@@ -5,7 +5,7 @@ import axios from 'axios';
 import dynamic from 'next/dynamic';
 import { FaRegSmile } from "react-icons/fa";
 import Image from 'next/image';
-
+import debounce from 'lodash/debounce';
 
 const VerseListComponent = dynamic(() => import('./components/VerseList'), {
   ssr: false
@@ -46,13 +46,6 @@ interface TafsirResponse {
   };
 }
 
-interface SingleAyatData {
-  verse_number: number;
-  text_uthmani: string;
-  translations: Array<{
-    text: string;
-  }>;
-}
 
 export default function Home() {
   const [messages, setMessages] = useState<Message[]>([{
@@ -66,8 +59,8 @@ export default function Home() {
   const [input, setInput] = useState('');
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showInstallPrompt, setShowInstallPrompt] = useState(false);
-  const [singleAyat, setSingleAyat] = useState<{ surah: SearchResult, ayat: number } | null>(null);
-  const [singleAyatData, setSingleAyatData] = useState<SingleAyatData | null>(null);
+  const [singleAyat, setSingleAyat] = useState<{ surah: any, ayat: number } | null>(null);
+  const [singleAyatData, setSingleAyatData] = useState<any>(null);
 
   // Load messages from localStorage on client-side only
   useEffect(() => {
@@ -115,7 +108,7 @@ export default function Home() {
 
   // Debounced search function
   const debouncedSearch = useCallback(
-    (query: string) => {
+    debounce((query: string) => {
       // Early return if any required data is missing
       if (!Array.isArray(allSurahs) || !query || typeof query !== 'string') {
         return [];
@@ -144,7 +137,7 @@ export default function Home() {
           name_english.toLowerCase().includes(searchQuery)
         );
       });
-    },
+    }, 300),
     [allSurahs]
   );
 
