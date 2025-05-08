@@ -302,15 +302,15 @@ export default function Home() {
       </div>
 
       {/* Chat Area */}
-      <div className="w-full max-w-md mx-auto flex-1 flex flex-col justify-end pb-2" style={{ minHeight: 'calc(100dvh - 220px)' }}>
-        <div className="flex-1 flex flex-col space-y-3 px-2 pt-4 overflow-y-auto scrollbar-none" style={{ minHeight: 200 }}>
+      <div className="w-full max-w-md mx-auto flex-1 flex flex-col justify-end pb-28 sm:pb-4" style={{ minHeight: 'calc(100dvh - 220px)' }}>
+        <div className="flex-1 flex flex-col space-y-2.5 sm:space-y-3 px-2 pt-3 sm:pt-4 overflow-y-auto scrollbar-none" style={{ minHeight: 200 }}>
           {messages.map((msg, idx) => (
             <div key={idx} className={`flex items-end ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}> 
               {msg.type !== 'user' && (
                 <Image src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740" alt="Bot" width={32} height={32} className="rounded-full object-cover mt-1" />
               )}
               <div
-                className={`rounded-2xl px-4 py-2 shadow max-w-[80%] text-sm leading-relaxed transition-all
+                className={`rounded-2xl px-3.5 sm:px-4 py-2 shadow max-w-[80%] text-sm leading-relaxed transition-all
                   ${msg.type === 'user'
                     ? 'bg-blue-400 text-white rounded-br-md'
                     : 'bg-white text-gray-800 border border-blue-100 rounded-bl-md'}
@@ -373,11 +373,11 @@ export default function Home() {
           ))}
           <div ref={messagesEndRef} />
         </div>
-        {/* Input sticky */}
+        {/* Input sticky/fixed */}
         <form
           onSubmit={handleSend}
-          className="sticky bottom-0 z-10 w-[calc(100%-24px)] max-w-md mx-auto flex items-center bg-white rounded-2xl shadow-lg px-4 sm:px-4 py-3 gap-3 border border-gray-200 mt-2 mb-2 mx-3 sm:mx-2"
-          style={{ minHeight: 56 }}
+          className="flex fixed bottom-0 left-0 right-0 w-full max-w-md z-20 bg-white rounded-t-2xl shadow-lg px-3.5 sm:px-4 py-2 sm:py-2.5 gap-2.5 sm:gap-3 border-t border-gray-200 mt-0 sm:mt-1 mb-0 sm:mb-1 mx-auto sm:mx-2 sm:sticky sm:bottom-0"
+          style={{ minHeight: '48px' }}
         >
           <button 
             type="button" 
