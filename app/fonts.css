@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Amiri';
+  src: url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mushaf Ligatures';
+  src: local('QCF_BSML'),
+       url(https://raw.githubusercontent.com/mustafa0x/qpc-fonts/f93bf5f3/mushaf-v2-woff2/QCF_BSML.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mushaf Page NNN';
+  src: local('QCF_PNNN'),
+       url(https://raw.githubusercontent.com/mustafa0x/qpc-fonts/f93bf5f3/mushaf-woff2/QCF_PNNN.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Scheherazade New';
+  src: url('https://quran.com/fonts/scheherazade-new.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'QCF_PBSML';
+  src: url('https://quran.com/fonts/qcf_pbsml.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'UthmaniHafs';
+  src: url('/fonts/KFGQPC Uthmanic Script HAFS Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'me_quran';
+  src: url('/fonts/me_quran-2.woff2') format('woff2'),
+       url('/fonts/me_quran-2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FatihahFont';
+  src: url('/fonts/mushaf/QCF_P001.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Indopak';
+  src: url('https://cdn.jsdelivr.net/gh/aldi/uthmanic-font/uthmanic.css');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} 
