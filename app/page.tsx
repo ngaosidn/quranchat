@@ -38,11 +38,16 @@ interface Message {
   ayat?: number;
 }
 
-const popularSurahs = [
-  { number: 1, name: "Al-Fatihah" },
-  { number: 2, name: "Al-Baqarah" },
-  { number: 36, name: "Yasin" },
-];
+interface TafsirData {
+  ayat: number;
+  teks: string;
+}
+
+interface TafsirResponse {
+  data: {
+    tafsir: TafsirData[];
+  };
+}
 
 export default function Home() {
   const [messages, setMessages] = useState<Message[]>([{
@@ -167,10 +172,10 @@ export default function Home() {
       // Perintah cari ayat spesifik
       const ayatPattern = /^(?:surah\s*)?(\d+|[\w\- ]+)[\s-]*ayat[\s-]*(\d+)$/i;
       const ayatPattern2 = /^(?:surah\s*)?(\d+)[\s-]+(\d+)$/i;
-      let matchAyat = userMessage.match(ayatPattern) || userMessage.match(ayatPattern2);
+      const matchAyat = userMessage.match(ayatPattern) || userMessage.match(ayatPattern2);
       if (matchAyat) {
-        let surahQuery = matchAyat[1].trim().replace(/-/g, ' ');
-        let ayatNum = parseInt(matchAyat[2]);
+        const surahQuery = matchAyat[1].trim().replace(/-/g, ' ');
+        const ayatNum = parseInt(matchAyat[2]);
         let surahInfo = null;
         if (/^\d+$/.test(surahQuery)) {
           surahInfo = allSurahs.find(s => s.id === parseInt(surahQuery));
@@ -195,7 +200,7 @@ export default function Home() {
       const surahPattern = /^(?:surah |surat )?([\w\- ]+)$/i;
       const match = userMessage.match(surahPattern);
       if (match) {
-        let query = match[1].trim().replace(/-/g, ' ');
+        const query = match[1].trim().replace(/-/g, ' ');
         let surahInfo = null;
         // Cek jika query angka
         if (/^\d+$/.test(query)) {
@@ -273,12 +278,6 @@ export default function Home() {
     }
 
     await handleSearch(userMessage);
-  };
-
-  const handleSurahQuickAction = (surah: { number: number; name: string }) => {
-    setInput(surah.name);
-    // Anda bisa langsung trigger pencarian jika ingin otomatis
-    // handleSend();
   };
 
   return (
@@ -483,8 +482,8 @@ function TafsirButton({ surahNumber, ayahNumber, surahName, onClose }: { surahNu
     if (!show) return;
     fetch(`https://equran.id/api/v2/tafsir/${surahNumber}`)
       .then(res => res.json())
-      .then(data => {
-        const tafsirAyat = data.data.tafsir.find((t: any) => t.ayat === ayahNumber);
+      .then((data: TafsirResponse) => {
+        const tafsirAyat = data.data.tafsir.find((t) => t.ayat === ayahNumber);
         setTafsir(tafsirAyat ? tafsirAyat.teks : 'Tafsir tidak tersedia.');
       });
   }, [show, surahNumber, ayahNumber]);
