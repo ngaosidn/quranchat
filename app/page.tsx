@@ -49,6 +49,14 @@ interface TafsirResponse {
   };
 }
 
+interface VerseData {
+  verse_number: number;
+  text_uthmani: string;
+  translations: Array<{
+    text: string;
+  }>;
+}
+
 export default function Home() {
   const [messages, setMessages] = useState<Message[]>([{
     type: 'bot',
@@ -467,7 +475,7 @@ export default function Home() {
               className="w-full my-2"
             />
             {/* Button Tafsir */}
-            <TafsirButton surahNumber={singleAyat.surah.id} ayahNumber={singleAyat.ayat} surahName={singleAyat.surah.name_simple} onClose={() => setSingleAyat(null)} />
+            <TafsirButton surahNumber={singleAyat.surah.id} ayahNumber={singleAyat.ayat} surahName={singleAyat.surah.name_simple} />
           </div>
         </div>
       )}
@@ -475,7 +483,7 @@ export default function Home() {
   );
 }
 
-function TafsirButton({ surahNumber, ayahNumber, surahName, onClose }: { surahNumber: number, ayahNumber: number, surahName: string, onClose: () => void }) {
+function TafsirButton({ surahNumber, ayahNumber, surahName }: { surahNumber: number, ayahNumber: number, surahName: string }) {
   const [show, setShow] = useState(false);
   const [tafsir, setTafsir] = useState('');
   useEffect(() => {
