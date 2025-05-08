@@ -29,6 +29,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#2563eb" />
+        <link rel="icon" href="/icon-192x192.png" />
+      </head>
       <body className={`${inter.className} ${poppins.variable} ${amiri.variable} font-poppins`}>{children}</body>
     </html>
   );

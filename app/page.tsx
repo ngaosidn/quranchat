@@ -1,15 +1,13 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
-import axios from 'axios';
-import dynamic from 'next/dynamic';
-import { FaRegSmile } from "react-icons/fa";
+import React from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
-
-const VerseListComponent = dynamic(() => import('./components/VerseList'), {
-  ssr: false
-});
+interface Message {
+  type: 'user' | 'bot';
+  content: React.ReactNode;
+}
 
 // TypeScript type for beforeinstallprompt event
 interface BeforeInstallPromptEvent extends Event {
@@ -17,93 +15,88 @@ interface BeforeInstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: 'accepted' | 'dismissed'; platform: string }>;
 }
 
-interface SearchResult {
-  id: number;
-  name_simple: string;
-  name_arabic: string;
-  name_english: string;
-  verses_count: number;
-  revelation_place: string;
-  translated_name?: { name: string };
-}
-
-interface Message {
-  type: 'user' | 'bot';
-  content: string;
-  surah?: SearchResult;
-  surahs?: SearchResult[];
-  ayat?: number;
-}
-
-interface TafsirData {
-  ayat: number;
-  teks: string;
-}
-
-interface TafsirResponse {
-  data: {
-    tafsir: TafsirData[];
-  };
-}
-
-interface SingleAyatData {
-  verse_number: number;
-  text_uthmani: string;
-  translations: Array<{
-    text: string;
-  }>;
+function isMobile() {
+  if (typeof window === 'undefined') return false;
+  return /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(navigator.userAgent);
 }
 
 export default function Home() {
-  const [messages, setMessages] = useState<Message[]>([{
-    type: 'bot',
-    content: `Assalamualaikum! 👋\n\nBerikut adalah perintah yang tersedia:\n\n📚 1. Ketik "list" untuk melihat daftar surah\n🔍 2. Ketik nama surah (contoh: "al fatihah" atau "yasin")\n🔢 3. Ketik nomor surah (contoh: "1" untuk Al-Fatihah)\n📖 4. Cari ayat spesifik dengan format:\n   - "surah 1 ayat 1"\n   - "al fatihah ayat 1"\n   - "1 1"\n🗑️ 5. Ketik "hapus riwayat" untuk menghapus riwayat chat\n\nSilakan pilih salah satu perintah di atas untuk memulai.`
-  }]);
-  const [loading, setLoading] = useState(false);
-  const [selectedSurah, setSelectedSurah] = useState<number | null>(null);
-  const [allSurahs, setAllSurahs] = useState<SearchResult[]>([]);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-  const [input, setInput] = useState('');
-  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
-  const [showInstallPrompt, setShowInstallPrompt] = useState(false);
-  const [singleAyat, setSingleAyat] = useState<{ surah: SearchResult, ayat: number } | null>(null);
-  const [singleAyatData, setSingleAyatData] = useState<SingleAyatData | null>(null);
-
-  // Load messages from localStorage on client-side only
-  useEffect(() => {
-    const savedMessages = localStorage.getItem('chatHistory');
-    if (savedMessages) {
-      setMessages(JSON.parse(savedMessages));
+  const router = useRouter();
+  const [messages] = React.useState<Message[]>([
+    {
+      type: 'bot',
+      content: (
+        <div className="flex flex-col gap-3">
+          <p className="text-lg font-semibold">Ahlan Bikum! 👋</p>
+          <p>Silakan pilih menu di bawah ini:</p>
+          <div className="flex flex-col gap-2">
+            <button
+              onClick={() => router.push('/quranchat')}
+              className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+              </svg>
+              <span>Quran Chat App</span>
+            </button>
+            <button
+              onClick={() => window.open('https://wa.me/6281234567890', '_blank')}
+              className="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" className="w-5 h-5">
+                <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.832 4.584 2.236 6.393L4 29l7.828-2.05C13.41 27.633 14.686 28 16 28c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.13 0-2.237-.188-3.28-.558l-.234-.08-4.65 1.217 1.24-4.527-.153-.236C7.188 18.237 7 17.13 7 16c0-4.963 4.037-9 9-9s9 4.037 9 9-4.037 9-9 9zm5.07-6.29c-.276-.138-1.637-.808-1.89-.9-.253-.092-.437-.138-.62.138-.184.276-.713.9-.874 1.085-.161.184-.322.207-.598.069-.276-.138-1.166-.43-2.222-1.37-.822-.733-1.377-1.637-1.54-1.913-.161-.276-.017-.425.122-.563.126-.125.276-.322.414-.483.138-.161.184-.276.276-.46.092-.184.046-.345-.023-.483-.069-.138-.62-1.497-.85-2.05-.224-.54-.453-.467-.62-.476l-.529-.01c-.161 0-.46.069-.701.322-.241.253-.92.9-.92 2.192 0 1.292.943 2.54 1.074 2.717.138.184 1.855 2.833 4.5 3.858.63.217 1.12.346 1.504.443.632.161 1.21.138 1.666.084.508-.06 1.637-.669 1.87-1.316.23-.646.23-1.2.161-1.316-.069-.115-.253-.184-.529-.322z" />
+              </svg>
+              <span>Quran Chat Whatsapp</span>
+            </button>
+            <button
+              onClick={() => router.push('/belajar-quran')}
+              className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+              </svg>
+              <span>Belajar Quran Dari 0 Online</span>
+            </button>
+            <button
+              onClick={() => router.push('/kamus-tajwid')}
+              className="flex items-center gap-2 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+              </svg>
+              <span>Dokumentasi Kaidah Tajwid</span>
+            </button>
+            <button
+              onClick={() => alert('Terima kasih atas dukungan dan doanya!')}
+              className="flex items-center gap-2 bg-yellow-400 text-yellow-900 px-4 py-2 rounded-lg hover:bg-yellow-500 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+              <span>Ucapan Terima Kasih</span>
+            </button>
+            <button
+              onClick={() => window.open('https://trakteer.id/waquran', '_blank')}
+              className="flex items-center gap-2 bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Support Kami</span>
+            </button>
+          </div>
+        </div>
+      )
     }
-  }, []);
+  ]);
 
-  // Save messages to localStorage whenever they change
-  useEffect(() => {
-    localStorage.setItem('chatHistory', JSON.stringify(messages));
-  }, [messages]);
+  // State untuk PWA install prompt
+  const [deferredPrompt, setDeferredPrompt] = React.useState<BeforeInstallPromptEvent | null>(null);
+  const [showInstallPrompt, setShowInstallPrompt] = React.useState(false);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
-
-  useEffect(() => {
-    const fetchAllSurahs = async () => {
-      try {
-        const response = await axios.get(`https://api.quran.com/api/v4/chapters?language=id`);
-        setAllSurahs(response.data.chapters);
-      } catch (error) {
-        console.error('Error fetching surahs:', error);
-      }
-    };
-    fetchAllSurahs();
-  }, []);
-
-  useEffect(() => {
+  React.useEffect(() => {
     const handler = (e: Event) => {
+      if (!isMobile()) return;
       const promptEvent = e as unknown as BeforeInstallPromptEvent;
       e.preventDefault();
       setDeferredPrompt(promptEvent);
@@ -112,178 +105,6 @@ export default function Home() {
     window.addEventListener("beforeinstallprompt", handler);
     return () => window.removeEventListener("beforeinstallprompt", handler);
   }, []);
-
-  // Debounced search function
-  const debouncedSearch = useCallback(
-    (query: string) => {
-      // Early return if any required data is missing
-      if (!Array.isArray(allSurahs) || !query || typeof query !== 'string') {
-        return [];
-      }
-
-      const searchQuery = query.toLowerCase().trim();
-      if (!searchQuery) return [];
-
-      return allSurahs.filter((surah) => {
-        // Skip invalid surah objects
-        if (!surah || typeof surah !== 'object') return false;
-
-        const { name_simple, name_arabic, name_english } = surah;
-        
-        // Skip if any required name is missing
-        if (!name_simple || !name_arabic || !name_english) return false;
-
-        // Ensure all names are strings
-        if (typeof name_simple !== 'string' || 
-            typeof name_arabic !== 'string' || 
-            typeof name_english !== 'string') return false;
-
-        return (
-          name_simple.toLowerCase().includes(searchQuery) ||
-          name_arabic.includes(query) ||
-          name_english.toLowerCase().includes(searchQuery)
-        );
-      });
-    },
-    [allSurahs]
-  );
-
-  // Memoize search results
-  const searchResults = useMemo(() => {
-    // Early return if input is invalid
-    if (!input || typeof input !== 'string' || !input.trim()) {
-      return [];
-    }
-
-    // Ensure allSurahs is valid
-    if (!Array.isArray(allSurahs)) {
-      return [];
-    }
-
-    return debouncedSearch(input);
-  }, [input, debouncedSearch, allSurahs]);
-
-  // Optimize handleSearch function
-  const handleSearch = useCallback(async (userMessage: string) => {
-    try {
-      if (!allSurahs) {
-        setMessages(prev => [...prev, {
-          type: 'bot',
-          content: 'Maaf, data surah belum siap. Silakan coba lagi dalam beberapa saat.'
-        }]);
-        return;
-      }
-
-      // Perintah cari ayat spesifik
-      const ayatPattern = /^(?:surah\s*)?(\d+|[\w\- ]+)[\s-]*ayat[\s-]*(\d+)$/i;
-      const ayatPattern2 = /^(?:surah\s*)?(\d+)[\s-]+(\d+)$/i;
-      const matchAyat = userMessage.match(ayatPattern) || userMessage.match(ayatPattern2);
-      if (matchAyat) {
-        const surahQuery = matchAyat[1].trim().replace(/-/g, ' ');
-        const ayatNum = parseInt(matchAyat[2]);
-        let surahInfo = null;
-        if (/^\d+$/.test(surahQuery)) {
-          surahInfo = allSurahs.find(s => s.id === parseInt(surahQuery));
-        } else {
-          surahInfo = allSurahs.find(s =>
-            s.name_simple.toLowerCase().replace(/-/g, ' ') === surahQuery.toLowerCase() ||
-            s.name_arabic.replace(/-/g, ' ') === surahQuery ||
-            s.translated_name?.name.toLowerCase().replace(/-/g, ' ') === surahQuery.toLowerCase()
-          );
-        }
-        if (surahInfo) {
-          setMessages(prev => [...prev, {
-            type: 'bot',
-            content: `📖 Klik tombol berikut untuk melihat ayat Surah ${surahInfo.name_simple} (${surahInfo.name_arabic}) ayat ${ayatNum}:`,
-            surah: surahInfo,
-            ayat: ayatNum
-          }]);
-          return;
-        }
-      }
-      // Perintah surah
-      const surahPattern = /^(?:surah |surat )?([\w\- ]+)$/i;
-      const match = userMessage.match(surahPattern);
-      if (match) {
-        const query = match[1].trim().replace(/-/g, ' ');
-        let surahInfo = null;
-        // Cek jika query angka
-        if (/^\d+$/.test(query)) {
-          surahInfo = allSurahs.find(s => s.id === parseInt(query));
-        } else {
-          surahInfo = allSurahs.find(s =>
-            s.name_simple.toLowerCase().replace(/-/g, ' ') === query.toLowerCase() ||
-            s.name_arabic.replace(/-/g, ' ') === query ||
-            s.translated_name?.name.toLowerCase().replace(/-/g, ' ') === query.toLowerCase()
-          );
-        }
-        if (surahInfo) {
-          setMessages(prev => [...prev, {
-            type: 'bot',
-            content: `📖 Informasi Surah :\n\n` +
-              `📌 Nama Surah : ${surahInfo.name_simple} (${surahInfo.name_arabic})\n` +
-              `📝 Arti Nama : ${surahInfo.translated_name?.name || '-'}\n` +
-              `📍 Tempat Turun : ${surahInfo.revelation_place === 'makkah' ? 'Makkiyah' : 'Madaniyah'}\n` +
-              `📊 Jumlah Ayat : ${surahInfo.verses_count}`
-          }]);
-          return;
-        }
-      }
-      // Perintah list (tetap ada)
-      if (userMessage.toLowerCase() === 'list') {
-        setMessages(prev => [...prev, {
-          type: 'bot',
-          content: 'Berikut adalah daftar surah dalam Al-Quran:',
-          surahs: allSurahs
-        }]);
-      } else {
-        const filteredResults = searchResults || [];
-
-        if (filteredResults.length === 0) {
-          setMessages(prev => [...prev, {
-            type: 'bot',
-            content: '❌ Maaf, saya tidak menemukan surah yang Anda cari. Silakan coba dengan nama surah yang lain atau ketik "list" untuk melihat daftar surah.'
-          }]);
-        } else {
-          setMessages(prev => [...prev, {
-            type: 'bot',
-            content: `✅ Saya menemukan ${filteredResults.length} surah yang cocok dengan pencarian Anda:`,
-            surah: filteredResults[0]
-          }]);
-        }
-      }
-    } catch (error) {
-      console.error('Search error:', error);
-      setMessages(prev => [...prev, {
-        type: 'bot',
-        content: 'Maaf, terjadi kesalahan saat mencari surah. Silakan coba lagi.'
-      }]);
-    } finally {
-      setLoading(false);
-    }
-  }, [allSurahs, searchResults]);
-
-  const handleSend = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-    const userMessage = input;
-    setInput('');
-    setMessages(prev => [...prev, { type: 'user', content: userMessage }]);
-    setLoading(true);
-
-    // Check for clear history command
-    if (userMessage.toLowerCase() === 'hapus riwayat') {
-      setMessages([{
-        type: 'bot',
-        content: `Assalamualaikum! 👋\n\nBerikut adalah perintah yang tersedia:\n\n📚 1. Ketik "list" untuk melihat daftar surah\n🔍 2. Ketik nama surah (contoh: "al fatihah" atau "yasin")\n🔢 3. Ketik nomor surah (contoh: "1" untuk Al-Fatihah)\n📖 4. Cari ayat spesifik dengan format:\n   - "surah 1 ayat 1"\n   - "al fatihah ayat 1"\n   - "1 1"\n🗑️ 5. Ketik "hapus riwayat" untuk menghapus riwayat chat\n\nSilakan pilih salah satu perintah di atas untuk memulai.`
-      }]);
-      localStorage.removeItem('chatHistory');
-      setLoading(false);
-      return;
-    }
-
-    await handleSearch(userMessage);
-  };
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-white">
@@ -316,108 +137,17 @@ export default function Home() {
                     : 'bg-white text-gray-800 border border-blue-100 rounded-bl-md'}
                 `}
               >
-                {msg.type === 'bot'
-                  ? <pre className="whitespace-pre-wrap">{msg.content}</pre>
-                  : msg.content}
-                {msg.surahs && (
-                  <div className="mt-2 grid grid-cols-1 gap-3 max-h-[60vh] overflow-y-auto pr-1">
-                    {msg.surahs.map((surah) => (
-                      <div
-                        key={surah.id}
-                        className="flex items-center gap-3 p-4 bg-white rounded-xl border border-blue-100 shadow hover:bg-blue-50 hover:border-blue-300 cursor-pointer transition-all group relative max-w-full"
-                        onClick={() => setSelectedSurah(surah.id)}
-                      >
-                        <span className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-700 font-bold text-lg shadow group-hover:bg-blue-600 group-hover:text-white transition-all shrink-0">
-                          {surah.id}
-                        </span>
-                        <div className="flex flex-col flex-1 min-w-0">
-                          <span className="font-semibold text-gray-800 truncate text-base">{surah.name_simple}</span>
-                          <span className="text-blue-500 surah-name-arabic leading-tight truncate">{surah.name_arabic}</span>
-                          {surah.translated_name?.name && (
-                            <span className="text-xs italic text-gray-500 truncate">{surah.translated_name.name}</span>
-                          )}
-                        </div>
-                        <div className="flex flex-col items-end justify-center gap-1 shrink-0">
-                          <span className="flex items-center justify-center h-7 px-3 rounded-full bg-blue-50 text-blue-700 font-bold text-xs border border-blue-200 whitespace-nowrap">
-                            {surah.verses_count} ayat
-                          </span>
-                          <span className="text-[11px] italic text-gray-500 whitespace-nowrap">{surah.revelation_place === 'makkah' ? 'Makkiyah' : 'Madaniyah'}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                {msg.ayat && (
-                  <button
-                    className="mt-2 px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold shadow hover:bg-indigo-700 transition"
-                    onClick={async () => {
-                      // Fetch data ayat
-                      if (!msg.surah || !msg.ayat) {
-                        console.error('Surah or ayat is undefined');
-                        return;
-                      }
-                      const res = await fetch(`https://api.quran.com/api/v4/verses/by_key/${msg.surah.id}:${msg.ayat}?words=true&word_fields=text_uthmani&fields=verse_number,text_uthmani&translations=33&language=id`);
-                      const data = await res.json();
-                      setSingleAyat({ surah: msg.surah, ayat: msg.ayat });
-                      setSingleAyatData(data.verse);
-                    }}
-                  >
-                    Lihat Ayat
-                  </button>
-                )}
+                {msg.content}
               </div>
               {msg.type === 'user' && (
                 <Image src="https://www.svgrepo.com/show/382106/male-avatar-boy-face-man-user-9.svg" alt="You" width={28} height={28} className="rounded-full object-cover ml-2 mb-1" />
               )}
             </div>
           ))}
-          <div ref={messagesEndRef} />
         </div>
-        {/* Input sticky/fixed */}
-        <form
-          onSubmit={handleSend}
-          className="flex fixed bottom-0 left-0 right-0 w-full max-w-md z-20 bg-white rounded-t-2xl shadow-lg px-3.5 sm:px-4 py-2 sm:py-2.5 gap-2.5 sm:gap-3 border-t border-gray-200 mt-0 sm:mt-1 mb-0 sm:mb-1 mx-auto sm:mx-2 sm:sticky sm:bottom-0"
-          style={{ minHeight: '48px' }}
-        >
-          <button 
-            type="button" 
-            className="text-gray-400 hover:text-gray-600 transition-colors shrink-0"
-            aria-label="Add emoji"
-          >
-            <FaRegSmile className="w-6 h-6" />
-          </button>
-          <input
-            type="text"
-            className="flex-1 bg-transparent outline-none text-gray-800 placeholder-gray-400 text-base w-full"
-            placeholder="Ketik pesan..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            autoFocus
-            style={{ WebkitAppearance: 'none', appearance: 'none' }}
-          />
-          <button
-            type="submit"
-            disabled={loading || !input.trim()}
-            className={`flex items-center justify-center rounded-xl px-4 py-2 font-semibold shadow transition-all shrink-0 ${
-              loading || !input.trim()
-                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                : 'bg-blue-600 text-white hover:bg-blue-700 hover:scale-105 active:scale-95'
-            }`}
-          >
-            Kirim
-          </button>
-        </form>
       </div>
-
-      {/* Modal for VerseList */}
-      {selectedSurah && (
-        <VerseListComponent
-          surahNumber={selectedSurah}
-          onClose={() => setSelectedSurah(null)}
-        />
-      )}
       {/* PWA Install Prompt */}
-      {showInstallPrompt && (
+      {showInstallPrompt && isMobile() && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 w-full max-w-sm mx-auto">
             <h2 className="text-lg font-bold mb-2">Install App</h2>
@@ -445,80 +175,6 @@ export default function Home() {
           </div>
         </div>
       )}
-      {/* Pop up single ayat */}
-      {singleAyat && singleAyatData && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-          <div className="bg-gradient-to-br from-green-100 via-white to-green-50 rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col border border-gray-100 p-4 sm:p-6 relative">
-            <button
-              className="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 rounded-lg text-lg p-1 shadow transition-all"
-              style={{ minWidth: 28, minHeight: 28 }}
-              onClick={() => { setSingleAyat(null); setSingleAyatData(null); }}
-            >×</button>
-            <h2 className="text-base sm:text-xl font-bold text-gray-800 tracking-wide mb-2 pr-8">
-              Surah {singleAyat.surah.name_simple} ({singleAyat.surah.name_arabic}) ayat {singleAyat.ayat}
-            </h2>
-            <div className="space-y-4 overflow-y-auto">
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
-                <div className="font-uthmani text-right mb-2">{singleAyatData.text_uthmani}</div>
-                <div className="translation-text" dangerouslySetInnerHTML={{ 
-                  __html: singleAyatData.translations?.[0]?.text?.replace(/<sup[^>]*>.*?<\/sup>/g, '') || "Translation not available" 
-                }} />
-              </div>
-            </div>
-            {/* Audio */}
-            <audio
-              controls
-              src={`https://everyayah.com/data/Alafasy_64kbps/${String(singleAyat.surah.id).padStart(3, '0')}${String(singleAyat.ayat).padStart(3, '0')}.mp3`}
-              className="w-full my-2"
-            />
-            {/* Button Tafsir */}
-            <TafsirButton surahNumber={singleAyat.surah.id} ayahNumber={singleAyat.ayat} surahName={singleAyat.surah.name_simple} />
-          </div>
-        </div>
-      )}
     </div>
-  );
-}
-
-function TafsirButton({ surahNumber, ayahNumber, surahName }: { surahNumber: number, ayahNumber: number, surahName: string }) {
-  const [show, setShow] = useState(false);
-  const [tafsir, setTafsir] = useState('');
-  useEffect(() => {
-    if (!show) return;
-    fetch(`https://equran.id/api/v2/tafsir/${surahNumber}`)
-      .then(res => res.json())
-      .then((data: TafsirResponse) => {
-        const tafsirAyat = data.data.tafsir.find((t) => t.ayat === ayahNumber);
-        setTafsir(tafsirAyat ? tafsirAyat.teks : 'Tafsir tidak tersedia.');
-      });
-  }, [show, surahNumber, ayahNumber]);
-  return (
-    <>
-      <button
-        className="mt-2 px-4 py-2 bg-yellow-400 text-yellow-900 rounded-lg font-semibold shadow hover:bg-yellow-500 transition w-full sm:w-auto"
-        onClick={() => setShow(true)}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 inline-block mr-1">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75C2.25 5.507 3.257 4.5 4.5 4.5h5.25v15H4.5a2.25 2.25 0 01-2.25-2.25V6.75zM21.75 6.75c0-1.243-1.007-2.25-2.25-2.25h-5.25v15h5.25a2.25 2.25 0 002.25-2.25V6.75z" />
-        </svg>
-        Tafsir
-      </button>
-      {show && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[90vh] p-4 sm:p-6 relative">
-            <button
-              className="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 rounded-lg text-2xl p-2 shadow transition-all"
-              style={{ minWidth: 40, minHeight: 40 }}
-              onClick={() => setShow(false)}
-            >×</button>
-            <h3 className="text-lg font-bold mb-2 text-indigo-700 pr-8">Tafsir Ayat {ayahNumber}{surahName ? ` - Surah ${surahName}` : ''}</h3>
-            <div className="text-gray-700 leading-relaxed max-h-[60vh] overflow-y-auto whitespace-pre-line mb-4 text-sm sm:text-base">
-              {tafsir}
-            </div>
-            <div className="text-xs text-gray-400 italic text-right">Sumber: equran.id (Tafsir Kementerian Agama RI)</div>
-          </div>
-        </div>
-      )}
-    </>
   );
 }
