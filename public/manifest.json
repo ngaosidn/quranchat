@@ -1,0 +1,38 @@
+{
+  "name": "waQuran App - Aplikasi Pencarian Ayat Al-Quran",
+  "short_name": "waQuran",
+  "description": "Aplikasi pencarian ayat Al-Quran yang mudah digunakan. Temukan ayat-ayat Al-Quran dengan cepat dan mudah dalam bahasa Indonesia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "waQuran App Screenshot"
+    }
+  ],
+  "categories": ["books", "education", "lifestyle"],
+  "lang": "id",
+  "dir": "ltr",
+  "prefer_related_applications": false
+} 

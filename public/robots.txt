@@ -1,0 +1,32 @@
+# Global rules
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.json$
+Disallow: /*.xml$
+Allow: /sitemap.xml
+Allow: /manifest.json
+
+# Google specific rules
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Bing specific rules
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://waquran.app/sitemap.xml
+
+# Host
+Host: https://waquran.app 
