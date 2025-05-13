@@ -9,9 +9,17 @@ const withPWA = require('next-pwa')({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      'img.freepik.com',
-      'www.svgrepo.com'
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.freepik.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.svgrepo.com',
+        pathname: '/**',
+      }
     ],
   },
 };

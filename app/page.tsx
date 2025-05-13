@@ -28,7 +28,7 @@ export default function Home() {
       content: (
         <div className="flex flex-col gap-3">
           <p className="text-lg font-semibold">Ahlan Bikum! 👋</p>
-          <p>Silakan pilih menu di bawah ini:</p>
+          <p>Silakan pilih menu di bawah ini :</p>
           <div className="flex flex-col gap-2">
             <button
               onClick={() => router.push('/quranchat')}
