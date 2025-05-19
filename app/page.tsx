@@ -93,9 +93,9 @@ export default function Home() {
       <div className="min-h-screen w-full flex flex-col items-center bg-white">
         {/* Header ala Intercom */}
         <div className="w-full max-w-md mx-auto sticky top-0 z-10">
-          <div className="bg-blue-600 rounded-b-3xl px-6 pt-10 pb-6 relative shadow">
+          <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-b-3xl px-6 pt-10 pb-6 relative shadow">
             <div className="flex items-center gap-3 mb-4">
-              <div>
+              {/* <div>
                 <Image 
                   src="/logo.svg" 
                   alt="Logo" 
@@ -104,10 +104,10 @@ export default function Home() {
                   className="max-w-[120px] h-auto" 
                   priority
                 />
-              </div>
+              </div> */}
             </div>
-            <div className="text-white text-sm font-normal font-poppins">Teman Ngaji Online-mu yang ingin mudah</div>
-            <div className="text-white text-sm font-normal font-poppins">Belajar Al-Quran ✨</div>
+            <div className="text-white text-sm font-normal font-poppins">Ahlan Bikum!</div>
+            <div className="text-white text-sm font-normal font-poppins">Yuk Belajar Bareng di QuranChat ✨</div>
           </div>
         </div>
 

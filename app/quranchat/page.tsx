@@ -616,7 +616,7 @@ export default function QuranChat() {
             <IoArrowBack className="w-7 h-7" />
           </button>
           <div className="flex items-center gap-3 mb-4">
-            <div>
+            {/* <div>
               <Image 
                 src="/logo.svg" 
                 alt="Logo" 
@@ -625,10 +625,10 @@ export default function QuranChat() {
                 className="max-w-[120px] h-auto" 
                 priority
               />
-            </div>
+            </div> */}
           </div>
-          <div className="text-white text-sm font-normal font-poppins">Teman Ngaji Online-mu yang ingin mudah</div>
-          <div className="text-white text-sm font-normal font-poppins">Belajar Al-Quran ✨</div>
+          <div className="text-white text-sm font-normal font-poppins">Ahlan Bikum!</div>
+          <div className="text-white text-sm font-normal font-poppins">Mau baca dan tadabbur ayat apa hari ini? ✨</div>
         </div>
       </div>
 
