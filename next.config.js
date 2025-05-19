@@ -19,6 +19,11 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'www.svgrepo.com',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        pathname: '/**',
       }
     ],
   },
