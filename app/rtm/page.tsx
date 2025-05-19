@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaEye, FaEyeSlash } from "react-icons/fa";
+import { IoArrowBack } from "react-icons/io5";
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -26,36 +27,55 @@ function isMobile() {
 
 export default function RTM() {
   const router = useRouter();
-  const [messages, setMessages] = useState<Message[]>([{
-    type: 'bot',
-    content: 'Selamat datang di Rumus Tajwid Mudah (RTM)! 🎓\n\nSilakan pilih menu di bawah ini :\n\n1. Mad Thabi\'i (2 Harakat)'
-  }]);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [input, setInput] = useState('');
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showInstallPrompt, setShowInstallPrompt] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  const SHOW_ANNOUNCEMENT = process.env.NEXT_PUBLIC_SHOW_ANNOUNCEMENT === 'true';
-  useEffect(() => {
-    if (SHOW_ANNOUNCEMENT) {
-      router.replace('/');
-    }
-  }, [SHOW_ANNOUNCEMENT, router]);
+  const [selectedMenu, setSelectedMenu] = useState<string | null>(null);
 
   // Load messages from localStorage on client-side only
   useEffect(() => {
-    const savedMessages = localStorage.getItem('rtmChatHistory');
-    if (savedMessages) {
-      setMessages(JSON.parse(savedMessages));
-    }
-  }, []);
+    const loadMessages = () => {
+      if (typeof window !== 'undefined') {
+        const savedMessages = localStorage.getItem('rtmChatHistory');
+        console.log('Loading saved messages:', savedMessages);
+        if (savedMessages) {
+          try {
+            const parsedMessages = JSON.parse(savedMessages);
+            if (Array.isArray(parsedMessages) && parsedMessages.length > 0) {
+              console.log('Setting messages from localStorage:', parsedMessages);
+              setMessages(parsedMessages);
+              setIsLoading(false);
+              return;
+            }
+          } catch (error) {
+            console.error('Error parsing saved messages:', error);
+          }
+        }
+        // If no messages were loaded or error occurred, set initial message
+        setMessages([{
+          type: 'bot',
+          content: 'Selamat datang di Rumus Tajwid Mudah (RTM)! 🎓\nSilakan klik 👁️ atau masukan perintah untuk pencarian hukum tajwid\n\nContoh:\nmad thabi\'i'
+        }]);
+        setIsLoading(false);
+      }
+    };
+
+    loadMessages();
+  }, []); // Empty dependency array to run only once on mount
 
   // Save messages to localStorage whenever they change
   useEffect(() => {
-    localStorage.setItem('rtmChatHistory', JSON.stringify(messages));
-  }, [messages]);
+    if (typeof window !== 'undefined' && messages.length > 0 && !isLoading) {
+      console.log('Saving messages to localStorage:', messages);
+      localStorage.setItem('rtmChatHistory', JSON.stringify(messages));
+    }
+  }, [messages, isLoading]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -76,6 +96,72 @@ export default function RTM() {
     window.addEventListener("beforeinstallprompt", handler);
     return () => window.removeEventListener("beforeinstallprompt", handler);
   }, []);
+
+  const handleMenuClick = (menuId: string) => {
+    setSelectedMenu(menuId);
+    setShowMenu(false);
+    setMessages(prev => [...prev, {
+      type: 'user',
+      content: menuId
+    }]);
+
+    // Handle different menus
+    switch(menuId) {
+      case 'mad':
+        setMessages(prev => [...prev, {
+          type: 'bot',
+          content: 'Silakan pilih jenis Mad:'
+        }]);
+        break;
+      case 'nun-sukun-tanwin':
+        setMessages(prev => [...prev, {
+          type: 'bot',
+          content: 'Silakan pilih jenis Nun Sukun dan Tanwin:'
+        }]);
+        break;
+      case 'mim-sukun':
+        setMessages(prev => [...prev, {
+          type: 'bot',
+          content: 'Silakan pilih jenis Mim Sukun:'
+        }]);
+        break;
+      case 'nun-mim-tasydid':
+        setMessages(prev => [...prev, {
+          type: 'bot',
+          content: 'Silakan pilih jenis Nun dan Mim Tasydid:'
+        }]);
+        break;
+      case 'qolqolah':
+        setMessages(prev => [...prev, {
+          type: 'bot',
+          content: 'Silakan pilih jenis Qolqolah:'
+        }]);
+        break;
+      case 'ahkam-raa':
+        setMessages(prev => [...prev, {
+          type: 'bot',
+          content: 'Silakan pilih jenis Ahkam Raa:'
+        }]);
+        break;
+      case 'ahkam-lam-jalalah':
+        setMessages(prev => [...prev, {
+          type: 'bot',
+          content: 'Silakan pilih jenis Ahkam Lam Jalalah:'
+        }]);
+        break;
+      case 'ayat-gharibah':
+        setMessages(prev => [...prev, {
+          type: 'bot',
+          content: 'Silakan pilih jenis Ayat Gharibah:'
+        }]);
+        break;
+      default:
+        setMessages(prev => [...prev, {
+          type: 'bot',
+          content: 'Menu ini sedang dalam pengembangan. Silakan pilih menu lain.'
+        }]);
+    }
+  };
 
   const handleCommand = async (command: string) => {
     setLoading(true);
@@ -115,7 +201,9 @@ export default function RTM() {
     setLoading(true);
 
     // Add user message
-    setMessages(prev => [...prev, { type: 'user', content: userMessage }]);
+    const newMessages: Message[] = [...messages, { type: 'user' as const, content: userMessage }];
+    setMessages(newMessages);
+    console.log('After adding user message:', newMessages);
 
     // Handle commands
     if (userMessage === '1' || 
@@ -124,10 +212,13 @@ export default function RTM() {
         userMessage === 'mad thabi\'i') {
       await handleCommand('1');
     } else {
-      setMessages(prev => [...prev, {
-        type: 'bot',
+      const botResponse: Message = {
+        type: 'bot' as const,
         content: 'Perintah tidak dikenali. Silakan gunakan tombol menu atau ketik "1" untuk Mad Thabi\'i.'
-      }]);
+      };
+      const updatedMessages: Message[] = [...newMessages, botResponse];
+      setMessages(updatedMessages);
+      console.log('After adding bot response:', updatedMessages);
     }
     
     setLoading(false);
@@ -138,6 +229,13 @@ export default function RTM() {
       {/* Header */}
       <div className="w-full max-w-md mx-auto sticky top-0 z-10">
         <div className="bg-purple-600 rounded-b-3xl px-6 pt-10 pb-6 relative shadow">
+          <button
+            onClick={() => router.push('/')}
+            className="absolute top-4 right-4 text-white hover:text-gray-200 transition-colors"
+            aria-label="Kembali ke Beranda"
+          >
+            <IoArrowBack className="w-7 h-7" />
+          </button>
           <div className="flex items-center gap-3 mb-4">
             <div>
               <Image 
@@ -158,7 +256,7 @@ export default function RTM() {
       {/* Chat Area */}
       <div className="w-full max-w-md mx-auto flex-1 flex flex-col justify-end pb-28 sm:pb-20" style={{ minHeight: 'calc(100dvh - 220px)' }}>
         <div className="flex-1 flex flex-col space-y-2.5 sm:space-y-3 px-4 pt-3 sm:pt-4 overflow-y-auto scrollbar-none" style={{ minHeight: 200 }}>
-          {messages.map((msg, idx) => (
+          {!isLoading && messages.map((msg, idx) => (
             <div key={idx} className={`flex items-end ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}> 
               {msg.type !== 'user' && (
                 <Image src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740" alt="Bot" width={32} height={32} className="rounded-full object-cover mt-1" />
@@ -188,6 +286,41 @@ export default function RTM() {
                     />
                   </div>
                 )}
+                {msg.type === 'bot' && msg.content.includes('Selamat datang di Rumus Tajwid Mudah (RTM)!') && (
+                  <div className="mt-3 space-y-1.5">
+                    {/* Menu buttons removed from here since they're now in the slide up component */}
+                  </div>
+                )}
+                {selectedMenu === 'mad' && msg.type === 'bot' && msg.content.includes('Silakan pilih jenis Mad:') && (
+                  <div className="mt-3 space-y-1.5 flex flex-col items-start">
+                    {[
+                      { id: 'mad-thabii', title: 'Mad Thabi\'i (2 Harakat)', icon: '1️⃣' },
+                      { id: 'mad-wajib-muttasil', title: 'Mad Wajib Muttasil (4-5 Harakat)', icon: '2️⃣' },
+                      { id: 'mad-jaiz-munfasil', title: 'Mad Jaiz Munfasil (4-5 Harakat)', icon: '3️⃣' },
+                      { id: 'mad-arid-lissukun', title: 'Mad Arid Lissukun (2-6 Harakat)', icon: '4️⃣' },
+                      { id: 'mad-lazim', title: 'Mad Lazim (6 Harakat)', icon: '5️⃣' }
+                    ].map((submenu) => (
+                      <button
+                        key={submenu.id}
+                        onClick={() => handleCommand(submenu.id)}
+                        className="flex items-center justify-center gap-2 bg-purple-600 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-colors text-xs font-medium"
+                      >
+                        <span className="text-sm">{submenu.icon}</span>
+                        <span>{submenu.title}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+                {selectedMenu && selectedMenu !== 'mad' && msg.type === 'bot' && msg.content.includes('Silakan pilih jenis') && (
+                  <div className="mt-3 space-y-1.5 flex flex-col items-start">
+                    <button
+                      onClick={() => setSelectedMenu(null)}
+                      className="flex items-center justify-center gap-2 bg-purple-600 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-colors text-xs font-medium"
+                    >
+                      <span>Kembali ke Menu Utama</span>
+                    </button>
+                  </div>
+                )}
               </div>
               {msg.type === 'user' && (
                 <Image src="https://www.svgrepo.com/show/382106/male-avatar-boy-face-man-user-9.svg" alt="You" width={28} height={28} className="rounded-full object-cover ml-2 mb-1" />
@@ -208,8 +341,9 @@ export default function RTM() {
             onClick={() => {
               setMessages([{
                 type: 'bot',
-                content: 'Selamat datang di Rumus Tajwid Mudah (RTM)! 🎓\n\nSilakan pilih menu di bawah ini :\n\n1. Mad Thabi\'i (2 Harakat)'
+                content: 'Selamat datang di Rumus Tajwid Mudah (RTM)! 🎓\nSilakan klik 👁️ atau masukan perintah untuk pencarian hukum tajwid\n\nContoh:\nmad thabi\'i'
               }]);
+              setSelectedMenu(null);
               localStorage.removeItem('rtmChatHistory');
             }}
           >
@@ -225,6 +359,14 @@ export default function RTM() {
             style={{ WebkitAppearance: 'none', appearance: 'none' }}
           />
           <button
+            type="button"
+            onClick={() => setShowMenu(!showMenu)}
+            className="text-gray-400 hover:text-purple-600 transition-colors shrink-0"
+            aria-label={showMenu ? "Hide menu" : "Show menu"}
+          >
+            {showMenu ? <FaEyeSlash className="w-5 h-5" /> : <FaEye className="w-5 h-5" />}
+          </button>
+          <button
             type="submit"
             disabled={loading || !input.trim()}
             className={`flex items-center justify-center rounded-xl px-4 py-2 font-semibold shadow transition-all shrink-0 ${
@@ -236,6 +378,68 @@ export default function RTM() {
             Kirim
           </button>
         </form>
+      </div>
+
+      {/* Menu Slide Up */}
+      <div className={`fixed bottom-0 left-0 right-0 w-full max-w-md mx-auto z-10 bg-white rounded-t-2xl shadow-lg transition-transform duration-300 ease-in-out ${showMenu ? '-translate-y-[40px]' : 'translate-y-full'}`}>
+        <div className="p-4 pb-8 space-y-1.5">
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              onClick={() => handleMenuClick('mad')}
+              className="flex items-center justify-center gap-2 bg-purple-600 text-white px-3 py-2.5 rounded-lg hover:bg-purple-700 transition-colors text-xs font-medium"
+            >
+              <span>Mad</span>
+            </button>
+            <button
+              onClick={() => handleMenuClick('nun-sukun-tanwin')}
+              className="flex items-center justify-center gap-2 bg-purple-600 text-white px-3 py-2.5 rounded-lg hover:bg-purple-700 transition-colors text-xs font-medium"
+            >
+              <span>Nun Sukun & Tanwin</span>
+            </button>
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              onClick={() => handleMenuClick('mim-sukun')}
+              className="flex items-center justify-center gap-2 bg-purple-600 text-white px-3 py-2.5 rounded-lg hover:bg-purple-700 transition-colors text-xs font-medium"
+            >
+              <span>Mim Sukun</span>
+            </button>
+            <button
+              onClick={() => handleMenuClick('nun-mim-tasydid')}
+              className="flex items-center justify-center gap-2 bg-purple-600 text-white px-3 py-2.5 rounded-lg hover:bg-purple-700 transition-colors text-xs font-medium"
+            >
+              <span>Nun & Mim Tasydid</span>
+            </button>
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              onClick={() => handleMenuClick('qolqolah')}
+              className="flex items-center justify-center gap-2 bg-purple-600 text-white px-3 py-2.5 rounded-lg hover:bg-purple-700 transition-colors text-xs font-medium"
+            >
+              <span>Qolqolah</span>
+            </button>
+            <button
+              onClick={() => handleMenuClick('ahkam-raa')}
+              className="flex items-center justify-center gap-2 bg-purple-600 text-white px-3 py-2.5 rounded-lg hover:bg-purple-700 transition-colors text-xs font-medium"
+            >
+              <span>Ahkam Raa</span>
+            </button>
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              onClick={() => handleMenuClick('ahkam-lam-jalalah')}
+              className="flex items-center justify-center gap-2 bg-purple-600 text-white px-3 py-2.5 rounded-lg hover:bg-purple-700 transition-colors text-xs font-medium"
+            >
+              <span>Ahkam Lam Jalalah</span>
+            </button>
+            <button
+              onClick={() => handleMenuClick('ayat-gharibah')}
+              className="flex items-center justify-center gap-2 bg-purple-600 text-white px-3 py-2.5 rounded-lg hover:bg-purple-700 transition-colors text-xs font-medium"
+            >
+              <span>Ayat Gharibah</span>
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* PWA Install Prompt */}

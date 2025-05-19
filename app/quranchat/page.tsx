@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import axios from 'axios';
 import dynamic from 'next/dynamic';
 import { FaTrash } from "react-icons/fa";
+import { IoArrowBack } from "react-icons/io5";
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -78,11 +79,8 @@ function isMobile() {
 
 export default function QuranChat() {
   const router = useRouter();
-  const [messages, setMessages] = useState<Message[]>([{
-    type: 'bot',
-    content: `Berikut adalah perintah yang tersedia:\n\n📚 1. Ketik "list" untuk melihat daftar surah\n🔍 2. Ketik nama surah (contoh: "al fatihah" atau "yasin")\n🔢 3. Ketik nomor surah (contoh: "1" untuk Al-Fatihah)\n📖 4. Cari ayat spesifik dengan format:\n   - "surah 1 ayat 1"\n   - "al fatihah ayat 1"\n   - "1 1"\n   - "surah al fatihah ayat 1-4"\n   - "1 1-4"\n🔎 5. Cari kata dalam Al-Quran:\n   - "cari malaikat"\n🎲 6. Ketik "random" atau "acak" untuk mendapatkan ayat random\n\nSilakan pilih salah satu perintah di atas untuk memulai.`
-  }]);
-  const [loading, setLoading] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedSurah, setSelectedSurah] = useState<number | null>(null);
   const [selectedAyatRange, setSelectedAyatRange] = useState<{ start: number; end: number } | null>(null);
   const [allSurahs, setAllSurahs] = useState<SearchResult[]>([]);
@@ -110,16 +108,42 @@ export default function QuranChat() {
 
   // Load messages from localStorage on client-side only
   useEffect(() => {
-    const savedMessages = localStorage.getItem('chatHistory');
-    if (savedMessages) {
-      setMessages(JSON.parse(savedMessages));
-    }
-  }, []);
+    const loadMessages = () => {
+      if (typeof window !== 'undefined') {
+        const savedMessages = localStorage.getItem('quranChatHistory');
+        console.log('Loading saved messages:', savedMessages);
+        if (savedMessages) {
+          try {
+            const parsedMessages = JSON.parse(savedMessages);
+            if (Array.isArray(parsedMessages) && parsedMessages.length > 0) {
+              console.log('Setting messages from localStorage:', parsedMessages);
+              setMessages(parsedMessages);
+              setIsLoading(false);
+              return;
+            }
+          } catch (error) {
+            console.error('Error parsing saved messages:', error);
+          }
+        }
+        // If no messages were loaded or error occurred, set initial message
+        setMessages([{
+          type: 'bot',
+          content: `Berikut adalah perintah yang tersedia:\n\n📚 1. Ketik "list" untuk melihat daftar surah\n🔍 2. Ketik nama surah (contoh: "al fatihah" atau "yasin")\n🔢 3. Ketik nomor surah (contoh: "1" untuk Al-Fatihah)\n📖 4. Cari ayat spesifik dengan format:\n   - "surah 1 ayat 1"\n   - "al fatihah ayat 1"\n   - "1 1"\n   - "surah al fatihah ayat 1-4"\n   - "1 1-4"\n🔎 5. Cari kata dalam Al-Quran:\n   - "cari malaikat"\n🎲 6. Ketik "random" atau "acak" untuk mendapatkan ayat random\n\nSilakan pilih salah satu perintah di atas untuk memulai.`
+        }]);
+        setIsLoading(false);
+      }
+    };
+
+    loadMessages();
+  }, []); // Empty dependency array to run only once on mount
 
   // Save messages to localStorage whenever they change
   useEffect(() => {
-    localStorage.setItem('chatHistory', JSON.stringify(messages));
-  }, [messages]);
+    if (typeof window !== 'undefined' && messages.length > 0 && !isLoading) {
+      console.log('Saving messages to localStorage:', messages);
+      localStorage.setItem('quranChatHistory', JSON.stringify(messages));
+    }
+  }, [messages, isLoading]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -200,7 +224,7 @@ export default function QuranChat() {
   // Word search function
   const searchWordInQuran = useCallback(async (query: string): Promise<WordSearchResult[]> => {
     try {
-      setLoading(true);
+      setIsLoading(true);
       const results: WordSearchResult[] = [];
       const searchQuery = query.toLowerCase();
 
@@ -271,7 +295,7 @@ export default function QuranChat() {
       console.error('Error searching word:', error);
       return [];
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   }, [allSurahs]);
 
@@ -340,7 +364,7 @@ export default function QuranChat() {
       
       if (wordSearchMatch) {
         const searchQuery = wordSearchMatch[1].trim();
-        setLoading(true);
+        setIsLoading(true);
         setMessages(prev => [...prev, {
           type: 'bot',
           content: `🔍 Mencari kata "${searchQuery}" dalam Al-Quran...`
@@ -406,7 +430,7 @@ export default function QuranChat() {
           surah: randomResult.surah,
           ayat: randomResult.ayat
         }]);
-        setLoading(false);
+        setIsLoading(false);
         return;
       }
 
@@ -518,7 +542,7 @@ export default function QuranChat() {
         content: 'Maaf, terjadi kesalahan saat mencari surah. Silakan coba lagi.'
       }]);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   }, [allSurahs, searchWordInQuran, searchResults, getRandomAyat]);
 
@@ -529,7 +553,7 @@ export default function QuranChat() {
     const userMessage = input.trim();
     setInput('');
     setMessages(prev => [...prev, { type: 'user', content: userMessage }]);
-    setLoading(true);
+    setIsLoading(true);
 
     try {
       // Check for random command
@@ -541,7 +565,7 @@ export default function QuranChat() {
           surah: randomResult.surah,
           ayat: randomResult.ayat
         }]);
-        setLoading(false);
+        setIsLoading(false);
         return;
       }
 
@@ -559,7 +583,7 @@ export default function QuranChat() {
         content: 'Maaf, terjadi kesalahan. Silakan coba lagi.'
       }]);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -584,6 +608,13 @@ export default function QuranChat() {
       {/* Header ala Intercom */}
       <div className="w-full max-w-md mx-auto sticky top-0 z-10">
         <div className="bg-blue-600 rounded-b-3xl px-6 pt-10 pb-6 relative shadow">
+          <button
+            onClick={() => router.push('/')}
+            className="absolute top-4 right-4 text-white hover:text-gray-200 transition-colors"
+            aria-label="Kembali ke Beranda"
+          >
+            <IoArrowBack className="w-7 h-7" />
+          </button>
           <div className="flex items-center gap-3 mb-4">
             <div>
               <Image 
@@ -707,7 +738,7 @@ export default function QuranChat() {
               )}
             </div>
           ))}
-          {loading && (
+          {isLoading && (
             <div className="flex items-end justify-start">
               <Image src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740" alt="Bot" width={32} height={32} className="rounded-full object-cover mt-1" />
               <div className="rounded-2xl px-3.5 sm:px-4 py-2 shadow max-w-[80%] text-sm leading-relaxed bg-white text-gray-800 border border-blue-100 rounded-bl-md">
@@ -722,6 +753,7 @@ export default function QuranChat() {
             </div>
           )}
           <div ref={messagesEndRef} />
+
         </div>
         {/* Input sticky/fixed */}
         <form
@@ -738,7 +770,7 @@ export default function QuranChat() {
                 type: 'bot',
                 content: `Berikut adalah perintah yang tersedia:\n\n📚 1. Ketik "list" untuk melihat daftar surah\n🔍 2. Ketik nama surah (contoh: "al fatihah" atau "yasin")\n🔢 3. Ketik nomor surah (contoh: "1" untuk Al-Fatihah)\n📖 4. Cari ayat spesifik dengan format:\n   - "surah 1 ayat 1"\n   - "al fatihah ayat 1"\n   - "1 1"\n   - "surah al fatihah ayat 1-4"\n   - "1 1-4"\n🔎 5. Cari kata dalam Al-Quran:\n   - "cari malaikat"\n🎲 6. Ketik "random" atau "acak" untuk mendapatkan ayat random\n\nSilakan pilih salah satu perintah di atas untuk memulai.`
               }]);
-              localStorage.removeItem('chatHistory');
+              localStorage.removeItem('quranChatHistory');
             }}
           >
             <FaTrash className="w-5 h-5" />
@@ -754,9 +786,9 @@ export default function QuranChat() {
           />
           <button
             type="submit"
-            disabled={loading || !input.trim()}
+            disabled={isLoading || !input.trim()}
             className={`flex items-center justify-center rounded-xl px-4 py-2 font-semibold shadow transition-all shrink-0 ${
-              loading || !input.trim()
+              isLoading || !input.trim()
                 ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                 : 'bg-blue-600 text-white hover:bg-blue-700 hover:scale-105 active:scale-95'
             }`}

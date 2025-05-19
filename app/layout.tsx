@@ -1,20 +1,27 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins, Amiri } from "next/font/google";
 import "./globals.css";
-import { Poppins } from "next/font/google";
-import { Amiri } from "next/font/google";
 import AnnouncementPopup from './components/AnnouncementPopup';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+});
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: 'swap',
+  preload: true,
   variable: "--font-poppins",
 });
 
 const amiri = Amiri({
   subsets: ["arabic"],
   weight: ["400", "700"],
+  display: 'swap',
+  preload: true,
   variable: "--font-amiri",
 });
 
@@ -114,6 +121,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className={`${inter.className} ${poppins.variable} ${amiri.variable} font-poppins`}>
         {children}
