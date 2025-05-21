@@ -173,19 +173,53 @@ export default function RTM() {
     }]);
 
     try {
-      // Add bot response with image
-      const imageUrl = 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 1 - Mad Thabi\'i.jpg';
+      // Map command to image URL
+      const imageMap: { [key: string]: string } = {
+        'mad-thabii': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 1 - Mad Thabi\'i.jpg',
+        'mad-badal': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 2 - Mad Badal.jpg',
+        'mad-iwadh': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 3 - Mad Iwadh.jpg',
+        'mad-shilah-sugro': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 4 - Mad Shilah Sugro.jpg',
+        'mad-tamkin': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 5 - Mad Tamkin.jpg',
+        'mad-jaiz-munfashil': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 6 - Mad Jaiz Munfashil.jpg',
+        'mad-wajib-muttasil': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 7 - Mad Wajib Mutthasil.jpg',
+        'mad-shilah-kubro': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 8 - Mad Shilah Kubro.jpg',
+        'mad-arid-lissukun': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 9 - Mad Aridh Lisukun.jpg',
+        'mad-lazim-kilmi-mutsaqol': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 10 - Mad Lazim Kilmi Mutsaqol.jpg',
+        'mad-lazim-kilmi-mukhofaf': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 11 - Mad Lazim Kilmi Mukhofaf.jpg',
+        'mad-lazim-harfi-mutsaqol': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 12 - Mad Lazim Harfi Mutsaqol.jpg',
+        'mad-lazim-harfi-mukhofaf': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 13 - Mad Lazim Harfi Mukhofaf.jpg',
+        'mad-thabii-harfi': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 14 - Mad Thabi\'i Harfi.jpg',
+        'mad-farq': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 15 - Mad Farq.jpg'
+      };
+
+      const imageUrl = imageMap[command];
       
-      setMessages(prev => [...prev, {
-        type: 'bot',
-        content: 'Berikut adalah penjelasan Mad Thabi\'i:',
-        imageUrl: imageUrl
-      }]);
+      if (imageUrl) {
+        // Check if image exists
+        const response = await fetch(imageUrl, { method: 'HEAD' });
+        if (response.ok) {
+          setMessages(prev => [...prev, {
+            type: 'bot',
+            content: `Berikut adalah penjelasan ${command.replace(/-/g, ' ').replace(/mad/i, 'Mad')}:`,
+            imageUrl: imageUrl
+          }]);
+        } else {
+          setMessages(prev => [...prev, {
+            type: 'bot',
+            content: 'Data belum ada'
+          }]);
+        }
+      } else {
+        setMessages(prev => [...prev, {
+          type: 'bot',
+          content: 'Data belum ada'
+        }]);
+      }
     } catch (error) {
       console.error('Error details:', error);
       setMessages(prev => [...prev, {
         type: 'bot',
-        content: 'Maaf, terjadi kesalahan saat mengambil data. Silakan coba lagi.'
+        content: 'Data belum ada'
       }]);
     } finally {
       setLoading(false);
@@ -206,15 +240,35 @@ export default function RTM() {
     console.log('After adding user message:', newMessages);
 
     // Handle commands
-    if (userMessage === '1' || 
-        userMessage === 'mad 2 harakat' || 
-        userMessage === 'mad thabii' || 
-        userMessage === 'mad thabi\'i') {
-      await handleCommand('1');
+    const madCommands: { [key: string]: string } = {
+      'mad thabi\'i': 'mad-thabii',
+      'mad badal': 'mad-badal',
+      'mad iwadh': 'mad-iwadh',
+      'mad shilah sugro': 'mad-shilah-sugro',
+      'mad tamkin': 'mad-tamkin',
+      'mad jaiz munfashil': 'mad-jaiz-munfashil',
+      'mad wajib mutthasil': 'mad-wajib-muttasil',
+      'mad shilah kubro': 'mad-shilah-kubro',
+      'mad aridh lisukun': 'mad-arid-lissukun',
+      'mad lazim kilmi mutsaqol': 'mad-lazim-kilmi-mutsaqol',
+      'mad lazim kilmi mukhofaf': 'mad-lazim-kilmi-mukhofaf',
+      'mad lazim harfi mutsaqol': 'mad-lazim-harfi-mutsaqol',
+      'mad lazim harfi mukhofaf': 'mad-lazim-harfi-mukhofaf',
+      'mad thabi\'i harfi': 'mad-thabii-harfi',
+      'mad farq': 'mad-farq'
+    };
+
+    // Check if the message matches any mad command
+    const matchedCommand = Object.entries(madCommands).find(([key]) => 
+      userMessage === key.toLowerCase()
+    );
+
+    if (matchedCommand) {
+      await handleCommand(matchedCommand[1]);
     } else {
       const botResponse: Message = {
         type: 'bot' as const,
-        content: 'Perintah tidak dikenali. Silakan gunakan tombol menu atau ketik "1" untuk Mad Thabi\'i.'
+        content: 'Perintah tidak dikenali. Silakan gunakan tombol menu atau ketik nama hukum tajwid yang ingin dipelajari.'
       };
       const updatedMessages: Message[] = [...newMessages, botResponse];
       setMessages(updatedMessages);
@@ -295,10 +349,20 @@ export default function RTM() {
                   <div className="mt-3 space-y-1.5 flex flex-col items-start">
                     {[
                       { id: 'mad-thabii', title: 'Mad Thabi\'i (2 Harakat)', icon: '1️⃣' },
-                      { id: 'mad-wajib-muttasil', title: 'Mad Wajib Muttasil (4-5 Harakat)', icon: '2️⃣' },
-                      { id: 'mad-jaiz-munfasil', title: 'Mad Jaiz Munfasil (4-5 Harakat)', icon: '3️⃣' },
-                      { id: 'mad-arid-lissukun', title: 'Mad Arid Lissukun (2-6 Harakat)', icon: '4️⃣' },
-                      { id: 'mad-lazim', title: 'Mad Lazim (6 Harakat)', icon: '5️⃣' }
+                      { id: 'mad-badal', title: 'Mad Badal (2 Harakat)', icon: '2️⃣' },
+                      { id: 'mad-iwadh', title: 'Mad Iwadh (2 Harakat)', icon: '3️⃣' },
+                      { id: 'mad-shilah-sugro', title: 'Mad Shilah Sugro (2 Harakat)', icon: '4️⃣' },
+                      { id: 'mad-tamkin', title: 'Mad Tamkin (2 Harakat)', icon: '5️⃣' },
+                      { id: 'mad-jaiz-munfashil', title: 'Mad Jaiz Munfashil (2, 4, 5 Harakat)', icon: '6️⃣' },
+                      { id: 'mad-wajib-muttasil', title: 'Mad Wajib Mutthasil (4 - 6 Harakat)', icon: '7️⃣' },
+                      { id: 'mad-shilah-kubro', title: 'Mad Shilah Kubro (4 - 5 Harakat)', icon: '8️⃣' },
+                      { id: 'mad-arid-lissukun', title: 'Mad Aridh Lisukun (2, 4, 6 Harakat)', icon: '9️⃣' },
+                      { id: 'mad-lazim-kilmi-mutsaqol', title: 'Mad Lazim Kilmi Mutsaqol (6 Harakat)', icon: '🔟' },
+                      { id: 'mad-lazim-kilmi-mukhofaf', title: 'Mad Lazim Kilmi Mukhofaf (6 Harakat)', icon: '1️⃣1️⃣' },
+                      { id: 'mad-lazim-harfi-mutsaqol', title: 'Mad Lazim Harfi Mutsaqol (6 Harakat + 2)', icon: '1️⃣2️⃣' },
+                      { id: 'mad-lazim-harfi-mukhofaf', title: 'Mad Lazim Harfi Mukhofaf (6 Harakat)', icon: '1️⃣3️⃣' },
+                      { id: 'mad-thabii-harfi', title: 'Mad Thabi\'i Harfi (2 Harakat)', icon: '1️⃣4️⃣' },
+                      { id: 'mad-farq', title: 'Mad Farq (2 Harakat)', icon: '1️⃣5️⃣' }
                     ].map((submenu) => (
                       <button
                         key={submenu.id}
