@@ -117,11 +117,6 @@ export default function RootLayout({
         <meta name="language" content="Indonesian" />
         <meta name="revisit-after" content="7 days" />
         <meta name="generator" content="Next.js" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className={`${inter.className} ${poppins.variable} ${amiri.variable} font-poppins`}>
         {children}

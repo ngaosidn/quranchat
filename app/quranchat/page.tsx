@@ -571,7 +571,7 @@ export default function QuranChat() {
 
     // Perintah kembali ke menu utama
     if (userMessage.trim().toLowerCase() === 'kembali') {
-      router.push('/');
+      router.replace('/');
       return;
     }
 
@@ -609,8 +609,8 @@ export default function QuranChat() {
       <div className="w-full max-w-md mx-auto sticky top-0 z-10">
         <div className="bg-blue-600 rounded-b-3xl px-6 pt-10 pb-6 relative shadow">
           <button
-            onClick={() => router.push('/')}
-            className="absolute top-4 right-4 text-white hover:text-gray-200 transition-colors"
+            onClick={() => router.replace('/')}
+            className="absolute top-4 right-4 text-white hover:text-blue-200 transition-colors p-2 rounded-full bg-blue-500/30 hover:bg-blue-700/60"
             aria-label="Kembali ke Beranda"
           >
             <IoArrowBack className="w-7 h-7" />
@@ -781,7 +781,6 @@ export default function QuranChat() {
             placeholder="Ketik pesan..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            autoFocus
             style={{ WebkitAppearance: 'none', appearance: 'none' }}
           />
           <button

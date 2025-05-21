@@ -17,6 +17,7 @@ interface Message {
   content: string;
   isCommand?: boolean;
   imageUrl?: string;
+  audioUrl?: string;
 }
 
 // Fungsi deteksi mobile
@@ -37,6 +38,9 @@ export default function RTM() {
   const [showInstallPrompt, setShowInstallPrompt] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedMenu, setSelectedMenu] = useState<string | null>(null);
+  const [playingAudioUrl, setPlayingAudioUrl] = useState<string | null>(null);
+  const [audioProgress, setAudioProgress] = useState<{ [url: string]: number }>({});
+  const audioRefs = useRef<{ [url: string]: HTMLAudioElement | null }>({});
 
   // Load messages from localStorage on client-side only
   useEffect(() => {
@@ -173,35 +177,83 @@ export default function RTM() {
     }]);
 
     try {
-      // Map command to image URL
-      const imageMap: { [key: string]: string } = {
-        'mad-thabii': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 1 - Mad Thabi\'i.jpg',
-        'mad-badal': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 2 - Mad Badal.jpg',
-        'mad-iwadh': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 3 - Mad Iwadh.jpg',
-        'mad-shilah-sugro': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 4 - Mad Shilah Sugro.jpg',
-        'mad-tamkin': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 5 - Mad Tamkin.jpg',
-        'mad-jaiz-munfashil': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 6 - Mad Jaiz Munfashil.jpg',
-        'mad-wajib-muttasil': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 7 - Mad Wajib Mutthasil.jpg',
-        'mad-shilah-kubro': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 8 - Mad Shilah Kubro.jpg',
-        'mad-arid-lissukun': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 9 - Mad Aridh Lisukun.jpg',
-        'mad-lazim-kilmi-mutsaqol': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 10 - Mad Lazim Kilmi Mutsaqol.jpg',
-        'mad-lazim-kilmi-mukhofaf': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 11 - Mad Lazim Kilmi Mukhofaf.jpg',
-        'mad-lazim-harfi-mutsaqol': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 12 - Mad Lazim Harfi Mutsaqol.jpg',
-        'mad-lazim-harfi-mukhofaf': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 13 - Mad Lazim Harfi Mukhofaf.jpg',
-        'mad-thabii-harfi': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 14 - Mad Thabi\'i Harfi.jpg',
-        'mad-farq': 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 15 - Mad Farq.jpg'
+      // Map command to image and audio URLs
+      const imageMap: { [key: string]: { image: string, audio: string } } = {
+        'mad-thabii': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 1 - Mad Thabi\'i.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 1 - Mad Thabi\'i.mp3'
+        },
+        'mad-badal': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 2 - Mad Badal.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 2 - Mad Badal.mp3'
+        },
+        'mad-iwadh': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 3 - Mad Iwadh.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 3 - Mad Iwadh.mp3'
+        },
+        'mad-shilah-sugro': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 4 - Mad Shilah Sugro.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 4 - Mad Shilah Sugro.mp3'
+        },
+        'mad-tamkin': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 5 - Mad Tamkin.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 5 - Mad Tamkin.mp3'
+        },
+        'mad-jaiz-munfashil': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 6 - Mad Jaiz Munfashil.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 6 - Mad Jaiz Munfashil.mp3'
+        },
+        'mad-wajib-muttasil': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 7 - Mad Wajib Mutthasil.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 7 - Mad Wajib Mutthasil.mp3'
+        },
+        'mad-shilah-kubro': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 8 - Mad Shilah Kubro.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 8 - Mad Shilah Kubro.mp3'
+        },
+        'mad-arid-lissukun': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 9 - Mad Aridh Lisukun.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 9 - Mad Aridh Lisukun.mp3'
+        },
+        'mad-lazim-kilmi-mutsaqol': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 10 - Mad Lazim Kilmi Mutsaqol.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 10 - Mad Lazim Kilmi Mutsaqol.mp3'
+        },
+        'mad-lazim-kilmi-mukhofaf': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 11 - Mad Lazim Kilmi Mukhofaf.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 11 - Mad Lazim Kilmi Mukhofaf.mp3'
+        },
+        'mad-lazim-harfi-mutsaqol': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 12 - Mad Lazim Harfi Mutsaqol.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 12 - Mad Lazim Harfi Mutsaqol.mp3'
+        },
+        'mad-lazim-harfi-mukhofaf': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 13 - Mad Lazim Harfi Mukhofaf.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 13 - Mad Lazim Harfi Mukhofaf.mp3'
+        },
+        'mad-thabii-harfi': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 14 - Mad Thabi\'i Harfi.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 14 - Mad Thabi\'i Harfi.mp3'
+        },
+        'mad-farq': {
+          image: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 15 - Mad Farq.jpg',
+          audio: 'https://raw.githubusercontent.com/ngaosidn/dbTajwid/main/01 - 15 - Mad Farq.mp3'
+        }
       };
 
-      const imageUrl = imageMap[command];
+      const urls = imageMap[command];
       
-      if (imageUrl) {
+      if (urls) {
         // Check if image exists
-        const response = await fetch(imageUrl, { method: 'HEAD' });
-        if (response.ok) {
+        const imageResponse = await fetch(urls.image, { method: 'HEAD' });
+        const audioResponse = await fetch(urls.audio, { method: 'HEAD' });
+        
+        if (imageResponse.ok) {
           setMessages(prev => [...prev, {
             type: 'bot',
             content: `Berikut adalah penjelasan ${command.replace(/-/g, ' ').replace(/mad/i, 'Mad')}:`,
-            imageUrl: imageUrl
+            imageUrl: urls.image,
+            audioUrl: audioResponse.ok ? urls.audio : undefined
           }]);
         } else {
           setMessages(prev => [...prev, {
@@ -284,8 +336,8 @@ export default function RTM() {
       <div className="w-full max-w-md mx-auto sticky top-0 z-10">
         <div className="bg-purple-600 rounded-b-3xl px-6 pt-10 pb-6 relative shadow">
           <button
-            onClick={() => router.push('/')}
-            className="absolute top-4 right-4 text-white hover:text-gray-200 transition-colors"
+            onClick={() => router.replace('/')}
+            className="absolute top-4 right-4 text-white hover:text-purple-200 transition-colors p-2 rounded-full bg-purple-500/30 hover:bg-purple-700/60"
             aria-label="Kembali ke Beranda"
           >
             <IoArrowBack className="w-7 h-7" />
@@ -338,6 +390,104 @@ export default function RTM() {
                         target.style.display = 'none';
                       }}
                     />
+                  </div>
+                )}
+                {msg.audioUrl && (
+                  <div className="mt-3 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4 border border-purple-200 shadow-sm">
+                    <div className="flex items-center gap-3 mb-3">
+                      <button
+                        id={`play-button-${msg.audioUrl}`}
+                        type="button"
+                        onClick={() => {
+                          const audioElement = document.getElementById(`audio-${msg.audioUrl}`) as HTMLAudioElement;
+                          if (!audioElement) return;
+                          if (audioElement.paused) {
+                            audioElement.play();
+                            setPlayingAudioUrl(msg.audioUrl ?? '');
+                          } else {
+                            audioElement.pause();
+                            setPlayingAudioUrl(null);
+                          }
+                        }}
+                        className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all hover:scale-105 cursor-pointer"
+                        style={{
+                          transform: playingAudioUrl === msg.audioUrl
+                            ? `rotate(${(audioProgress[msg.audioUrl ?? ''] || 0) * 360}deg)`
+                            : undefined,
+                          transition: 'transform 0.2s linear',
+                        }}
+                        aria-label="Play/Pause Audio"
+                      >
+                        {playingAudioUrl === msg.audioUrl ? (
+                          <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <rect x="6" y="4" width="4" height="16" rx="2" />
+                            <rect x="14" y="4" width="4" height="16" rx="2" />
+                          </svg>
+                        ) : (
+                          <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                          </svg>
+                        )}
+                      </button>
+                      <div className="flex-1">
+                        <div className="text-sm font-semibold text-purple-900">Audio Penjelasan</div>
+                        <div className="text-xs text-purple-600">Dengarkan penjelasan hukum tajwid</div>
+                        <div
+                          className="relative mt-3 h-3 w-full bg-purple-100 rounded-full cursor-pointer group"
+                          style={{ userSelect: 'none' }}
+                          onClick={e => {
+                            const bar = e.currentTarget;
+                            const rect = bar.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const percent = Math.max(0, Math.min(1, x / rect.width));
+                            setAudioProgress(prev => ({ ...prev, [(msg.audioUrl ?? '')]: percent }));
+                            const audio = document.getElementById(`audio-${msg.audioUrl}`) as HTMLAudioElement;
+                            if (audio && audio.duration) {
+                              audio.currentTime = percent * audio.duration;
+                            }
+                          }}
+                        >
+                          <div
+                            className="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-500 to-purple-600 rounded-full transition-all duration-200"
+                            style={{ width: `${(audioProgress[msg.audioUrl ?? ''] || 0) * 100}%` }}
+                          />
+                          <div
+                            className="absolute top-1/2 transform -translate-y-1/2"
+                            style={{
+                              left: `calc(${(audioProgress[msg.audioUrl ?? ''] || 0) * 100}% - 10px)`
+                            }}
+                          >
+                            <div className="w-5 h-5 bg-white border-2 border-purple-400 rounded-full shadow group-hover:scale-110 transition-transform duration-150" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <audio 
+                      id={`audio-${msg.audioUrl}`}
+                      className="hidden"
+                      controlsList="nodownload"
+                      ref={el => { audioRefs.current[msg.audioUrl ?? ''] = el; }}
+                      onTimeUpdate={(e) => {
+                        const audioElement = e.currentTarget;
+                        const progress = (audioElement.currentTime / audioElement.duration) || 0;
+                        setAudioProgress(prev => ({ ...prev, [(msg.audioUrl ?? '')]: progress }));
+                      }}
+                      onPlay={() => setPlayingAudioUrl(msg.audioUrl ?? '')}
+                      onPause={() => setPlayingAudioUrl(null)}
+                      onEnded={() => {
+                        setPlayingAudioUrl(null);
+                        setAudioProgress(prev => ({ ...prev, [(msg.audioUrl ?? '')]: 0 }));
+                      }}
+                      onLoadedMetadata={() => {}}
+                    >
+                      <source src={msg.audioUrl} type="audio/mpeg" />
+                      Your browser does not support the audio element.
+                    </audio>
+                    <div className="flex flex-col gap-4">
+                      <div className="flex items-center gap-4">
+                        {/* Progress bar dan waktu dihilangkan sesuai permintaan */}
+                      </div>
+                    </div>
                   </div>
                 )}
                 {msg.type === 'bot' && msg.content.includes('Selamat datang di Rumus Tajwid Mudah (RTM)!') && (
@@ -419,7 +569,6 @@ export default function RTM() {
             placeholder="Ketik pesan..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            autoFocus
             style={{ WebkitAppearance: 'none', appearance: 'none' }}
           />
           <button
@@ -555,6 +704,22 @@ export default function RTM() {
           />
         </div>
       )}
+
+      <style jsx>{`
+        @keyframes spectrum {
+          0%, 100% { height: 20%; }
+          50% { height: 100%; }
+        }
+        .animate-spectrum > div {
+          animation-play-state: running;
+        }
+        .animate-spectrum > div:nth-child(odd) {
+          background: linear-gradient(to top, #9333ea, #7e22ce);
+        }
+        .animate-spectrum > div:nth-child(even) {
+          background: linear-gradient(to top, #7e22ce, #9333ea);
+        }
+      `}</style>
     </div>
   );
 } 

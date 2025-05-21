@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
@@ -13,6 +13,11 @@ interface Message {
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
   userChoice: Promise<{ outcome: 'accepted' | 'dismissed'; platform: string }>;
+}
+
+// Extended Navigator interface for iOS PWA detection
+interface ExtendedNavigator extends Navigator {
+  standalone?: boolean;
 }
 
 function isMobile() {
@@ -76,6 +81,10 @@ export default function Home() {
   const [deferredPrompt, setDeferredPrompt] = React.useState<BeforeInstallPromptEvent | null>(null);
   const [showInstallPrompt, setShowInstallPrompt] = React.useState(false);
 
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isStandalone, setIsStandalone] = useState(false);
+  const [isMobileBrowser, setIsMobileBrowser] = useState(false);
+
   React.useEffect(() => {
     const handler = (e: Event) => {
       if (!isMobile()) return;
@@ -88,12 +97,53 @@ export default function Home() {
     return () => window.removeEventListener("beforeinstallprompt", handler);
   }, []);
 
+  // Detect fullscreen, PWA, and mobile browser
+  useEffect(() => {
+    const checkStandalone = () => {
+      setIsStandalone(window.matchMedia('(display-mode: standalone)').matches || (window.navigator as ExtendedNavigator).standalone === true);
+    };
+    const checkMobile = () => {
+      setIsMobileBrowser(isMobile() && !window.matchMedia('(display-mode: standalone)').matches && !(window.navigator as ExtendedNavigator).standalone);
+    };
+    checkStandalone();
+    checkMobile();
+    window.addEventListener('resize', checkStandalone);
+    window.addEventListener('resize', checkMobile);
+    document.addEventListener('fullscreenchange', () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    });
+    return () => {
+      window.removeEventListener('resize', checkStandalone);
+      window.removeEventListener('resize', checkMobile);
+      document.removeEventListener('fullscreenchange', () => {});
+    };
+  }, []);
+
+  useEffect(() => {
+    // Pastikan state isFullscreen sesuai kondisi browser saat komponen mount
+    setIsFullscreen(!!document.fullscreenElement);
+  }, []);
+
   return (
     <>
       <div className="min-h-screen w-full flex flex-col items-center bg-white">
         {/* Header ala Intercom */}
         <div className="w-full max-w-md mx-auto sticky top-0 z-10">
           <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-b-3xl px-6 pt-10 pb-6 relative shadow">
+            {/* Fullscreen button for mobile browser */}
+            {typeof window !== 'undefined' && isMobileBrowser && !isFullscreen && !isStandalone && (
+              <button
+                onClick={() => document.documentElement.requestFullscreen()}
+                className="absolute top-4 right-4 text-white hover:text-blue-200 transition-colors p-2 rounded-full bg-blue-500/30 hover:bg-blue-700/60"
+                aria-label="Fullscreen"
+                style={{ zIndex: 20 }}
+              >
+                {/* Icon layar (fullscreen/expand) */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9V5.25A1.5 1.5 0 015.25 3.75H9m6 0h3.75a1.5 1.5 0 011.5 1.5V9m0 6v3.75a1.5 1.5 0 01-1.5 1.5H15m-6 0H5.25a1.5 1.5 0 01-1.5-1.5V15" />
+                </svg>
+              </button>
+            )}
             <div className="flex items-center gap-3 mb-4">
               {/* <div>
                 <Image 
