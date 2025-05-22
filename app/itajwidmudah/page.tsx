@@ -338,6 +338,21 @@ export default function RTM() {
     setLoading(false);
   };
 
+  useEffect(() => {
+    // Set theme color for mobile status bar
+    const metaThemeColor = document.querySelector("meta[name='theme-color']");
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute("content", "#9333ea");
+    }
+    
+    // Cleanup function to reset theme color when leaving the page
+    return () => {
+      if (metaThemeColor) {
+        metaThemeColor.setAttribute("content", "#2563eb");
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-white">
       {/* Header */}
@@ -351,7 +366,7 @@ export default function RTM() {
             <IoArrowBack className="w-7 h-7" />
           </button>
           <div className="flex items-center gap-3 mb-4">
-            {/* <div>
+            <div>
               <Image 
                 src="/logo.svg" 
                 alt="Logo" 
@@ -360,7 +375,7 @@ export default function RTM() {
                 className="max-w-[120px] h-auto" 
                 priority
               />
-            </div> */}
+            </div>
           </div>
           <div className="text-white text-sm font-normal font-poppins">Rumus Tajwid Mudah</div>
           <div className="text-white text-sm font-normal font-poppins">Belajar Tajwid dengan Mudah ✨</div>

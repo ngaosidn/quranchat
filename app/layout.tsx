@@ -32,12 +32,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "waQuran App - Aplikasi Pencarian Ayat Al-Quran",
+  title: "i-Qlab - Baca, Tadabbur dan Tajwid Interactive 🚀",
   description: "Aplikasi pencarian ayat Al-Quran yang mudah digunakan. Temukan ayat-ayat Al-Quran dengan cepat dan mudah dalam bahasa Indonesia.",
-  keywords: "Al-Quran, Quran, Islam, Ayat, Pencarian Quran, Muslim, Digital Quran, Alquran Digital, Baca Quran Online",
-  authors: [{ name: "waQuran Team" }],
-  creator: "waQuran",
-  publisher: "waQuran",
+  keywords: "Al-Quran, Quran, Islam, Ayat, Pencarian Quran, Muslim, Digital Quran, Alquran Digital, Baca Quran Online, Baca Quran Gratis, Baca Quran Online, Belajar Quran Online, Tadabbur Online, Tajwid Online",
+  authors: [{ name: "i-Qlab" }],
+  creator: "DigiTea",
+  publisher: "DigiTea",
   formatDetection: {
     email: false,
     address: false,
