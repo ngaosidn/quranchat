@@ -423,12 +423,12 @@ export default function RTM() {
                             setPlayingAudioId(null);
                           }
                         }}
-                        className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all hover:scale-105 cursor-pointer shrink-0"
+                        className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all hover:from-purple-600 hover:to-purple-700 cursor-pointer shrink-0"
                         style={{
                           transform: playingAudioId === `${msg.audioUrl}-${idx}`
                             ? `rotate(${(audioProgress[`${msg.audioUrl}-${idx}`] || 0) * 360}deg)`
-                            : undefined,
-                          transition: 'transform 0.2s linear',
+                            : 'rotate(0deg)',
+                          transition: 'transform 0.3s ease-out'
                         }}
                         aria-label="Play/Pause Audio"
                       >
@@ -469,10 +469,10 @@ export default function RTM() {
                             <div
                               className="absolute top-1/2 transform -translate-y-1/2"
                               style={{
-                                left: `calc(${(audioProgress[`${msg.audioUrl}-${idx}`] || 0) * 100}% - 8px)`
+                                left: `calc(${(audioProgress[`${msg.audioUrl}-${idx}`] || 0) * 100}% - 6px)`
                               }}
                             >
-                              <div className="w-4 h-4 bg-white border-2 border-purple-400 rounded-full shadow group-hover:scale-110 transition-transform duration-150" />
+                              <div className="w-3.5 h-3.5 bg-white border-2 border-purple-400 rounded-full shadow group-hover:scale-110 transition-transform duration-150" />
                             </div>
                           </div>
                           <div className="text-[10px] text-purple-600 font-medium mt-1 text-right">
