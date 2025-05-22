@@ -38,9 +38,17 @@ export default function RTM() {
   const [showInstallPrompt, setShowInstallPrompt] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedMenu, setSelectedMenu] = useState<string | null>(null);
-  const [playingAudioUrl, setPlayingAudioUrl] = useState<string | null>(null);
-  const [audioProgress, setAudioProgress] = useState<{ [url: string]: number }>({});
-  const audioRefs = useRef<{ [url: string]: HTMLAudioElement | null }>({});
+  const [playingAudioId, setPlayingAudioId] = useState<string | null>(null);
+  const [audioProgress, setAudioProgress] = useState<{ [id: string]: number }>({});
+  const [audioDurations, setAudioDurations] = useState<{ [id: string]: number }>({});
+  const audioRefs = useRef<{ [id: string]: HTMLAudioElement | null }>({});
+
+  // Format time in MM:SS
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+  };
 
   // Load messages from localStorage on client-side only
   useEffect(() => {
@@ -393,101 +401,116 @@ export default function RTM() {
                   </div>
                 )}
                 {msg.audioUrl && (
-                  <div className="mt-3 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4 border border-purple-200 shadow-sm">
-                    <div className="flex items-center gap-3 mb-3">
+                  <div className="mt-3 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-3 border border-purple-200 shadow-sm">
+                    <div className="flex items-center gap-3">
                       <button
-                        id={`play-button-${msg.audioUrl}`}
+                        id={`play-button-${msg.audioUrl}-${idx}`}
                         type="button"
                         onClick={() => {
-                          const audioElement = document.getElementById(`audio-${msg.audioUrl}`) as HTMLAudioElement;
+                          const audioElement = document.getElementById(`audio-${msg.audioUrl}-${idx}`) as HTMLAudioElement;
                           if (!audioElement) return;
                           if (audioElement.paused) {
+                            // Pause all other audio elements
+                            Object.values(audioRefs.current).forEach(audio => {
+                              if (audio && audio !== audioElement) {
+                                audio.pause();
+                              }
+                            });
                             audioElement.play();
-                            setPlayingAudioUrl(msg.audioUrl ?? '');
+                            setPlayingAudioId(`${msg.audioUrl}-${idx}`);
                           } else {
                             audioElement.pause();
-                            setPlayingAudioUrl(null);
+                            setPlayingAudioId(null);
                           }
                         }}
-                        className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all hover:scale-105 cursor-pointer"
+                        className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all hover:scale-105 cursor-pointer shrink-0"
                         style={{
-                          transform: playingAudioUrl === msg.audioUrl
-                            ? `rotate(${(audioProgress[msg.audioUrl ?? ''] || 0) * 360}deg)`
+                          transform: playingAudioId === `${msg.audioUrl}-${idx}`
+                            ? `rotate(${(audioProgress[`${msg.audioUrl}-${idx}`] || 0) * 360}deg)`
                             : undefined,
                           transition: 'transform 0.2s linear',
                         }}
                         aria-label="Play/Pause Audio"
                       >
-                        {playingAudioUrl === msg.audioUrl ? (
-                          <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        {playingAudioId === `${msg.audioUrl}-${idx}` ? (
+                          <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                             <rect x="6" y="4" width="4" height="16" rx="2" />
                             <rect x="14" y="4" width="4" height="16" rx="2" />
                           </svg>
                         ) : (
-                          <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                           </svg>
                         )}
                       </button>
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <div className="text-sm font-semibold text-purple-900">Audio Penjelasan</div>
                         <div className="text-xs text-purple-600">Dengarkan penjelasan hukum tajwid</div>
-                        <div
-                          className="relative mt-3 h-3 w-full bg-purple-100 rounded-full cursor-pointer group"
-                          style={{ userSelect: 'none' }}
-                          onClick={e => {
-                            const bar = e.currentTarget;
-                            const rect = bar.getBoundingClientRect();
-                            const x = e.clientX - rect.left;
-                            const percent = Math.max(0, Math.min(1, x / rect.width));
-                            setAudioProgress(prev => ({ ...prev, [(msg.audioUrl ?? '')]: percent }));
-                            const audio = document.getElementById(`audio-${msg.audioUrl}`) as HTMLAudioElement;
-                            if (audio && audio.duration) {
-                              audio.currentTime = percent * audio.duration;
-                            }
-                          }}
-                        >
+                        <div className="flex flex-col mt-2">
                           <div
-                            className="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-500 to-purple-600 rounded-full transition-all duration-200"
-                            style={{ width: `${(audioProgress[msg.audioUrl ?? ''] || 0) * 100}%` }}
-                          />
-                          <div
-                            className="absolute top-1/2 transform -translate-y-1/2"
-                            style={{
-                              left: `calc(${(audioProgress[msg.audioUrl ?? ''] || 0) * 100}% - 10px)`
+                            className="relative h-2.5 w-full bg-purple-100 rounded-full cursor-pointer group"
+                            style={{ userSelect: 'none' }}
+                            onClick={e => {
+                              const bar = e.currentTarget;
+                              const rect = bar.getBoundingClientRect();
+                              const x = e.clientX - rect.left;
+                              const percent = Math.max(0, Math.min(1, x / rect.width));
+                              setAudioProgress(prev => ({ ...prev, [`${msg.audioUrl}-${idx}`]: percent }));
+                              const audio = document.getElementById(`audio-${msg.audioUrl}-${idx}`) as HTMLAudioElement;
+                              if (audio && audio.duration) {
+                                audio.currentTime = percent * audio.duration;
+                              }
                             }}
                           >
-                            <div className="w-5 h-5 bg-white border-2 border-purple-400 rounded-full shadow group-hover:scale-110 transition-transform duration-150" />
+                            <div
+                              className="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-500 to-purple-600 rounded-full transition-all duration-200"
+                              style={{ width: `${(audioProgress[`${msg.audioUrl}-${idx}`] || 0) * 100}%` }}
+                            />
+                            <div
+                              className="absolute top-1/2 transform -translate-y-1/2"
+                              style={{
+                                left: `calc(${(audioProgress[`${msg.audioUrl}-${idx}`] || 0) * 100}% - 8px)`
+                              }}
+                            >
+                              <div className="w-4 h-4 bg-white border-2 border-purple-400 rounded-full shadow group-hover:scale-110 transition-transform duration-150" />
+                            </div>
+                          </div>
+                          <div className="text-[10px] text-purple-600 font-medium mt-1 text-right">
+                            {formatTime((audioProgress[`${msg.audioUrl}-${idx}`] || 0) * (audioDurations[`${msg.audioUrl}-${idx}`] || 0))} / {formatTime(audioDurations[`${msg.audioUrl}-${idx}`] || 0)}
                           </div>
                         </div>
                       </div>
                     </div>
                     <audio 
-                      id={`audio-${msg.audioUrl}`}
+                      id={`audio-${msg.audioUrl}-${idx}`}
                       className="hidden"
                       controlsList="nodownload"
-                      ref={el => { audioRefs.current[msg.audioUrl ?? ''] = el; }}
+                      ref={el => { 
+                        audioRefs.current[`${msg.audioUrl}-${idx}`] = el;
+                        if (el) {
+                          el.addEventListener('loadedmetadata', () => {
+                            setAudioDurations(prev => ({
+                              ...prev,
+                              [`${msg.audioUrl}-${idx}`]: el.duration
+                            }));
+                          });
+                        }
+                      }}
                       onTimeUpdate={(e) => {
                         const audioElement = e.currentTarget;
                         const progress = (audioElement.currentTime / audioElement.duration) || 0;
-                        setAudioProgress(prev => ({ ...prev, [(msg.audioUrl ?? '')]: progress }));
+                        setAudioProgress(prev => ({ ...prev, [`${msg.audioUrl}-${idx}`]: progress }));
                       }}
-                      onPlay={() => setPlayingAudioUrl(msg.audioUrl ?? '')}
-                      onPause={() => setPlayingAudioUrl(null)}
+                      onPlay={() => setPlayingAudioId(`${msg.audioUrl}-${idx}`)}
+                      onPause={() => setPlayingAudioId(null)}
                       onEnded={() => {
-                        setPlayingAudioUrl(null);
-                        setAudioProgress(prev => ({ ...prev, [(msg.audioUrl ?? '')]: 0 }));
+                        setPlayingAudioId(null);
+                        setAudioProgress(prev => ({ ...prev, [`${msg.audioUrl}-${idx}`]: 0 }));
                       }}
-                      onLoadedMetadata={() => {}}
                     >
                       <source src={msg.audioUrl} type="audio/mpeg" />
                       Your browser does not support the audio element.
                     </audio>
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-4">
-                        {/* Progress bar dan waktu dihilangkan sesuai permintaan */}
-                      </div>
-                    </div>
                   </div>
                 )}
                 {msg.type === 'bot' && msg.content.includes('Selamat datang di Rumus Tajwid Mudah (RTM)!') && (
@@ -704,22 +727,6 @@ export default function RTM() {
           />
         </div>
       )}
-
-      <style jsx>{`
-        @keyframes spectrum {
-          0%, 100% { height: 20%; }
-          50% { height: 100%; }
-        }
-        .animate-spectrum > div {
-          animation-play-state: running;
-        }
-        .animate-spectrum > div:nth-child(odd) {
-          background: linear-gradient(to top, #9333ea, #7e22ce);
-        }
-        .animate-spectrum > div:nth-child(even) {
-          background: linear-gradient(to top, #7e22ce, #9333ea);
-        }
-      `}</style>
     </div>
   );
 } 
