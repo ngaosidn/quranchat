@@ -81,7 +81,6 @@ export default function Home() {
   const [deferredPrompt, setDeferredPrompt] = React.useState<BeforeInstallPromptEvent | null>(null);
   const [showInstallPrompt, setShowInstallPrompt] = React.useState(false);
 
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const [isStandalone, setIsStandalone] = useState(false);
   const [isMobileBrowser, setIsMobileBrowser] = useState(false);
 
@@ -97,7 +96,7 @@ export default function Home() {
     return () => window.removeEventListener("beforeinstallprompt", handler);
   }, []);
 
-  // Detect fullscreen, PWA, and mobile browser
+  // Detect PWA and mobile browser
   useEffect(() => {
     const checkStandalone = () => {
       setIsStandalone(window.matchMedia('(display-mode: standalone)').matches || (window.navigator as ExtendedNavigator).standalone === true);
@@ -109,19 +108,10 @@ export default function Home() {
     checkMobile();
     window.addEventListener('resize', checkStandalone);
     window.addEventListener('resize', checkMobile);
-    document.addEventListener('fullscreenchange', () => {
-      setIsFullscreen(!!document.fullscreenElement);
-    });
     return () => {
       window.removeEventListener('resize', checkStandalone);
       window.removeEventListener('resize', checkMobile);
-      document.removeEventListener('fullscreenchange', () => {});
     };
-  }, []);
-
-  useEffect(() => {
-    // Pastikan state isFullscreen sesuai kondisi browser saat komponen mount
-    setIsFullscreen(!!document.fullscreenElement);
   }, []);
 
   return (
@@ -130,9 +120,9 @@ export default function Home() {
         {/* Header ala Intercom */}
         <div className="w-full max-w-md mx-auto sticky top-0 z-10">
           <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-b-3xl px-6 pt-10 pb-6 relative shadow">
-            {/* Fullscreen and Install buttons for mobile browser */}
-            {typeof window !== 'undefined' && isMobileBrowser && !isFullscreen && !isStandalone && (
-              <div className="absolute top-4 right-4 flex gap-2">
+            {/* Install button for mobile browser */}
+            {typeof window !== 'undefined' && isMobileBrowser && !isStandalone && (
+              <div className="absolute top-4 right-4">
                 <button
                   onClick={() => setShowInstallPrompt(true)}
                   className="text-white hover:text-blue-200 transition-colors p-2 rounded-full bg-blue-500/30 hover:bg-blue-700/60"
@@ -140,16 +130,6 @@ export default function Home() {
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                  </svg>
-                </button>
-                <button
-                  onClick={() => document.documentElement.requestFullscreen()}
-                  className="text-white hover:text-blue-200 transition-colors p-2 rounded-full bg-blue-500/30 hover:bg-blue-700/60"
-                  aria-label="Fullscreen"
-                  style={{ zIndex: 20 }}
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9V5.25A1.5 1.5 0 015.25 3.75H9m6 0h3.75a1.5 1.5 0 011.5 1.5V9m0 6v3.75a1.5 1.5 0 01-1.5 1.5H15m-6 0H5.25a1.5 1.5 0 01-1.5-1.5V15" />
                   </svg>
                 </button>
               </div>
