@@ -98,6 +98,7 @@ export default function QuranChat() {
   } | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
+  const totalPages = 49; // Total halaman untuk surah Al-Baqarah
 
   const SHOW_ANNOUNCEMENT = process.env.NEXT_PUBLIC_SHOW_ANNOUNCEMENT === 'true';
   useEffect(() => {
@@ -507,7 +508,8 @@ export default function QuranChat() {
               `📌 Nama Surah : ${surahInfo.name_simple} (${surahInfo.name_arabic})\n` +
               `📝 Arti Nama : ${surahInfo.translated_name?.name || '-'}\n` +
               `📍 Tempat Turun : ${surahInfo.revelation_place === 'makkah' ? 'Makkiyah' : 'Madaniyah'}\n` +
-              `📊 Jumlah Ayat : ${surahInfo.verses_count}`
+              `📊 Jumlah Ayat : ${surahInfo.verses_count}`,
+            surah: surahInfo
           }]);
           return;
         }
@@ -597,11 +599,282 @@ export default function QuranChat() {
     }
   };
 
-  useEffect(() => {
-    if (!showWordSearchModal) {
-      setCurrentPage(1);
+  // Add new state for surah image
+  const [showSurahImage, setShowSurahImage] = useState(false);
+  const [selectedSurahImage, setSelectedSurahImage] = useState<SearchResult | null>(null);
+
+  // Function to get total pages based on surah
+  const getTotalPages = (surahId: number) => {
+    switch(surahId) {
+      case 1: return 1; // Al-Fatihah
+      case 2: return 49; // Al-Baqarah
+      case 3: return 27; // Ali Imran (050-076)
+      case 4: return 30; // An-Nisa (077-106)
+      case 5: return 22; // Al-Maidah (106-127)
+      case 6: return 23; // Al-An'am (128-150)
+      case 7: return 26; // Al-A'raf (151-176)
+      case 8: return 10; // Al-Anfal (177-186)
+      case 9: return 21; // At-Taubah (187-207)
+      case 10: return 14; // Yunus (208-221)
+      case 11: return 15; // Hud (221-235)
+      case 12: return 14; // Yusuf (235-248)
+      case 13: return 7; // Ar-Ra'd (249-255)
+      case 14: return 7; // Ibrahim (255-261)
+      case 15: return 6; // Al-Hijr (262-267)
+      case 16: return 15; // An-Nahl (267-281)
+      case 17: return 12; // Al-Isra (282-293)
+      case 18: return 12; // Al-Kahf (293-304)
+      case 19: return 8; // Maryam (305-312)
+      case 20: return 10; // Ta Ha (312-321)
+      case 21: return 10; // Al-Anbiya (322-331)
+      case 22: return 10; // Al-Hajj (332-341)
+      case 23: return 8; // Al-Mu'minun (342-349)
+      case 24: return 10; // An-Nur (350-359)
+      case 25: return 8; // Al-Furqan (359-366)
+      case 26: return 10; // Asy-Syu'ara (367-376)
+      case 27: return 9; // An-Naml (377-385)
+      case 28: return 12; // Al-Qasas (385-396)
+      case 29: return 9; // Al-Ankabut (396-404)
+      case 30: return 7; // Ar-Rum (404-410)
+      case 31: return 4; // Luqman (411-414)
+      case 32: return 3; // As-Sajdah (415-417)
+      case 33: return 10; // Al-Ahzab (418-427)
+      case 34: return 7; // Saba (428-434)
+      case 35: return 7; // Fatir (434-440)
+      case 36: return 6; // Yasin (440-445)
+      case 37: return 7; // As-Saffat (446-452)
+      case 38: return 6; // Sad (453-458)
+      case 39: return 10; // Az-Zumar (458-467)
+      case 40: return 10; // Ghafir (467-476)
+      case 41: return 6; // Fussilat (477-482)
+      case 42: return 7; // Asy-Syura (483-489)
+      case 43: return 7; // Az-Zukhruf (489-495)
+      case 44: return 3; // Ad-Dukhan (496-498)
+      case 45: return 4; // Al-Jasiyah (499-502)
+      case 46: return 5; // Al-Ahqaf (502-506)
+      case 47: return 4; // Muhammad (507-510)
+      case 48: return 5; // Al-Fath (511-515)
+      case 49: return 3; // Al-Hujurat (515-517)
+      case 50: return 3; // Qaf (518-520)
+      case 51: return 4; // Az-Zariyat (520-523)
+      case 52: return 3; // At-Tur (523-525)
+      case 53: return 3; // An-Najm (526-528)
+      case 54: return 4; // Al-Qamar (528-531)
+      case 55: return 4; // Ar-Rahman (531-534)
+      case 56: return 4; // Al-Waqi'ah (534-537)
+      case 57: return 5; // Al-Hadid (537-541)
+      case 58: return 4; // Al-Mujadilah (542-545)
+      case 59: return 4; // Al-Hasyr (545-548)
+      case 60: return 3; // Al-Mumtahanah (549-551)
+      case 61: return 2; // As-Saff (551-552)
+      case 62: return 2; // Al-Jumu'ah (553-554)
+      case 63: return 2; // Al-Munafiqun (554-555)
+      case 64: return 2; // At-Tagabun (556-557)
+      case 65: return 2; // At-Talaq (558-559)
+      case 66: return 2; // At-Tahrim (560-561)
+      case 67: return 3; // Al-Mulk (562-564)
+      case 68: return 3; // Al-Qalam (564-566)
+      case 69: return 3; // Al-Haqqah (566-568)
+      case 70: return 3; // Al-Ma'arij (568-570)
+      case 71: return 2; // Nuh (570-571)
+      case 72: return 2; // Al-Jinn (572-573)
+      case 73: return 2; // Al-Muzzammil (574-575)
+      case 74: return 3; // Al-Muddassir (575-577)
+      case 75: return 2; // Al-Qiyamah (577-578)
+      case 76: return 3; // Al-Insan (578-580)
+      case 77: return 2; // Al-Mursalat (580-581)
+      case 78: return 2; // An-Naba (582-583)
+      case 79: return 2; // An-Nazi'at (583-584)
+      case 80: return 1; // 'Abasa (585)
+      case 81: return 1; // At-Takwir (586)
+      case 82: return 1; // Al-Infitar (587)
+      case 83: return 3; // Al-Mutaffifin (587-589)
+      case 84: return 1; // Al-Insyiqaq (589)
+      case 85: return 1; // Al-Buruj (590)
+      case 86: return 1; // At-Tariq (591)
+      case 87: return 2; // Al-A'la (591-592)
+      case 88: return 1; // Al-Gasyiyah (592)
+      case 89: return 2; // Al-Fajr (593-594)
+      case 90: return 1; // Al-Balad (594)
+      case 91: return 1; // Asy-Syams (595)
+      case 92: return 2; // Al-Lail (595-596)
+      case 93: return 1; // Ad-Duha (596)
+      case 94: return 1; // Al-Insyirah (596)
+      case 95: return 1; // At-Tin (597)
+      case 96: return 1; // Al-'Alaq (597)
+      case 97: return 1; // Al-Qadr (598)
+      case 98: return 2; // Al-Bayyinah (598-599)
+      case 99: return 1; // Az-Zalzalah (599)
+      case 100: return 2; // Al-'Adiyat (599-600)
+      case 101: return 1; // Al-Qari'ah (600)
+      case 102: return 1; // At-Takasur (600)
+      case 103: return 1; // Al-'Asr (601)
+      case 104: return 1; // Al-Humazah (601)
+      case 105: return 1; // Al-Fil (601)
+      case 106: return 1; // Quraisy (602)
+      case 107: return 1; // Al-Ma'un (602)
+      case 108: return 1; // Al-Kausar (602)
+      case 109: return 1; // Al-Kafirun (603)
+      case 110: return 1; // An-Nasr (603)
+      case 111: return 1; // Al-Lahab (603)
+      case 112: return 1; // Al-Ikhlas (604)
+      case 113: return 1; // Al-Falaq (604)
+      case 114: return 1; // An-Nas (604)
+      default: return 1;
     }
-  }, [showWordSearchModal]);
+  };
+
+  // Add function to handle page navigation
+  const handlePageChange = (newPage: number) => {
+    if (selectedSurahImage) {
+      const totalPages = getTotalPages(selectedSurahImage.id);
+      if (newPage >= 1 && newPage <= totalPages) {
+        // Change page first
+        setCurrentPage(newPage);
+        // Use requestAnimationFrame to ensure DOM is updated before scrolling
+        requestAnimationFrame(() => {
+          const imageContainer = document.querySelector('.bg-white.rounded-2xl.shadow-xl .flex-1.overflow-y-auto');
+          if (imageContainer) {
+            imageContainer.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        });
+      }
+    }
+  };
+
+  // Function to get image number based on surah and page
+  const getImageNumber = (surahId: number, page: number) => {
+    switch(surahId) {
+      case 1: return "001"; // Al-Fatihah
+      case 2: return String(page + 1).padStart(3, '0'); // Al-Baqarah (002-049)
+      case 3: return String(page + 49).padStart(3, '0'); // Ali Imran (050-076)
+      case 4: return String(page + 76).padStart(3, '0'); // An-Nisa (077-106)
+      case 5: return String(page + 105).padStart(3, '0'); // Al-Maidah (106-127)
+      case 6: return String(page + 127).padStart(3, '0'); // Al-An'am (128-150)
+      case 7: return String(page + 150).padStart(3, '0'); // Al-A'raf (151-176)
+      case 8: return String(page + 176).padStart(3, '0'); // Al-Anfal (177-186)
+      case 9: return String(page + 186).padStart(3, '0'); // At-Taubah (187-207)
+      case 10: return String(page + 207).padStart(3, '0'); // Yunus (208-221)
+      case 11: return String(page + 220).padStart(3, '0'); // Hud (221-235)
+      case 12: return String(page + 234).padStart(3, '0'); // Yusuf (235-248)
+      case 13: return String(page + 248).padStart(3, '0'); // Ar-Ra'd (249-255)
+      case 14: return String(page + 254).padStart(3, '0'); // Ibrahim (255-261)
+      case 15: return String(page + 261).padStart(3, '0'); // Al-Hijr (262-267)
+      case 16: return String(page + 266).padStart(3, '0'); // An-Nahl (267-281)
+      case 17: return String(page + 281).padStart(3, '0'); // Al-Isra (282-293)
+      case 18: return String(page + 292).padStart(3, '0'); // Al-Kahf (293-304)
+      case 19: return String(page + 304).padStart(3, '0'); // Maryam (305-312)
+      case 20: return String(page + 311).padStart(3, '0'); // Ta Ha (312-321)
+      case 21: return String(page + 321).padStart(3, '0'); // Al-Anbiya (322-331)
+      case 22: return String(page + 331).padStart(3, '0'); // Al-Hajj (332-341)
+      case 23: return String(page + 341).padStart(3, '0'); // Al-Mu'minun (342-349)
+      case 24: return String(page + 349).padStart(3, '0'); // An-Nur (350-359)
+      case 25: return String(page + 358).padStart(3, '0'); // Al-Furqan (359-366)
+      case 26: return String(page + 366).padStart(3, '0'); // Asy-Syu'ara (367-376)
+      case 27: return String(page + 376).padStart(3, '0'); // An-Naml (377-385)
+      case 28: return String(page + 384).padStart(3, '0'); // Al-Qasas (385-396)
+      case 29: return String(page + 395).padStart(3, '0'); // Al-Ankabut (396-404)
+      case 30: return String(page + 403).padStart(3, '0'); // Ar-Rum (404-410)
+      case 31: return String(page + 410).padStart(3, '0'); // Luqman (411-414)
+      case 32: return String(page + 414).padStart(3, '0'); // As-Sajdah (415-417)
+      case 33: return String(page + 417).padStart(3, '0'); // Al-Ahzab (418-427)
+      case 34: return String(page + 427).padStart(3, '0'); // Saba (428-434)
+      case 35: return String(page + 433).padStart(3, '0'); // Fatir (434-440)
+      case 36: return String(page + 439).padStart(3, '0'); // Yasin (440-445)
+      case 37: return String(page + 445).padStart(3, '0'); // As-Saffat (446-452)
+      case 38: return String(page + 451).padStart(3, '0'); // Sad (453-458)
+      case 39: return String(page + 457).padStart(3, '0'); // Az-Zumar (458-467)
+      case 40: return String(page + 466).padStart(3, '0'); // Ghafir (467-476)
+      case 41: return String(page + 476).padStart(3, '0'); // Fussilat (477-482)
+      case 42: return String(page + 482).padStart(3, '0'); // Asy-Syura (483-489)
+      case 43: return String(page + 488).padStart(3, '0'); // Az-Zukhruf (489-495)
+      case 44: return String(page + 495).padStart(3, '0'); // Ad-Dukhan (496-498)
+      case 45: return String(page + 498).padStart(3, '0'); // Al-Jasiyah (499-502)
+      case 46: return String(page + 501).padStart(3, '0'); // Al-Ahqaf (502-506)
+      case 47: return String(page + 506).padStart(3, '0'); // Muhammad (507-510)
+      case 48: return String(page + 510).padStart(3, '0'); // Al-Fath (511-515)
+      case 49: return String(page + 514).padStart(3, '0'); // Al-Hujurat (515-517)
+      case 50: return String(page + 517).padStart(3, '0'); // Qaf (518-520)
+      case 51: return String(page + 519).padStart(3, '0'); // Az-Zariyat (520-523)
+      case 52: return String(page + 522).padStart(3, '0'); // At-Tur (523-525)
+      case 53: return String(page + 525).padStart(3, '0'); // An-Najm (526-528)
+      case 54: return String(page + 527).padStart(3, '0'); // Al-Qamar (528-531)
+      case 55: return String(page + 530).padStart(3, '0'); // Ar-Rahman (531-534)
+      case 56: return String(page + 533).padStart(3, '0'); // Al-Waqi'ah (534-537)
+      case 57: return String(page + 536).padStart(3, '0'); // Al-Hadid (537-541)
+      case 58: return String(page + 541).padStart(3, '0'); // Al-Mujadilah (542-545)
+      case 59: return String(page + 544).padStart(3, '0'); // Al-Hasyr (545-548)
+      case 60: return String(page + 548).padStart(3, '0'); // Al-Mumtahanah (549-551)
+      case 61: return String(page + 550).padStart(3, '0'); // As-Saff (551-552)
+      case 62: return String(page + 552).padStart(3, '0'); // Al-Jumu'ah (553-554)
+      case 63: return String(page + 553).padStart(3, '0'); // Al-Munafiqun (554-555)
+      case 64: return String(page + 555).padStart(3, '0'); // At-Tagabun (556-557)
+      case 65: return String(page + 557).padStart(3, '0'); // At-Talaq (558-559)
+      case 66: return String(page + 559).padStart(3, '0'); // At-Tahrim (560-561)
+      case 67: return String(page + 561).padStart(3, '0'); // Al-Mulk (562-564)
+      case 68: return String(page + 563).padStart(3, '0'); // Al-Qalam (564-566)
+      case 69: return String(page + 565).padStart(3, '0'); // Al-Haqqah (566-568)
+      case 70: return String(page + 567).padStart(3, '0'); // Al-Ma'arij (568-570)
+      case 71: return String(page + 569).padStart(3, '0'); // Nuh (570-571)
+      case 72: return String(page + 571).padStart(3, '0'); // Al-Jinn (572-573)
+      case 73: return String(page + 573).padStart(3, '0'); // Al-Muzzammil (574-575)
+      case 74: return String(page + 574).padStart(3, '0'); // Al-Muddassir (575-577)
+      case 75: return String(page + 576).padStart(3, '0'); // Al-Qiyamah (577-578)
+      case 76: return String(page + 577).padStart(3, '0'); // Al-Insan (578-580)
+      case 77: return String(page + 579).padStart(3, '0'); // Al-Mursalat (580-581)
+      case 78: return String(page + 581).padStart(3, '0'); // An-Naba (582-583)
+      case 79: return String(page + 582).padStart(3, '0'); // An-Nazi'at (583-584)
+      case 80: return "585"; // 'Abasa (585)
+      case 81: return "586"; // At-Takwir (586)
+      case 82: return "587"; // Al-Infitar (587)
+      case 83: return String(page + 586).padStart(3, '0'); // Al-Mutaffifin (587-589)
+      case 84: return "589"; // Al-Insyiqaq (589)
+      case 85: return "590"; // Al-Buruj (590)
+      case 86: return "591"; // At-Tariq (591)
+      case 87: return String(page + 590).padStart(3, '0'); // Al-A'la (591-592)
+      case 88: return "592"; // Al-Gasyiyah (592)
+      case 89: return String(page + 592).padStart(3, '0'); // Al-Fajr (593-594)
+      case 90: return "594"; // Al-Balad (594)
+      case 91: return "595"; // Asy-Syams (595)
+      case 92: return String(page + 594).padStart(3, '0'); // Al-Lail (595-596)
+      case 93: return "596"; // Ad-Duha (596)
+      case 94: return "596"; // Al-Insyirah (596)
+      case 95: return "597"; // At-Tin (597)
+      case 96: return "597"; // Al-'Alaq (597)
+      case 97: return "598"; // Al-Qadr (598)
+      case 98: return String(page + 597).padStart(3, '0'); // Al-Bayyinah (598-599)
+      case 99: return "599"; // Az-Zalzalah (599)
+      case 100: return String(page + 598).padStart(3, '0'); // Al-'Adiyat (599-600)
+      case 101: return "600"; // Al-Qari'ah (600)
+      case 102: return "600"; // At-Takasur (600)
+      case 103: return "601"; // Al-'Asr (601)
+      case 104: return "601"; // Al-Humazah (601)
+      case 105: return "601"; // Al-Fil (601)
+      case 106: return "602"; // Quraisy (602)
+      case 107: return "602"; // Al-Ma'un (602)
+      case 108: return "602"; // Al-Kausar (602)
+      case 109: return "603"; // Al-Kafirun (603)
+      case 110: return "603"; // An-Nasr (603)
+      case 111: return "603"; // Al-Lahab (603)
+      case 112: return "604"; // Al-Ikhlas (604)
+      case 113: return "604"; // Al-Falaq (604)
+      case 114: return "604"; // An-Nas (604)
+      default: return String(surahId).padStart(3, '0');
+    }
+  };
+
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('ServiceWorker registration successful');
+          return registration;
+        }).catch(err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  }, []);
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-white">
@@ -648,6 +921,17 @@ export default function QuranChat() {
                 `}
               >
                 <pre className="whitespace-pre-wrap">{msg.content}</pre>
+                {msg.surah && !msg.ayat && (
+                  <button
+                    className="mt-2 px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold shadow hover:bg-indigo-700 transition w-full sm:w-auto"
+                    onClick={() => {
+                      setSelectedSurahImage(msg.surah!);
+                      setShowSurahImage(true);
+                    }}
+                  >
+                    Baca Surah
+                  </button>
+                )}
                 {msg.wordSearchResults && (
                   <div className="mt-2 grid grid-cols-1 gap-3 max-h-[60vh] overflow-y-auto pr-1">
                     {msg.wordSearchResults.map((result, index) => (
@@ -933,38 +1217,81 @@ export default function QuranChat() {
 
             {/* Pagination */}
             {wordSearchData.results.length > itemsPerPage && (
-              <div className="flex justify-between items-center mt-4 gap-2">
+              <div className="mt-4 flex items-center justify-between gap-2 sm:gap-4">
                 <button
-                  onClick={() => {
-                    setCurrentPage(prev => Math.max(prev - 1, 1));
-                    const modalContent = document.querySelector('.space-y-3.overflow-y-auto');
-                    if (modalContent) {
-                      modalContent.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
-                  }}
-                  disabled={currentPage === 1}
-                  className="px-3 py-1 rounded bg-green-200 text-green-800 font-semibold disabled:opacity-50"
+                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-blue-600 text-white text-xl sm:text-2xl rounded-lg font-semibold shadow hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  aria-label="Halaman sebelumnya"
                 >
-                  Sebelumnya
+                  ←
                 </button>
-                <span className="text-gray-600 text-sm">
-                  Halaman {currentPage} dari {Math.ceil(wordSearchData.results.length / itemsPerPage)}
+                <span className="text-gray-600 font-medium text-sm sm:text-base whitespace-nowrap">
+                  Halaman {currentPage} dari {totalPages}
                 </span>
                 <button
-                  onClick={() => {
-                    setCurrentPage(prev => Math.min(prev + 1, Math.ceil(wordSearchData.results.length / itemsPerPage)));
-                    const modalContent = document.querySelector('.space-y-3.overflow-y-auto');
-                    if (modalContent) {
-                      modalContent.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
-                  }}
-                  disabled={currentPage === Math.ceil(wordSearchData.results.length / itemsPerPage)}
-                  className="px-3 py-1 rounded bg-green-200 text-green-800 font-semibold disabled:opacity-50"
+                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-blue-600 text-white text-xl sm:text-2xl rounded-lg font-semibold shadow hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  aria-label="Halaman berikutnya"
                 >
-                  Berikutnya
+                  →
                 </button>
               </div>
             )}
+          </div>
+        </div>
+      )}
+      {/* Add Surah Image Modal */}
+      {showSurahImage && selectedSurahImage && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 z-50">
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-4xl max-h-[95vh] flex flex-col border border-gray-100 p-3 sm:p-6 relative">
+            <button
+              className="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 rounded-lg text-2xl p-2 shadow transition-all"
+              style={{ minWidth: 40, minHeight: 40 }}
+              onClick={() => {
+                setShowSurahImage(false);
+                setSelectedSurahImage(null);
+                setCurrentPage(1);
+              }}
+            >×</button>
+            
+            <h3 className="text-lg sm:text-xl font-bold mb-4 text-blue-700 pr-8">
+              Surah {selectedSurahImage.name_simple} ({selectedSurahImage.name_arabic})
+            </h3>
+
+            <div className="flex-1 overflow-y-auto">
+              <Image 
+                src={`https://raw.githubusercontent.com/ngaosidn/dbQuranImages/main/${getImageNumber(selectedSurahImage.id, currentPage)}.png`}
+                alt={`Surah ${selectedSurahImage.name_simple} Halaman ${currentPage}`}
+                width={1000}
+                height={1500}
+                className="w-full h-auto object-contain"
+                priority
+              />
+            </div>
+
+            <div className="mt-4 flex items-center justify-between gap-2 sm:gap-4">
+              <button
+                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-blue-600 text-white text-xl sm:text-2xl rounded-lg font-semibold shadow hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === getTotalPages(selectedSurahImage.id)}
+                aria-label="Halaman berikutnya"
+              >
+                ←
+              </button>
+              <span className="text-gray-600 font-medium text-sm sm:text-base whitespace-nowrap">
+                Halaman {currentPage} dari {getTotalPages(selectedSurahImage.id)}
+              </span>
+              <button
+                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-blue-600 text-white text-xl sm:text-2xl rounded-lg font-semibold shadow hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                aria-label="Halaman sebelumnya"
+              >
+                →
+              </button>
+            </div>
           </div>
         </div>
       )}
