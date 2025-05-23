@@ -1,125 +1,126 @@
-'use client';
-
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Poppins, Amiri } from "next/font/google";
 import "./globals.css";
-import { useEffect, useState } from "react";
-import PreCacheDialog from "./components/PreCacheDialog";
+import AnnouncementPopup from './components/AnnouncementPopup';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+});
 
-// Extended Navigator interface for iOS PWA detection
-interface ExtendedNavigator extends Navigator {
-  standalone?: boolean;
-}
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: 'swap',
+  preload: true,
+  variable: "--font-poppins",
+});
 
-// Extended Window interface for MSStream
-interface ExtendedWindow extends Window {
-  MSStream?: unknown;
-}
+const amiri = Amiri({
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+  display: 'swap',
+  preload: true,
+  variable: "--font-amiri",
+});
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
+export const metadata: Metadata = {
+  title: "i-Qlab - Baca, Tadabbur dan Tajwid Interactive 🚀",
+  description: "Aplikasi pencarian ayat Al-Quran yang mudah digunakan. Temukan ayat-ayat Al-Quran dengan cepat dan mudah dalam bahasa Indonesia.",
+  keywords: "Al-Quran, Quran, Islam, Ayat, Pencarian Quran, Muslim, Digital Quran, Alquran Digital, Baca Quran Online, Baca Quran Gratis, Baca Quran Online, Belajar Quran Online, Tadabbur Online, Tajwid Online",
+  authors: [{ name: "i-Qlab" }],
+  creator: "DigiTea",
+  publisher: "DigiTea",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://waquran.app'),
+  alternates: {
+    canonical: 'https://waquran.app',
+  },
+  openGraph: {
+    title: "waQuran App - Aplikasi Pencarian Ayat Al-Quran",
+    description: "Aplikasi pencarian ayat Al-Quran yang mudah digunakan. Temukan ayat-ayat Al-Quran dengan cepat dan mudah dalam bahasa Indonesia.",
+    url: 'https://waquran.app',
+    siteName: 'waQuran App',
+    locale: 'id_ID',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'waQuran App Preview',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "waQuran App - Aplikasi Pencarian Ayat Al-Quran",
+    description: "Aplikasi pencarian ayat Al-Quran yang mudah digunakan. Temukan ayat-ayat Al-Quran dengan cepat dan mudah dalam bahasa Indonesia.",
+    images: ['/og-image.png'],
+    creator: '@waquran',
+    site: '@waquran',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-site-verification',
+    yandex: 'your-yandex-verification',
+  },
+  category: 'education',
+  classification: 'Islamic Application',
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const [showPreCacheDialog, setShowPreCacheDialog] = useState(false);
-  const [isDownloading, setIsDownloading] = useState(false);
-  const [downloadProgress, setDownloadProgress] = useState(0);
-  const [isPWAInstalled, setIsPWAInstalled] = useState(false);
-
-  useEffect(() => {
-    // Check if app is running as PWA
-    const checkPWAInstallation = () => {
-      // Check for Android PWA
-      const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
-      
-      // Check for iOS PWA
-      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as ExtendedWindow).MSStream;
-      const isIOSPWA = isIOS && (navigator as ExtendedNavigator).standalone;
-      
-      // Check for other PWA indicators
-      const isInPWA = window.matchMedia('(display-mode: fullscreen)').matches || 
-                     window.matchMedia('(display-mode: minimal-ui)').matches;
-      
-      const wasInstalled = isPWAInstalled;
-      const isNowInstalled = isStandalone || isIOSPWA || isInPWA;
-      
-      setIsPWAInstalled(isNowInstalled);
-
-      // If PWA was just installed, show pre-cache dialog
-      if (!wasInstalled && isNowInstalled) {
-        const hasPreCached = localStorage.getItem('hasPreCached');
-        if (!hasPreCached) {
-          setShowPreCacheDialog(true);
-        }
-      }
-    };
-
-    // Initial check
-    checkPWAInstallation();
-
-    // Listen for display mode changes (PWA installation)
-    const mediaQuery = window.matchMedia('(display-mode: standalone)');
-    const handleDisplayModeChange = () => {
-      checkPWAInstallation();
-    };
-    
-    mediaQuery.addEventListener('change', handleDisplayModeChange);
-    window.addEventListener('resize', checkPWAInstallation);
-
-    // Register service worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then((registration) => {
-            console.log('ServiceWorker registration successful with scope:', registration.scope);
-          })
-          .catch(err => {
-            console.error('ServiceWorker registration failed:', err);
-          });
-      });
-    }
-
-    // Listen for progress updates from service worker
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.addEventListener('message', (event) => {
-        if (event.data.type === 'CACHE_PROGRESS') {
-          setDownloadProgress(event.data.progress);
-          if (event.data.progress === 100) {
-            setIsDownloading(false);
-            setShowPreCacheDialog(false);
-            localStorage.setItem('hasPreCached', 'true');
-          }
-        }
-      });
-    }
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleDisplayModeChange);
-      window.removeEventListener('resize', checkPWAInstallation);
-    };
-  }, [isPWAInstalled]);
-
-  const handlePreCache = () => {
-    setIsDownloading(true);
-    if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-      navigator.serviceWorker.controller.postMessage({ type: 'START_CACHING' });
-    }
-  };
+}: {
+  children: React.ReactNode
+}) {
+  const SHOW_ANNOUNCEMENT = process.env.NEXT_PUBLIC_SHOW_ANNOUNCEMENT === 'true';
 
   return (
     <html lang="id">
-      <body className={inter.className}>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#2563eb" />
+        <link rel="icon" href="/icon-192x192.png" />
+        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="waQuran" />
+        <meta name="msvalidate.01" content="your-bing-verification" />
+        <meta name="description" content="Aplikasi pencarian ayat Al-Quran yang mudah digunakan. Temukan ayat-ayat Al-Quran dengan cepat dan mudah dalam bahasa Indonesia." />
+        <meta name="keywords" content="Al-Quran, Quran, Islam, Ayat, Pencarian Quran, Muslim, Digital Quran, Alquran Digital, Baca Quran Online" />
+        <meta name="author" content="waQuran Team" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="Indonesian" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="generator" content="Next.js" />
+      </head>
+      <body className={`${inter.className} ${poppins.variable} ${amiri.variable} font-poppins`}>
         {children}
-        {isPWAInstalled && (
-          <PreCacheDialog
-            isOpen={showPreCacheDialog}
-            onClose={() => setShowPreCacheDialog(false)}
-            onConfirm={handlePreCache}
-            isDownloading={isDownloading}
-            progress={downloadProgress}
-          />
-        )}
+        {SHOW_ANNOUNCEMENT && <AnnouncementPopup />}
       </body>
     </html>
   );
