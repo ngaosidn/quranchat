@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Poppins, Amiri } from "next/font/google";
 import "./globals.css";
-import AnnouncementPopup from './components/AnnouncementPopup';
+import ClientLayout from "./components/ClientLayout";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -95,8 +95,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const SHOW_ANNOUNCEMENT = process.env.NEXT_PUBLIC_SHOW_ANNOUNCEMENT === 'true';
-
   return (
     <html lang="id">
       <head>
@@ -119,8 +117,9 @@ export default function RootLayout({
         <meta name="generator" content="Next.js" />
       </head>
       <body className={`${inter.className} ${poppins.variable} ${amiri.variable} font-poppins`}>
-        {children}
-        {SHOW_ANNOUNCEMENT && <AnnouncementPopup />}
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   );
