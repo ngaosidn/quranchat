@@ -98,6 +98,10 @@ export default function QuranChat() {
   const [isCaching, setIsCaching] = useState(false);
   const [cachingProgress, setCachingProgress] = useState(0);
   const [cachingTotal, setCachingTotal] = useState(0);
+  const [showInitialCachePrompt, setShowInitialCachePrompt] = useState(false);
+  const [isCachingAll, setIsCachingAll] = useState(false);
+  const [cachingAllProgress, setCachingAllProgress] = useState(0);
+  const [cachingAllTotal, setCachingAllTotal] = useState(0);
 
   const SHOW_ANNOUNCEMENT = process.env.NEXT_PUBLIC_SHOW_ANNOUNCEMENT === 'true';
   useEffect(() => {
@@ -759,7 +763,7 @@ export default function QuranChat() {
   const handleSurahSelect = async (surah: SearchResult) => {
     setSelectedSurahImage(surah);
     setShowSurahImage(true);
-    setCurrentPage(1);
+      setCurrentPage(1);
 
     // Cek apakah surah sudah di-cache
     if (!cachedSurahs.has(surah.id)) {
@@ -939,6 +943,59 @@ export default function QuranChat() {
     setCachedSurahs(newCachedSurahs);
     localStorage.setItem('cachedSurahs', JSON.stringify([...newCachedSurahs]));
     setIsCaching(false);
+  };
+
+  // Tambahkan useEffect untuk mengecek dan menampilkan prompt saat pertama kali masuk
+  useEffect(() => {
+    const hasShownPrompt = localStorage.getItem('hasShownInitialCachePrompt');
+    if (!hasShownPrompt) {
+      setShowInitialCachePrompt(true);
+    }
+  }, []);
+
+  // Fungsi untuk mendownload semua gambar
+  const cacheAllSurahImages = async () => {
+    setIsCachingAll(true);
+    setShowInitialCachePrompt(false);
+    localStorage.setItem('hasShownInitialCachePrompt', 'true');
+
+    const totalSurahs = 114;
+    let totalPages = 0;
+    
+    // Hitung total halaman yang perlu di-cache
+    for (let surahId = 1; surahId <= totalSurahs; surahId++) {
+      totalPages += getTotalPages(surahId);
+    }
+    
+    setCachingAllTotal(totalPages);
+    setCachingAllProgress(0);
+    
+    const cache = await caches.open('quran-images');
+    let currentProgress = 0;
+    
+    // Cache semua surah
+    for (let surahId = 1; surahId <= totalSurahs; surahId++) {
+      const totalPages = getTotalPages(surahId);
+      
+      for (let page = 1; page <= totalPages; page++) {
+        const imageUrl = `https://raw.githubusercontent.com/ngaosidn/dbQuranImages/main/${getImageNumber(surahId, page)}.webp`;
+        try {
+          const response = await fetch(imageUrl);
+          await cache.put(imageUrl, response);
+          currentProgress++;
+          setCachingAllProgress(currentProgress);
+        } catch (error) {
+          console.error(`Error caching image for surah ${surahId} page ${page}:`, error);
+        }
+      }
+    }
+    
+    // Update cachedSurahs state dan localStorage
+    const allSurahIds = Array.from({ length: 114 }, (_, i) => i + 1);
+    setCachedSurahs(new Set(allSurahIds));
+    localStorage.setItem('cachedSurahs', JSON.stringify(allSurahIds));
+    
+    setIsCachingAll(false);
   };
 
   return (
@@ -1282,7 +1339,7 @@ export default function QuranChat() {
             <button
               className="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 rounded-lg text-2xl p-2 shadow transition-all"
               style={{ minWidth: 40, minHeight: 40 }}
-              onClick={() => {
+                  onClick={() => {
                 setShowSurahImage(false);
                 setSelectedSurahImage(null);
                 setCurrentPage(1);
@@ -1332,10 +1389,10 @@ export default function QuranChat() {
                 aria-label="Halaman berikutnya"
               >
                 ←
-              </button>
+                </button>
               <span className="text-gray-600 font-medium text-sm sm:text-base whitespace-nowrap">
                 Halaman {currentPage} dari {getTotalPages(selectedSurahImage.id)}
-              </span>
+                </span>
               <button
                 className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-blue-600 text-white text-xl sm:text-2xl rounded-lg font-semibold shadow hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 onClick={() => handlePageChange(currentPage - 1)}
@@ -1364,6 +1421,57 @@ export default function QuranChat() {
               </div>
               <p className="text-sm text-gray-600 text-center">
                 Mengunduh {cachingProgress} dari {cachingTotal} halaman
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* Initial Cache Prompt Modal */}
+      {showInitialCachePrompt && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm p-6 relative">
+            <h3 className="text-lg font-bold mb-4 text-blue-700">
+              Download Gambar Al-Quran
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Untuk pengalaman terbaik, Anda dapat mengunduh semua gambar Al-Quran sekaligus. Ini akan memakan waktu beberapa saat, tapi akan membuat aplikasi lebih cepat saat digunakan.
+            </p>
+            <div className="flex flex-col gap-3">
+              <button
+                onClick={cacheAllSurahImages}
+                className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold shadow hover:bg-blue-700 transition"
+              >
+                Download Sekarang
+              </button>
+                <button
+                  onClick={() => {
+                  setShowInitialCachePrompt(false);
+                  localStorage.setItem('hasShownInitialCachePrompt', 'true');
+                }}
+                className="w-full px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold shadow hover:bg-gray-200 transition"
+              >
+                Nanti Saja
+                </button>
+            </div>
+          </div>
+              </div>
+            )}
+      {/* Caching All Progress Modal */}
+      {isCachingAll && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm p-6 relative">
+            <h3 className="text-lg font-bold mb-4 text-blue-700">
+              Mengunduh Semua Gambar
+            </h3>
+            <div className="space-y-4">
+              <div className="w-full bg-gray-200 rounded-full h-2.5">
+                <div 
+                  className="bg-blue-600 h-2.5 rounded-full transition-all duration-300"
+                  style={{ width: `${(cachingAllProgress / cachingAllTotal) * 100}%` }}
+                ></div>
+              </div>
+              <p className="text-sm text-gray-600 text-center">
+                Mengunduh {cachingAllProgress} dari {cachingAllTotal} halaman
               </p>
             </div>
           </div>

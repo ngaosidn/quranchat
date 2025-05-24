@@ -158,7 +158,7 @@ export default function Home() {
       
       // Only show automatic prompt on fresh load or refresh
       if (isFreshLoad && !hasShownPrompt) {
-        setShowInstallPrompt(true);
+      setShowInstallPrompt(true);
         sessionStorage.setItem('hasShownPWAPrompt', 'true');
       }
     };
@@ -270,7 +270,7 @@ export default function Home() {
                         // Show the install prompt
                         await deferredPrompt.prompt();
                         // Wait for the user to respond to the prompt
-                        const { outcome } = await deferredPrompt.userChoice;
+                      const { outcome } = await deferredPrompt.userChoice;
                         console.log(`User response to the install prompt: ${outcome}`);
                         // We no longer need the prompt. Clear it up
                         setDeferredPrompt(null);
