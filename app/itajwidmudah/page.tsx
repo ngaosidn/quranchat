@@ -6,24 +6,12 @@ import { IoArrowBack } from "react-icons/io5";
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-// TypeScript type for beforeinstallprompt event
-interface BeforeInstallPromptEvent extends Event {
-  prompt: () => Promise<void>;
-  userChoice: Promise<{ outcome: 'accepted' | 'dismissed'; platform: string }>;
-}
-
 interface Message {
   type: 'user' | 'bot';
   content: string;
   isCommand?: boolean;
   imageUrl?: string;
   audioUrl?: string;
-}
-
-// Fungsi deteksi mobile
-function isMobile() {
-  if (typeof window === 'undefined') return false;
-  return /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(navigator.userAgent);
 }
 
 export default function RTM() {
@@ -34,8 +22,6 @@ export default function RTM() {
   const [showMenu, setShowMenu] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [input, setInput] = useState('');
-  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
-  const [showInstallPrompt, setShowInstallPrompt] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedMenu, setSelectedMenu] = useState<string | null>(null);
   const [playingAudioId, setPlayingAudioId] = useState<string | null>(null);
@@ -96,18 +82,6 @@ export default function RTM() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
-
-  useEffect(() => {
-    const handler = (e: Event) => {
-      if (!isMobile()) return;
-      const promptEvent = e as unknown as BeforeInstallPromptEvent;
-      e.preventDefault();
-      setDeferredPrompt(promptEvent);
-      setShowInstallPrompt(true);
-    };
-    window.addEventListener("beforeinstallprompt", handler);
-    return () => window.removeEventListener("beforeinstallprompt", handler);
-  }, []);
 
   const handleMenuClick = (menuId: string) => {
     setSelectedMenu(menuId);
@@ -692,36 +666,6 @@ export default function RTM() {
           </div>
         </div>
       </div>
-
-      {/* PWA Install Prompt */}
-      {showInstallPrompt && isMobile() && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 w-full max-w-sm mx-auto">
-            <h2 className="text-lg font-bold mb-2">Install App</h2>
-            <p className="mb-4 text-gray-600 text-center text-sm sm:text-base">Install aplikasi ini di perangkat Anda untuk pengalaman terbaik di Android!</p>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <button
-                className="bg-purple-600 text-white px-4 py-2 rounded font-semibold w-full sm:w-auto"
-                onClick={async () => {
-                  if (deferredPrompt) {
-                    deferredPrompt.prompt();
-                    const { outcome } = await deferredPrompt.userChoice;
-                    if (outcome === "accepted") setShowInstallPrompt(false);
-                  }
-                }}
-              >
-                Install
-              </button>
-              <button
-                className="bg-gray-200 text-gray-700 px-4 py-2 rounded font-semibold w-full sm:w-auto"
-                onClick={() => setShowInstallPrompt(false)}
-              >
-                Nanti saja
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Image Modal */}
       {selectedImage && (

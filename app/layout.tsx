@@ -32,7 +32,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "i-Qlab - Baca, Tadabbur dan Tajwid Interactive 🚀",
+  title: "waQuran App - Aplikasi Pencarian Ayat Al-Quran",
   description: "Aplikasi pencarian ayat Al-Quran yang mudah digunakan. Temukan ayat-ayat Al-Quran dengan cepat dan mudah dalam bahasa Indonesia.",
   keywords: "Al-Quran, Quran, Islam, Ayat, Pencarian Quran, Muslim, Digital Quran, Alquran Digital, Baca Quran Online, Baca Quran Gratis, Baca Quran Online, Belajar Quran Online, Tadabbur Online, Tajwid Online",
   authors: [{ name: "i-Qlab" }],
@@ -88,6 +88,28 @@ export const metadata: Metadata = {
   },
   category: 'education',
   classification: 'Islamic Application',
+  manifest: '/manifest.json',
+  themeColor: '#2563eb',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'waQuran',
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
+  icons: {
+    icon: [
+      { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
+  },
 };
 
 export default function RootLayout({

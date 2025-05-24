@@ -12,12 +12,6 @@ const VerseListComponent = dynamic(() => import('../components/VerseList'), {
   ssr: false
 });
 
-// TypeScript type for beforeinstallprompt event
-interface BeforeInstallPromptEvent extends Event {
-  prompt: () => Promise<void>;
-  userChoice: Promise<{ outcome: 'accepted' | 'dismissed'; platform: string }>;
-}
-
 interface SearchResult {
   id: number;
   name_simple: string;
@@ -71,12 +65,6 @@ interface SingleAyatData {
   }>;
 }
 
-// Fungsi deteksi mobile
-function isMobile() {
-  if (typeof window === 'undefined') return false;
-  return /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(navigator.userAgent);
-}
-
 export default function QuranChat() {
   const router = useRouter();
   const [messages, setMessages] = useState<Message[]>([]);
@@ -86,8 +74,6 @@ export default function QuranChat() {
   const [allSurahs, setAllSurahs] = useState<SearchResult[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [input, setInput] = useState('');
-  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
-  const [showInstallPrompt, setShowInstallPrompt] = useState(false);
   const [singleAyat, setSingleAyat] = useState<{ surah: SearchResult, ayat: number } | null>(null);
   const [singleAyatData, setSingleAyatData] = useState<SingleAyatData | null>(null);
   const [showWordSearchModal, setShowWordSearchModal] = useState(false);
@@ -99,6 +85,12 @@ export default function QuranChat() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   const totalPages = 49; // Total halaman untuk surah Al-Baqarah
+  const [imageSrc, setImageSrc] = useState<string | null>(null);
+  const [isImageLoading, setIsImageLoading] = useState(false);
+  const [cachedSurahs, setCachedSurahs] = useState<Set<number>>(new Set());
+  const [isCaching, setIsCaching] = useState(false);
+  const [cachingProgress, setCachingProgress] = useState(0);
+  const [cachingTotal, setCachingTotal] = useState(0);
 
   const SHOW_ANNOUNCEMENT = process.env.NEXT_PUBLIC_SHOW_ANNOUNCEMENT === 'true';
   useEffect(() => {
@@ -164,18 +156,6 @@ export default function QuranChat() {
       }
     };
     fetchAllSurahs();
-  }, []);
-
-  useEffect(() => {
-    const handler = (e: Event) => {
-      if (!isMobile()) return; // hanya tampil di mobile
-      const promptEvent = e as unknown as BeforeInstallPromptEvent;
-      e.preventDefault();
-      setDeferredPrompt(promptEvent);
-      setShowInstallPrompt(true);
-    };
-    window.addEventListener("beforeinstallprompt", handler);
-    return () => window.removeEventListener("beforeinstallprompt", handler);
   }, []);
 
   // Debounced search function
@@ -724,14 +704,40 @@ export default function QuranChat() {
     }
   };
 
-  // Add function to handle page navigation
-  const handlePageChange = (newPage: number) => {
+  // Modifikasi fungsi getImageUrlFromCache
+  const getImageUrlFromCache = async (surahId: number, page: number) => {
+    const imageNumber = getImageNumber(surahId, page);
+    const imageUrl = `https://raw.githubusercontent.com/ngaosidn/dbQuranImages/main/${imageNumber}.webp`;
+    
+    try {
+      const cache = await caches.open('quran-images');
+      const cachedResponse = await cache.match(imageUrl);
+      
+      if (cachedResponse) {
+        const blob = await cachedResponse.blob();
+        return URL.createObjectURL(blob);
+      }
+    } catch (error) {
+      console.error('Error getting image from cache:', error);
+    }
+    
+    return imageUrl;
+  };
+
+  // Modifikasi fungsi handlePageChange
+  const handlePageChange = async (newPage: number) => {
     if (selectedSurahImage) {
       const totalPages = getTotalPages(selectedSurahImage.id);
       if (newPage >= 1 && newPage <= totalPages) {
-        // Change page first
         setCurrentPage(newPage);
-        // Use requestAnimationFrame to ensure DOM is updated before scrolling
+        setIsImageLoading(true);
+        // Get image URL from cache
+        const imageUrl = await getImageUrlFromCache(selectedSurahImage.id, newPage);
+        // Tambahkan delay buatan 1 detik
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        setImageSrc(imageUrl);
+        setIsImageLoading(false);
+        
         requestAnimationFrame(() => {
           const imageContainer = document.querySelector('.bg-white.rounded-2xl.shadow-xl .flex-1.overflow-y-auto');
           if (imageContainer) {
@@ -740,6 +746,27 @@ export default function QuranChat() {
         });
       }
     }
+  };
+
+  // Modifikasi fungsi handleSurahSelect
+  const handleSurahSelect = async (surah: SearchResult) => {
+    setSelectedSurahImage(surah);
+    setShowSurahImage(true);
+    setCurrentPage(1);
+
+    // Cek apakah surah sudah di-cache
+    if (!cachedSurahs.has(surah.id)) {
+      // Jika belum di-cache, tampilkan popup caching dulu
+      await preCacheSurahImages(surah.id);
+    }
+
+    // Setelah caching selesai, tampilkan gambar
+    setIsImageLoading(true);
+    const imageUrl = await getImageUrlFromCache(surah.id, 1);
+    // Tambahkan delay buatan 1 detik
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    setImageSrc(imageUrl);
+    setIsImageLoading(false);
   };
 
   // Function to get image number based on surah and page
@@ -876,6 +903,35 @@ export default function QuranChat() {
     }
   }, []);
 
+  // Modifikasi fungsi preCacheSurahImages
+  const preCacheSurahImages = async (surahId: number) => {
+    if (cachedSurahs.has(surahId)) return; // Skip if already cached
+
+    const totalPages = getTotalPages(surahId);
+    const cache = await caches.open('quran-images');
+    
+    setIsCaching(true);
+    setCachingTotal(totalPages);
+    setCachingProgress(0);
+    
+    // Cache all pages of the surah
+    for (let page = 1; page <= totalPages; page++) {
+      const imageUrl = `https://raw.githubusercontent.com/ngaosidn/dbQuranImages/main/${getImageNumber(surahId, page)}.webp`;
+      try {
+        const response = await fetch(imageUrl);
+        await cache.put(imageUrl, response);
+        console.log(`Cached image for surah ${surahId} page ${page}`);
+        setCachingProgress(page);
+      } catch (error) {
+        console.error(`Error caching image for surah ${surahId} page ${page}:`, error);
+      }
+    }
+    
+    // Mark this surah as cached
+    setCachedSurahs(prev => new Set([...prev, surahId]));
+    setIsCaching(false);
+  };
+
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-white">
       {/* Header ala Intercom */}
@@ -924,10 +980,7 @@ export default function QuranChat() {
                 {msg.surah && !msg.ayat && (
                   <button
                     className="mt-2 px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold shadow hover:bg-indigo-700 transition w-full sm:w-auto"
-                    onClick={() => {
-                      setSelectedSurahImage(msg.surah!);
-                      setShowSurahImage(true);
-                    }}
+                    onClick={() => handleSurahSelect(msg.surah!)}
                   >
                     Baca Surah
                   </button>
@@ -1093,35 +1146,6 @@ export default function QuranChat() {
           endAyat={selectedAyatRange?.end}
         />
       )}
-      {/* PWA Install Prompt */}
-      {showInstallPrompt && isMobile() && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 w-full max-w-sm mx-auto">
-            <h2 className="text-lg font-bold mb-2">Install App</h2>
-            <p className="mb-4 text-gray-600 text-center text-sm sm:text-base">Install aplikasi ini di perangkat Anda untuk pengalaman terbaik di Android!</p>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <button
-                className="bg-blue-600 text-white px-4 py-2 rounded font-semibold w-full sm:w-auto"
-                onClick={async () => {
-                  if (deferredPrompt) {
-                    deferredPrompt.prompt();
-                    const { outcome } = await deferredPrompt.userChoice;
-                    if (outcome === "accepted") setShowInstallPrompt(false);
-                  }
-                }}
-              >
-                Install
-              </button>
-              <button
-                className="bg-gray-200 text-gray-700 px-4 py-2 rounded font-semibold w-full sm:w-auto"
-                onClick={() => setShowInstallPrompt(false)}
-              >
-                Nanti saja
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
       {/* Pop up single ayat */}
       {singleAyat && singleAyatData && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50">
@@ -1253,6 +1277,7 @@ export default function QuranChat() {
                 setShowSurahImage(false);
                 setSelectedSurahImage(null);
                 setCurrentPage(1);
+                setImageSrc(null);
               }}
             >×</button>
             
@@ -1261,21 +1286,40 @@ export default function QuranChat() {
             </h3>
 
             <div className="flex-1 overflow-y-auto">
-              <Image 
-                src={`https://raw.githubusercontent.com/ngaosidn/dbQuranImages/main/${getImageNumber(selectedSurahImage.id, currentPage)}.png`}
-                alt={`Surah ${selectedSurahImage.name_simple} Halaman ${currentPage}`}
-                width={1000}
-                height={1500}
-                className="w-full h-auto object-contain"
-                priority
-              />
+              <div className="relative w-full h-auto min-h-[200px]">
+                {isImageLoading ? (
+                  <div className="w-full h-[200px] flex items-center justify-center bg-gray-50 rounded-lg">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                      <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                      <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                    </div>
+                  </div>
+                ) : imageSrc ? (
+                  <Image
+                    src={imageSrc}
+                    alt={`Surah ${selectedSurahImage.name_simple} Halaman ${currentPage}`}
+                    width={1000}
+                    height={1500}
+                    className="w-full h-auto object-contain"
+                    loading="lazy"
+                    onError={(e) => {
+                      // Fallback to original URL if cache fails
+                      const originalUrl = `https://raw.githubusercontent.com/ngaosidn/dbQuranImages/main/${getImageNumber(selectedSurahImage.id, currentPage)}.webp`;
+                      if (e.currentTarget.src !== originalUrl) {
+                        setImageSrc(originalUrl);
+                      }
+                    }}
+                  />
+                ) : null}
+              </div>
             </div>
 
             <div className="mt-4 flex items-center justify-between gap-2 sm:gap-4">
               <button
                 className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-blue-600 text-white text-xl sm:text-2xl rounded-lg font-semibold shadow hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 onClick={() => handlePageChange(currentPage + 1)}
-                disabled={currentPage === getTotalPages(selectedSurahImage.id)}
+                disabled={currentPage === getTotalPages(selectedSurahImage.id) || isImageLoading}
                 aria-label="Halaman berikutnya"
               >
                 ←
@@ -1286,11 +1330,32 @@ export default function QuranChat() {
               <button
                 className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-blue-600 text-white text-xl sm:text-2xl rounded-lg font-semibold shadow hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}
+                disabled={currentPage === 1 || isImageLoading}
                 aria-label="Halaman sebelumnya"
               >
                 →
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* Add Caching Progress Modal */}
+      {isCaching && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm p-6 relative">
+            <h3 className="text-lg font-bold mb-4 text-blue-700">
+              Mengunduh Gambar Surah
+            </h3>
+            <div className="space-y-4">
+              <div className="w-full bg-gray-200 rounded-full h-2.5">
+                <div 
+                  className="bg-blue-600 h-2.5 rounded-full transition-all duration-300"
+                  style={{ width: `${(cachingProgress / cachingTotal) * 100}%` }}
+                ></div>
+              </div>
+              <p className="text-sm text-gray-600 text-center">
+                Mengunduh {cachingProgress} dari {cachingTotal} halaman
+              </p>
             </div>
           </div>
         </div>

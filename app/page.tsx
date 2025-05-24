@@ -20,6 +20,10 @@ interface ExtendedNavigator extends Navigator {
   standalone?: boolean;
 }
 
+interface ExtendedWindow extends Window {
+  MSStream?: unknown;
+}
+
 function isMobile() {
   if (typeof window === 'undefined') return false;
   return /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(navigator.userAgent);
@@ -78,39 +82,115 @@ export default function Home() {
   ]);
 
   // State untuk PWA install prompt
-  const [deferredPrompt, setDeferredPrompt] = React.useState<BeforeInstallPromptEvent | null>(null);
-  const [showInstallPrompt, setShowInstallPrompt] = React.useState(false);
-
+  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
+  const [showInstallPrompt, setShowInstallPrompt] = useState(false);
   const [isStandalone, setIsStandalone] = useState(false);
   const [isMobileBrowser, setIsMobileBrowser] = useState(false);
 
-  React.useEffect(() => {
-    const handler = (e: Event) => {
-      if (!isMobile()) return;
-      const promptEvent = e as unknown as BeforeInstallPromptEvent;
-      e.preventDefault();
-      setDeferredPrompt(promptEvent);
-      setShowInstallPrompt(true);
-    };
-    window.addEventListener("beforeinstallprompt", handler);
-    return () => window.removeEventListener("beforeinstallprompt", handler);
+  // Register service worker
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('ServiceWorker registration successful');
+          return registration;
+        }).catch(err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
   }, []);
 
   // Detect PWA and mobile browser
   useEffect(() => {
-    const checkStandalone = () => {
-      setIsStandalone(window.matchMedia('(display-mode: standalone)').matches || (window.navigator as ExtendedNavigator).standalone === true);
+    const checkPWAInstallation = () => {
+      if (typeof window === 'undefined') return;
+
+      // Check for Android PWA
+      const isStandaloneMode = window.matchMedia('(display-mode: standalone)').matches;
+      
+      // Check for iOS PWA
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as unknown as ExtendedWindow).MSStream;
+      const isIOSPWA = isIOS && (navigator as ExtendedNavigator).standalone;
+      
+      // Check for other PWA indicators
+      const isInPWA = window.matchMedia('(display-mode: fullscreen)').matches || 
+                     window.matchMedia('(display-mode: minimal-ui)').matches;
+      
+      const isPWAInstalled = isStandaloneMode || isIOSPWA || isInPWA;
+      setIsStandalone(isPWAInstalled);
+      setIsMobileBrowser(isMobile() && !isPWAInstalled);
     };
-    const checkMobile = () => {
-      setIsMobileBrowser(isMobile() && !window.matchMedia('(display-mode: standalone)').matches && !(window.navigator as ExtendedNavigator).standalone);
+
+    // Initial check
+    checkPWAInstallation();
+
+    // Listen for display mode changes (PWA installation)
+    const mediaQuery = window.matchMedia('(display-mode: standalone)');
+    const handleDisplayModeChange = () => {
+      checkPWAInstallation();
     };
-    checkStandalone();
-    checkMobile();
-    window.addEventListener('resize', checkStandalone);
-    window.addEventListener('resize', checkMobile);
+    
+    mediaQuery.addEventListener('change', handleDisplayModeChange);
+    window.addEventListener('resize', checkPWAInstallation);
+
     return () => {
-      window.removeEventListener('resize', checkStandalone);
-      window.removeEventListener('resize', checkMobile);
+      mediaQuery.removeEventListener('change', handleDisplayModeChange);
+      window.removeEventListener('resize', checkPWAInstallation);
+    };
+  }, []);
+
+  // Handle PWA install prompt
+  useEffect(() => {
+    const handler = (e: Event) => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      
+      // Check if this is a fresh page load or refresh
+      const navigationEntry = window.performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+      const isFreshLoad = navigationEntry.type === 'navigate' || navigationEntry.type === 'reload';
+      
+      // Check if prompt was shown in this session
+      const hasShownPrompt = sessionStorage.getItem('hasShownPWAPrompt') === 'true';
+      
+      // Store the prompt event for later use
+      setDeferredPrompt(e as BeforeInstallPromptEvent);
+      
+      // Only show automatic prompt on fresh load or refresh
+      if (isFreshLoad && !hasShownPrompt) {
+        setShowInstallPrompt(true);
+        sessionStorage.setItem('hasShownPWAPrompt', 'true');
+      }
+    };
+
+    // Check if the browser supports PWA installation
+    if ('serviceWorker' in navigator && 'BeforeInstallPromptEvent' in window) {
+      window.addEventListener('beforeinstallprompt', handler);
+    }
+
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handler);
+    };
+  }, []);
+
+  // Handle manual install button click
+  const handleInstallClick = () => {
+    if (deferredPrompt) {
+      setShowInstallPrompt(true);
+    }
+  };
+
+  // Handle successful installation
+  useEffect(() => {
+    const handleAppInstalled = () => {
+      console.log('PWA was installed');
+      setShowInstallPrompt(false);
+      setIsStandalone(true);
+    };
+
+    window.addEventListener('appinstalled', handleAppInstalled);
+    return () => {
+      window.removeEventListener('appinstalled', handleAppInstalled);
     };
   }, []);
 
@@ -124,7 +204,7 @@ export default function Home() {
             {typeof window !== 'undefined' && isMobileBrowser && !isStandalone && (
               <div className="absolute top-4 right-4">
                 <button
-                  onClick={() => setShowInstallPrompt(true)}
+                  onClick={handleInstallClick}
                   className="text-white hover:text-blue-200 transition-colors p-2 rounded-full bg-blue-500/30 hover:bg-blue-700/60"
                   aria-label="Install App"
                 >
@@ -176,7 +256,7 @@ export default function Home() {
           </div>
         </div>
         {/* PWA Install Prompt */}
-        {showInstallPrompt && isMobile() && (
+        {showInstallPrompt && isMobileBrowser && deferredPrompt && !isStandalone && (
           <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 w-full max-w-sm mx-auto">
               <h2 className="text-lg font-bold mb-2">Install App</h2>
@@ -186,9 +266,20 @@ export default function Home() {
                   className="bg-blue-600 text-white px-4 py-2 rounded font-semibold w-full sm:w-auto"
                   onClick={async () => {
                     if (deferredPrompt) {
-                      deferredPrompt.prompt();
-                      const { outcome } = await deferredPrompt.userChoice;
-                      if (outcome === "accepted") setShowInstallPrompt(false);
+                      try {
+                        // Show the install prompt
+                        await deferredPrompt.prompt();
+                        // Wait for the user to respond to the prompt
+                        const { outcome } = await deferredPrompt.userChoice;
+                        console.log(`User response to the install prompt: ${outcome}`);
+                        // We no longer need the prompt. Clear it up
+                        setDeferredPrompt(null);
+                        // Hide the install prompt
+                        setShowInstallPrompt(false);
+                      } catch (error) {
+                        console.error('Error during install prompt:', error);
+                        setShowInstallPrompt(false);
+                      }
                     }
                   }}
                 >
