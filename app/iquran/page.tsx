@@ -87,7 +87,14 @@ export default function QuranChat() {
   const totalPages = 49; // Total halaman untuk surah Al-Baqarah
   const [imageSrc, setImageSrc] = useState<string | null>(null);
   const [isImageLoading, setIsImageLoading] = useState(false);
-  const [cachedSurahs, setCachedSurahs] = useState<Set<number>>(new Set());
+  const [cachedSurahs, setCachedSurahs] = useState<Set<number>>(() => {
+    // Inisialisasi dari localStorage saat komponen mount
+    if (typeof window !== 'undefined') {
+      const savedCache = localStorage.getItem('cachedSurahs');
+      return new Set(savedCache ? JSON.parse(savedCache) : []);
+    }
+    return new Set();
+  });
   const [isCaching, setIsCaching] = useState(false);
   const [cachingProgress, setCachingProgress] = useState(0);
   const [cachingTotal, setCachingTotal] = useState(0);
@@ -927,8 +934,10 @@ export default function QuranChat() {
       }
     }
     
-    // Mark this surah as cached
-    setCachedSurahs(prev => new Set([...prev, surahId]));
+    // Mark this surah as cached and save to localStorage
+    const newCachedSurahs = new Set([...cachedSurahs, surahId]);
+    setCachedSurahs(newCachedSurahs);
+    localStorage.setItem('cachedSurahs', JSON.stringify([...newCachedSurahs]));
     setIsCaching(false);
   };
 
