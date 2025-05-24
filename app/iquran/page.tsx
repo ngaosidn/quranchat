@@ -1262,7 +1262,7 @@ export default function QuranChat() {
 
             <div className="flex-1 overflow-y-auto">
               <Image 
-                src={`https://raw.githubusercontent.com/ngaosidn/dbQuranImages/main/${getImageNumber(selectedSurahImage.id, currentPage)}.png`}
+                src={`https://raw.githubusercontent.com/ngaosidn/dbQuranImages/main/${getImageNumber(selectedSurahImage.id, currentPage)}.webp`}
                 alt={`Surah ${selectedSurahImage.name_simple} Halaman ${currentPage}`}
                 width={1000}
                 height={1500}
