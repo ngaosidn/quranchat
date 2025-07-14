@@ -106,3 +106,15 @@ body {
 .animate-spectrum > div:nth-child(even) {
   background: linear-gradient(to top, #7e22ce, #9333ea);
 }
+
+@font-face {
+  font-family: 'UthmanicNeoColor';
+  src: url('/fonts/Uthmanic_NeoCOLOR-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-uthmanic {
+  font-family: 'UthmanicNeoColor', serif;
+}

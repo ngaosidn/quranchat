@@ -5,23 +5,16 @@ import axios from 'axios';
 import React from 'react';
 
 interface Verse {
-  id: number;
-  verse_number: number;
-  text_uthmani: string;
-  translations: Array<{
-    text: string;
-  }>;
-}
+  ayat: number;
+  teks_arab: string;
+  terjemahan: string;
+} 
 
 interface VerseListProps {
   surahNumber: number;
   onClose: () => void;
   startAyat?: number;
   endAyat?: number;
-}
-
-function removeSupTags(text: string) {
-  return text.replace(/<sup[^>]*>.*?<\/sup>/g, '');
 }
 
 const VERSES_PER_PAGE = 10;
@@ -45,44 +38,27 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
     const fetchVerses = async () => {
       setLoading(true);
       try {
-        // Jika ada range ayat, kita akan fetch hanya ayat yang dibutuhkan
-        let versesData;
-        if (startAyat && endAyat) {
-          // Hitung total ayat yang perlu diambil
-          const totalAyat = endAyat - startAyat + 1;
-          // Hitung halaman yang dibutuhkan
-          const pageSize = VERSES_PER_PAGE;
-          const startPage = Math.floor((startAyat - 1) / pageSize) + 1;
-          const endPage = Math.ceil(endAyat / pageSize);
-          
-          // Fetch semua halaman yang dibutuhkan
-          const pages = [];
-          for (let page = startPage; page <= endPage; page++) {
-            const response = await axios.get(
-              `https://api.quran.com/api/v4/verses/by_chapter/${surahNumber}?words=true&word_fields=text_uthmani&fields=verse_number,text_uthmani&translations=33&language=id&page=${page}&per_page=${pageSize}`
-            );
-            pages.push(...response.data.verses);
-          }
-          
-          // Filter verses berdasarkan range
-          versesData = pages.filter((verse: Verse) => 
-            verse.verse_number >= startAyat && verse.verse_number <= endAyat
-          );
-          
-          // Set total pages untuk pagination
-          setTotalPages(Math.ceil(totalAyat / VERSES_PER_PAGE));
-        } else {
-          // Jika tidak ada range, gunakan pagination normal
-          const response = await axios.get(
-            `https://api.quran.com/api/v4/verses/by_chapter/${surahNumber}?words=true&word_fields=text_uthmani&fields=verse_number,text_uthmani&translations=33&language=id&page=${currentPage}&per_page=${VERSES_PER_PAGE}`
-          );
-          versesData = response.data.verses;
-          setTotalPages(response.data.pagination.total_pages);
+        // Ambil data ayat dari file lokal JSON
+        const response = await fetch('/data/verse.json');
+        const data = await response.json();
+        const surahData = data[surahNumber];
+        if (!surahData) {
+          setVerses([]);
+          setTotalPages(1);
+          return;
         }
-        
-        setVerses(versesData);
+        let ayatList = surahData.ayat;
+        // Filter berdasarkan range jika ada
+        if (startAyat && endAyat) {
+          ayatList = ayatList.filter((a: Verse) => a.ayat >= startAyat && a.ayat <= endAyat);
+        }
+        // Pagination
+        setTotalPages(Math.ceil(ayatList.length / VERSES_PER_PAGE));
+        setVerses(ayatList);
       } catch (error) {
         console.error('Error fetching verses:', error);
+        setVerses([]);
+        setTotalPages(1);
       } finally {
         setLoading(false);
       }
@@ -148,13 +124,10 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
 
   // Modifikasi tampilan verses untuk mendukung pagination dengan range
   const displayedVerses = useMemo(() => {
-    if (!startAyat || !endAyat) {
-      return verses;
-    }
-
+    if (!verses.length) return [];
     const startIndex = (currentPage - 1) * VERSES_PER_PAGE;
     return verses.slice(startIndex, startIndex + VERSES_PER_PAGE);
-  }, [verses, currentPage, startAyat, endAyat]);
+  }, [verses, currentPage]);
 
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-2 z-50">
@@ -185,19 +158,19 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
             <div className="flex flex-col space-y-4 sm:space-y-6">
               {displayedVerses.map((verse) => (
                 <div
-                  key={verse.verse_number}
+                  key={verse.ayat}
                   className="bg-gradient-to-br from-indigo-50 to-white rounded-2xl p-3 sm:p-5 shadow border border-indigo-50 flex flex-col gap-2 sm:gap-3 hover:shadow-lg hover:border-indigo-200 transition-all duration-300"
                 >
                   <div className="flex items-center gap-2 sm:gap-3 mb-1">
                     <span className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-indigo-100 text-indigo-600 font-bold text-base sm:text-lg shadow-sm">
-                      {verse.verse_number}
+                      {verse.ayat}
                     </span>
                     <span className="text-xs sm:text-sm text-gray-400">Ayat</span>
                     <button
                       className="ml-2 px-2 py-1 rounded-full border border-indigo-200 bg-white hover:bg-indigo-100 transition text-indigo-600 flex items-center"
-                      onClick={() => handlePlay(verse.verse_number)}
+                      onClick={() => handlePlay(verse.ayat)}
                     >
-                      {playingAyah === verse.verse_number ? (
+                      {playingAyah === verse.ayat ? (
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
                         </svg>
@@ -210,9 +183,9 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
                     <button
                       className="ml-1 px-2 py-1 rounded-full border border-indigo-200 bg-white hover:bg-yellow-100 transition text-yellow-600 flex items-center gap-1"
                       onClick={() => {
-                        const tafsirAyat = tafsirList.find((t) => t.ayat === verse.verse_number);
+                        const tafsirAyat = tafsirList.find((t) => t.ayat === verse.ayat);
                         setShowTafsir({
-                          ayat: verse.verse_number,
+                          ayat: verse.ayat,
                           text: tafsirAyat ? tafsirAyat.teks : 'Tafsir tidak tersedia.'
                         });
                       }}
@@ -225,13 +198,13 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
                     </button>
                   </div>
                   <div className="text-right">
-                    <p className="text-xl sm:text-3xl leading-loose font-amiri text-gray-800">
-                      {verse.text_uthmani}
+                    <p className="text-3xl sm:text-3xl md:text-4xl leading-loose font-uthmanic text-gray-800">
+                      {verse.teks_arab}
                     </p>
                   </div>
                   <div className="border-t border-gray-100 pt-2 sm:pt-3">
                     <p className="text-gray-600 leading-relaxed text-sm sm:text-base italic">
-                      {removeSupTags(verse.translations[0]?.text || "Translation not available")}
+                      {verse.terjemahan ? verse.terjemahan : 'Terjemahan tidak tersedia'}
                     </p>
                   </div>
                 </div>
