@@ -29,17 +29,37 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
   const [surahName, setSurahName] = useState<string>("");
   const [showTafsir, setShowTafsir] = useState<{ ayat: number, text: string } | null>(null);
   const [tafsirList, setTafsirList] = useState<Array<{ ayat: number, teks: string }>>([]);
+  const [mushafFont, setMushafFont] = useState('');
+  const [dataSource, setDataSource] = useState<'verse' | 'kemenag' | 'indopak'>('verse');
+  const [fontClass, setFontClass] = useState('font-uthmanic');
 
   useEffect(() => {
     setCurrentPage(1);
   }, [surahNumber, startAyat, endAyat]);
 
+  // Ganti sumber data & font jika Mushaf Font berubah
+  useEffect(() => {
+    if (mushafFont === 'Kemenag') {
+      setDataSource('kemenag');
+      setFontClass('font-nastaleeq');
+    } else if (mushafFont === 'Indopak') {
+      setDataSource('indopak');
+      setFontClass('font-indopak');
+    } else {
+      setDataSource('verse');
+      setFontClass('font-uthmanic');
+    }
+  }, [mushafFont]);
+
   useEffect(() => {
     const fetchVerses = async () => {
       setLoading(true);
       try {
-        // Ambil data ayat dari file lokal JSON
-        const response = await fetch('/data/verse.json');
+        // Ambil data ayat dari file lokal JSON sesuai dataSource
+        let url = '/data/verse.json';
+        if (dataSource === 'kemenag') url = '/data/kemenag.json';
+        if (dataSource === 'indopak') url = '/data/indopak.json';
+        const response = await fetch(url);
         const data = await response.json();
         const surahData = data[surahNumber];
         if (!surahData) {
@@ -65,7 +85,7 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
     };
 
     fetchVerses();
-  }, [surahNumber, currentPage, startAyat, endAyat]);
+  }, [surahNumber, currentPage, startAyat, endAyat, dataSource]);
 
   useEffect(() => {
     const fetchSurahName = async () => {
@@ -137,12 +157,27 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
             Surah {surahNumber}{surahName ? ` - ${surahName}` : ''}
             {startAyat && endAyat && startAyat !== endAyat ? ` (Ayat ${startAyat}-${endAyat})` : startAyat ? ` (Ayat ${startAyat})` : ''}
           </h2>
-          <button
-            onClick={onClose}
-            className="text-gray-500 hover:text-green-600 p-2 hover:bg-green-50 rounded-full transition-all duration-200"
-          >
-            ✕
-          </button>
+          <div className="flex items-center gap-2">
+            <label className="flex items-center gap-1">
+              <span className="font-semibold text-green-800 text-xs sm:text-sm">Mushaf Font :</span>
+              <select
+                className="border border-green-200 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-green-300 text-xs sm:text-sm text-gray-800 bg-white"
+                value={mushafFont}
+                onChange={e => setMushafFont(e.target.value)}
+              >
+                <option value="">Pilih</option>
+                <option value="Madina">Madina</option>
+                <option value="Kemenag">Kemenag</option>
+                <option value="Indopak">Indopak</option>
+              </select>
+            </label>
+            <button
+              onClick={onClose}
+              className="text-gray-500 hover:text-green-600 p-2 hover:bg-green-50 rounded-full transition-all duration-200"
+            >
+              ✕
+            </button>
+          </div>
         </div>
 
         <div className="overflow-y-auto p-3 sm:p-6 space-y-4 sm:space-y-6">
@@ -156,7 +191,38 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
             </div>
           ) : (
             <div className="flex flex-col space-y-4 sm:space-y-6">
-              {displayedVerses.map((verse) => (
+              {displayedVerses.map((verse) => {
+                // Logic khusus Indopak: pisahkan angka Arab di akhir teks_arab
+                let arabicText = verse.teks_arab;
+                let ayahNumberMark = '';
+                let ayahNumberSymbol = '';
+                let ayahNumberCircle = '';
+                if (mushafFont === 'Indopak') {
+                  // Regex: cari satu atau lebih karakter non-huruf Arab di akhir string
+                  const match = arabicText.match(/^(.*?)([\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]*)([^\u0621-\u064A\u0660-\u0669\u0670-\u06D3\u06FA-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]+)$/);
+                  if (match) {
+                    arabicText = match[1] + match[2];
+                    ayahNumberMark = match[3];
+                    // Pisahkan simbol di atas bulatan dan angka bulatan
+                    // Asumsi: simbol (misal: 'ؔ', 'ۚ', dsb) di awal, angka bulatan (misal: '\uFD3E'-'\uFD3F', '\uFDFD', dsb) di akhir
+                    const symbolMatch = ayahNumberMark.match(/^([\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]+)?([\uFDFD-\uFDFE\uFD3E-\uFD3F\u06DD\u06DE\u06E9\u06E0-\u06ED\u06F0-\u06F9\u0660-\u0669\u06DF-\u06E8\u06E2-\u06E4\u06E7-\u06E8\u06EA-\u06ED\u06F0-\u06F9\u06DD\u06DE\u06E9\u06E0-\u06ED\u06F0-\u06F9\u0660-\u0669\uFD3E-\uFD3F]+)$/);
+                    if (symbolMatch) {
+                      ayahNumberSymbol = symbolMatch[1] || '';
+                      ayahNumberCircle = symbolMatch[2] || ayahNumberMark;
+                    } else {
+                      ayahNumberCircle = ayahNumberMark;
+                    }
+                  } else {
+                    // fallback: cari satu atau lebih karakter non-huruf Arab/angka di akhir
+                    const fallback = arabicText.match(/^(.*?)([^\u0621-\u064A\u0660-\u0669]+)$/);
+                    if (fallback) {
+                      arabicText = fallback[1];
+                      ayahNumberMark = fallback[2];
+                      ayahNumberCircle = ayahNumberMark;
+                    }
+                  }
+                }
+                return (
                 <div
                   key={verse.ayat}
                   className="bg-gradient-to-br from-indigo-50 to-white rounded-2xl p-3 sm:p-5 shadow border border-indigo-50 flex flex-col gap-2 sm:gap-3 hover:shadow-lg hover:border-indigo-200 transition-all duration-300"
@@ -198,9 +264,24 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
                     </button>
                   </div>
                   <div className="text-right">
-                    <p className="text-3xl sm:text-3xl md:text-4xl leading-loose font-uthmanic text-gray-800">
-                      {verse.teks_arab}
-                    </p>
+                    <div className={`text-3xl sm:text-3xl md:text-4xl leading-loose text-gray-800 ${fontClass}`} style={{ direction: 'rtl', position: 'relative' }}>
+                      {mushafFont === 'Indopak' ? (
+                        <>
+                          <span>{arabicText}</span>
+                          <span
+                            className="inline-flex flex-col items-center align-middle ml-2"
+                            style={{ verticalAlign: 'middle' }}
+                          >
+                            {ayahNumberSymbol && (
+                              <span style={{ fontSize: '0.7em', lineHeight: 1 }}>{ayahNumberSymbol}</span>
+                            )}
+                            <span>{ayahNumberCircle}</span>
+                          </span>
+                        </>
+                      ) : (
+                        <span>{verse.teks_arab}</span>
+                      )}
+                    </div>
                   </div>
                   <div className="border-t border-gray-100 pt-2 sm:pt-3">
                     <p className="text-gray-600 leading-relaxed text-sm sm:text-base italic">
@@ -208,7 +289,8 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
                     </p>
                   </div>
                 </div>
-              ))}
+              );
+              })}
               {/* Pagination Controls */}
               <div className="flex justify-between items-center mt-4 gap-2">
                 <button

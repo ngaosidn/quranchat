@@ -1,0 +1,3496 @@
+{
+  "1": {
+    "nama": "Al-Fatihah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِیْمِ ۟",
+        "terjemahan": "Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِیْنَ ۟ۙ",
+        "terjemahan": "Segala puji bagi Allah, Tuhan semesta alam."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "الرَّحْمٰنِ الرَّحِیْمِ ۟ۙ",
+        "terjemahan": "Maha Pemurah lagi Maha Penyayang."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "مٰلِكِ یَوْمِ الدِّیْنِ ۟ؕ",
+        "terjemahan": "Yang menguasai hari pembalasan ."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اِیَّاكَ نَعْبُدُ وَاِیَّاكَ نَسْتَعِیْنُ ۟ؕ",
+        "terjemahan": "Hanya kepada Engkau-lah kami menyembah 185>1 dan hanya kepada Engkau-lah kami memohon pertolongan"
+      }
+    ]
+  },
+  "2": {
+    "nama": "Al-Baqarah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "الٓمّٓ ۟ۚ",
+        "terjemahan": "Alif Lām Mīm."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "ذٰلِكَ الْكِتٰبُ لَا رَیْبَ ۛۖۚ فِیْهِ ۛۚ هُدًی لِّلْمُتَّقِیْنَ ۟ۙ",
+        "terjemahan": "Kitab (Al-Qur`ān) ini tidak ada keraguan padanya; petunjuk bagi mereka yang bertakwa ,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "الَّذِیْنَ یُؤْمِنُوْنَ بِالْغَیْبِ وَیُقِیْمُوْنَ الصَّلٰوةَ وَمِمَّا رَزَقْنٰهُمْ یُنْفِقُوْنَ ۟ۙ",
+        "terjemahan": "(yaitu) mereka yang beriman kepada yang gaib , yang mendirikan salat , dan menafkahkan sebagian rezeki yang Kami anugerahkan kepada mereka,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَالَّذِیْنَ یُؤْمِنُوْنَ بِمَاۤ اُنْزِلَ اِلَیْكَ وَمَاۤ اُنْزِلَ مِنْ قَبْلِكَ ۚ وَبِالْاٰخِرَةِ هُمْ یُوْقِنُوْنَ ۟ؕ",
+        "terjemahan": "dan mereka yang beriman kepada Kitab (Al-Qur`ān) yang telah diturunkan kepadamu dan kitab-kitab yang telah diturunkan sebelummu , serta mereka yakin akan adanya (kehidupan) akhirat ."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اُولٰٓىِٕكَ عَلٰی هُدًی مِّنْ رَّبِّهِمْ ۗ وَاُولٰٓىِٕكَ هُمُ الْمُفْلِحُوْنَ ۟",
+        "terjemahan": "Mereka itulah yang tetap mendapat petunjuk dari Tuhan mereka, dan merekalah orang-orang yang beruntung ."
+      }
+    ]
+  },
+  "3": {
+    "nama": "Ali 'Imran",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "الٓمَّٓ ۟ۙ",
+        "terjemahan": "Alif Lām Mīm."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اللّٰهُ لَاۤ اِلٰهَ اِلَّا هُوَۙ الْحَیُّ الْقَیُّوْمُ ۟ؕ",
+        "terjemahan": "Allah, tidak ada Tuhan (yang berhak disembah) melainkan Dia. Yang hidup kekal lagi terus menerus mengurus makhluk-Nya ."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "نَزَّلَ عَلَیْكَ الْكِتٰبَ بِالْحَقِّ مُصَدِّقًا لِّمَا بَیْنَ یَدَیْهِ وَاَنْزَلَ التَّوْرٰىةَ وَالْاِنْجِیْلَ ۟ۙ",
+        "terjemahan": "Dia menurunkan Alkitab (Al-Qur`ān) kepadamu dengan sebenarnya, membenarkan kitab yang telah diturunkan sebelumnya dan menurunkan Taurat dan Injil,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "مِنْ قَبْلُ هُدًی لِّلنَّاسِ وَاَنْزَلَ الْفُرْقَانَ ؕ۬ اِنَّ الَّذِیْنَ كَفَرُوْا بِاٰیٰتِ اللّٰهِ لَهُمْ عَذَابٌ شَدِیْدٌ ؕ وَاللّٰهُ عَزِیْزٌ ذُو انْتِقَامٍ ۟ؕ",
+        "terjemahan": "sebelum (Al-Qur`ān), menjadi petunjuk bagi manusia, dan Dia menurunkan Al-Furqān . Sesungguhnya orang-orang yang kafir terhadap ayat-ayat Allah akan memperoleh siksa yang berat; dan Allah Maha Perkasa lagi mempunyai balasan (siksa)."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اِنَّ اللّٰهَ لَا یَخْفٰی عَلَیْهِ شَیْءٌ فِی الْاَرْضِ وَلَا فِی السَّمَآءِ ۟ؕ",
+        "terjemahan": "Sesungguhnya bagi Allah tidak ada satu pun yang tersembunyi di bumi dan tidak (pula) di langit."
+      }
+    ]
+  },
+  "4": {
+    "nama": "An-Nisa",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یٰۤاَیُّهَا النَّاسُ اتَّقُوْا رَبَّكُمُ الَّذِیْ خَلَقَكُمْ مِّنْ نَّفْسٍ وَّاحِدَةٍ وَّخَلَقَ مِنْهَا زَوْجَهَا وَبَثَّ مِنْهُمَا رِجَالًا كَثِیْرًا وَّنِسَآءً ۚ وَاتَّقُوا اللّٰهَ الَّذِیْ تَسَآءَلُوْنَ بِهٖ وَالْاَرْحَامَ ؕ اِنَّ اللّٰهَ كَانَ عَلَیْكُمْ رَقِیْبًا ۟",
+        "terjemahan": "Hai sekalian manusia, bertakwalah kepada Tuhan-mu yang telah menciptakan kamu dari diri yang satu, dan darinya Allah menciptakan istrinya; dan dari keduanya Allah mengembangbiakan laki-laki dan perempuan yang banyak. Dan bertakwalah kepada Allah yang dengan (mempergunakan) nama-Nya kamu saling meminta satu sama lain , dan (peliharalah) hubungan silaturahmi. Sesungguhnya Allah selalu menjaga dan mengawasi kamu."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَاٰتُوا الْیَتٰمٰۤی اَمْوَالَهُمْ وَلَا تَتَبَدَّلُوا الْخَبِیْثَ بِالطَّیِّبِ ۪ وَلَا تَاْكُلُوْۤا اَمْوَالَهُمْ اِلٰۤی اَمْوَالِكُمْ ؕ اِنَّهٗ كَانَ حُوْبًا كَبِیْرًا ۟",
+        "terjemahan": "Dan berikanlah kepada anak-anak yatim (yang sudah balig) harta mereka; jangan kamu menukar yang baik dengan yang buruk dan jangan kamu makan harta mereka bersama hartamu. Sesungguhnya tindakan-tindakan (menukar dan memakan) itu, adalah dosa yang besar."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَاِنْ خِفْتُمْ اَلَّا تُقْسِطُوْا فِی الْیَتٰمٰی فَانْكِحُوْا مَا طَابَ لَكُمْ مِّنَ النِّسَآءِ مَثْنٰی وَثُلٰثَ وَرُبٰعَ ۚ فَاِنْ خِفْتُمْ اَلَّا تَعْدِلُوْا فَوَاحِدَةً اَوْ مَا مَلَكَتْ اَیْمَانُكُمْ ؕ ذٰلِكَ اَدْنٰۤی اَلَّا تَعُوْلُوْا ۟ؕ",
+        "terjemahan": "Dan jika kamu takut tidak akan dapat berlaku adil terhadap (hak-hak) perempuan yang yatim (bilamana kamu mengawininya), maka kawinilah wanita-wanita (lain) yang kamu senangi: dua, tiga atau empat. Kemudian jika kamu takut tidak akan dapat berlaku adil , maka (kawinilah) seorang saja, atau budak-budak yang kamu miliki. Yang demikian itu adalah lebih dekat kepada tidak berbuat aniaya ."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَاٰتُوا النِّسَآءَ صَدُقٰتِهِنَّ نِحْلَةً ؕ فَاِنْ طِبْنَ لَكُمْ عَنْ شَیْءٍ مِّنْهُ نَفْسًا فَكُلُوْهُ هَنِیْٓـًٔا مَّرِیْٓـًٔا ۟",
+        "terjemahan": "Berikanlah maskawin (mahar) kepada wanita (yang kamu nikahi) sebagai pemberian dengan penuh kerelaan. Kemudian jika mereka menyerahkan kepada kamu sebagian dari maskawin itu dengan senang hati, maka makanlah (ambillah) pemberian itu (sebagai makanan) yang sedap lagi baik akibatnya."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَلَا تُؤْتُوا السُّفَهَآءَ اَمْوَالَكُمُ الَّتِیْ جَعَلَ اللّٰهُ لَكُمْ قِیٰمًا وَّارْزُقُوْهُمْ فِیْهَا وَاكْسُوْهُمْ وَقُوْلُوْا لَهُمْ قَوْلًا مَّعْرُوْفًا ۟",
+        "terjemahan": "Dan janganlah kamu serahkan kepada orang-orang yang belum sempurna akalnya , harta (mereka yang ada dalam kekuasaanmu) yang dijadikan Allah sebagai pokok kehidupan. Berilah mereka belanja dan pakaian (dari hasil harta itu) dan ucapkanlah kepada mereka kata-kata yang baik."
+      }
+    ]
+  },
+  "5": {
+    "nama": "Al-Ma'idah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یٰۤاَیُّهَا الَّذِیْنَ اٰمَنُوْۤا اَوْفُوْا بِالْعُقُوْدِ ؕ۬ اُحِلَّتْ لَكُمْ بَهِیْمَةُ الْاَنْعَامِ اِلَّا مَا یُتْلٰی عَلَیْكُمْ غَیْرَ مُحِلِّی الصَّیْدِ وَاَنْتُمْ حُرُمٌ ؕ اِنَّ اللّٰهَ یَحْكُمُ مَا یُرِیْدُ ۟",
+        "terjemahan": "Hai orang-orang yang beriman, penuhilah akad-akad itu . Dihalalkan bagimu binatang ternak, kecuali yang akan dibacakan kepadamu, (Yang demikian itu) dengan tidak menghalalkan berburu ketika kamu sedang mengerjakan haji. Sesungguhnya Allah menetapkan hukum-hukum menurut yang dikehendaki-Nya."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "یٰۤاَیُّهَا الَّذِیْنَ اٰمَنُوْا لَا تُحِلُّوْا شَعَآىِٕرَ اللّٰهِ وَلَا الشَّهْرَ الْحَرَامَ وَلَا الْهَدْیَ وَلَا الْقَلَآىِٕدَ وَلَاۤ ݾ‌‌مِّیْنَ الْبَیْتَ الْحَرَامَ یَبْتَغُوْنَ فَضْلًا مِّنْ رَّبِّهِمْ وَرِضْوَانًا ؕ وَاِذَا حَلَلْتُمْ فَاصْطَادُوْا ؕ وَلَا یَجْرِمَنَّكُمْ شَنَاٰنُ قَوْمٍ اَنْ صَدُّوْكُمْ عَنِ الْمَسْجِدِ الْحَرَامِ اَنْ تَعْتَدُوْا ۘ وَتَعَاوَنُوْا عَلَی الْبِرِّ وَالتَّقْوٰی ۪ وَلَا تَعَاوَنُوْا عَلَی الْاِثْمِ وَالْعُدْوَانِ ۪ وَاتَّقُوا اللّٰهَ ؕ اِنَّ اللّٰهَ شَدِیْدُ الْعِقَابِ ۟",
+        "terjemahan": "Hai orang-orang yang beriman, janganlah kamu melanggar syiar-syiar Allah , dan jangan melanggar kehormatan bulan-bulan haram , jangan (mengganggu) binatang-binatang hadya , dan binatang-binatang qalā`id , dan jangan (pula) mengganggu orang-orang yang mengunjungi Baitullah, sedang mereka mencari karunia dan keridaan dari Tuhan-nya dan apabila kamu telah menyelesaikan ibadah haji, maka bolehlah berburu. Dan janganlah sekali-kali kebencian(mu) kepada sesuatu kaum karena mereka menghalang-halangi kamu dari Masjidil Haram, mendorongmu berbuat aniaya (kepada mereka). Dan tolong-menolonglah kamu dalam (mengerjakan) kebajikan dan takwa, dan jangan tolong-menolong dalam berbuat dosa dan pelanggaran. Dan bertakwalah kamu kepada Allah, sesungguhnya Allah amat berat siksa-Nya."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "حُرِّمَتْ عَلَیْكُمُ الْمَیْتَةُ وَالدَّمُ وَلَحْمُ الْخِنْزِیْرِ وَمَاۤ اُهِلَّ لِغَیْرِ اللّٰهِ بِهٖ وَالْمُنْخَنِقَةُ وَالْمَوْقُوْذَةُ وَالْمُتَرَدِّیَةُ وَالنَّطِیْحَةُ وَمَاۤ اَكَلَ السَّبُعُ اِلَّا مَا ذَكَّیْتُمْ ۫ وَمَا ذُبِحَ عَلَی النُّصُبِ وَاَنْ تَسْتَقْسِمُوْا بِالْاَزْلَامِ ؕ ذٰلِكُمْ فِسْقٌ ؕ اَلْیَوْمَ یَىِٕسَ الَّذِیْنَ كَفَرُوْا مِنْ دِیْنِكُمْ فَلَا تَخْشَوْهُمْ وَاخْشَوْنِ ؕ اَلْیَوْمَ اَكْمَلْتُ لَكُمْ دِیْنَكُمْ وَاَتْمَمْتُ عَلَیْكُمْ نِعْمَتِیْ وَرَضِیْتُ لَكُمُ الْاِسْلَامَ دِیْنًا ؕ فَمَنِ اضْطُرَّ فِیْ مَخْمَصَةٍ غَیْرَ مُتَجَانِفٍ لِّاِثْمٍ ۙ فَاِنَّ اللّٰهَ غَفُوْرٌ رَّحِیْمٌ ۟",
+        "terjemahan": "Diharamkan bagimu (memakan) bangkai, darah , daging babi, (daging hewan) yang disembelih atas nama selain Allah, yang tercekik, yang dipukul, yang jatuh, yang ditanduk, dan diterkam binatang buas, kecuali yang sempat kamu menyembelihnya , dan (diharamkan bagimu) yang disembelih untuk berhala. Dan (diharamkan juga) mengundi nasib dengan anak panah , (mengundi nasib dengan anak panah itu) adalah kefasikan. Pada hari ini , orang-orang kafir telah putus asa untuk (mengalahkan) agamamu, sebab itu janganlah kamu takut kepada mereka dan takutlah kepada-Ku. Pada hari ini, telah Ku-sempurnakan untuk kamu agamamu, dan telah Kucukupkan kepadamu nikmat-Ku, dan telah Kuridai Islam itu jadi agama bagimu. Maka barang siapa terpaksa karena kelaparan tanpa sengaja berbuat dosa, sesungguhnya Allah Maha Pengampun lagi Maha Penyayang."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "یَسْـَٔلُوْنَكَ مَاذَاۤ اُحِلَّ لَهُمْ ؕ قُلْ اُحِلَّ لَكُمُ الطَّیِّبٰتُ ۙ وَمَا عَلَّمْتُمْ مِّنَ الْجَوَارِحِ مُكَلِّبِیْنَ تُعَلِّمُوْنَهُنَّ مِمَّا عَلَّمَكُمُ اللّٰهُ ؗ فَكُلُوْا مِمَّاۤ اَمْسَكْنَ عَلَیْكُمْ وَاذْكُرُوا اسْمَ اللّٰهِ عَلَیْهِ ۪ وَاتَّقُوا اللّٰهَ ؕ اِنَّ اللّٰهَ سَرِیْعُ الْحِسَابِ ۟",
+        "terjemahan": "Mereka menanyakan kepadamu, \"Apakah yang dihalalkan bagi mereka?\" Katakanlah, \"Dihalalkan bagimu yang baik-baik dan (buruan yang ditangkap) oleh binatang buas yang telah kamu ajar dengan melatih nya untuk berburu; kamu mengajarnya menurut apa yang telah diajarkan Allah kepadamu . Maka makanlah dari apa yang ditangkapnya untukmu , dan sebutlah nama Allah atas binatang buas itu (waktu melepaskannya) . Dan bertakwalah kepada Allah, sesungguhnya Allah amat cepat hisab-Nya\"."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اَلْیَوْمَ اُحِلَّ لَكُمُ الطَّیِّبٰتُ ؕ وَطَعَامُ الَّذِیْنَ اُوْتُوا الْكِتٰبَ حِلٌّ لَّكُمْ ۪ وَطَعَامُكُمْ حِلٌّ لَّهُمْ ؗ وَالْمُحْصَنٰتُ مِنَ الْمُؤْمِنٰتِ وَالْمُحْصَنٰتُ مِنَ الَّذِیْنَ اُوْتُوا الْكِتٰبَ مِنْ قَبْلِكُمْ اِذَاۤ اٰتَیْتُمُوْهُنَّ اُجُوْرَهُنَّ مُحْصِنِیْنَ غَیْرَ مُسٰفِحِیْنَ وَلَا مُتَّخِذِیْۤ اَخْدَانٍ ؕ وَمَنْ یَّكْفُرْ بِالْاِیْمَانِ فَقَدْ حَبِطَ عَمَلُهٗ ؗ وَهُوَ فِی الْاٰخِرَةِ مِنَ الْخٰسِرِیْنَ ۟۠",
+        "terjemahan": "Pada hari ini dihalalkan bagimu yang baik-baik. Makanan (sembelihan) orang-orang yang diberi Alkitab itu halal bagimu, dan makanan kamu halal (pula) bagi mereka. (Dan dihalalkan mangawini) wanita-wanita yang menjaga kehormatan di antara wanita-wanita yang beriman dan wanita-wanita yang menjaga kehormatan di antara orang-orang yang diberi Alkitab sebelum kamu, bila kamu telah membayar maskawin mereka dengan maksud menikahinya, tidak dengan maksud berzina dan tidak (pula) menjadikannya gundik-gundik. Barang siapa yang kafir sesudah beriman (tidak menerima hukum-hukum Islam), maka hapuslah amalannya dan ia di hari kiamat termasuk orang-orang merugi."
+      }
+    ]
+  },
+  "6": {
+    "nama": "Al-An'am",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اَلْحَمْدُ لِلّٰهِ الَّذِیْ خَلَقَ السَّمٰوٰتِ وَالْاَرْضَ وَجَعَلَ الظُّلُمٰتِ وَالنُّوْرَ ؕ۬ ثُمَّ الَّذِیْنَ كَفَرُوْا بِرَبِّهِمْ یَعْدِلُوْنَ ۟",
+        "terjemahan": "Segala puji bagi Allah Yang telah menciptakan langit dan bumi, dan mengadakan gelap dan terang, namun orang-orang yang kafir mempersekutukan (sesuatu) dengan Tuhan mereka."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "هُوَ الَّذِیْ خَلَقَكُمْ مِّنْ طِیْنٍ ثُمَّ قَضٰۤی اَجَلًا ؕ وَاَجَلٌ مُّسَمًّی عِنْدَهٗ ثُمَّ اَنْتُمْ تَمْتَرُوْنَ ۟",
+        "terjemahan": "Dia-lah Yang menciptakan kamu dari tanah, sesudah itu ditentukan-Nya ajal (kematianmu), dan ada lagi suatu ajal yang ditentukan (untuk berbangkit) yang ada pada sisi-Nya (yang Dia sendirilah mengetahuinya), kemudian kamu masih ragu-ragu (tentang berbangkit itu)."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَهُوَ اللّٰهُ فِی السَّمٰوٰتِ وَفِی الْاَرْضِ ؕ یَعْلَمُ سِرَّكُمْ وَجَهْرَكُمْ وَیَعْلَمُ مَا تَكْسِبُوْنَ ۟",
+        "terjemahan": "Dan Dia-lah Allah (yang disembah), baik di langit maupun di bumi; Dia mengetahui apa yang kamu rahasiakan dan apa yang kamu lahirkan dan mengetahui (pula) apa yang kamu usahakan."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَمَا تَاْتِیْهِمْ مِّنْ اٰیَةٍ مِّنْ اٰیٰتِ رَبِّهِمْ اِلَّا كَانُوْا عَنْهَا مُعْرِضِیْنَ ۟",
+        "terjemahan": "Dan tak ada sesuatu ayat pun dari ayat-ayat Tuhan sampai kepada mereka, melainkan mereka selalu berpaling darinya (mendustakannya)."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَقَدْ كَذَّبُوْا بِالْحَقِّ لَمَّا جَآءَهُمْ ؕ فَسَوْفَ یَاْتِیْهِمْ اَنْۢبٰٓؤُا مَا كَانُوْا بِهٖ یَسْتَهْزِءُوْنَ ۟",
+        "terjemahan": "Sesungguhnya mereka telah mendustakan yang haq (Al-Qur`ān) tatkala sampai kepada mereka, maka kelak akan sampai kepada mereka (kenyataan dari) berita-berita yang selalu mereka perolok-olokkan."
+      }
+    ]
+  },
+  "7": {
+    "nama": "Al-A'raf",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "الٓمّٓصٓ ۟ۚ",
+        "terjemahan": "Alif Lām Mīm Ṣād ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "كِتٰبٌ اُنْزِلَ اِلَیْكَ فَلَا یَكُنْ فِیْ صَدْرِكَ حَرَجٌ مِّنْهُ لِتُنْذِرَ بِهٖ وَذِكْرٰی لِلْمُؤْمِنِیْنَ ۟",
+        "terjemahan": "Ini adalah sebuah kitab yang diturunkan kepadamu, maka janganlah ada kesempitan di dalam dadamu karenanya, supaya kamu memberi peringatan dengan kitab itu (kepada orang kafir), dan menjadi pelajaran bagi orang-orang yang beriman."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِتَّبِعُوْا مَاۤ اُنْزِلَ اِلَیْكُمْ مِّنْ رَّبِّكُمْ وَلَا تَتَّبِعُوْا مِنْ دُوْنِهٖۤ اَوْلِیَآءَ ؕ قَلِیْلًا مَّا تَذَكَّرُوْنَ ۟",
+        "terjemahan": "Ikutilah apa yang diturunkan kepadamu dari Tuhan-mu dan janganlah kamu mengikuti pemimpin-pemimpin selain-Nya . Amat sedikitlah kamu mengambil pelajaran (darinya)."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَكَمْ مِّنْ قَرْیَةٍ اَهْلَكْنٰهَا فَجَآءَهَا بَاْسُنَا بَیَاتًا اَوْ هُمْ قَآىِٕلُوْنَ ۟",
+        "terjemahan": "Betapa banyaknya negeri yang telah Kami binasakan, maka datanglah siksaan Kami (menimpa penduduk)nya di waktu mereka berada di malam hari, atau di waktu mereka beristirahat di tengah hari."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَمَا كَانَ دَعْوٰىهُمْ اِذْ جَآءَهُمْ بَاْسُنَاۤ اِلَّاۤ اَنْ قَالُوْۤا اِنَّا كُنَّا ظٰلِمِیْنَ ۟",
+        "terjemahan": "Maka tidak adalah keluhan mereka di waktu datang kepada mereka siksaan Kami, kecuali mengatakan, \"Sesungguhnya kami adalah orang-orang yang zalim\"."
+      }
+    ]
+  },
+  "8": {
+    "nama": "Al-Anfal",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یَسْـَٔلُوْنَكَ عَنِ الْاَنْفَالِ ؕ قُلِ الْاَنْفَالُ لِلّٰهِ وَالرَّسُوْلِ ۚ فَاتَّقُوا اللّٰهَ وَاَصْلِحُوْا ذَاتَ بَیْنِكُمْ ۪ وَاَطِیْعُوا اللّٰهَ وَرَسُوْلَهٗۤ اِنْ كُنْتُمْ مُّؤْمِنِیْنَ ۟",
+        "terjemahan": "Mereka menanyakan kepadamu tentang (pembagian) harta rampasan perang. Katakanlah, \"Harta rampasan perang itu kepunyaan Allah dan rasul , sebab itu bertakwalah kepada Allah dan perbaikilah perhubungan di antara sesamamu, dan taatlah kepada Allah dan rasul-Nya jika kamu adalah orang-orang yang beriman\"."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اِنَّمَا الْمُؤْمِنُوْنَ الَّذِیْنَ اِذَا ذُكِرَ اللّٰهُ وَجِلَتْ قُلُوْبُهُمْ وَاِذَا تُلِیَتْ عَلَیْهِمْ اٰیٰتُهٗ زَادَتْهُمْ اِیْمَانًا وَّعَلٰی رَبِّهِمْ یَتَوَكَّلُوْنَ ۟ۚۖ",
+        "terjemahan": "Sesungguhnya orang-orang yang beriman itu adalah mereka yang apabila disebut nama Allah gemetarlah hati mereka, dan apabila dibacakan ayat-ayat-Nya, bertambahlah iman mereka (karenanya), dan hanya kepada Tuhan-lah mereka bertawakal,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "الَّذِیْنَ یُقِیْمُوْنَ الصَّلٰوةَ وَمِمَّا رَزَقْنٰهُمْ یُنْفِقُوْنَ ۟ؕ",
+        "terjemahan": "(yaitu) orang-orang yang mendirikan salat dan yang menafkahkan sebagian dari rezeki yang Kami berikan kepada mereka."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اُولٰٓىِٕكَ هُمُ الْمُؤْمِنُوْنَ حَقًّا ؕ لَهُمْ دَرَجٰتٌ عِنْدَ رَبِّهِمْ وَمَغْفِرَةٌ وَّرِزْقٌ كَرِیْمٌ ۟ۚ",
+        "terjemahan": "Itulah orang-orang yang beriman dengan sebenar-benarnya. Mereka akan memperoleh beberapa derajat ketinggian di sisi Tuhan-nya dan ampunan serta rezeki (nikmat) yang mulia."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "كَمَاۤ اَخْرَجَكَ رَبُّكَ مِنْ بَیْتِكَ بِالْحَقِّ ۪ وَاِنَّ فَرِیْقًا مِّنَ الْمُؤْمِنِیْنَ لَكٰرِهُوْنَ ۟ۙ",
+        "terjemahan": "Sebagaimana Tuhan-mu menyuruhmu pergi dan rumahmu dengan kebenaran , padahal sesungguhnya sebagian dari orang-orang yang beriman itu tidak menyukainya,"
+      }
+    ]
+  },
+  "9": {
+    "nama": "At-Tawbah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "بَرَآءَةٌ مِّنَ اللّٰهِ وَرَسُوْلِهٖۤ اِلَی الَّذِیْنَ عٰهَدْتُّمْ مِّنَ الْمُشْرِكِیْنَ ۟ؕ",
+        "terjemahan": "(Inilah pernyataan) pemutusan hubungan dari Allah dan rasul-Nya (yang dihadapkan) kepada orang-orang musyrikin yang kamu (kaum muslimin) telah mengadakan perjanjian (dengan mereka)."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "فَسِیْحُوْا فِی الْاَرْضِ اَرْبَعَةَ اَشْهُرٍ وَّاعْلَمُوْۤا اَنَّكُمْ غَیْرُ مُعْجِزِی اللّٰهِ ۙ وَاَنَّ اللّٰهَ مُخْزِی الْكٰفِرِیْنَ ۟",
+        "terjemahan": "Maka berjalanlah kamu (kaum musyrikin) di muka bumi selama empat bulan, dan ketahuilah bahwa sesungguhnya kamu tidak akan dapat melemahkan Allah, dan sesungguhnya Allah menghinakan orang-orang kafir ."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَاَذَانٌ مِّنَ اللّٰهِ وَرَسُوْلِهٖۤ اِلَی النَّاسِ یَوْمَ الْحَجِّ الْاَكْبَرِ اَنَّ اللّٰهَ بَرِیْٓءٌ مِّنَ الْمُشْرِكِیْنَ ۙ۬ وَرَسُوْلُهٗ ؕ فَاِنْ تُبْتُمْ فَهُوَ خَیْرٌ لَّكُمْ ۚ وَاِنْ تَوَلَّیْتُمْ فَاعْلَمُوْۤا اَنَّكُمْ غَیْرُ مُعْجِزِی اللّٰهِ ؕ وَبَشِّرِ الَّذِیْنَ كَفَرُوْا بِعَذَابٍ اَلِیْمٍ ۟ۙ",
+        "terjemahan": "Dan (inilah) suatu permakluman dari Allah dan rasul-Nya kepada umat manusia pada hari haji akbar , bahwa sesungguhnya Allah dan rasul-Nya berlepas diri dari orang-orang musyrikin. Kemudian jika kamu (kaum musyrikin) bertobat, maka bertobat itu lebih baik bagimu; dan jika kamu berpaling, maka ketahuilah bahwa sesungguhnya kamu tidak dapat melemahkan Allah. Dan beritakanlah kepada orang-orang kafir (bahwa mereka akan mendapat) siksa yang pedih."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِلَّا الَّذِیْنَ عٰهَدْتُّمْ مِّنَ الْمُشْرِكِیْنَ ثُمَّ لَمْ یَنْقُصُوْكُمْ شَیْـًٔا وَّلَمْ یُظَاهِرُوْا عَلَیْكُمْ اَحَدًا فَاَتِمُّوْۤا اِلَیْهِمْ عَهْدَهُمْ اِلٰی مُدَّتِهِمْ ؕ اِنَّ اللّٰهَ یُحِبُّ الْمُتَّقِیْنَ ۟",
+        "terjemahan": "kecuali orang-orang musyrikin yang kamu telah mengadakan perjanjian (dengan mereka) dan mereka tidak mengurangi sesuatu pun (dari isi perjanjian)mu dan tidak (pula) mereka membantu seseorang yang memusuhi kamu, maka terhadap mereka itu penuhilah janjinya sampai batas waktunya . Sesungguhnya Allah menyukai orang-orang yang bertakwa."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَاِذَا انْسَلَخَ الْاَشْهُرُ الْحُرُمُ فَاقْتُلُوا الْمُشْرِكِیْنَ حَیْثُ وَجَدْتُّمُوْهُمْ وَخُذُوْهُمْ وَاحْصُرُوْهُمْ وَاقْعُدُوْا لَهُمْ كُلَّ مَرْصَدٍ ۚ فَاِنْ تَابُوْا وَاَقَامُوا الصَّلٰوةَ وَاٰتَوُا الزَّكٰوةَ فَخَلُّوْا سَبِیْلَهُمْ ؕ اِنَّ اللّٰهَ غَفُوْرٌ رَّحِیْمٌ ۟",
+        "terjemahan": "Apabila sudah habis bulan-bulan Haram itu , maka bunuhlah orang-orang musyrikin itu di mana saja kamu jumpai mereka, dan tangkaplah mereka. Kepunglah mereka dan intailah ditempat pengintaian. Jika mereka bertobat, dan mendirikan salat, dan menunaikan zakat, maka berilah kebebasan kepada mereka untuk berjalan . Sesungguhnya Allah Maha Pengampun lagi maha Penyayang."
+      }
+    ]
+  },
+  "10": {
+    "nama": "Yunus",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "الٓرٰ ۫ تِلْكَ اٰیٰتُ الْكِتٰبِ الْحَكِیْمِ ۟",
+        "terjemahan": "Alif Lām Rā . Inilah ayat-ayat Al-Qur`ān yang mengandung hikmah."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اَكَانَ لِلنَّاسِ عَجَبًا اَنْ اَوْحَیْنَاۤ اِلٰی رَجُلٍ مِّنْهُمْ اَنْ اَنْذِرِ النَّاسَ وَبَشِّرِ الَّذِیْنَ اٰمَنُوْۤا اَنَّ لَهُمْ قَدَمَ صِدْقٍ عِنْدَ رَبِّهِمْ ؔؕ قَالَ الْكٰفِرُوْنَ اِنَّ هٰذَا لَسٰحِرٌ مُّبِیْنٌ ۟",
+        "terjemahan": "Patutkah menjadi keheranan bagi manusia bahwa Kami mewahyukan kepada seorang laki-laki di antara mereka, \"Berilah peringatan kepada manusia dan gembirakanlah orang-orang beriman bahwa mereka mempunyai kedudukan yang tinggi di sisi Tuhan mereka\". Orang-orang kafir berkata, \"Sesungguhnya orang ini (Muhammad) benar-benar adalah tukang sihir yang nyata\"."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِنَّ رَبَّكُمُ اللّٰهُ الَّذِیْ خَلَقَ السَّمٰوٰتِ وَالْاَرْضَ فِیْ سِتَّةِ اَیَّامٍ ثُمَّ اسْتَوٰی عَلَی الْعَرْشِ یُدَبِّرُ الْاَمْرَ ؕ مَا مِنْ شَفِیْعٍ اِلَّا مِنْ بَعْدِ اِذْنِهٖ ؕ ذٰلِكُمُ اللّٰهُ رَبُّكُمْ فَاعْبُدُوْهُ ؕ اَفَلَا تَذَكَّرُوْنَ ۟",
+        "terjemahan": "Sesungguhnya Tuhan kamu ialah Allah Yang menciptakan langit dan bumi dalam enam hari, kemudian Dia bersemayam di atas Arasy untuk mengatur segala urusan. Tiada seorang pun yang akan memberi syafaat, kecuali sesudah ada izin-Nya. (Zat) yang demikian itulah Allah, Tuhan kamu, maka sembahlah Dia. Maka apakah kamu tidak mengambil pelajaran?"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِلَیْهِ مَرْجِعُكُمْ جَمِیْعًا ؕ وَعْدَ اللّٰهِ حَقًّا ؕ اِنَّهٗ یَبْدَؤُا الْخَلْقَ ثُمَّ یُعِیْدُهٗ لِیَجْزِیَ الَّذِیْنَ اٰمَنُوْا وَعَمِلُوا الصّٰلِحٰتِ بِالْقِسْطِ ؕ وَالَّذِیْنَ كَفَرُوْا لَهُمْ شَرَابٌ مِّنْ حَمِیْمٍ وَّعَذَابٌ اَلِیْمٌ بِمَا كَانُوْا یَكْفُرُوْنَ ۟",
+        "terjemahan": "Hanya kepada-Nya-lah kamu semuanya akan kembali; sebagai janji yang benar daripada Allah, sesungguhnya Allah menciptakan makhluk pada permulaannya, kemudian mengulanginya (menghidupkannya) kembali (sesudah berbangkit) agar Dia memberi pembalasan kepada orang-orang yang beriman dan yang mengerjakan amal saleh dengan adil. Dan untuk orang-orang kafir disediakan minuman air yang panas dan azab yang pedih disebabkan kekafiran mereka."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "هُوَ الَّذِیْ جَعَلَ الشَّمْسَ ضِیَآءً وَّالْقَمَرَ نُوْرًا وَّقَدَّرَهٗ مَنَازِلَ لِتَعْلَمُوْا عَدَدَ السِّنِیْنَ وَالْحِسَابَ ؕ مَا خَلَقَ اللّٰهُ ذٰلِكَ اِلَّا بِالْحَقِّ ۚ یُفَصِّلُ الْاٰیٰتِ لِقَوْمٍ یَّعْلَمُوْنَ ۟",
+        "terjemahan": "Dia-lah yang menjadikan matahari bersinar dan bulan bercahaya dan ditetapkan-Nya manzilah-manzilah (tempat-tempat) bagi perjalanan bulan itu supaya kamu mengetahui bilangan tahun dan perhitungan (waktu). Allah tidak menciptakan yang demikian itu, melainkan dengan hak . Dia menjelaskan tanda-tanda (kebesaran-Nya) kepada orang-orang yang mengetahui."
+      }
+    ]
+  },
+  "11": {
+    "nama": "Hud",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "الٓرٰ ۫ كِتٰبٌ اُحْكِمَتْ اٰیٰتُهٗ ثُمَّ فُصِّلَتْ مِنْ لَّدُنْ حَكِیْمٍ خَبِیْرٍ ۟ۙ",
+        "terjemahan": "Alif Lām Rā, (inilah) suatu kitab yang ayat-ayatnya disusun dengan rapi serta dijelaskan secara terperinci yang diturunkan dari sisi (Allah) Yang Maha Bijaksana lagi Maha Tahu,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اَلَّا تَعْبُدُوْۤا اِلَّا اللّٰهَ ؕ اِنَّنِیْ لَكُمْ مِّنْهُ نَذِیْرٌ وَّبَشِیْرٌ ۟ۙ",
+        "terjemahan": "agar kamu tidak menyembah selain Allah. Sesungguhnya aku (Muhammad) adalah pemberi peringatan dan pembawa kabar gembira kepadamu dari-Nya,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَّاَنِ اسْتَغْفِرُوْا رَبَّكُمْ ثُمَّ تُوْبُوْۤا اِلَیْهِ یُمَتِّعْكُمْ مَّتَاعًا حَسَنًا اِلٰۤی اَجَلٍ مُّسَمًّی وَّیُؤْتِ كُلَّ ذِیْ فَضْلٍ فَضْلَهٗ ؕ وَاِنْ تَوَلَّوْا فَاِنِّیْۤ اَخَافُ عَلَیْكُمْ عَذَابَ یَوْمٍ كَبِیْرٍ ۟",
+        "terjemahan": "dan hendaklah kamu meminta ampun kepada Tuhan-mu dan bertobat kepada-Nya. (Jika kamu mengerjakan yang demikian), niscaya Dia akan memberi kenikmatan yang baik (terus-menerus) kepadamu sampai kepada waktu yang telah ditentukan dan Dia akan memberi kepada tiap-tiap orang yang mempunyai keutamaan (balasan) keutamaannya. Jika kamu berpaling, maka sesungguhnya aku takut kamu akan ditimpa siksa hari kiamat."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِلَی اللّٰهِ مَرْجِعُكُمْ ۚ وَهُوَ عَلٰی كُلِّ شَیْءٍ قَدِیْرٌ ۟",
+        "terjemahan": "Kepada Allah-lah kembalimu dan Dia Maha Kuasa atas segala sesuatu."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اَلَاۤ اِنَّهُمْ یَثْنُوْنَ صُدُوْرَهُمْ لِیَسْتَخْفُوْا مِنْهُ ؕ اَلَا حِیْنَ یَسْتَغْشُوْنَ ثِیَابَهُمْ ۙ یَعْلَمُ مَا یُسِرُّوْنَ وَمَا یُعْلِنُوْنَ ۚ اِنَّهٗ عَلِیْمٌۢ بِذَاتِ الصُّدُوْرِ ۟",
+        "terjemahan": "Ingatlah, sesungguhnya (orang munafik itu) memalingkan dada mereka untuk menyembunyikan diri darinya (Muhammad) . Ingatlah, pada waktu mereka menyelimuti dirinya dengan kain, Allah mengetahui apa yang mereka sembunyikan dan apa yang mereka lahirkan; sesungguhnya Allah Maha Mengetahui segala isi hati."
+      }
+    ]
+  },
+  "12": {
+    "nama": "Yusuf",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "الٓرٰ ۫ تِلْكَ اٰیٰتُ الْكِتٰبِ الْمُبِیْنِ ۟۫",
+        "terjemahan": "Alif Lām Rā . Ini adalah ayat-ayat Kitab (Al-Qur`ān) yang nyata (dari Allah)."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اِنَّاۤ اَنْزَلْنٰهُ قُرْءٰنًا عَرَبِیًّا لَّعَلَّكُمْ تَعْقِلُوْنَ ۟",
+        "terjemahan": "Sesungguhnya Kami menurunkannya berupa Al-Qur`ān dengan berbahasa Arab agar kamu memahaminya."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "نَحْنُ نَقُصُّ عَلَیْكَ اَحْسَنَ الْقَصَصِ بِمَاۤ اَوْحَیْنَاۤ اِلَیْكَ هٰذَا الْقُرْاٰنَ ۖۗ وَاِنْ كُنْتَ مِنْ قَبْلِهٖ لَمِنَ الْغٰفِلِیْنَ ۟",
+        "terjemahan": "Kami menceritakan kepadamu kisah yang paling baik dengan mewahyukan Al-Qur`ān ini kepadamu dan sesungguhnya kamu sebelum (Kami mewahyukan)nya adalah termasuk orang-orang yang belum mengetahui."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِذْ قَالَ یُوْسُفُ لِاَبِیْهِ یٰۤاَبَتِ اِنِّیْ رَاَیْتُ اَحَدَ عَشَرَ كَوْكَبًا وَّالشَّمْسَ وَالْقَمَرَ رَاَیْتُهُمْ لِیْ سٰجِدِیْنَ ۟",
+        "terjemahan": "(Ingatlah), ketika Yūsuf berkata kepada ayahnya, \"Wahai ayahku , sesungguhnya aku bermimpi melihat sebelas bintang, matahari dan bulan; kulihat semuanya sujud kepadaku\"."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "قَالَ یٰبُنَیَّ لَا تَقْصُصْ رُءْیَاكَ عَلٰۤی اِخْوَتِكَ فَیَكِیْدُوْا لَكَ كَیْدًا ؕ اِنَّ الشَّیْطٰنَ لِلْاِنْسَانِ عَدُوٌّ مُّبِیْنٌ ۟",
+        "terjemahan": "Ayahnya berkata, \"Hai anakku, janganlah kamu ceritakan mimpimu itu kepada saudara-saudaramu, maka mereka membuat makar (untuk membinasakan)mu. Sesungguhnya setan itu adalah musuh yang nyata bagi manusia\"."
+      }
+    ]
+  },
+  "13": {
+    "nama": "Ar-Ra'd",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "الٓمّٓرٰ ۫ تِلْكَ اٰیٰتُ الْكِتٰبِ ؕ وَالَّذِیْۤ اُنْزِلَ اِلَیْكَ مِنْ رَّبِّكَ الْحَقُّ وَلٰكِنَّ اَكْثَرَ النَّاسِ لَا یُؤْمِنُوْنَ ۟",
+        "terjemahan": "Alif Lām Mīm Rā . Ini adalah ayat-ayat Alkitab (Al-Qur`ān). Dan Kitab yang diturunkan kepadamu daripada Tuhan-mu itu adalah benar, akan tetapi kebanyakan manusia tidak beriman (kepadanya)."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اَللّٰهُ الَّذِیْ رَفَعَ السَّمٰوٰتِ بِغَیْرِ عَمَدٍ تَرَوْنَهَا ثُمَّ اسْتَوٰی عَلَی الْعَرْشِ وَسَخَّرَ الشَّمْسَ وَالْقَمَرَ ؕ كُلٌّ یَّجْرِیْ لِاَجَلٍ مُّسَمًّی ؕ یُدَبِّرُ الْاَمْرَ یُفَصِّلُ الْاٰیٰتِ لَعَلَّكُمْ بِلِقَآءِ رَبِّكُمْ تُوْقِنُوْنَ ۟",
+        "terjemahan": "Allah-lah Yang meninggikan langit tanpa tiang (sebagaimana) yang kamu lihat, kemudian Dia bersemayam di atas arasy dan menundukkan matahari dan bulan. Masing-masing beredar hingga waktu yang ditentukan. Allah mengatur urusan (makhluk-Nya), menjelaskan tanda-tanda (kebesaran-Nya) supaya kamu meyakini pertemuan(mu) dengan Tuhan-mu."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَهُوَ الَّذِیْ مَدَّ الْاَرْضَ وَجَعَلَ فِیْهَا رَوَاسِیَ وَاَنْهٰرًا ؕ وَمِنْ كُلِّ الثَّمَرٰتِ جَعَلَ فِیْهَا زَوْجَیْنِ اثْنَیْنِ یُغْشِی الَّیْلَ النَّهَارَ ؕ اِنَّ فِیْ ذٰلِكَ لَاٰیٰتٍ لِّقَوْمٍ یَّتَفَكَّرُوْنَ ۟",
+        "terjemahan": "Dan Dia-lah Tuhan yang membentangkan bumi dan menjadikan gunung-gunung dan sungai-sungai padanya. Dan menjadikan padanya semua buah-buahan berpasang-pasangan , Allah menutupkan malam kepada siang. Sesungguhnya pada yang demikian itu terdapat tanda-tanda (kebesaran Allah) bagi kaum yang memikirkan."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَفِی الْاَرْضِ قِطَعٌ مُّتَجٰوِرٰتٌ وَّجَنّٰتٌ مِّنْ اَعْنَابٍ وَّزَرْعٌ وَّنَخِیْلٌ صِنْوَانٌ وَّغَیْرُ صِنْوَانٍ یُّسْقٰی بِمَآءٍ وَّاحِدٍ ۫ وَنُفَضِّلُ بَعْضَهَا عَلٰی بَعْضٍ فِی الْاُكُلِ ؕ اِنَّ فِیْ ذٰلِكَ لَاٰیٰتٍ لِّقَوْمٍ یَّعْقِلُوْنَ ۟",
+        "terjemahan": "Dan di bumi ini terdapat bagian-bagian yang berdampingan dan kebun-kebun anggur, tanaman-tanaman dan pohon kurma yang bercabang, dan yang tidak bercabang disirami dengan air yang sama. Kami melebihkan sebagian tanam-tanaman itu atas sebagian yang lain tentang rasanya. Sesungguhnya pada yang demikian itu terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَاِنْ تَعْجَبْ فَعَجَبٌ قَوْلُهُمْ ءَاِذَا كُنَّا تُرٰبًا ءَاِنَّا لَفِیْ خَلْقٍ جَدِیْدٍ ؕ۬ اُولٰٓىِٕكَ الَّذِیْنَ كَفَرُوْا بِرَبِّهِمْ ۚ وَاُولٰٓىِٕكَ الْاَغْلٰلُ فِیْۤ اَعْنَاقِهِمْ ۚ وَاُولٰٓىِٕكَ اَصْحٰبُ النَّارِ ۚ هُمْ فِیْهَا خٰلِدُوْنَ ۟",
+        "terjemahan": "Dan jika (ada sesuatu) yang kamu herankan, maka yang patut mengherankan adalah ucapan mereka, \"Apabila kami telah menjadi tanah, apakah kami sesungguhnya akan (dikembalikan) menjadi makhluk yang baru?\" Orang-orang itulah yang kafir kepada Tuhan-nya dan orang-orang itulah (yang dilekatkan) belenggu di lehernya; mereka itulah penghuni neraka; mereka kekal di dalamnya."
+      }
+    ]
+  },
+  "14": {
+    "nama": "Ibrahim",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "الٓرٰ ۫ كِتٰبٌ اَنْزَلْنٰهُ اِلَیْكَ لِتُخْرِجَ النَّاسَ مِنَ الظُّلُمٰتِ اِلَی النُّوْرِ ۙ۬ بِاِذْنِ رَبِّهِمْ اِلٰی صِرَاطِ الْعَزِیْزِ الْحَمِیْدِ ۟ۙ",
+        "terjemahan": "Alif Lām Rā. (Ini adalah) Kitab yang Kami turunkan kepadamu supaya kamu mengeluarkan manusia dari gelap gulita kepada cahaya terang benderang dengan izin Tuhan mereka, (yaitu) menuju jalan Tuhan Yang Maha Perkasa lagi Maha Terpuji."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اللّٰهِ الَّذِیْ لَهٗ مَا فِی السَّمٰوٰتِ وَمَا فِی الْاَرْضِ ؕ وَوَیْلٌ لِّلْكٰفِرِیْنَ مِنْ عَذَابٍ شَدِیْدِ ۟ۙ",
+        "terjemahan": "Allah yang memiliki segala apa yang di langit dan di bumi. Dan celakalah bagi orang-orang kafir karena siksaan yang sangat pedih."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "لَّذِیْنَ یَسْتَحِبُّوْنَ الْحَیٰوةَ الدُّنْیَا عَلَی الْاٰخِرَةِ وَیَصُدُّوْنَ عَنْ سَبِیْلِ اللّٰهِ وَیَبْغُوْنَهَا عِوَجًا ؕ اُولٰٓىِٕكَ فِیْ ضَلٰلٍ بَعِیْدٍ ۟",
+        "terjemahan": "(yaitu) orang-orang yang lebih menyukai kehidupan dunia daripada kehidupan akhirat dan menghalang-halangi (manusia) dari jalan Allah dan menginginkan agar jalan Allah itu bengkok. Mereka itu berada dalam kesesatan yang jauh."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَمَاۤ اَرْسَلْنَا مِنْ رَّسُوْلٍ اِلَّا بِلِسَانِ قَوْمِهٖ لِیُبَیِّنَ لَهُمْ ؕ فَیُضِلُّ اللّٰهُ مَنْ یَّشَآءُ وَیَهْدِیْ مَنْ یَّشَآءُ ؕ وَهُوَ الْعَزِیْزُ الْحَكِیْمُ ۟",
+        "terjemahan": "Kami tidak mengutus seorang rasul pun, melainkan dengan bahasa kaumnya supaya ia dapat memberi penjelasan dengan terang kepada mereka. Maka Allah menyesatkan siapa yang Dia kehendaki dan memberi petunjuk kepada siapa yang Dia kehendaki. Dan Dia-lah Tuhan Yang Maha Kuasa lagi Maha Bijaksana."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَلَقَدْ اَرْسَلْنَا مُوْسٰی بِاٰیٰتِنَاۤ اَنْ اَخْرِجْ قَوْمَكَ مِنَ الظُّلُمٰتِ اِلَی النُّوْرِ ۙ۬ وَذَكِّرْهُمْ بِاَیّٰىمِ اللّٰهِ ؕ اِنَّ فِیْ ذٰلِكَ لَاٰیٰتٍ لِّكُلِّ صَبَّارٍ شَكُوْرٍ ۟",
+        "terjemahan": "Dan sesungguhnya Kami telah mengutus Musa dengan membawa ayat-ayat Kami (dan Kami perintahkan kepadanya), \"Keluarkanlah kaummu dari gelap gulita kepada cahaya terang benderang dan ingatkanlah mereka kepada hari-hari Allah\" . Sesunguhnya pada yang demikian itu terdapat tanda-tanda (kekuasaan Allah) bagi setiap orang penyabar dan banyak bersyukur."
+      }
+    ]
+  },
+  "15": {
+    "nama": "Al-Hijr",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "الٓرٰ ۫ تِلْكَ اٰیٰتُ الْكِتٰبِ وَقُرْاٰنٍ مُّبِیْنٍ ۟",
+        "terjemahan": "Alif Lām Rā. (surah) ini adalah (sebagian dari) ayat-ayat Alkitab (yang sempurna), yaitu (ayat-ayat) Al-Qur`ān yang memberi penjelasan."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "رُبَمَا یَوَدُّ الَّذِیْنَ كَفَرُوْا لَوْ كَانُوْا مُسْلِمِیْنَ ۟",
+        "terjemahan": "Orang-orang yang kafir itu seringkali (nanti di akhirat) menginginkan kiranya mereka dahulu (di dunia) menjadi orang-orang muslim."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "ذَرْهُمْ یَاْكُلُوْا وَیَتَمَتَّعُوْا وَیُلْهِهِمُ الْاَمَلُ فَسَوْفَ یَعْلَمُوْنَ ۟",
+        "terjemahan": "Biarkanlah mereka (di dunia ini) makan dan bersenang-senang dan dilalaikan oleh angan-angan (kosong), maka kelak mereka akan mengetahui (akibat perbuatan mereka)."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَمَاۤ اَهْلَكْنَا مِنْ قَرْیَةٍ اِلَّا وَلَهَا كِتَابٌ مَّعْلُوْمٌ ۟",
+        "terjemahan": "Dan Kami tiada membinasakan sesuatu negeri pun, melainkan ada baginya ketentuan masa yang telah ditetapkan."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "مَا تَسْبِقُ مِنْ اُمَّةٍ اَجَلَهَا وَمَا یَسْتَاْخِرُوْنَ ۟",
+        "terjemahan": "Tidak ada suatu umat pun yang dapat mendahului ajalnya dan tidak (pula) dapat mengundurkan(nya)."
+      }
+    ]
+  },
+  "16": {
+    "nama": "An-Nahl",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اَتٰۤی اَمْرُ اللّٰهِ فَلَا تَسْتَعْجِلُوْهُ ؕ سُبْحٰنَهٗ وَتَعٰلٰی عَمَّا یُشْرِكُوْنَ ۟",
+        "terjemahan": "Telah pasti datangnya ketetapan Allah maka janganlah kamu meminta agar disegerakan (datang)nya. Maha Suci Allah dan Maha Tinggi dari apa yang mereka persekutukan."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "یُنَزِّلُ الْمَلٰٓىِٕكَةَ بِالرُّوْحِ مِنْ اَمْرِهٖ عَلٰی مَنْ یَّشَآءُ مِنْ عِبَادِهٖۤ اَنْ اَنْذِرُوْۤا اَنَّهٗ لَاۤ اِلٰهَ اِلَّاۤ اَنَا فَاتَّقُوْنِ ۟",
+        "terjemahan": "Dia menurunkan para malaikat dengan (membawa) wahyu dengan perintah-Nya kepada siapa yang Dia kehendaki di antara hamba-hamba-Nya, yaitu, \"Peringatkanlah olehmu sekalian, bahwasanya tidak ada Tuhan (yang hak) melainkan Aku, maka hendaklah kamu bertakwa kepada-Ku\"."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "خَلَقَ السَّمٰوٰتِ وَالْاَرْضَ بِالْحَقِّ ؕ تَعٰلٰی عَمَّا یُشْرِكُوْنَ ۟",
+        "terjemahan": "Dia menciptakan langit dan bumi dengan hak . Maha Tinggi Allah daripada apa yang mereka persekutukan."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "خَلَقَ الْاِنْسَانَ مِنْ نُّطْفَةٍ فَاِذَا هُوَ خَصِیْمٌ مُّبِیْنٌ ۟",
+        "terjemahan": "Dia telah menciptakan manusia dari mani, tiba-tiba ia menjadi pembantah yang nyata."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَالْاَنْعَامَ خَلَقَهَا ۚ لَكُمْ فِیْهَا دِفْءٌ وَّمَنَافِعُ وَمِنْهَا تَاْكُلُوْنَ ۪۟",
+        "terjemahan": "Dan Dia telah menciptakan binatang ternak untuk kamu; padanya ada (bulu) yang menghangatkan dan berbagai-bagai manfaat dan sebagiannya kamu makan."
+      }
+    ]
+  },
+  "17": {
+    "nama": "Al-Isra",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "سُبْحٰنَ الَّذِیْۤ اَسْرٰی بِعَبْدِهٖ لَیْلًا مِّنَ الْمَسْجِدِ الْحَرَامِ اِلَی الْمَسْجِدِ الْاَقْصَا الَّذِیْ بٰرَكْنَا حَوْلَهٗ لِنُرِیَهٗ مِنْ اٰیٰتِنَا ؕ اِنَّهٗ هُوَ السَّمِیْعُ الْبَصِیْرُ ۟",
+        "terjemahan": "Maha Suci Allah yang telah memperjalankan hamba-Nya pada suatu malam dari Masjidil Haram ke Al Masjidil Aqṣā yang telah Kami berkahi sekelilingnya agar Kami perlihatkan kepadanya sebagian dari tanda-tanda (kebesaran) Kami. Sesungguhnya Dia adalah Maha Mendengar lagi Maha Mengetahui."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَاٰتَیْنَا مُوْسَی الْكِتٰبَ وَجَعَلْنٰهُ هُدًی لِّبَنِیْۤ اِسْرَآءِیْلَ اَلَّا تَتَّخِذُوْا مِنْ دُوْنِیْ وَكِیْلًا ۟ؕ",
+        "terjemahan": "Dan Kami berikan kepada Musa kitab (Taurat) dan Kami jadikan kitab Taurat itu petunjuk bagi Bani Isrā`īl (dengan firman), \"Janganlah kamu mengambil penolong selain Aku,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "ذُرِّیَّةَ مَنْ حَمَلْنَا مَعَ نُوْحٍ ؕ اِنَّهٗ كَانَ عَبْدًا شَكُوْرًا ۟",
+        "terjemahan": "(yaitu) anak cucu dari orang-orang yang Kami bawa bersama-sama Nūḥ. Sesungguhnya dia adalah hamba (Allah) yang banyak bersyukur."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَقَضَیْنَاۤ اِلٰی بَنِیْۤ اِسْرَآءِیْلَ فِی الْكِتٰبِ لَتُفْسِدُنَّ فِی الْاَرْضِ مَرَّتَیْنِ وَلَتَعْلُنَّ عُلُوًّا كَبِیْرًا ۟",
+        "terjemahan": "Dan telah Kami tetapkan terhadap Bani Isrā`īl dalam Kitab itu, \"Sesungguhnya kamu akan membuat kerusakan di muka bumi ini dua kali dan pasti kamu akan menyombongkan diri dengan kesombongan yang besar.\""
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَاِذَا جَآءَ وَعْدُ اُوْلٰىهُمَا بَعَثْنَا عَلَیْكُمْ عِبَادًا لَّنَاۤ اُولِیْ بَاْسٍ شَدِیْدٍ فَجَاسُوْا خِلٰلَ الدِّیَارِ وَكَانَ وَعْدًا مَّفْعُوْلًا ۟",
+        "terjemahan": "Maka apabila datang saat hukuman bagi (kejahatan) pertama dari kedua (kejahatan) itu, Kami datangkan kepadamu hamba-hamba Kami yang mempunyai kekuatan yang besar, lalu mereka merajalela di kampung-kampung dan itulah ketetapan yang pasti terlaksana."
+      }
+    ]
+  },
+  "18": {
+    "nama": "Al-Kahf",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اَلْحَمْدُ لِلّٰهِ الَّذِیْۤ اَنْزَلَ عَلٰی عَبْدِهِ الْكِتٰبَ وَلَمْ یَجْعَلْ لَّهٗ عِوَجًا ۟ؕٚ",
+        "terjemahan": "Segala puji bagi Allah yang telah menurunkan kepada hamba-Nya Alkitab (Al-Qur`ān), dan Dia tidak mengadakan kebengkokan di dalamnya;"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "قَیِّمًا لِّیُنْذِرَ بَاْسًا شَدِیْدًا مِّنْ لَّدُنْهُ وَیُبَشِّرَ الْمُؤْمِنِیْنَ الَّذِیْنَ یَعْمَلُوْنَ الصّٰلِحٰتِ اَنَّ لَهُمْ اَجْرًا حَسَنًا ۟ۙ",
+        "terjemahan": "sebagai bimbingan yang lurus untuk memperingatkan siksaan yang sangat pedih dari sisi Allah dan memberi berita gembira kepada orang-orang yang beriman, yang mengerjakan amal saleh, bahwa mereka akan mendapat pembalasan yang baik,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "مَّاكِثِیْنَ فِیْهِ اَبَدًا ۟ۙ",
+        "terjemahan": "mereka kekal di dalamnya untuk selama-lamanya."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَّیُنْذِرَ الَّذِیْنَ قَالُوا اتَّخَذَ اللّٰهُ وَلَدًا ۟ۗ",
+        "terjemahan": "Dan untuk memperingatkan kepada orang-orang yang berkata, \"Allah mengambil seorang anak\"."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "مَا لَهُمْ بِهٖ مِنْ عِلْمٍ وَّلَا لِاٰبَآىِٕهِمْ ؕ كَبُرَتْ كَلِمَةً تَخْرُجُ مِنْ اَفْوَاهِهِمْ ؕ اِنْ یَّقُوْلُوْنَ اِلَّا كَذِبًا ۟",
+        "terjemahan": "Mereka sekali-kali tidak mempunyai pengetahuan tentang hal itu, begitu pula nenek moyang mereka. Alangkah jeleknya kata-kata yang keluar dari mulut mereka; mereka tidak mengatakan (sesuatu) kecuali dusta."
+      }
+    ]
+  },
+  "19": {
+    "nama": "Maryam",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "كٓهٰیٰعٓصٓ ۟۫ۚ",
+        "terjemahan": "Kāf Hā Yā ʻAin Ṣād"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "ذِكْرُ رَحْمَتِ رَبِّكَ عَبْدَهٗ زَكَرِیَّا ۟ۖۚ",
+        "terjemahan": "(Yang dibacakan ini adalah) penjelasan tentang rahmat Tuhan kamu kepada hamba-Nya, Zakariyyā,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِذْ نَادٰی رَبَّهٗ نِدَآءً خَفِیًّا ۟",
+        "terjemahan": "yaitu tatkala ia berdoa kepada Tuhan-nya dengan suara yang lembut."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "قَالَ رَبِّ اِنِّیْ وَهَنَ الْعَظْمُ مِنِّیْ وَاشْتَعَلَ الرَّاْسُ شَیْبًا وَّلَمْ اَكُنْ بِدُعَآىِٕكَ رَبِّ شَقِیًّا ۟",
+        "terjemahan": "Ia berkata, \"Ya Tuhan-ku, sesungguhnya tulangku telah lemah dan kepalaku telah ditumbuhi uban dan aku belum pernah kecewa dalam berdoa kepada Engkau, ya Tuhan-ku."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَاِنِّیْ خِفْتُ الْمَوَالِیَ مِنْ وَّرَآءِیْ وَكَانَتِ امْرَاَتِیْ عَاقِرًا فَهَبْ لِیْ مِنْ لَّدُنْكَ وَلِیًّا ۟ۙ",
+        "terjemahan": "Dan sesungguhnya aku khawatir terhadap mawālīku sepeninggalku, sedang istriku adalah seorang yang mandul, maka anugerahilah aku dari sisi Engkau seorang putra,"
+      }
+    ]
+  },
+  "20": {
+    "nama": "Ta-Ha",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "طٰهٰ ۟ۚ",
+        "terjemahan": "Ṭāha"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "مَاۤ اَنْزَلْنَا عَلَیْكَ الْقُرْاٰنَ لِتَشْقٰۤی ۟ۙ",
+        "terjemahan": "Kami tidak menurunkan Al-Qur`ān ini kepadamu agar kamu menjadi susah;"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِلَّا تَذْكِرَةً لِّمَنْ یَّخْشٰی ۟ۙ",
+        "terjemahan": "tetapi sebagai peringatan bagi orang yang takut (kepada Allah),"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "تَنْزِیْلًا مِّمَّنْ خَلَقَ الْاَرْضَ وَالسَّمٰوٰتِ الْعُلٰی ۟ؕ",
+        "terjemahan": "yaitu diturunkan dari Allah yang menciptakan bumi dan langit yang tinggi."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اَلرَّحْمٰنُ عَلَی الْعَرْشِ اسْتَوٰی ۟",
+        "terjemahan": "(Yaitu) Tuhan Yang Maha Pemurah, Yang bersemayam di atas arasy ."
+      }
+    ]
+  },
+  "21": {
+    "nama": "Al-Anbiya",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِقْتَرَبَ لِلنَّاسِ حِسَابُهُمْ وَهُمْ فِیْ غَفْلَةٍ مُّعْرِضُوْنَ ۟ۚ",
+        "terjemahan": "Telah dekat kepada manusia hari menghisab segala amalan mereka, sedang mereka berada dalam kelalaian lagi berpaling (darinya)."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "مَا یَاْتِیْهِمْ مِّنْ ذِكْرٍ مِّنْ رَّبِّهِمْ مُّحْدَثٍ اِلَّا اسْتَمَعُوْهُ وَهُمْ یَلْعَبُوْنَ ۟ۙ",
+        "terjemahan": "Tidak datang kepada mereka suatu ayat Al-Qur`ān pun yang baru (di-turunkan) dari Tuhan mereka, melainkan mereka mendengarnya, sedang mereka bermain-main,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "لَاهِیَةً قُلُوْبُهُمْ ؕ وَاَسَرُّوا النَّجْوَی ۖۗ الَّذِیْنَ ظَلَمُوْا ۖۗ هَلْ هٰذَاۤ اِلَّا بَشَرٌ مِّثْلُكُمْ ۚ اَفَتَاْتُوْنَ السِّحْرَ وَاَنْتُمْ تُبْصِرُوْنَ ۟",
+        "terjemahan": "(lagi) hati mereka dalam keadaan lalai. Dan mereka yang zalim itu merahasiakan pembicaraan mereka, \"Orang ini tidak lain hanyalah seorang manusia (jua) seperti kamu, maka apakah kamu menerima sihir itu padahal kamu menyaksikannya?\""
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "قٰلَ رَبِّیْ یَعْلَمُ الْقَوْلَ فِی السَّمَآءِ وَالْاَرْضِ ؗ وَهُوَ السَّمِیْعُ الْعَلِیْمُ ۟",
+        "terjemahan": "Berkatalah Muhammad (kepada mereka), \"Tuhan-ku mengetahui semua perkataan di langit dan di bumi dan Dia-lah Yang Maha Mendengar lagi Maha Mengetahui\"."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "بَلْ قَالُوْۤا اَضْغَاثُ اَحْلَامٍ بَلِ افْتَرٰىهُ بَلْ هُوَ شَاعِرٌ ۖۚ فَلْیَاْتِنَا بِاٰیَةٍ كَمَاۤ اُرْسِلَ الْاَوَّلُوْنَ ۟",
+        "terjemahan": "Bahkan, mereka berkata (pula), \"(Al-Qur`ān itu adalah) mimpi-mimpi yang kalut, malah diada-adakannya, bahkan dia sendiri seorang penyair, maka hendaknya ia mendatangkan kepada kita suatu mukjizat sebagaimana rasul-rasul yang telah lalu diutus\"."
+      }
+    ]
+  },
+  "22": {
+    "nama": "Al-Hajj",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یٰۤاَیُّهَا النَّاسُ اتَّقُوْا رَبَّكُمْ ۚ اِنَّ زَلْزَلَةَ السَّاعَةِ شَیْءٌ عَظِیْمٌ ۟",
+        "terjemahan": "Hai manusia, bertakwalah kepada Tuhanmu; sesungguhnya kegoncangan hari kiamat itu adalah suatu kejadian yang sangat besar (dahsyat)."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "یَوْمَ تَرَوْنَهَا تَذْهَلُ كُلُّ مُرْضِعَةٍ عَمَّاۤ اَرْضَعَتْ وَتَضَعُ كُلُّ ذَاتِ حَمْلٍ حَمْلَهَا وَتَرَی النَّاسَ سُكٰرٰی وَمَا هُمْ بِسُكٰرٰی وَلٰكِنَّ عَذَابَ اللّٰهِ شَدِیْدٌ ۟",
+        "terjemahan": "(Ingatlah) pada hari (ketika) kamu melihat kegoncangan itu, lalailah semua wanita yang menyusui anaknya dari anak yang disusuinya, dan gugurlah kandungan segala wanita yang hamil, dan kamu lihat manusia dalam keadaan mabuk, padahal sebenarnya mereka tidak mabuk, akan tetapi azab Allah itu sangat kerasnya."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَمِنَ النَّاسِ مَنْ یُّجَادِلُ فِی اللّٰهِ بِغَیْرِ عِلْمٍ وَّیَتَّبِعُ كُلَّ شَیْطٰنٍ مَّرِیْدٍ ۟ۙ",
+        "terjemahan": "Di antara manusia ada orang yang membantah tentang Allah tanpa ilmu pengetahuan dan mengikuti setiap setan yang sangat jahat,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "كُتِبَ عَلَیْهِ اَنَّهٗ مَنْ تَوَلَّاهُ فَاَنَّهٗ یُضِلُّهٗ وَیَهْدِیْهِ اِلٰی عَذَابِ السَّعِیْرِ ۟",
+        "terjemahan": "yang telah ditetapkan terhadap setan itu bahwa barang siapa yang berkawan dengan dia, tentu dia akan menyesatkannya dan membawanya ke azab neraka."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "یٰۤاَیُّهَا النَّاسُ اِنْ كُنْتُمْ فِیْ رَیْبٍ مِّنَ الْبَعْثِ فَاِنَّا خَلَقْنٰكُمْ مِّنْ تُرَابٍ ثُمَّ مِنْ نُّطْفَةٍ ثُمَّ مِنْ عَلَقَةٍ ثُمَّ مِنْ مُّضْغَةٍ مُّخَلَّقَةٍ وَّغَیْرِ مُخَلَّقَةٍ لِّنُبَیِّنَ لَكُمْ ؕ وَنُقِرُّ فِی الْاَرْحَامِ مَا نَشَآءُ اِلٰۤی اَجَلٍ مُّسَمًّی ثُمَّ نُخْرِجُكُمْ طِفْلًا ثُمَّ لِتَبْلُغُوْۤا اَشُدَّكُمْ ۚ وَمِنْكُمْ مَّنْ یُّتَوَفّٰی وَمِنْكُمْ مَّنْ یُّرَدُّ اِلٰۤی اَرْذَلِ الْعُمُرِ لِكَیْلَا یَعْلَمَ مِنْ بَعْدِ عِلْمٍ شَیْـًٔا ؕ وَتَرَی الْاَرْضَ هَامِدَةً فَاِذَاۤ اَنْزَلْنَا عَلَیْهَا الْمَآءَ اهْتَزَّتْ وَرَبَتْ وَاَنْۢبَتَتْ مِنْ كُلِّ زَوْجٍ بَهِیْجٍ ۟",
+        "terjemahan": "Hai manusia, jika kamu dalam keraguan tentang kebangkitan (dari kubur), maka (ketahuilah) sesungguhnya Kami telah menjadikan kamu dari tanah, kemudian dari setetes mani, kemudian dari segumpal darah, kemudian dari segumpal daging yang sempurna kejadiannya dan yang tidak sempurna agar Kami jelaskan kepada kamu dan Kami tetapkan dalam rahim, apa yang Kami kehendaki sampai waktu yang sudah ditentukan, kemudian Kami keluarkan kamu sebagai bayi, kemudian (dengan berangsur-angsur) kamu sampailah kepada kedewasaan, dan di antara kamu ada yang diwafatkan, dan (ada pula) di antara kamu yang dipanjangkan umurnya sampai pikun supaya dia tidak mengetahui lagi sesuatu pun yang dahulunya telah diketahuinya. Dan kamu lihat bumi ini kering, kemudian apabila telah Kami turunkan air di atasnya, hiduplah bumi itu dan suburlah dan menumbuhkan berbagai macam tumbuh-tumbuhan yang indah."
+      }
+    ]
+  },
+  "23": {
+    "nama": "Al-Mu'minun",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "قَدْ اَفْلَحَ الْمُؤْمِنُوْنَ ۟ۙ",
+        "terjemahan": "Sesungguhnya beruntunglah orang-orang yang beriman,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "الَّذِیْنَ هُمْ فِیْ صَلَاتِهِمْ خٰشِعُوْنَ ۟ۙ",
+        "terjemahan": "(yaitu) orang-orang yang khusyuk dalam salatnya,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَالَّذِیْنَ هُمْ عَنِ اللَّغْوِ مُعْرِضُوْنَ ۟ۙ",
+        "terjemahan": "dan orang-orang yang menjauhkan diri dari (perbuatan dan perkataan) yang tiada berguna,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَالَّذِیْنَ هُمْ لِلزَّكٰوةِ فٰعِلُوْنَ ۟ۙ",
+        "terjemahan": "dan orang-orang yang menunaikan zakat,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَالَّذِیْنَ هُمْ لِفُرُوْجِهِمْ حٰفِظُوْنَ ۟ۙ",
+        "terjemahan": "dan orang-orang yang menjaga kemaluannya,"
+      }
+    ]
+  },
+  "24": {
+    "nama": "An-Nur",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "سُوْرَةٌ اَنْزَلْنٰهَا وَفَرَضْنٰهَا وَاَنْزَلْنَا فِیْهَاۤ اٰیٰتٍ بَیِّنٰتٍ لَّعَلَّكُمْ تَذَكَّرُوْنَ ۟",
+        "terjemahan": "(Ini adalah) satu surah yang Kami turunkan dan Kami wajibkan (menjalankan hukum-hukum yang ada di dalam)nya dan Kami turunkan di dalamnya ayat-ayat yang jelas agar kamu selalu mengingatinya."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اَلزَّانِیَةُ وَالزَّانِیْ فَاجْلِدُوْا كُلَّ وَاحِدٍ مِّنْهُمَا مِائَةَ جَلْدَةٍ ۪ وَّلَا تَاْخُذْكُمْ بِهِمَا رَاْفَةٌ فِیْ دِیْنِ اللّٰهِ اِنْ كُنْتُمْ تُؤْمِنُوْنَ بِاللّٰهِ وَالْیَوْمِ الْاٰخِرِ ۚ وَلْیَشْهَدْ عَذَابَهُمَا طَآىِٕفَةٌ مِّنَ الْمُؤْمِنِیْنَ ۟",
+        "terjemahan": "Perempuan yang berzina dan laki-laki yang berzina, maka deralah tiap-tiap seorang dari keduanya seratus kali dera, dan janganlah belas kasihan kepada keduanya mencegah kamu untuk (menjalankan) agama Allah, jika kamu beriman kepada Allah dan hari akhirat dan hendaklah (pelaksanaan) hukuman mereka disaksikan oleh sekumpulan orang-orang yang beriman."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اَلزَّانِیْ لَا یَنْكِحُ اِلَّا زَانِیَةً اَوْ مُشْرِكَةً ؗ وَّالزَّانِیَةُ لَا یَنْكِحُهَاۤ اِلَّا زَانٍ اَوْ مُشْرِكٌ ۚ وَحُرِّمَ ذٰلِكَ عَلَی الْمُؤْمِنِیْنَ ۟",
+        "terjemahan": "Laki-laki yang berzina tidak mengawini, melainkan perempuan yang berzina atau perempuan yang musyrik dan perempuan yang berzina tidak dikawini, melainkan oleh laki-laki yang berzina atau laki-laki musyrik dan yang demikian itu diharamkan atas orang-orang yang mukmin ."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَالَّذِیْنَ یَرْمُوْنَ الْمُحْصَنٰتِ ثُمَّ لَمْ یَاْتُوْا بِاَرْبَعَةِ شُهَدَآءَ فَاجْلِدُوْهُمْ ثَمٰنِیْنَ جَلْدَةً وَّلَا تَقْبَلُوْا لَهُمْ شَهَادَةً اَبَدًا ۚ وَاُولٰٓىِٕكَ هُمُ الْفٰسِقُوْنَ ۟ۙ",
+        "terjemahan": "Dan orang-orang yang menuduh wanita-wanita yang baik-baik (berbuat zina) dan mereka tidak mendatangkan empat orang saksi, maka deralah mereka (yang menuduh itu) delapan puluh kali dera dan janganlah kamu terima kesaksian mereka buat selama-lamanya. Dan mereka itulah orang-orang yang fasik."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اِلَّا الَّذِیْنَ تَابُوْا مِنْ بَعْدِ ذٰلِكَ وَاَصْلَحُوْا ۚ فَاِنَّ اللّٰهَ غَفُوْرٌ رَّحِیْمٌ ۟",
+        "terjemahan": "kecuali orang-orang yang bertobat sesudah itu dan memperbaiki (dirinya), maka sesungguhnya Allah Maha Pengampun lagi Maha Penyayang."
+      }
+    ]
+  },
+  "25": {
+    "nama": "Al-Furqan",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "تَبٰرَكَ الَّذِیْ نَزَّلَ الْفُرْقَانَ عَلٰی عَبْدِهٖ لِیَكُوْنَ لِلْعٰلَمِیْنَ نَذِیْرَا ۟ۙ",
+        "terjemahan": "Maha suci Allah yang telah menurunkan Al-Furqān (Al-Qur`ān) kepada hamba-Nya agar dia menjadi pemberi peringatan kepada seluruh alam ,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "لَّذِیْ لَهٗ مُلْكُ السَّمٰوٰتِ وَالْاَرْضِ وَلَمْ یَتَّخِذْ وَلَدًا وَّلَمْ یَكُنْ لَّهٗ شَرِیْكٌ فِی الْمُلْكِ وَخَلَقَ كُلَّ شَیْءٍ فَقَدَّرَهٗ تَقْدِیْرًا ۟",
+        "terjemahan": "yang kepunyaan-Nya-lah kerajaan langit dan bumi, dan Dia tidak mempunyai anak, dan tidak ada sekutu bagi-Nya dalam kekuasaan(Nya), dan dia telah menciptakan segala sesuatu, dan Dia menetapkan ukuran-ukurannya dengan serapi-rapinya ."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَاتَّخَذُوْا مِنْ دُوْنِهٖۤ اٰلِهَةً لَّا یَخْلُقُوْنَ شَیْـًٔا وَّهُمْ یُخْلَقُوْنَ وَلَا یَمْلِكُوْنَ لِاَنْفُسِهِمْ ضَرًّا وَّلَا نَفْعًا وَّلَا یَمْلِكُوْنَ مَوْتًا وَّلَا حَیٰوةً وَّلَا نُشُوْرًا ۟",
+        "terjemahan": "Kemudian, mereka mengambil tuhan-tuhan selain daripada-Nya (untuk disembah) yang tuhan-tuhan itu tidak menciptakan apa pun, bahkan mereka sendiri diciptakan dan tidak kuasa untuk (menolak) sesuatu kemudaratan dari dirinya dan tidak (pula untuk mengambil) suatu kemanfaatan pun dan (juga) tidak kuasa mematikan, menghidupkan, dan tidak (pula) membangkitkan."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَقَالَ الَّذِیْنَ كَفَرُوْۤا اِنْ هٰذَاۤ اِلَّاۤ اِفْكُ فْتَرٰىهُ وَاَعَانَهٗ عَلَیْهِ قَوْمٌ اٰخَرُوْنَ ۛۚ فَقَدْ جَآءُوْ ظُلْمًا وَّزُوْرًا ۟ۚۛ",
+        "terjemahan": "Dan orang-orang kafir berkata, \"Al-Qur`ān ini tidak lain hanyalah kebohongan yang diada-adakan oleh Muhammad dan dia dibantu oleh kaum yang lain \"; maka sesungguhnya mereka telah berbuat suatu kezaliman dan dusta yang besar."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَقَالُوْۤا اَسَاطِیْرُ الْاَوَّلِیْنَ اكْتَتَبَهَا فَهِیَ تُمْلٰی عَلَیْهِ بُكْرَةً وَّاَصِیْلًا ۟",
+        "terjemahan": "Dan mereka berkata, \"Dongengan-dongengan orang-orang dahulu, dimintanya supaya dituliskan, maka dibacakanlah dongengan itu kepadanya setiap pagi dan petang.\""
+      }
+    ]
+  },
+  "26": {
+    "nama": "Ash-Shu'ara",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "طٰسٓمّٓ ۟",
+        "terjemahan": "Ṭā Sīm mīm"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "تِلْكَ اٰیٰتُ الْكِتٰبِ الْمُبِیْنِ ۟",
+        "terjemahan": "Inilah ayat-ayat Al-Qur`ān yang menerangkan."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "لَعَلَّكَ بَاخِعٌ نَّفْسَكَ اَلَّا یَكُوْنُوْا مُؤْمِنِیْنَ ۟",
+        "terjemahan": "Boleh jadi kamu (Muhammad) akan membinasakan dirimu karena mereka tidak beriman."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِنْ نَّشَاْ نُنَزِّلْ عَلَیْهِمْ مِّنَ السَّمَآءِ اٰیَةً فَظَلَّتْ اَعْنَاقُهُمْ لَهَا خٰضِعِیْنَ ۟",
+        "terjemahan": "Jika kami kehendaki, niscaya Kami menurunkan kepada mereka mukjizat dari langit, maka senantiasa kuduk-kuduk mereka tunduk kepadanya."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَمَا یَاْتِیْهِمْ مِّنْ ذِكْرٍ مِّنَ الرَّحْمٰنِ مُحْدَثٍ اِلَّا كَانُوْا عَنْهُ مُعْرِضِیْنَ ۟",
+        "terjemahan": "Dan sekali-kali tidak datang kepada mereka suatu peringatan baru dari Tuhan Yang Maha Pemurah, melainkan mereka selalu berpaling darinya."
+      }
+    ]
+  },
+  "27": {
+    "nama": "An-Naml",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "طٰسٓ ۫ تِلْكَ اٰیٰتُ الْقُرْاٰنِ وَكِتَابٍ مُّبِیْنٍ ۟ۙ",
+        "terjemahan": "Ṭā Sīn (surah) ini adalah ayat-ayat Al-Qur`ān dan (ayat-ayat) kitab yang menjelaskan,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "هُدًی وَّبُشْرٰی لِلْمُؤْمِنِیْنَ ۟ۙ",
+        "terjemahan": "untuk menjadi petunjuk dan berita gembira untuk orang-orang yang beriman,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "الَّذِیْنَ یُقِیْمُوْنَ الصَّلٰوةَ وَیُؤْتُوْنَ الزَّكٰوةَ وَهُمْ بِالْاٰخِرَةِ هُمْ یُوْقِنُوْنَ ۟",
+        "terjemahan": "(yaitu) orang-orang yang mendirikan sembahyang dan menunaikan zakat dan mereka yakin akan adanya negeri akhirat."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِنَّ الَّذِیْنَ لَا یُؤْمِنُوْنَ بِالْاٰخِرَةِ زَیَّنَّا لَهُمْ اَعْمَالَهُمْ فَهُمْ یَعْمَهُوْنَ ۟ؕ",
+        "terjemahan": "Sesungguhnya orang-orang yang tidak beriman kepada negeri akhirat, Kami jadikan mereka memandang indah perbuatan-perbuatan mereka, maka mereka bergelimang (dalam kesesatan)."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اُولٰٓىِٕكَ الَّذِیْنَ لَهُمْ سُوْٓءُ الْعَذَابِ وَهُمْ فِی الْاٰخِرَةِ هُمُ الْاَخْسَرُوْنَ ۟",
+        "terjemahan": "Mereka itulah orang-orang yang mendapat (di dunia) azab yang buruk dan mereka di akhirat adalah orang-orang yang paling merugi."
+      }
+    ]
+  },
+  "28": {
+    "nama": "Al-Qasas",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "طٰسٓمّٓ ۟",
+        "terjemahan": "Ṭā Sīn Mīm"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "تِلْكَ اٰیٰتُ الْكِتٰبِ الْمُبِیْنِ ۟",
+        "terjemahan": "Ini adalah ayat-ayat Kitab (Al-Qur`ān) yang nyata (dari Allah)."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "نَتْلُوْا عَلَیْكَ مِنْ نَّبَاِ مُوْسٰی وَفِرْعَوْنَ بِالْحَقِّ لِقَوْمٍ یُّؤْمِنُوْنَ ۟",
+        "terjemahan": "Kami membacakan kepadamu sebagian dari kisah Musa dan Firʻawn dengan benar untuk orang-orang yang beriman."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِنَّ فِرْعَوْنَ عَلَا فِی الْاَرْضِ وَجَعَلَ اَهْلَهَا شِیَعًا یَّسْتَضْعِفُ طَآىِٕفَةً مِّنْهُمْ یُذَبِّحُ اَبْنَآءَهُمْ وَیَسْتَحْیٖ نِسَآءَهُمْ ؕ اِنَّهٗ كَانَ مِنَ الْمُفْسِدِیْنَ ۟",
+        "terjemahan": "Sesungguhnya Firʻawn telah berbuat sewenang-wenang di muka bumi dan menjadikan penduduknya berpecah belah dengan menindas segolongan dari mereka, menyembelih anak laki-laki mereka, dan membiarkan hidup anak-anak perempuan mereka . Sesungguhnya Firʻawn termasuk orang-orang yang berbuat kerusakan."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَنُرِیْدُ اَنْ نَّمُنَّ عَلَی الَّذِیْنَ اسْتُضْعِفُوْا فِی الْاَرْضِ وَنَجْعَلَهُمْ اَىِٕمَّةً وَّنَجْعَلَهُمُ الْوٰرِثِیْنَ ۟ۙ",
+        "terjemahan": "Dan Kami hendak memberi karunia kepada orang-orang yang tertindas di bumi (Mesir) itu dan hendak menjadikan mereka pemimpin dan menjadikan mereka orang-orang yang mewarisi (bumi) ,"
+      }
+    ]
+  },
+  "29": {
+    "nama": "Al-'Ankabut",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "الٓمّٓ ۟ۚ",
+        "terjemahan": "Alif Lām Mīm"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اَحَسِبَ النَّاسُ اَنْ یُّتْرَكُوْۤا اَنْ یَّقُوْلُوْۤا اٰمَنَّا وَهُمْ لَا یُفْتَنُوْنَ ۟",
+        "terjemahan": "Apakah manusia itu mengira bahwa mereka dibiarkan (saja) mengatakan, \"Kami telah beriman\", sedang mereka tidak diuji lagi?"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَلَقَدْ فَتَنَّا الَّذِیْنَ مِنْ قَبْلِهِمْ فَلَیَعْلَمَنَّ اللّٰهُ الَّذِیْنَ صَدَقُوْا وَلَیَعْلَمَنَّ الْكٰذِبِیْنَ ۟",
+        "terjemahan": "Dan sesungguhnya kami telah menguji orang-orang yang sebelum mereka, maka sesungguhnya Allah mengetahui orang-orang yang benar dan sesungguhnya Dia mengetahui orang-orang yang dusta."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اَمْ حَسِبَ الَّذِیْنَ یَعْمَلُوْنَ السَّیِّاٰتِ اَنْ یَّسْبِقُوْنَا ؕ سَآءَ مَا یَحْكُمُوْنَ ۟",
+        "terjemahan": "Ataukah orang-orang yang mengerjakan kejahatan itu mengira bahwa mereka akan luput (dari azab) Kami? Amatlah buruk apa yang mereka tetapkan itu."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "مَنْ كَانَ یَرْجُوْا لِقَآءَ اللّٰهِ فَاِنَّ اَجَلَ اللّٰهِ لَاٰتٍ ؕ وَهُوَ السَّمِیْعُ الْعَلِیْمُ ۟",
+        "terjemahan": "Barang siapa yang mengharap pertemuan dengan Allah, maka sesungguhnya waktu (yang dijanjikan) Allah itu pasti datang. Dan Dia-lah Yang Maha mendengar lagi Maha Mengetahui."
+      }
+    ]
+  },
+  "30": {
+    "nama": "Ar-Rum",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "الٓمّٓ ۟ۚ",
+        "terjemahan": "Alif Lām Mīm"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "غُلِبَتِ الرُّوْمُ ۟ۙ",
+        "terjemahan": "Telah dikalahkan bangsa Romawi ,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "فِیْۤ اَدْنَی الْاَرْضِ وَهُمْ مِّنْ بَعْدِ غَلَبِهِمْ سَیَغْلِبُوْنَ ۟ۙ",
+        "terjemahan": "di negeri yang terdekat dan mereka sesudah dikalahkan itu akan menang ,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "فِیْ بِضْعِ سِنِیْنَ ؕ۬ لِلّٰهِ الْاَمْرُ مِنْ قَبْلُ وَمِنْ بَعْدُ ؕ وَیَوْمَىِٕذٍ یَّفْرَحُ الْمُؤْمِنُوْنَ ۟ۙ",
+        "terjemahan": "dalam beberapa tahun lagi . Bagi Allah-lah urusan sebelum dan sesudah (mereka menang). Dan pada hari (kemenangan bangsa Romawi) itu, bergembiralah orang-orang yang beriman,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "بِنَصْرِ اللّٰهِ ؕ یَنْصُرُ مَنْ یَّشَآءُ ؕ وَهُوَ الْعَزِیْزُ الرَّحِیْمُ ۟ۙ",
+        "terjemahan": "Karena pertolongan Allah. Dia menolong siapa yang dikehendaki-Nya. Dan Dialah Maha Perkasa lagi Penyayang."
+      }
+    ]
+  },
+  "31": {
+    "nama": "Luqman",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "الٓمّٓ ۟ۚ",
+        "terjemahan": "Alif Lām Mīm"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "تِلْكَ اٰیٰتُ الْكِتٰبِ الْحَكِیْمِ ۟ۙ",
+        "terjemahan": "Inilah ayat-ayat Al-Qur`ān yang mengandung hikmat,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "هُدًی وَّرَحْمَةً لِّلْمُحْسِنِیْنَ ۟ۙ",
+        "terjemahan": "menjadi petunjuk dan rahmat bagi orang-orang yang berbuat kebaikan."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "الَّذِیْنَ یُقِیْمُوْنَ الصَّلٰوةَ وَیُؤْتُوْنَ الزَّكٰوةَ وَهُمْ بِالْاٰخِرَةِ هُمْ یُوْقِنُوْنَ ۟ؕ",
+        "terjemahan": "(yaitu) orang-orang yang mendirikan salat, menunaikan zakat, dan mereka yakin akan adanya negeri akhirat."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اُولٰٓىِٕكَ عَلٰی هُدًی مِّنْ رَّبِّهِمْ وَاُولٰٓىِٕكَ هُمُ الْمُفْلِحُوْنَ ۟",
+        "terjemahan": "Mereka itulah orang-orang yang tetap mendapat petunjuk dari Tuhan-nya dan mereka itulah orang-orang yang beruntung."
+      }
+    ]
+  },
+  "32": {
+    "nama": "As-Sajdah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "الٓمّٓ ۟ۚ",
+        "terjemahan": "Alif Lām Mīm"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "تَنْزِیْلُ الْكِتٰبِ لَا رَیْبَ فِیْهِ مِنْ رَّبِّ الْعٰلَمِیْنَ ۟ؕ",
+        "terjemahan": "Turunnya Al-Qur`ān yang tidak ada keraguan padanya (adalah) dari Tuhan semesta alam."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اَمْ یَقُوْلُوْنَ افْتَرٰىهُ ۚ بَلْ هُوَ الْحَقُّ مِنْ رَّبِّكَ لِتُنْذِرَ قَوْمًا مَّاۤ اَتٰىهُمْ مِّنْ نَّذِیْرٍ مِّنْ قَبْلِكَ لَعَلَّهُمْ یَهْتَدُوْنَ ۟",
+        "terjemahan": "Tetapi mengapa mereka (orang kafir) mengatakan, \"Dia Muhammad mengada-adakannya\". Sebenarnya, Al-Qur`ān itu adalah kebenaran (yang datang) dari Tuhan-mu agar kamu memberi peringatan kepada kaum yang belum datang kepada mereka orang yang memberi peringatan sebelum kamu; mudah-mudahan mereka mendapat petunjuk."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اَللّٰهُ الَّذِیْ خَلَقَ السَّمٰوٰتِ وَالْاَرْضَ وَمَا بَیْنَهُمَا فِیْ سِتَّةِ اَیَّامٍ ثُمَّ اسْتَوٰی عَلَی الْعَرْشِ ؕ مَا لَكُمْ مِّنْ دُوْنِهٖ مِنْ وَّلِیٍّ وَّلَا شَفِیْعٍ ؕ اَفَلَا تَتَذَكَّرُوْنَ ۟",
+        "terjemahan": "Allah-lah yang menciptakan langit dan bumi dan apa yang ada di antara keduanya dalam enam masa, kemudian Dia bersemayam di atas arasy 64>1. Tidak ada bagi kamu selain dari-Nya seorang penolong pun dan tidak (pula) seorang pemberi syafaat Maka apakah kamu tidak memperhatikan?"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "یُدَبِّرُ الْاَمْرَ مِنَ السَّمَآءِ اِلَی الْاَرْضِ ثُمَّ یَعْرُجُ اِلَیْهِ فِیْ یَوْمٍ كَانَ مِقْدَارُهٗۤ اَلْفَ سَنَةٍ مِّمَّا تَعُدُّوْنَ ۟",
+        "terjemahan": "Dia mengatur urusan dari langit ke bumi, kemudian (urusan) itu naik kepada-Nya dalam satu hari yang kadarnya (lamanya) adalah seribu tahun menurut perhitunganmu ."
+      }
+    ]
+  },
+  "33": {
+    "nama": "Al-Ahzab",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یٰۤاَیُّهَا النَّبِیُّ اتَّقِ اللّٰهَ وَلَا تُطِعِ الْكٰفِرِیْنَ وَالْمُنٰفِقِیْنَ ؕ اِنَّ اللّٰهَ كَانَ عَلِیْمًا حَكِیْمًا ۟ۙ",
+        "terjemahan": "Hai Nabi, bertakwalah kepada Allah dan janganlah kamu menuruti (keinginan) orang-orang kafir dan orang-orang munafik. Sesungguhnya Allah adalah Maha Mengetahui lagi Maha Bijaksana,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَّاتَّبِعْ مَا یُوْحٰۤی اِلَیْكَ مِنْ رَّبِّكَ ؕ اِنَّ اللّٰهَ كَانَ بِمَا تَعْمَلُوْنَ خَبِیْرًا ۟ۙ",
+        "terjemahan": "dan ikutilah apa yang diwahyukan Tuhan kepadamu. Sesungguhnya Allah adalah Maha Mengetahui apa yang kamu kerjakan."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَّتَوَكَّلْ عَلَی اللّٰهِ ؕ وَكَفٰی بِاللّٰهِ وَكِیْلًا ۟",
+        "terjemahan": "dan bertawakallah kepada Allah. Dan cukuplah Allah sebagai Pemelihara."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "مَا جَعَلَ اللّٰهُ لِرَجُلٍ مِّنْ قَلْبَیْنِ فِیْ جَوْفِهٖ ۚ وَمَا جَعَلَ اَزْوَاجَكُمُ الّٰٓـِٔیْ تُظٰهِرُوْنَ مِنْهُنَّ اُمَّهٰتِكُمْ ۚ وَمَا جَعَلَ اَدْعِیَآءَكُمْ اَبْنَآءَكُمْ ؕ ذٰلِكُمْ قَوْلُكُمْ بِاَفْوَاهِكُمْ ؕ وَاللّٰهُ یَقُوْلُ الْحَقَّ وَهُوَ یَهْدِی السَّبِیْلَ ۟",
+        "terjemahan": "Allah sekali-kali tidak menjadikan bagi seseorang dua buah hati dalam rongganya dan Dia tidak menjadikan istri-istrimu yang kamu ẓihār itu sebagai ibumu dan Dia tidak menjadikan anak-anak angkatmu sebagai anak kandungmu (sendiri). Yang demikian itu, hanyalah perkataanmu di mulutmu saja. Dan Allah mengatakan yang sebenarnya dan Dia menunjukkan jalan (yang benar)."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اُدْعُوْهُمْ لِاٰبَآىِٕهِمْ هُوَ اَقْسَطُ عِنْدَ اللّٰهِ ۚ فَاِنْ لَّمْ تَعْلَمُوْۤا اٰبَآءَهُمْ فَاِخْوَانُكُمْ فِی الدِّیْنِ وَمَوَالِیْكُمْ ؕ وَلَیْسَ عَلَیْكُمْ جُنَاحٌ فِیْمَاۤ اَخْطَاْتُمْ بِهٖ ۙ وَلٰكِنْ مَّا تَعَمَّدَتْ قُلُوْبُكُمْ ؕ وَكَانَ اللّٰهُ غَفُوْرًا رَّحِیْمًا ۟",
+        "terjemahan": "Panggilah mereka (anak-anak angkat itu) dengan (memakai) nama bapak-bapak mereka; itulah yang lebih adil pada sisi Allah dan jika kamu tidak mengetahui bapak-bapak mereka, maka (panggilah mereka sebagai) saudara-saudaramu seagama dan maula-maulamu . Dan tidak ada dosa atasmu terhadap apa yang kamu khilaf padanya, tetapi (yang ada dosanya) apa yang disengaja oleh hatimu. Dan adalah Allah Maha Pengampun lagi Maha Penyayang."
+      }
+    ]
+  },
+  "34": {
+    "nama": "Saba",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اَلْحَمْدُ لِلّٰهِ الَّذِیْ لَهٗ مَا فِی السَّمٰوٰتِ وَمَا فِی الْاَرْضِ وَلَهُ الْحَمْدُ فِی الْاٰخِرَةِ ؕ وَهُوَ الْحَكِیْمُ الْخَبِیْرُ ۟",
+        "terjemahan": "Segala puji bagi Allah yang memiliki apa yang di langit dan apa yang di bumi dan bagi-Nya (pula) segala puji di akhirat. Dan Dia-lah Yang Maha Bijaksana lagi Maha Mengetahui."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "یَعْلَمُ مَا یَلِجُ فِی الْاَرْضِ وَمَا یَخْرُجُ مِنْهَا وَمَا یَنْزِلُ مِنَ السَّمَآءِ وَمَا یَعْرُجُ فِیْهَا ؕ وَهُوَ الرَّحِیْمُ الْغَفُوْرُ ۟",
+        "terjemahan": "Dia mengetahui apa yang masuk ke dalam bumi, apa yang ke luar darinya, apa yang turun dari langit, dan apa yang naik kepadanya. Dan Dia-lah Yang Maha Penyayang lagi Maha Pengampun."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَقَالَ الَّذِیْنَ كَفَرُوْا لَا تَاْتِیْنَا السَّاعَةُ ؕ قُلْ بَلٰی وَرَبِّیْ لَتَاْتِیَنَّكُمْ ۙ عٰلِمِ الْغَیْبِ ۚ لَا یَعْزُبُ عَنْهُ مِثْقَالُ ذَرَّةٍ فِی السَّمٰوٰتِ وَلَا فِی الْاَرْضِ وَلَاۤ اَصْغَرُ مِنْ ذٰلِكَ وَلَاۤ اَكْبَرُ اِلَّا فِیْ كِتٰبٍ مُّبِیْنٍ ۟ۗۙ",
+        "terjemahan": "Dan orang-orang yang kafir berkata, \"Hari berbangkit itu tidak akan datang kepada kami\". Katakanlah, \"Pasti datang, demi Tuhan-ku Yang Mengetahui yang gaib, sesungguhnya kiamat itu pasti akan datang kepadamu. Tidak ada tersembunyi daripada-Nya sebesar zarah pun yang ada di langit dan yang ada di bumi dan tidak ada (pula) yang lebih kecil dari itu dan yang lebih besar, melainkan tersebut dalam kitab yang nyata (Lawḥ Maḥfūẓ)\","
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "لِّیَجْزِیَ الَّذِیْنَ اٰمَنُوْا وَعَمِلُوا الصّٰلِحٰتِ ؕ اُولٰٓىِٕكَ لَهُمْ مَّغْفِرَةٌ وَّرِزْقٌ كَرِیْمٌ ۟",
+        "terjemahan": "supaya Allah memberi balasan kepada orang-orang yang beriman dan mengerjakan amal yang saleh. Mereka itu adalah orang-orang yang baginya ampunan dan rezeki yang mulia."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَالَّذِیْنَ سَعَوْ فِیْۤ اٰیٰتِنَا مُعٰجِزِیْنَ اُولٰٓىِٕكَ لَهُمْ عَذَابٌ مِّنْ رِّجْزٍ اَلِیْمٌ ۟",
+        "terjemahan": "Dan orang-orang yang berusaha untuk (menentang) ayat-ayat Kami dengan anggapan mereka dapat melemahkan (menggagalkan azab Kami), mereka itu memperoleh azab, yaitu (jenis) azab yang pedih."
+      }
+    ]
+  },
+  "35": {
+    "nama": "Fatir",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اَلْحَمْدُ لِلّٰهِ فَاطِرِ السَّمٰوٰتِ وَالْاَرْضِ جَاعِلِ الْمَلٰٓىِٕكَةِ رُسُلًا اُولِیْۤ اَجْنِحَةٍ مَّثْنٰی وَثُلٰثَ وَرُبٰعَ ؕ یَزِیْدُ فِی الْخَلْقِ مَا یَشَآءُ ؕ اِنَّ اللّٰهَ عَلٰی كُلِّ شَیْءٍ قَدِیْرٌ ۟",
+        "terjemahan": "Segala puji bagi Allah Pencipta langit dan bumi, Yang menjadikan malaikat sebagai utusan-utusan (untuk mengurus berbagai macam urusan) yang mempunyai sayap, masing-masing (ada yang) dua, tiga, dan empat. Allah menambahkan pada ciptaan-Nya apa yang dikehendaki-Nya. Sesungguhnya Allah Maha Kuasa atas segala sesuatu."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "مَا یَفْتَحِ اللّٰهُ لِلنَّاسِ مِنْ رَّحْمَةٍ فَلَا مُمْسِكَ لَهَا ۚ وَمَا یُمْسِكْ ۙ فَلَا مُرْسِلَ لَهٗ مِنْ بَعْدِهٖ ؕ وَهُوَ الْعَزِیْزُ الْحَكِیْمُ ۟",
+        "terjemahan": "Apa saja yang Allah anugerahkan kepada manusia berupa rahmat, maka tidak ada seorang pun yang dapat menahannya dan apa saja yang ditahan oleh Allah, maka tidak seorang pun yang sanggup untuk melepaskannya sesudah itu. Dan Dia-lah Yang Maha Perkasa lagi Maha Bijaksana."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "یٰۤاَیُّهَا النَّاسُ اذْكُرُوْا نِعْمَتَ اللّٰهِ عَلَیْكُمْ ؕ هَلْ مِنْ خَالِقٍ غَیْرُ اللّٰهِ یَرْزُقُكُمْ مِّنَ السَّمَآءِ وَالْاَرْضِ ؕ لَاۤ اِلٰهَ اِلَّا هُوَ ۖؗ فَاَنّٰی تُؤْفَكُوْنَ ۟",
+        "terjemahan": "Hai manusia, ingatlah akan nikmat Allah kepadamu. Adakah pencipta selain Allah yang dapat memberikan rezeki kepada kamu dari langit dan bumi? Tidak ada Tuhan (yang berhak disembah) selain Dia, maka mengapakah kamu berpaling (dari ketauhidan)?"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَاِنْ یُّكَذِّبُوْكَ فَقَدْ كُذِّبَتْ رُسُلٌ مِّنْ قَبْلِكَ ؕ وَاِلَی اللّٰهِ تُرْجَعُ الْاُمُوْرُ ۟",
+        "terjemahan": "Dan jika mereka mendustakan kamu (sesudah kamu beri peringatan), maka sungguh telah didustakan pula rasul-rasul sebelum kamu. Dan hanya kepada Allahlah dikembalikan segala urusan."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "یٰۤاَیُّهَا النَّاسُ اِنَّ وَعْدَ اللّٰهِ حَقٌّ فَلَا تَغُرَّنَّكُمُ الْحَیٰوةُ الدُّنْیَا ۥ وَلَا یَغُرَّنَّكُمْ بِاللّٰهِ الْغَرُوْرُ ۟",
+        "terjemahan": "Hai manusia, sesungguhnya janji Allah adalah benar, maka sekali-kali janganlah kehidupan dunia memperdayakan kamu dan sekali-kali janganlah setan yang pandai menipu memperdayakan kamu tentang Allah."
+      }
+    ]
+  },
+  "36": {
+    "nama": "Ya-Sin",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یٰسٓ ۟ۚ",
+        "terjemahan": "Yā sīn"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَالْقُرْاٰنِ الْحَكِیْمِ ۟ۙ",
+        "terjemahan": "Demi Al-Qur`ān yang penuh hikmah,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِنَّكَ لَمِنَ الْمُرْسَلِیْنَ ۟ۙ",
+        "terjemahan": "Sesungguhnya kamu salah seorang dari rasul-rasul,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "عَلٰی صِرَاطٍ مُّسْتَقِیْمٍ ۟ؕ",
+        "terjemahan": "(yang berada) di atas jalan yang lurus,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "تَنْزِیْلَ الْعَزِیْزِ الرَّحِیْمِ ۟ۙ",
+        "terjemahan": "(sebagai wahyu) yang diturunkan oleh Yang Maha Perkasa lagi Maha Penyayang."
+      }
+    ]
+  },
+  "37": {
+    "nama": "As-Saffat",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالصّٰٓفّٰتِ صَفًّا ۟ۙ",
+        "terjemahan": "Demi (rombongan) yang bersaf-saf dengan sebenar-benarnya ,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "فَالزّٰجِرٰتِ زَجْرًا ۟ۙ",
+        "terjemahan": "dan demi (rombongan) yang melarang dengan sebenar-benarnya (dari perbuatan-perbuatan maksiat),"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "فَالتّٰلِیٰتِ ذِكْرًا ۟ۙ",
+        "terjemahan": "dan demi (rombongan) yang membacakan pelajaran,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِنَّ اِلٰهَكُمْ لَوَاحِدٌ ۟ؕ",
+        "terjemahan": "Sesungguhnya Tuhan-mu benar-benar Esa."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "رَبُّ السَّمٰوٰتِ وَالْاَرْضِ وَمَا بَیْنَهُمَا وَرَبُّ الْمَشَارِقِ ۟ؕ",
+        "terjemahan": "Tuhan langit dan bumi dan apa yang berada di antara keduanya dan Tuhan tempat-tempat terbit matahari."
+      }
+    ]
+  },
+  "38": {
+    "nama": "Sad",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "صٓ وَالْقُرْاٰنِ ذِی الذِّكْرِ ۟ؕ",
+        "terjemahan": "Ṣād, demi Al-Qur`ān yang mempunyai keagungan."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "بَلِ الَّذِیْنَ كَفَرُوْا فِیْ عِزَّةٍ وَّشِقَاقٍ ۟",
+        "terjemahan": "Sebenarnya, orang-orang kafir itu (berada) dalam kesombongan dan permusuhan yang sengit."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "كَمْ اَهْلَكْنَا مِنْ قَبْلِهِمْ مِّنْ قَرْنٍ فَنَادَوْا وَّلَاتَ حِیْنَ مَنَاصٍ ۟",
+        "terjemahan": "Betapa banyaknya umat sebelum mereka yang telah Kami binasakan, lalu mereka meminta tolong padahal (waktu itu) bukanlah saat untuk lari melepaskan diri."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَعَجِبُوْۤا اَنْ جَآءَهُمْ مُّنْذِرٌ مِّنْهُمْ ؗ وَقَالَ الْكٰفِرُوْنَ هٰذَا سٰحِرٌ كَذَّابٌ ۟ۖۚ",
+        "terjemahan": "Dan mereka heran karena mereka kedatangan seorang pemberi peringatan (rasul) dari kalangan mereka dan orang-orang kafir berkata, \"Ini adalah seorang ahli sihir yang banyak berdusta\"."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اَجَعَلَ الْاٰلِهَةَ اِلٰهًا وَّاحِدًا ۖۚ اِنَّ هٰذَا لَشَیْءٌ عُجَابٌ ۟",
+        "terjemahan": "Mengapa ia menjadikan tuhan-tuhan itu Tuhan Yang Satu saja? Sesungguhnya ini benar-benar suatu hal yang sangat mengherankan."
+      }
+    ]
+  },
+  "39": {
+    "nama": "Az-Zumar",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "تَنْزِیْلُ الْكِتٰبِ مِنَ اللّٰهِ الْعَزِیْزِ الْحَكِیْمِ ۟",
+        "terjemahan": "Kitab (Al-Qur`ān ini) diturunkan oleh Allah Yang Maha Perkasa lagi Maha Bijaksana."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اِنَّاۤ اَنْزَلْنَاۤ اِلَیْكَ الْكِتٰبَ بِالْحَقِّ فَاعْبُدِ اللّٰهَ مُخْلِصًا لَّهُ الدِّیْنَ ۟ؕ",
+        "terjemahan": "Sesunguhnya Kami menurunkan kepadamu Kitab (Al-Qur`ān) dengan (membawa) kebenaran. Maka sembahlah Allah dengan memurnikan ketaatan kepada-Nya."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اَلَا لِلّٰهِ الدِّیْنُ الْخَالِصُ ؕ وَالَّذِیْنَ اتَّخَذُوْا مِنْ دُوْنِهٖۤ اَوْلِیَآءَ ۘ مَا نَعْبُدُهُمْ اِلَّا لِیُقَرِّبُوْنَاۤ اِلَی اللّٰهِ زُلْفٰی ؕ اِنَّ اللّٰهَ یَحْكُمُ بَیْنَهُمْ فِیْ مَا هُمْ فِیْهِ یَخْتَلِفُوْنَ ؕ۬ اِنَّ اللّٰهَ لَا یَهْدِیْ مَنْ هُوَ كٰذِبٌ كَفَّارٌ ۟",
+        "terjemahan": "Ingatlah, hanya kepunyaan Allah-lah agama yang bersih (dari syirik). Dan orang-orang yang mengambil pelindung selain Allah (berkata), \"Kami tidak menyembah mereka, melainkan supaya mereka mendekatkan kami kepada Allah dengan sedekat-dekatnya\". Sesungguhnya Allah akan memutuskan di antara mereka tentang apa yang mereka berselisih padanya. Sesungguhnya Allah tidak menunjuki orang-orang yang pendusta dan sangat ingkar."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "لَوْ اَرَادَ اللّٰهُ اَنْ یَّتَّخِذَ وَلَدًا لَّاصْطَفٰی مِمَّا یَخْلُقُ مَا یَشَآءُ ۙ سُبْحٰنَهٗ ؕ هُوَ اللّٰهُ الْوَاحِدُ الْقَهَّارُ ۟",
+        "terjemahan": "Kalau sekiranya Allah hendak mengambil anak, tentu Dia akan memilih apa yang dikehendaki-Nya di antara ciptaan-ciptaan yang telah diciptakan-Nya. Maha Suci Allah. Dia-lah Allah Yang Maha Esa lagi Maha Mengalahkan."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "خَلَقَ السَّمٰوٰتِ وَالْاَرْضَ بِالْحَقِّ ۚ یُكَوِّرُ الَّیْلَ عَلَی النَّهَارِ وَیُكَوِّرُ النَّهَارَ عَلَی الَّیْلِ وَسَخَّرَ الشَّمْسَ وَالْقَمَرَ ؕ كُلٌّ یَّجْرِیْ لِاَجَلٍ مُّسَمًّی ؕ اَلَا هُوَ الْعَزِیْزُ الْغَفَّارُ ۟",
+        "terjemahan": "Dia menciptakan langit dan bumi dengan (tujuan) yang benar; Dia menutupkan malam atas siang dan menutupkan siang atas malam dan menundukkan matahari dan bulan; masing-masing berjalan menurut waktu yang ditentukan. Ingatlah Dia-lah Yang Maha Perkasa lagi Maha Pengampun."
+      }
+    ]
+  },
+  "40": {
+    "nama": "Ghafir",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "حٰمٓ ۟ۚ",
+        "terjemahan": "Ḥā Mīm ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "تَنْزِیْلُ الْكِتٰبِ مِنَ اللّٰهِ الْعَزِیْزِ الْعَلِیْمِ ۟ۙ",
+        "terjemahan": "Diturunkan Kitab ini (Al-Qur`ān) dari Allah Yang Maha Perkasa lagi Maha Mengetahui,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "غَافِرِ الذَّنْۢبِ وَقَابِلِ التَّوْبِ شَدِیْدِ الْعِقَابِ ۙ ذِی الطَّوْلِ ؕ لَاۤ اِلٰهَ اِلَّا هُوَ ؕ اِلَیْهِ الْمَصِیْرُ ۟",
+        "terjemahan": "Yang Mengampuni dosa dan Menerima tobat lagi keras hukuman-Nya. Yang mempunyai karunia. Tiada Tuhan (yang berhak disembah) selain Dia. Hanya kepada-Nya-lah kembali (semua makhluk)."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "مَا یُجَادِلُ فِیْۤ اٰیٰتِ اللّٰهِ اِلَّا الَّذِیْنَ كَفَرُوْا فَلَا یَغْرُرْكَ تَقَلُّبُهُمْ فِی الْبِلَادِ ۟",
+        "terjemahan": "Tidak ada yang memperdebatkan tentang ayat-ayat Allah, kecuali orang-orang yang kafir. Karena itu, janganlah pulang balik mereka dengan bebas dari suatu kota ke kota yang lain memperdayakan kamu."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "كَذَّبَتْ قَبْلَهُمْ قَوْمُ نُوْحٍ وَّالْاَحْزَابُ مِنْ بَعْدِهِمْ ۪ وَهَمَّتْ كُلُّ اُمَّةٍ بِرَسُوْلِهِمْ لِیَاْخُذُوْهُ وَجٰدَلُوْا بِالْبَاطِلِ لِیُدْحِضُوْا بِهِ الْحَقَّ فَاَخَذْتُهُمْ ۫ فَكَیْفَ كَانَ عِقَابِ ۟",
+        "terjemahan": "Sebelum mereka, kaum Nūḥ dan golongan-golongan yang bersekutu sesudah mereka telah mendustakan (rasul) dan tiap-tiap umat telah merencanakan makar terhadap rasul mereka untuk menawannya dan mereka membantah dengan (alasan) yang batil untuk melenyapkan kebenaran dengan yang batil itu, karena itu Aku azab mereka. Maka betapa (pedihnya) azab-Ku?"
+      }
+    ]
+  },
+  "41": {
+    "nama": "Fussilat",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "حٰمٓ ۟ۚ",
+        "terjemahan": "Ḥā Mīm ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "تَنْزِیْلٌ مِّنَ الرَّحْمٰنِ الرَّحِیْمِ ۟ۚ",
+        "terjemahan": "Diturunkan dari Tuhan Yang Maha Pemurah lagi Maha Penyayang."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "كِتٰبٌ فُصِّلَتْ اٰیٰتُهٗ قُرْاٰنًا عَرَبِیًّا لِّقَوْمٍ یَّعْلَمُوْنَ ۟ۙ",
+        "terjemahan": "Kitab yang dijelaskan ayat-ayatnya, yakni bacaan dalam bahasa Arab untuk kaum yang mengetahui,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "بَشِیْرًا وَّنَذِیْرًا ۚ فَاَعْرَضَ اَكْثَرُهُمْ فَهُمْ لَا یَسْمَعُوْنَ ۟",
+        "terjemahan": "yang membawa berita gembira dan yang membawa peringatan, tetapi kebanyakan mereka berpaling (daripadanya), maka mereka tidak mau mendengarkan."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَقَالُوْا قُلُوْبُنَا فِیْۤ اَكِنَّةٍ مِّمَّا تَدْعُوْنَاۤ اِلَیْهِ وَفِیْۤ اٰذَانِنَا وَقْرٌ وَّمِنْ بَیْنِنَا وَبَیْنِكَ حِجَابٌ فَاعْمَلْ اِنَّنَا عٰمِلُوْنَ ۟",
+        "terjemahan": "Mereka berkata, \"Hati kami berada dalam tutupan (yang menutupi) apa yang kamu seru kami kepadanya dan di telinga kami ada sumbatan dan antara kami dan kamu ada dinding, maka bekerjalah kamu; sesungguhnya kami bekerja (pula)\"."
+      }
+    ]
+  },
+  "42": {
+    "nama": "Ash-Shura",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "حٰمٓ ۟ۚ",
+        "terjemahan": "Ḥā Mīm ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "عٓسٓقٓ ۟",
+        "terjemahan": "ʻAin Sīn Qāf ."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "كَذٰلِكَ یُوْحِیْۤ اِلَیْكَ وَاِلَی الَّذِیْنَ مِنْ قَبْلِكَ ۙ اللّٰهُ الْعَزِیْزُ الْحَكِیْمُ ۟",
+        "terjemahan": "Demikianlah, Allah Yang Maha Perkasa lagi Maha Bijaksana mewahyukan kepada kamu dan kepada orang-orang sebelum kamu."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "لَهٗ مَا فِی السَّمٰوٰتِ وَمَا فِی الْاَرْضِ ؕ وَهُوَ الْعَلِیُّ الْعَظِیْمُ ۟",
+        "terjemahan": "Kepunyaan-Nya-lah apa yang ada di langit dan apa yang ada di bumi. Dan Dialah yang Maha Tinggi lagi Maha Besar."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "تَكَادُ السَّمٰوٰتُ یَتَفَطَّرْنَ مِنْ فَوْقِهِنَّ وَالْمَلٰٓىِٕكَةُ یُسَبِّحُوْنَ بِحَمْدِ رَبِّهِمْ وَیَسْتَغْفِرُوْنَ لِمَنْ فِی الْاَرْضِ ؕ اَلَاۤ اِنَّ اللّٰهَ هُوَ الْغَفُوْرُ الرَّحِیْمُ ۟",
+        "terjemahan": "Hampir saja langit itu pecah dari sebelah atasnya (karena kebesaran Tuhan) dan malaikat-malaikat bertasbih serta memuji Tuhan-nya dan memohonkan ampun bagi orang-orang yang ada di bumi. Ingatlah bahwa sesungguhnya Allah Dia-lah Yang Maha Pengampun lagi Penyayang."
+      }
+    ]
+  },
+  "43": {
+    "nama": "Az-Zukhruf",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "حٰمٓ ۟ۚۛ",
+        "terjemahan": "Ḥā Mīm ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَالْكِتٰبِ الْمُبِیْنِ ۟ۙۛ",
+        "terjemahan": "Demi Kitab (Al-Qur`ān) yang menerangkan."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِنَّا جَعَلْنٰهُ قُرْءٰنًا عَرَبِیًّا لَّعَلَّكُمْ تَعْقِلُوْنَ ۟ۚ",
+        "terjemahan": "Sesungguhnya Kami menjadikan Al-Qur`ān dalam bahasa Arab supaya kamu memahami(nya)."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَاِنَّهٗ فِیْۤ اُمِّ الْكِتٰبِ لَدَیْنَا لَعَلِیٌّ حَكِیْمٌ ۟ؕ",
+        "terjemahan": "Dan sesungguhnya, Al-Qur`ān itu dalam induk Alkitab (Lawḥ Maḥfūẓ) di sisi Kami adalah benar-benar tinggi (nilainya) dan amat banyak mengandung hikmah."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اَفَنَضْرِبُ عَنْكُمُ الذِّكْرَ صَفْحًا اَنْ كُنْتُمْ قَوْمًا مُّسْرِفِیْنَ ۟",
+        "terjemahan": "Maka apakah Kami akan berhenti menurunkan Al-Qur`ān kepadamu karena kamu adalah kaum yang melampaui batas?"
+      }
+    ]
+  },
+  "44": {
+    "nama": "Ad-Dukhan",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "حٰمٓ ۟ۚۛ",
+        "terjemahan": "Ḥā Mīm ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَالْكِتٰبِ الْمُبِیْنِ ۟ۙۛ",
+        "terjemahan": "Demi Kitab (Al-Qur`ān) yang menjelaskan,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِنَّاۤ اَنْزَلْنٰهُ فِیْ لَیْلَةٍ مُّبٰرَكَةٍ اِنَّا كُنَّا مُنْذِرِیْنَ ۟",
+        "terjemahan": "sesungguhnya Kami menurunkannya pada suatu malam yang diberkahi dan sesungguhnya Kami-lah yang memberi peringatan."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "فِیْهَا یُفْرَقُ كُلُّ اَمْرٍ حَكِیْمٍ ۟ۙ",
+        "terjemahan": "Pada malam itu dijelaskan segala urusan yang penuh hikmah ,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اَمْرًا مِّنْ عِنْدِنَا ؕ اِنَّا كُنَّا مُرْسِلِیْنَ ۟ۚ",
+        "terjemahan": "(yaitu) urusan yang besar dari sisi Kami. Sesungguhnya Kami adalah Yang mengutus rasul-rasul,"
+      }
+    ]
+  },
+  "45": {
+    "nama": "Al-Jathiyah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "حٰمٓ ۟ۚ",
+        "terjemahan": "Ḥā Mīm ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "تَنْزِیْلُ الْكِتٰبِ مِنَ اللّٰهِ الْعَزِیْزِ الْحَكِیْمِ ۟",
+        "terjemahan": "Kitab (ini) diturunkan dari Allah Yang Maha Perkasa lagi Maha Bijaksana."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِنَّ فِی السَّمٰوٰتِ وَالْاَرْضِ لَاٰیٰتٍ لِّلْمُؤْمِنِیْنَ ۟ؕ",
+        "terjemahan": "Sesungguhnya pada langit dan bumi benar-benar terdapat tanda-tanda (kekuasaan Allah) untuk orang-orang yang beriman."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَفِیْ خَلْقِكُمْ وَمَا یَبُثُّ مِنْ دَآبَّةٍ اٰیٰتٌ لِّقَوْمٍ یُّوْقِنُوْنَ ۟ۙ",
+        "terjemahan": "Dan pada penciptakan kamu dan pada binatang-binatang yang melata yang bertebaran (di muka bumi) terdapat tanda-tanda (kekuasaan Allah) untuk kaum yang meyakini,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَاخْتِلَافِ الَّیْلِ وَالنَّهَارِ وَمَاۤ اَنْزَلَ اللّٰهُ مِنَ السَّمَآءِ مِنْ رِّزْقٍ فَاَحْیَا بِهِ الْاَرْضَ بَعْدَ مَوْتِهَا وَتَصْرِیْفِ الرِّیٰحِ اٰیٰتٌ لِّقَوْمٍ یَّعْقِلُوْنَ ۟",
+        "terjemahan": "dan pada pergantian malam dan siang dan hujan yang diturunkan Allah dari langit, lalu dihidupkanNya dengan air hujan itu bumi sesudah matinya, dan pada perkisaran angin terdapat pula tanda-tanda (kekuasaan Allah) bagi kaum yang berakal."
+      }
+    ]
+  },
+  "46": {
+    "nama": "Al-Ahqaf",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "حٰمٓ ۟ۚ",
+        "terjemahan": "ῌā Mīm ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "تَنْزِیْلُ الْكِتٰبِ مِنَ اللّٰهِ الْعَزِیْزِ الْحَكِیْمِ ۟",
+        "terjemahan": "Diturunkan kitab ini dari Allah Yang Maha Perkasa lagi Maha Bijaksana."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "مَا خَلَقْنَا السَّمٰوٰتِ وَالْاَرْضَ وَمَا بَیْنَهُمَاۤ اِلَّا بِالْحَقِّ وَاَجَلٍ مُّسَمًّی ؕ وَالَّذِیْنَ كَفَرُوْا عَمَّاۤ اُنْذِرُوْا مُعْرِضُوْنَ ۟",
+        "terjemahan": "Kami tiada menciptakan langit dan bumi dan apa yang ada antara keduanya melainkan dengan (tujuan) yang benar dan dalam waktu yang ditentukan. Dan orang-orang yang kafir berpaling dari apa yang diperingatkan kepada mereka."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "قُلْ اَرَءَیْتُمْ مَّا تَدْعُوْنَ مِنْ دُوْنِ اللّٰهِ اَرُوْنِیْ مَاذَا خَلَقُوْا مِنَ الْاَرْضِ اَمْ لَهُمْ شِرْكٌ فِی السَّمٰوٰتِ ؕ اِیْتُوْنِیْ بِكِتٰبٍ مِّنْ قَبْلِ هٰذَاۤ اَوْ اَثٰرَةٍ مِّنْ عِلْمٍ اِنْ كُنْتُمْ صٰدِقِیْنَ ۟",
+        "terjemahan": "Katakanlah, \"Terangkanlah kepadaku tentang apa yang kamu sembah selain Allah; perlihatkan kepada-Ku apakah yang telah mereka ciptakan dari bumi ini atau adakah mereka berserikat (dengan Allah) dalam (penciptaan) langit? Bawalah kepada-Ku Kitab yang sebelum (Al-Qur`ān) ini atau peninggalan dari pengetahuan (orang-orang dahulu), jika kamu adalah orang-orang yang benar\"."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَمَنْ اَضَلُّ مِمَّنْ یَّدْعُوْا مِنْ دُوْنِ اللّٰهِ مَنْ لَّا یَسْتَجِیْبُ لَهٗۤ اِلٰی یَوْمِ الْقِیٰمَةِ وَهُمْ عَنْ دُعَآىِٕهِمْ غٰفِلُوْنَ ۟",
+        "terjemahan": "Dan siapakah yang lebih sesat daripada orang yang menyembah sembahan-sembahan selain Allah yang tiada dapat memperkenankan (doa)nya sampai hari kiamat dan mereka lalai dari (memperhatikan) doa mereka?"
+      }
+    ]
+  },
+  "47": {
+    "nama": "Muhammad",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اَلَّذِیْنَ كَفَرُوْا وَصَدُّوْا عَنْ سَبِیْلِ اللّٰهِ اَضَلَّ اَعْمَالَهُمْ ۟",
+        "terjemahan": "Orang-orang yang kafir dan menghalang-halangi (manusia) dari jalan Allah, Allah menghapus perbuatan-perbuatan mereka ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَالَّذِیْنَ اٰمَنُوْا وَعَمِلُوا الصّٰلِحٰتِ وَاٰمَنُوْا بِمَا نُزِّلَ عَلٰی مُحَمَّدٍ وَّهُوَ الْحَقُّ مِنْ رَّبِّهِمْ ۙ كَفَّرَ عَنْهُمْ سَیِّاٰتِهِمْ وَاَصْلَحَ بَالَهُمْ ۟",
+        "terjemahan": "Dan orang-orang yang beriman (kepada Allah) dan mengerjakan amal-amal yang saleh serta beriman (pula) kepada apa yang diturunkan kepada Muhammad dan itulah yang hak dari Tuhan mereka, Allah menghapuskan kesalahan-kesalahan mereka dan memperbaiki keadaan mereka."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "ذٰلِكَ بِاَنَّ الَّذِیْنَ كَفَرُوا اتَّبَعُوا الْبَاطِلَ وَاَنَّ الَّذِیْنَ اٰمَنُوا اتَّبَعُوا الْحَقَّ مِنْ رَّبِّهِمْ ؕ كَذٰلِكَ یَضْرِبُ اللّٰهُ لِلنَّاسِ اَمْثَالَهُمْ ۟",
+        "terjemahan": "Yang demikian adalah karena sesungguhnya orang-orang kafir mengikuti yang batil dan sesungguhnya orang-orang yang beriman mengikuti yang hak dari Tuhan mereka. Demikianlah Allah membuat untuk manusia perbandingan-perbandingan bagi mereka."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "فَاِذَا لَقِیْتُمُ الَّذِیْنَ كَفَرُوْا فَضَرْبَ الرِّقَابِ ؕ حَتّٰۤی اِذَاۤ اَثْخَنْتُمُوْهُمْ فَشُدُّوا الْوَثَاقَ ۙۗ فَاِمَّا مَنًّا بَعْدُ وَاِمَّا فِدَآءً حَتّٰی تَضَعَ الْحَرْبُ اَوْزَارَهَا ذٰؔلِكَ ۛؕ وَلَوْ یَشَآءُ اللّٰهُ لَانْتَصَرَ مِنْهُمْ ۙ وَلٰكِنْ لِّیَبْلُوَاۡ بَعْضَكُمْ بِبَعْضٍ ؕ وَالَّذِیْنَ قُتِلُوْا فِیْ سَبِیْلِ اللّٰهِ فَلَنْ یُّضِلَّ اَعْمَالَهُمْ ۟",
+        "terjemahan": "Apabila kamu bertemu dengan orang-orang kafir (di medan perang) maka pancunglah batang leher mereka. Sehingga apabila kamu telah mengalahkan mereka, maka tawanlah mereka dan sesudah itu kamu boleh membebaskan mereka atau menerima tebusan sampai perang berhenti. Demikianlah, apabila Allah menghendaki, niscaya Allah akan membinasakan mereka tetapi Allah hendak menguji sebagian kamu dengan sebagian yang lain. Dan orang-orang yang gugur pada jalan Allah, Allah tidak akan menyia-nyiakan amal mereka."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "سَیَهْدِیْهِمْ وَیُصْلِحُ بَالَهُمْ ۟ۚ",
+        "terjemahan": "Allah akan memberi pimpinan kepada mereka dan memperbaiki keadaan mereka,"
+      }
+    ]
+  },
+  "48": {
+    "nama": "Al-Fath",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِنَّا فَتَحْنَا لَكَ فَتْحًا مُّبِیْنًا ۟ۙ",
+        "terjemahan": "Sesungguhnya Kami telah memberikan kepadamu kemenangan yang nyata,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "لِّیَغْفِرَ لَكَ اللّٰهُ مَا تَقَدَّمَ مِنْ ذَنْۢبِكَ وَمَا تَاَخَّرَ وَیُتِمَّ نِعْمَتَهٗ عَلَیْكَ وَیَهْدِیَكَ صِرَاطًا مُّسْتَقِیْمًا ۟ۙ",
+        "terjemahan": "supaya Allah memberi ampunan kepadamu terhadap dosamu yang telah lalu dan yang akan datang serta menyempurnakan nikmat-Nya atasmu dan memimpin kamu kepada jalan yang lurus,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَّیَنْصُرَكَ اللّٰهُ نَصْرًا عَزِیْزًا ۟",
+        "terjemahan": "dan supaya Allah menolongmu dengan pertolongan yang kuat (banyak)."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "هُوَ الَّذِیْۤ اَنْزَلَ السَّكِیْنَةَ فِیْ قُلُوْبِ الْمُؤْمِنِیْنَ لِیَزْدَادُوْۤا اِیْمَانًا مَّعَ اِیْمَانِهِمْ ؕ وَلِلّٰهِ جُنُوْدُ السَّمٰوٰتِ وَالْاَرْضِ ؕ وَكَانَ اللّٰهُ عَلِیْمًا حَكِیْمًا ۟ۙ",
+        "terjemahan": "Dia-lah yang telah menurunkan ketenangan ke dalam hati orang-orang mukmin supaya keimanan mereka bertambah di samping keimanan mereka (yang telah ada). Dan kepunyaan Allah-lah tentara langit dan bumi dan adalah Allah Maha Mengetahui lagi Maha Bijaksana,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "لِّیُدْخِلَ الْمُؤْمِنِیْنَ وَالْمُؤْمِنٰتِ جَنّٰتٍ تَجْرِیْ مِنْ تَحْتِهَا الْاَنْهٰرُ خٰلِدِیْنَ فِیْهَا وَیُكَفِّرَ عَنْهُمْ سَیِّاٰتِهِمْ ؕ وَكَانَ ذٰلِكَ عِنْدَ اللّٰهِ فَوْزًا عَظِیْمًا ۟ۙ",
+        "terjemahan": "supaya Dia memasukkan orang-orang mukmin laki-laki dan perempuan ke dalam surga yang mengalir di bawahnya sungai-sungai, mereka kekal di dalamnya dan supaya Dia menutupi kesalahan-kesalahan mereka. Dan yang demikian itu adalah keberuntungan yang besar di sisi Allah,"
+      }
+    ]
+  },
+  "49": {
+    "nama": "Al-Hujurat",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یٰۤاَیُّهَا الَّذِیْنَ اٰمَنُوْا لَا تُقَدِّمُوْا بَیْنَ یَدَیِ اللّٰهِ وَرَسُوْلِهٖ وَاتَّقُوا اللّٰهَ ؕ اِنَّ اللّٰهَ سَمِیْعٌ عَلِیْمٌ ۟",
+        "terjemahan": "Hai orang-orang yang beriman, janganlah kamu mendahului Allah dan rasulnya dan bertakwalah kepada Allah. Sesungguhnya Allah Maha Mendengar lagi Maha Mengetahui."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "یٰۤاَیُّهَا الَّذِیْنَ اٰمَنُوْا لَا تَرْفَعُوْۤا اَصْوَاتَكُمْ فَوْقَ صَوْتِ النَّبِیِّ وَلَا تَجْهَرُوْا لَهٗ بِالْقَوْلِ كَجَهْرِ بَعْضِكُمْ لِبَعْضٍ اَنْ تَحْبَطَ اَعْمَالُكُمْ وَاَنْتُمْ لَا تَشْعُرُوْنَ ۟",
+        "terjemahan": "Hai orang-orang yang beriman, janganlah kamu meninggikan suaramu melebihi suara nabi , dan janganlah kamu berkata kepadanya dengan suara keras, sebagaimana kerasnya suara sebagian kamu terhadap sebagian yang lain, supaya tidak hapus (pahala) amalanmu sedangkan kamu tidak menyadari."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِنَّ الَّذِیْنَ یَغُضُّوْنَ اَصْوَاتَهُمْ عِنْدَ رَسُوْلِ اللّٰهِ اُولٰٓىِٕكَ الَّذِیْنَ امْتَحَنَ اللّٰهُ قُلُوْبَهُمْ لِلتَّقْوٰی ؕ لَهُمْ مَّغْفِرَةٌ وَّاَجْرٌ عَظِیْمٌ ۟",
+        "terjemahan": "Sesungguhnya orang yang merendahkan suaranya di sisi Rasulullah, mereka itulah orang-orang yang telah diuji hati mereka oleh Allah untuk bertakwa. Bagi mereka ampunan dan pahala yang besar."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِنَّ الَّذِیْنَ یُنَادُوْنَكَ مِنْ وَّرَآءِ الْحُجُرٰتِ اَكْثَرُهُمْ لَا یَعْقِلُوْنَ ۟",
+        "terjemahan": "Sesungguhnya orang-orang yang memanggil kamu dari luar kamar(mu) kebanyakan mereka tidak mengerti."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَلَوْ اَنَّهُمْ صَبَرُوْا حَتّٰی تَخْرُجَ اِلَیْهِمْ لَكَانَ خَیْرًا لَّهُمْ ؕ وَاللّٰهُ غَفُوْرٌ رَّحِیْمٌ ۟",
+        "terjemahan": "Dan kalau sekiranya mereka bersabar sampai kamu keluar menemui mereka, sesungguhnya itu lebih baik bagi mereka, dan Allah Maha Pengampun lagi Maha Penyayang."
+      }
+    ]
+  },
+  "50": {
+    "nama": "Qaf",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "قٓ ۚ۫ وَالْقُرْاٰنِ الْمَجِیْدِ ۟ۚ",
+        "terjemahan": "Qāf . Demi Al-Qur`ān yang sangat mulia."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "بَلْ عَجِبُوْۤا اَنْ جَآءَهُمْ مُّنْذِرٌ مِّنْهُمْ فَقَالَ الْكٰفِرُوْنَ هٰذَا شَیْءٌ عَجِیْبٌ ۟ۚ",
+        "terjemahan": "(Mereka tidak menerimanya) bahkan mereka tercengang karena telah datang kepada mereka seorang pemberi peringatan dari (kalangan) mereka sendiri, maka berkatalah orang-orang kafir, \"Ini adalah suatu yang amat ajaib\"."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "ءَاِذَا مِتْنَا وَكُنَّا تُرَابًا ۚ ذٰلِكَ رَجْعٌ بَعِیْدٌ ۟",
+        "terjemahan": "Apakah kami setelah mati dan setelah menjadi tanah (kami akan kembali lagi)? Itu adalah suatu pengembalian yang tidak mungkin."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "قَدْ عَلِمْنَا مَا تَنْقُصُ الْاَرْضُ مِنْهُمْ ۚ وَعِنْدَنَا كِتٰبٌ حَفِیْظٌ ۟",
+        "terjemahan": "Sesungguhnya Kami telah mengetahui apa yang dihancurkan oleh bumi dari (tubuh-tubuh) mereka, dan pada sisi Kami pun ada kitab yang memelihara (mencatat)."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "بَلْ كَذَّبُوْا بِالْحَقِّ لَمَّا جَآءَهُمْ فَهُمْ فِیْۤ اَمْرٍ مَّرِیْجٍ ۟",
+        "terjemahan": "Sebenarnya, mereka telah mendustakan kebenaran tatkala kebenaran itu datang kepada mereka, maka mereka berada dalam keadaan kacau balau."
+      }
+    ]
+  },
+  "51": {
+    "nama": "Adh-Dhariyat",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالذّٰرِیٰتِ ذَرْوًا ۟ۙ",
+        "terjemahan": "Demi (angin) yang menerbangkan debu dengan kuat,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "فَالْحٰمِلٰتِ وِقْرًا ۟ۙ",
+        "terjemahan": "dan awan yang mengandung hujan,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "فَالْجٰرِیٰتِ یُسْرًا ۟ۙ",
+        "terjemahan": "dan kapal-kapal yang berlayar dengan mudah,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "فَالْمُقَسِّمٰتِ اَمْرًا ۟ۙ",
+        "terjemahan": "dan (malaikat-malaikat) yang membagi-bagi urusan ,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اِنَّمَا تُوْعَدُوْنَ لَصَادِقٌ ۟ۙ",
+        "terjemahan": "sesungguhnya apa yang dijanjikan kepadamu pasti benar,"
+      }
+    ]
+  },
+  "52": {
+    "nama": "At-Tur",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالطُّوْرِ ۟ۙ",
+        "terjemahan": "Demi bukit ,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَكِتٰبٍ مَّسْطُوْرٍ ۟ۙ",
+        "terjemahan": "dan kitab yang ditulis,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "فِیْ رَقٍّ مَّنْشُوْرٍ ۟ۙ",
+        "terjemahan": "pada lembaran yang terbuka,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَّالْبَیْتِ الْمَعْمُوْرِ ۟ۙ",
+        "terjemahan": "dan demi Baitul Makmur ,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَالسَّقْفِ الْمَرْفُوْعِ ۟ۙ",
+        "terjemahan": "dan atap yang ditinggikan (langit),"
+      }
+    ]
+  },
+  "53": {
+    "nama": "An-Najm",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالنَّجْمِ اِذَا هَوٰی ۟ۙ",
+        "terjemahan": "Demi bintang ketika terbenam,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "مَا ضَلَّ صَاحِبُكُمْ وَمَا غَوٰی ۟ۚ",
+        "terjemahan": "kawanmu (Muhammad) tidak sesat dan tidak pula keliru,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَمَا یَنْطِقُ عَنِ الْهَوٰی ۟ؕ",
+        "terjemahan": "dan tiadalah yang diucapkannya itu (Al-Qur`ān) menurut kemauan hawa nafsunya."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِنْ هُوَ اِلَّا وَحْیٌ یُّوْحٰی ۟ۙ",
+        "terjemahan": "Ucapannya itu tiada lain hanyalah wahyu yang diwahyukan (kepadanya),"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "عَلَّمَهٗ شَدِیْدُ الْقُوٰی ۟ۙ",
+        "terjemahan": "yang diajarkan kepadanya oleh (Jibril) yang sangat kuat,"
+      }
+    ]
+  },
+  "54": {
+    "nama": "Al-Qamar",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِقْتَرَبَتِ السَّاعَةُ وَانْشَقَّ الْقَمَرُ ۟",
+        "terjemahan": "Telah dekat (datangnya) saat itu dan telah terbelah bulan ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَاِنْ یَّرَوْا اٰیَةً یُّعْرِضُوْا وَیَقُوْلُوْا سِحْرٌ مُّسْتَمِرٌّ ۟",
+        "terjemahan": "Dan jika mereka (orang-orang musyrikin) melihat suatu tanda (mukjizat), mereka berpaling dan berkata, \"(Ini adalah) sihir yang terus menerus\"."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَكَذَّبُوْا وَاتَّبَعُوْۤا اَهْوَآءَهُمْ وَكُلُّ اَمْرٍ مُّسْتَقِرٌّ ۟",
+        "terjemahan": "Dan mereka mendustakan (Nabi) dan mengikuti hawa nafsu mereka, sedang tiap-tiap urusan telah ada ketetapannya ."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَلَقَدْ جَآءَهُمْ مِّنَ الْاَنْۢبَآءِ مَا فِیْهِ مُزْدَجَرٌ ۟ۙ",
+        "terjemahan": "Dan sesungguhnya telah datang kepada mereka beberapa kisah yang di dalamnya terdapat cegahan (dari kekafiran),"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "حِكْمَةٌ بَالِغَةٌ فَمَا تُغْنِ النُّذُرُ ۟ۙ",
+        "terjemahan": "Itulah suatu hikmah yang sempurna, maka peringatan-peringatan itu tidak berguna (bagi mereka)."
+      }
+    ]
+  },
+  "55": {
+    "nama": "Ar-Rahman",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اَلرَّحْمٰنُ ۟ۙ",
+        "terjemahan": "(Tuhan) Yang Maha Pemurah,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "عَلَّمَ الْقُرْاٰنَ ۟ؕ",
+        "terjemahan": "Yang telah mengajarkan Al-Qur`ān ."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "خَلَقَ الْاِنْسَانَ ۟ۙ",
+        "terjemahan": "Dia menciptakan manusia,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "عَلَّمَهُ الْبَیَانَ ۟",
+        "terjemahan": "mengajarnya pandai berbicara."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اَلشَّمْسُ وَالْقَمَرُ بِحُسْبَانٍ ۟ۙ",
+        "terjemahan": "Matahari dan bulan (beredar) menurut perhitungan."
+      }
+    ]
+  },
+  "56": {
+    "nama": "Al-Waqi'ah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِذَا وَقَعَتِ الْوَاقِعَةُ ۟ۙ",
+        "terjemahan": "Apabila terjadi hari kiamat,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "لَیْسَ لِوَقْعَتِهَا كَاذِبَةٌ ۟ۘ",
+        "terjemahan": "terjadinya kiamat itu tidak dapat didustakan (disangkal)."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "خَافِضَةٌ رَّافِعَةٌ ۟ۙ",
+        "terjemahan": "(Kejadian itu) merendahkan (satu golongan) dan meninggikan (golongan yang lain),"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِذَا رُجَّتِ الْاَرْضُ رَجًّا ۟ۙ",
+        "terjemahan": "apabila bumi digoncangkan sedahsyat-dahsyatnya,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَّبُسَّتِ الْجِبَالُ بَسًّا ۟ۙ",
+        "terjemahan": "dan gunung-gunung dihancurluluhkan sehancur-hancurnya,"
+      }
+    ]
+  },
+  "57": {
+    "nama": "Al-Hadid",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "سَبَّحَ لِلّٰهِ مَا فِی السَّمٰوٰتِ وَالْاَرْضِ ۚ وَهُوَ الْعَزِیْزُ الْحَكِیْمُ ۟",
+        "terjemahan": "Semua yang berada di langit dan yang berada di bumi bertasbih kepada Allah (menyatakan kebesaran Allah). Dan Dia-lah Yang Maha Perkasa lagi Maha Bijaksana."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "لَهٗ مُلْكُ السَّمٰوٰتِ وَالْاَرْضِ ۚ یُحْیٖ وَیُمِیْتُ ۚ وَهُوَ عَلٰی كُلِّ شَیْءٍ قَدِیْرٌ ۟",
+        "terjemahan": "Kepunyaan-Nya-lah kerajaan langit dan bumi, Dia menghidupkan dan mematikan, dan Dia Maha Kuasa atas segala sesuatu."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "هُوَ الْاَوَّلُ وَالْاٰخِرُ وَالظَّاهِرُ وَالْبَاطِنُ ۚ وَهُوَ بِكُلِّ شَیْءٍ عَلِیْمٌ ۟",
+        "terjemahan": "Dia-lah Yang Awal dan Yang Akhir; Yang Zahir dan Yang Batin ; dan Dia Maha Mengetahui segala sesuatu."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "هُوَ الَّذِیْ خَلَقَ السَّمٰوٰتِ وَالْاَرْضَ فِیْ سِتَّةِ اَیَّامٍ ثُمَّ اسْتَوٰی عَلَی الْعَرْشِ ؕ یَعْلَمُ مَا یَلِجُ فِی الْاَرْضِ وَمَا یَخْرُجُ مِنْهَا وَمَا یَنْزِلُ مِنَ السَّمَآءِ وَمَا یَعْرُجُ فِیْهَا ؕ وَهُوَ مَعَكُمْ اَیْنَ مَا كُنْتُمْ ؕ وَاللّٰهُ بِمَا تَعْمَلُوْنَ بَصِیْرٌ ۟",
+        "terjemahan": "Dia-lah yang menciptakan langit dan bumi dalam enam hari; Kemudian Dia bersemayam di atas arasy . Dia mengetahui apa yang masuk ke dalam bumi dan apa yang keluar darinya dan apa yang turun dari langit dan apa yang naik kepada-Nya . Dan Dia bersama kamu di mana saja kamu berada. Dan Allah Maha Melihat apa yang kamu kerjakan."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "لَهٗ مُلْكُ السَّمٰوٰتِ وَالْاَرْضِ ؕ وَاِلَی اللّٰهِ تُرْجَعُ الْاُمُوْرُ ۟",
+        "terjemahan": "Kepunyaan-Nya-lah kerajaan langit dan bumi. Dan kepada Allah-lah dikembalikan segala urusan."
+      }
+    ]
+  },
+  "58": {
+    "nama": "Al-Mujadila",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "قَدْ سَمِعَ اللّٰهُ قَوْلَ الَّتِیْ تُجَادِلُكَ فِیْ زَوْجِهَا وَتَشْتَكِیْۤ اِلَی اللّٰهِ ۖۗ وَاللّٰهُ یَسْمَعُ تَحَاوُرَكُمَا ؕ اِنَّ اللّٰهَ سَمِیْعٌ بَصِیْرٌ ۟",
+        "terjemahan": "Sesungguhnya Allah telah mendengar perkataan wanita yang memajukan gugatan kepada kamu tentang suaminya, dan mengadukan (halnya) kepada Allah. Dan Allah mendengar soal jawab antara kamu berdua. Sesungguhnya Allah Maha Mendengar lagi Maha Melihat ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اَلَّذِیْنَ یُظٰهِرُوْنَ مِنْكُمْ مِّنْ نِّسَآىِٕهِمْ مَّا هُنَّ اُمَّهٰتِهِمْ ؕ اِنْ اُمَّهٰتُهُمْ اِلَّا الّٰٓـِٔیْ وَلَدْنَهُمْ ؕ وَاِنَّهُمْ لَیَقُوْلُوْنَ مُنْكَرًا مِّنَ الْقَوْلِ وَزُوْرًا ؕ وَاِنَّ اللّٰهَ لَعَفُوٌّ غَفُوْرٌ ۟",
+        "terjemahan": "Orang-orang yang men-ẓihār istrinya di antara kamu, (menganggap istrinya sebagai ibunya, padahal) tiadalah istri mereka itu ibu mereka. Ibu-ibu mereka tidak lain hanyalah wanita yang melahirkan mereka. Dan sesungguhnya mereka sungguh-sungguh mengucapkan suatu perkataan yang mungkar dan dusta. Dan sesungguhnya Allah Maha Pemaaf lagi Maha Pengampun."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَالَّذِیْنَ یُظٰهِرُوْنَ مِنْ نِّسَآىِٕهِمْ ثُمَّ یَعُوْدُوْنَ لِمَا قَالُوْا فَتَحْرِیْرُ رَقَبَةٍ مِّنْ قَبْلِ اَنْ یَّتَمَآسَّا ؕ ذٰلِكُمْ تُوْعَظُوْنَ بِهٖ ؕ وَاللّٰهُ بِمَا تَعْمَلُوْنَ خَبِیْرٌ ۟",
+        "terjemahan": "Orang-orang yang men-ẓihār istri mereka, kemudian mereka hendak menarik kembali apa yang mereka ucapkan, maka (wajib atasnya) memerdekakan seorang budak sebelum kedua suami istri itu bercampur. Demikianlah yang diajarkan kepada kamu, dan Allah Maha Mengetahui apa yang kamu kerjakan."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "فَمَنْ لَّمْ یَجِدْ فَصِیَامُ شَهْرَیْنِ مُتَتَابِعَیْنِ مِنْ قَبْلِ اَنْ یَّتَمَآسَّا ۚ فَمَنْ لَّمْ یَسْتَطِعْ فَاِطْعَامُ سِتِّیْنَ مِسْكِیْنًا ؕ ذٰلِكَ لِتُؤْمِنُوْا بِاللّٰهِ وَرَسُوْلِهٖ ؕ وَتِلْكَ حُدُوْدُ اللّٰهِ ؕ وَلِلْكٰفِرِیْنَ عَذَابٌ اَلِیْمٌ ۟",
+        "terjemahan": "Barang siapa yang tidak mendapatkan (budak), maka (wajib atasnya) berpuasa dua bulan berturut-turut sebelum keduanya bercampur. Maka siapa yang tidak kuasa (wajiblah atasnya) memberi makan enam puluh orang miskin. Demikianlah supaya kamu beriman kepada Allah dan rasul-Nya. Dan itulah hukum-hukum Allah, dan bagi orang-orang kafir ada siksaan yang sangat pedih."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اِنَّ الَّذِیْنَ یُحَآدُّوْنَ اللّٰهَ وَرَسُوْلَهٗ كُبِتُوْا كَمَا كُبِتَ الَّذِیْنَ مِنْ قَبْلِهِمْ وَقَدْ اَنْزَلْنَاۤ اٰیٰتٍ بَیِّنٰتٍ ؕ وَلِلْكٰفِرِیْنَ عَذَابٌ مُّهِیْنٌ ۟ۚ",
+        "terjemahan": "Sesungguhnya orang-orang yang yang menentang Allah dan rasul-Nya pasti mendapat kehinaan sebagaimana orang-orang yang sebelum mereka telah mendapat kehinaan. Sesungguhnya Kami telah menurunkan bukti-bukti nyata. Dan bagi orang-orang kafir ada siksa yang menghinakan."
+      }
+    ]
+  },
+  "59": {
+    "nama": "Al-Hashr",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "سَبَّحَ لِلّٰهِ مَا فِی السَّمٰوٰتِ وَمَا فِی الْاَرْضِ ۚ وَهُوَ الْعَزِیْزُ الْحَكِیْمُ ۟",
+        "terjemahan": "Bertasbih kepada Allah apa yang ada di langit dan apa yang ada di bumi; dan Dia-lah Yang Maha Perkasa lagi Maha Bijaksana."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "هُوَ الَّذِیْۤ اَخْرَجَ الَّذِیْنَ كَفَرُوْا مِنْ اَهْلِ الْكِتٰبِ مِنْ دِیَارِهِمْ لِاَوَّلِ الْحَشْرِ ؔؕ مَا ظَنَنْتُمْ اَنْ یَّخْرُجُوْا وَظَنُّوْۤا اَنَّهُمْ مَّانِعَتُهُمْ حُصُوْنُهُمْ مِّنَ اللّٰهِ فَاَتٰىهُمُ اللّٰهُ مِنْ حَیْثُ لَمْ یَحْتَسِبُوْا وَقَذَفَ فِیْ قُلُوْبِهِمُ الرُّعْبَ یُخْرِبُوْنَ بُیُوْتَهُمْ بِاَیْدِیْهِمْ وَاَیْدِی الْمُؤْمِنِیْنَ ۗ فَاعْتَبِرُوْا یٰۤاُولِی الْاَبْصَارِ ۟",
+        "terjemahan": "Dia-lah yang mengeluarkan orang-orang kafir di antara ahli kitab dari kampung-kampung mereka pada saat pengusiran kali yang pertama. Kamu tiada menyangka bahwa mereka akan keluar dan mereka pun yakin bahwa benteng-benteng mereka akan dapat mempertahankan mereka dari (siksaan) Allah; maka Allah mendatangkan kepada mereka (hukuman) dari arah yang tidak mereka sangka-sangka. Dan Allah mencampakkan ketakutan ke dalam hati mereka; mereka memusnahkan rumah-rumah mereka dengan tangan mereka sendiri dan tangan orang-orang yang beriman. Maka ambillah (kejadian itu) untuk menjadi pelajaran, hai orang-orang yang mempunyai pandangan."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَلَوْلَاۤ اَنْ كَتَبَ اللّٰهُ عَلَیْهِمُ الْجَلَآءَ لَعَذَّبَهُمْ فِی الدُّنْیَا ؕ وَلَهُمْ فِی الْاٰخِرَةِ عَذَابُ النَّارِ ۟",
+        "terjemahan": "Dan jikalau tidaklah karena Allah telah menetapkan pengusiran terhadap mereka, benar-benar Allah mengazab mereka di dunia. Dan bagi mereka di akhirat azab neraka."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "ذٰلِكَ بِاَنَّهُمْ شَآقُّوا اللّٰهَ وَرَسُوْلَهٗ ۚ وَمَنْ یُّشَآقِّ اللّٰهَ فَاِنَّ اللّٰهَ شَدِیْدُ الْعِقَابِ ۟",
+        "terjemahan": "Yang demikian itu adalah karena sesungguhnya mereka menentang Allah dan rasul-Nya. Barang siapa menentang Allah, maka sesungguhnya Allah sangat keras hukuman-Nya."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "مَا قَطَعْتُمْ مِّنْ لِّیْنَةٍ اَوْ تَرَكْتُمُوْهَا قَآىِٕمَةً عَلٰۤی اُصُوْلِهَا فَبِاِذْنِ اللّٰهِ وَلِیُخْزِیَ الْفٰسِقِیْنَ ۟",
+        "terjemahan": "Apa saja yang kamu tebang dari pohon kurma (milik orang-orang kafir) atau yang kamu biarkan (tumbuh) berdiri di atas pokoknya , maka (semua itu) adalah dengan izin Allah; dan karena Dia hendak memberikan kehinaan kepada orang-orang fasik."
+      }
+    ]
+  },
+  "60": {
+    "nama": "Al-Mumtahanah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یٰۤاَیُّهَا الَّذِیْنَ اٰمَنُوْا لَا تَتَّخِذُوْا عَدُوِّیْ وَعَدُوَّكُمْ اَوْلِیَآءَ تُلْقُوْنَ اِلَیْهِمْ بِالْمَوَدَّةِ وَقَدْ كَفَرُوْا بِمَا جَآءَكُمْ مِّنَ الْحَقِّ ۚ یُخْرِجُوْنَ الرَّسُوْلَ وَاِیَّاكُمْ اَنْ تُؤْمِنُوْا بِاللّٰهِ رَبِّكُمْ ؕ اِنْ كُنْتُمْ خَرَجْتُمْ جِهَادًا فِیْ سَبِیْلِیْ وَابْتِغَآءَ مَرْضَاتِیْ تُسِرُّوْنَ اِلَیْهِمْ بِالْمَوَدَّةِ ۖۗ وَاَنَا اَعْلَمُ بِمَاۤ اَخْفَیْتُمْ وَمَاۤ اَعْلَنْتُمْ ؕ وَمَنْ یَّفْعَلْهُ مِنْكُمْ فَقَدْ ضَلَّ سَوَآءَ السَّبِیْلِ ۟",
+        "terjemahan": "Hai orang-orang yang beriman, janganlah kamu mengambil musuh-Ku dan musuhmu menjadi teman-teman setia yang kamu sampaikan kepada mereka (berita-berita Muhammad), karena rasa kasih sayang; padahal sesungguhnya mereka telah ingkar kepada kebenaran yang datang kepadamu, mereka mengusir rasul dan (mengusir) kamu karena kamu beriman kepada Allah, Tuhan-mu. Jika kamu benar-benar keluar untuk berjihad di jalan-Ku dan mencari keridaan-Ku (janganlah kamu berbuat demikian). Kamu memberitahukan secara rahasia (berita-berita Muhammad) kepada mereka, karena rasa kasih sayang. Aku lebih mengetahui apa yang kamu sembunyikan dan apa yang kamu nyatakan. Dan barang siapa di antara kamu yang melakukannya, maka sesungguhnya dia telah tersesat dari jalan yang lurus."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اِنْ یَّثْقَفُوْكُمْ یَكُوْنُوْا لَكُمْ اَعْدَآءً وَّیَبْسُطُوْۤا اِلَیْكُمْ اَیْدِیَهُمْ وَاَلْسِنَتَهُمْ بِالسُّوْٓءِ وَوَدُّوْا لَوْ تَكْفُرُوْنَ ۟ؕ",
+        "terjemahan": "Jika mereka menangkap kamu, niscaya mereka bertindak sebagai musuh bagimu dan melepaskan tangan dan lidah mereka kepadamu dengan menyakiti(mu); dan mereka ingin supaya kamu (kembali) kafir."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "لَنْ تَنْفَعَكُمْ اَرْحَامُكُمْ وَلَاۤ اَوْلَادُكُمْ ۛۚ یَوْمَ الْقِیٰمَةِ ۛۚ یَفْصِلُ بَیْنَكُمْ ؕ وَاللّٰهُ بِمَا تَعْمَلُوْنَ بَصِیْرٌ ۟",
+        "terjemahan": "Karib kerabat dan anak-anakmu sekali-sekali tiada bermanfaat bagimu pada hari Kiamat. Dia akan memisahkan antara kamu. Dan Allah Maha Melihat apa yang kamu kerjakan."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "قَدْ كَانَتْ لَكُمْ اُسْوَةٌ حَسَنَةٌ فِیْۤ اِبْرٰهِیْمَ وَالَّذِیْنَ مَعَهٗ ۚ اِذْ قَالُوْا لِقَوْمِهِمْ اِنَّا بُرَءٰٓؤُا مِنْكُمْ وَمِمَّا تَعْبُدُوْنَ مِنْ دُوْنِ اللّٰهِ ؗ كَفَرْنَا بِكُمْ وَبَدَا بَیْنَنَا وَبَیْنَكُمُ الْعَدَاوَةُ وَالْبَغْضَآءُ اَبَدًا حَتّٰی تُؤْمِنُوْا بِاللّٰهِ وَحْدَهٗۤ اِلَّا قَوْلَ اِبْرٰهِیْمَ لِاَبِیْهِ لَاَسْتَغْفِرَنَّ لَكَ وَمَاۤ اَمْلِكُ لَكَ مِنَ اللّٰهِ مِنْ شَیْءٍ ؕ رَبَّنَا عَلَیْكَ تَوَكَّلْنَا وَاِلَیْكَ اَنَبْنَا وَاِلَیْكَ الْمَصِیْرُ ۟",
+        "terjemahan": "Sesungguhnya telah ada suri teladan yang baik bagimu pada Ibrāhīm dan orang-orang yang bersama dengan dia; ketika mereka berkata kepada kaum mereka, \"Sesungguhnya kami berlepas diri dari kamu dari dari apa yang kamu sembah selain Allah, kami ingkari (kekafiran)mu dan telah nyata antara kami dan kamu permusuhan dan kebencian buat selama-lamanya sampai kamu beriman kepada Allah saja\". Kecuali perkataan Ibrāhīm kepada bapaknya , \"Sesungguhnya aku akan memohonkan ampunan bagi kamu dan aku tiada dapat menolak sesuatu pun dari kamu (siksaan) Allah\". (Ibrāhīm berkata), \"Ya Tuhan kami hanya kepada Engkau-lah kami bertawakal dan hanya kepada Engkau-lah kami bertobat dan hanya kepada Engkau-lah kami kembali,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِّلَّذِیْنَ كَفَرُوْا وَاغْفِرْ لَنَا رَبَّنَا ۚ اِنَّكَ اَنْتَ الْعَزِیْزُ الْحَكِیْمُ ۟",
+        "terjemahan": "\"Ya Tuhan kami, janganlah Engkau jadikan kami (sasaran) fitnah bagi orang-orang kafir. Dan ampunilah kami ya Tuhan kami. Sesungguhnya Engkau-lah Yang Maha Perkasa lagi Maha Bijaksana\"."
+      }
+    ]
+  },
+  "61": {
+    "nama": "As-Saff",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "سَبَّحَ لِلّٰهِ مَا فِی السَّمٰوٰتِ وَمَا فِی الْاَرْضِ ۚ وَهُوَ الْعَزِیْزُ الْحَكِیْمُ ۟",
+        "terjemahan": "Bertasbih kepada Allah apa saja yang ada di langit dan apa saja yang ada di bumi; dan Dia-lah Yang Maha Perkasa lagi Maha Bijaksana."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "یٰۤاَیُّهَا الَّذِیْنَ اٰمَنُوْا لِمَ تَقُوْلُوْنَ مَا لَا تَفْعَلُوْنَ ۟",
+        "terjemahan": "Hai orang-orang yang beriman, mengapa kamu mengatakan apa yang tidak kamu perbuat?"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "كَبُرَ مَقْتًا عِنْدَ اللّٰهِ اَنْ تَقُوْلُوْا مَا لَا تَفْعَلُوْنَ ۟",
+        "terjemahan": "Amat besar kebencian di sisi Allah bahwa kamu mengatakan apa-apa yang tiada kamu kerjakan."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِنَّ اللّٰهَ یُحِبُّ الَّذِیْنَ یُقَاتِلُوْنَ فِیْ سَبِیْلِهٖ صَفًّا كَاَنَّهُمْ بُنْیَانٌ مَّرْصُوْصٌ ۟",
+        "terjemahan": "Sesungguhnya Allah menyukai orang yang berperang dijalan-Nya dalam barisan yang teratur seakan-akan mereka seperti suatu bangunan yang tersusun kukuh."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَاِذْ قَالَ مُوْسٰی لِقَوْمِهٖ یٰقَوْمِ لِمَ تُؤْذُوْنَنِیْ وَقَدْ تَّعْلَمُوْنَ اَنِّیْ رَسُوْلُ اللّٰهِ اِلَیْكُمْ ؕ فَلَمَّا زَاغُوْۤا اَزَاغَ اللّٰهُ قُلُوْبَهُمْ ؕ وَاللّٰهُ لَا یَهْدِی الْقَوْمَ الْفٰسِقِیْنَ ۟",
+        "terjemahan": "Dan (ingatlah) ketika Musa berkata kepada kaumnya, \"Hai kaumku, mengapa kamu menyakitiku, sedangkan kamu mengetahui bahwa sesungguhnya aku adalah utusan Allah kepadamu?\" Maka tatkala mereka berpaling (dari kebenaran), Allah memalingkan hati mereka ; dan Allah tiada memberi petunjuk kepada kaum yang fasik."
+      }
+    ]
+  },
+  "62": {
+    "nama": "Al-Jumu'ah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یُسَبِّحُ لِلّٰهِ مَا فِی السَّمٰوٰتِ وَمَا فِی الْاَرْضِ الْمَلِكِ الْقُدُّوْسِ الْعَزِیْزِ الْحَكِیْمِ ۟",
+        "terjemahan": "Senantiasa bertasbih kepada Allah apa yang ada di langit dan apa yang ada di bumi. Raja, Yang Maha Suci, Yang Maha Perkasa lagi Maha Bijaksana."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "هُوَ الَّذِیْ بَعَثَ فِی الْاُمِّیّٖنَ رَسُوْلًا مِّنْهُمْ یَتْلُوْا عَلَیْهِمْ اٰیٰتِهٖ وَیُزَكِّیْهِمْ وَیُعَلِّمُهُمُ الْكِتٰبَ وَالْحِكْمَةَ ۗ وَاِنْ كَانُوْا مِنْ قَبْلُ لَفِیْ ضَلٰلٍ مُّبِیْنٍ ۟ۙ",
+        "terjemahan": "Dia-lah yang mengutus kepada kaum yang buta huruf seorang rasul di antara mereka, yang membacakan ayat-ayat-Nya kepada mereka, menyucikan mereka dan mengajarkan kepada mereka Kitab dan Hikmah (As Sunah). Dan sesungguhnya mereka sebelumnya benar-benar dalam kesesatan yang nyata,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَّاٰخَرِیْنَ مِنْهُمْ لَمَّا یَلْحَقُوْا بِهِمْ ؕ وَهُوَ الْعَزِیْزُ الْحَكِیْمُ ۟",
+        "terjemahan": "dan (juga) kepada kaum yang lain dari mereka yang belum berhubungan dengan mereka. Dan Dia-lah Yang Maha Perkasa lagi Maha Bijaksana."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "ذٰلِكَ فَضْلُ اللّٰهِ یُؤْتِیْهِ مَنْ یَّشَآءُ ؕ وَاللّٰهُ ذُو الْفَضْلِ الْعَظِیْمِ ۟",
+        "terjemahan": "Demikianlah karunia Allah, diberikan-Nya kepada siapa yang dikehendaki-Nya; dan Allah mempunyai karunia yang besar."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "مَثَلُ الَّذِیْنَ حُمِّلُوا التَّوْرٰىةَ ثُمَّ لَمْ یَحْمِلُوْهَا كَمَثَلِ الْحِمَارِ یَحْمِلُ اَسْفَارًا ؕ بِئْسَ مَثَلُ الْقَوْمِ الَّذِیْنَ كَذَّبُوْا بِاٰیٰتِ اللّٰهِ ؕ وَاللّٰهُ لَا یَهْدِی الْقَوْمَ الظّٰلِمِیْنَ ۟",
+        "terjemahan": "Perumpamaan orang-orang yang dipikulkan kepadanya Taurat, kemudian mereka tiada memikulnya adalah seperti keledai yang membawa kitab-kitab yang tebal. Amatlah buruknya perumpamaan kaum yang mendustakan ayat-ayat Allah itu. Dan Allah tiada memberi petunjuk kepada kaum yang zalim."
+      }
+    ]
+  },
+  "63": {
+    "nama": "Al-Munafiqun",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِذَا جَآءَكَ الْمُنٰفِقُوْنَ قَالُوْا نَشْهَدُ اِنَّكَ لَرَسُوْلُ اللّٰهِ ۘ وَاللّٰهُ یَعْلَمُ اِنَّكَ لَرَسُوْلُهٗ ؕ وَاللّٰهُ یَشْهَدُ اِنَّ الْمُنٰفِقِیْنَ لَكٰذِبُوْنَ ۟ۚ",
+        "terjemahan": "Apabila orang-orang munafik datang kepadamu, mereka berkata, \"Kami mengakui bahwa sesungguhnya kamu benar-benar rasul Allah\". Dan Allah mengetahui bahwa sesungguhnya kamu benar-benar rasul-Nya; dan Allah mengetahui bahwa sesungguhnya orang-orang munafik itu benar-benar orang pendusta."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اِتَّخَذُوْۤا اَیْمَانَهُمْ جُنَّةً فَصَدُّوْا عَنْ سَبِیْلِ اللّٰهِ ؕ اِنَّهُمْ سَآءَ مَا كَانُوْا یَعْمَلُوْنَ ۟",
+        "terjemahan": "Mereka itu menjadikan sumpah mereka sebagai perisai , lalu mereka menghalangi (manusia) dari jalan Allah. Sesungguhnya amat buruklah apa yang telah mereka kerjakan."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "ذٰلِكَ بِاَنَّهُمْ اٰمَنُوْا ثُمَّ كَفَرُوْا فَطُبِعَ عَلٰی قُلُوْبِهِمْ فَهُمْ لَا یَفْقَهُوْنَ ۟",
+        "terjemahan": "Yang demikian itu adalah karena bahwa sesungguhnya mereka telah beriman, kemudian menjadi kafir (lagi) lalu hati mereka dikunci mati; karena itu mereka tidak dapat mengerti."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَاِذَا رَاَیْتَهُمْ تُعْجِبُكَ اَجْسَامُهُمْ ؕ وَاِنْ یَّقُوْلُوْا تَسْمَعْ لِقَوْلِهِمْ ؕ كَاَنَّهُمْ خُشُبٌ مُّسَنَّدَةٌ ؕ یَحْسَبُوْنَ كُلَّ صَیْحَةٍ عَلَیْهِمْ ؕ هُمُ الْعَدُوُّ فَاحْذَرْهُمْ ؕ قٰتَلَهُمُ اللّٰهُ ؗ اَنّٰی یُؤْفَكُوْنَ ۟",
+        "terjemahan": "Dan apabila kamu melihat mereka, tubuh-tubuh mereka menjadikan kamu kagum. Dan jika mereka berkata kamu mendengarkan perkataan mereka. Mereka adalah seakan-akan kayu yang tersandar . Mereka mengira bahwa tiap-tiap teriakan yang keras ditujukan kepada mereka. Mereka itulah musuh (yang sebenarnya), maka waspadalah terhadap mereka; semoga Allah membinasakan mereka. Bagaimanakah mereka sampai dipalingkan (dari kebenaran)?"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَاِذَا قِیْلَ لَهُمْ تَعَالَوْا یَسْتَغْفِرْ لَكُمْ رَسُوْلُ اللّٰهِ لَوَّوْا رُءُوْسَهُمْ وَرَاَیْتَهُمْ یَصُدُّوْنَ وَهُمْ مُّسْتَكْبِرُوْنَ ۟",
+        "terjemahan": "Dan apabila dikatakan kepada mereka, \"Marilah (beriman), agar Rasulullah memintakan ampunan bagimu\", mereka membuang muka mereka dan kamu lihat mereka berpaling sedang mereka menyombongkan diri."
+      }
+    ]
+  },
+  "64": {
+    "nama": "At-Taghabun",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یُسَبِّحُ لِلّٰهِ مَا فِی السَّمٰوٰتِ وَمَا فِی الْاَرْضِ ۚ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ ؗ وَهُوَ عَلٰی كُلِّ شَیْءٍ قَدِیْرٌ ۟",
+        "terjemahan": "Senantiasa bertasbih kepada Allah apa yang di langit dan apa yang ada di bumi; hanya Allah-lah yang mempunyai semua kerajaan dan semua puji-pujian; dan Dia Maha Kuasa atas segala sesuatu."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "هُوَ الَّذِیْ خَلَقَكُمْ فَمِنْكُمْ كَافِرٌ وَّمِنْكُمْ مُّؤْمِنٌ ؕ وَاللّٰهُ بِمَا تَعْمَلُوْنَ بَصِیْرٌ ۟",
+        "terjemahan": "Dia-lah yang menciptakan kamu, maka di antara kamu ada yang kafir dan di antaramu ada yang beriman. Dan Allah Maha Melihat apa yang kamu kerjakan."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "خَلَقَ السَّمٰوٰتِ وَالْاَرْضَ بِالْحَقِّ وَصَوَّرَكُمْ فَاَحْسَنَ صُوَرَكُمْ ۚ وَاِلَیْهِ الْمَصِیْرُ ۟",
+        "terjemahan": "Dia menciptakan langit dan bumi dengan (tujuan) yang benar, Dia membentuk rupamu dan dibaguskan-Nya rupamu itu, dan hanya kepada-Nya-lah kembali(mu)."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "یَعْلَمُ مَا فِی السَّمٰوٰتِ وَالْاَرْضِ وَیَعْلَمُ مَا تُسِرُّوْنَ وَمَا تُعْلِنُوْنَ ؕ وَاللّٰهُ عَلِیْمٌۢ بِذَاتِ الصُّدُوْرِ ۟",
+        "terjemahan": "Dia mengetahui apa yang ada di langit dan di bumi, dan mengetahui apa yang kamu rahasiakan dan yang kamu nyatakan. Dan Allah Maha Mengetahui segala isi hati."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اَلَمْ یَاْتِكُمْ نَبَؤُا الَّذِیْنَ كَفَرُوْا مِنْ قَبْلُ ؗ فَذَاقُوْا وَبَالَ اَمْرِهِمْ وَلَهُمْ عَذَابٌ اَلِیْمٌ ۟",
+        "terjemahan": "Apakah belum datang kepadamu (hai orang-orang kafir) berita orang-orang kafir dahulu? Maka mereka telah merasakan akibat yang buruk dari perbuatan mereka dan mereka memperoleh azab yang pedih."
+      }
+    ]
+  },
+  "65": {
+    "nama": "At-Talaq",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یٰۤاَیُّهَا النَّبِیُّ اِذَا طَلَّقْتُمُ النِّسَآءَ فَطَلِّقُوْهُنَّ لِعِدَّتِهِنَّ وَاَحْصُوا الْعِدَّةَ ۚ وَاتَّقُوا اللّٰهَ رَبَّكُمْ ۚ لَا تُخْرِجُوْهُنَّ مِنْ بُیُوْتِهِنَّ وَلَا یَخْرُجْنَ اِلَّاۤ اَنْ یَّاْتِیْنَ بِفَاحِشَةٍ مُّبَیِّنَةٍ ؕ وَتِلْكَ حُدُوْدُ اللّٰهِ ؕ وَمَنْ یَّتَعَدَّ حُدُوْدَ اللّٰهِ فَقَدْ ظَلَمَ نَفْسَهٗ ؕ لَا تَدْرِیْ لَعَلَّ اللّٰهَ یُحْدِثُ بَعْدَ ذٰلِكَ اَمْرًا ۟",
+        "terjemahan": "Hai Nabi, apabila kamu menceraikan istri-istrimu maka hendaklah kamu ceraikan mereka pada waktu mereka dapat (menghadapi) idahnya (yang wajar) dan hitunglah waktu idah itu serta bertakwalah kepada Allah Tuhan-mu. Janganlah kamu keluarkan mereka dari rumah mereka dan janganlah mereka (diizinkan) ke luar kecuali kalau mereka mengerjakan perbuatan keji yang terang. Itulah hukum-hukum Allah dan barang siapa yang melanggar hukum-hukum Allah, maka sesungguhnya dia telah berbuat zalim terhadap dirinya sendiri. Kamu tidak mengetahui barangkali Allah mengadakan sesudah itu sesuatu hal yang baru ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "فَاِذَا بَلَغْنَ اَجَلَهُنَّ فَاَمْسِكُوْهُنَّ بِمَعْرُوْفٍ اَوْ فَارِقُوْهُنَّ بِمَعْرُوْفٍ وَّاَشْهِدُوْا ذَوَیْ عَدْلٍ مِّنْكُمْ وَاَقِیْمُوا الشَّهَادَةَ لِلّٰهِ ؕ ذٰلِكُمْ یُوْعَظُ بِهٖ مَنْ كَانَ یُؤْمِنُ بِاللّٰهِ وَالْیَوْمِ الْاٰخِرِ ؕ۬ وَمَنْ یَّتَّقِ اللّٰهَ یَجْعَلْ لَّهٗ مَخْرَجًا ۟ۙ",
+        "terjemahan": "Apabila mereka telah mendekati akhir idahnya, maka rujukilah mereka dengan baik atau lepaskanlah mereka dengan baik dan persaksikanlah dengan dua orang saksi yang adil di antara kamu dan hendaklah kamu tegakkan kesaksian itu karena Allah. Demikianlah diberi pengajaran dengan itu orang yang beriman kepada Allah dan hari akhirat. Barang siapa bertakwa kepada Allah, niscaya Dia akan mengadakan baginya jalan keluar."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَّیَرْزُقْهُ مِنْ حَیْثُ لَا یَحْتَسِبُ ؕ وَمَنْ یَّتَوَكَّلْ عَلَی اللّٰهِ فَهُوَ حَسْبُهٗ ؕ اِنَّ اللّٰهَ بَالِغُ اَمْرِهٖ ؕ قَدْ جَعَلَ اللّٰهُ لِكُلِّ شَیْءٍ قَدْرًا ۟",
+        "terjemahan": "Dan memberinya rezeki dari arah yang tiada disangka-sangkanya. Dan barang siapa yang bertawakal kepada Allah, niscaya Allah akan mencukupkan (keperluan)nya. Sesungguhnya Allah melaksanakan urusan yang (dikehendaki)-Nya. Sesungguhnya Allah telah mengadakan ketentuan bagi tiap-tiap sesuatu."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَا یَىِٕسْنَ مِنَ الْمَحِیْضِ مِنْ نِّسَآىِٕكُمْ اِنِ ارْتَبْتُمْ فَعِدَّتُهُنَّ ثَلٰثَةُ اَشْهُرٍ ۙ وَّا لَمْ یَحِضْنَ ؕ وَاُولَاتُ الْاَحْمَالِ اَجَلُهُنَّ اَنْ یَّضَعْنَ حَمْلَهُنَّ ؕ وَمَنْ یَّتَّقِ اللّٰهَ یَجْعَلْ لَّهٗ مِنْ اَمْرِهٖ یُسْرًا ۟",
+        "terjemahan": "Dan perempuan-perempuan yang tidak haid lagi (menopause) di antara perempuan-perempuanmu jika kamu ragu-ragu (tentang masa idahnya), maka masa idah mereka adalah tiga bulan; dan begitu (pula) perempuan-perempuan yang tidak haid. Dan perempuan-perempuan yang hamil, waktu idah mereka itu ialah sampai mereka melahirkan kandungannya. Dan barang siapa yang bertakwa kepada Allah, niscaya Allah menjadikan baginya kemudahan dalam urusannya."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "ذٰلِكَ اَمْرُ اللّٰهِ اَنْزَلَهٗۤ اِلَیْكُمْ ؕ وَمَنْ یَّتَّقِ اللّٰهَ یُكَفِّرْ عَنْهُ سَیِّاٰتِهٖ وَیُعْظِمْ لَهٗۤ اَجْرًا ۟",
+        "terjemahan": "Itulah perintah Allah yang diturunkan-Nya kepada kamu, dan barang siapa yang bertakwa kepada Allah, niscaya Dia akan menghapus kesalahan-kesalahannya dan akan melipatgandakan pahala baginya."
+      }
+    ]
+  },
+  "66": {
+    "nama": "At-Tahrim",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یٰۤاَیُّهَا النَّبِیُّ لِمَ تُحَرِّمُ مَاۤ اَحَلَّ اللّٰهُ لَكَ ۚ تَبْتَغِیْ مَرْضَاتَ اَزْوَاجِكَ ؕ وَاللّٰهُ غَفُوْرٌ رَّحِیْمٌ ۟",
+        "terjemahan": "Hai Nabi, mengapa kamu mengharamkan apa yang Allah menghalalkannya bagimu; kamu mencari kesenangan hati istri-istrimu? Dan Allah Maha Pengampun lagi Maha Penyayang ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "قَدْ فَرَضَ اللّٰهُ لَكُمْ تَحِلَّةَ اَیْمَانِكُمْ ۚ وَاللّٰهُ مَوْلٰىكُمْ ۚ وَهُوَ الْعَلِیْمُ الْحَكِیْمُ ۟",
+        "terjemahan": "Sesungguhnya Allah telah mewajibkan kepada kamu sekalian membebaskan diri dari sumpahmu ; dan Allah adalah Pelindungmu dan Dia Maha Mengetahui lagi Maha Bijaksana."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَاِذْ اَسَرَّ النَّبِیُّ اِلٰی بَعْضِ اَزْوَاجِهٖ حَدِیْثًا ۚ فَلَمَّا نَبَّاَتْ بِهٖ وَاَظْهَرَهُ اللّٰهُ عَلَیْهِ عَرَّفَ بَعْضَهٗ وَاَعْرَضَ عَنْ بَعْضٍ ۚ فَلَمَّا نَبَّاَهَا بِهٖ قَالَتْ مَنْ اَنْۢبَاَكَ هٰذَا ؕ قَالَ نَبَّاَنِیَ الْعَلِیْمُ الْخَبِیْرُ ۟",
+        "terjemahan": "Dan ingatlah ketika nabi membicarakan secara rahasia kepada salah seorang dari istri-istrinya (ῌafṣah) suatu peristiwa. Maka tatkala (ῌafṣah) menceritakan peristiwa itu (kepada ʻĀ`isyah) dan Allah memberitahukan hal itu (semua pembicaraan ῌafṣah dengan ʻĀ`isyah) kepada Muhammad, lalu Muhammad memberitahukan sebagian (yang diberitakan Allah kepadanya) dan menyembunyikan sebagian yang lain (kepada ῌafṣah). Maka tatkala (Muhammad) memberitahukan pembicaraan (antara ῌafṣah dan ʻĀ`isyah), lalu ῌafṣah bertanya, \"Siapakah yang telah memberitahukan hal ini kepadamu?\" Nabi menjawab, \"Telah diberitahukan kepadaku oleh Allah yang Maha Mengetahui lagi Maha Mengenal\"."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِنْ تَتُوْبَاۤ اِلَی اللّٰهِ فَقَدْ صَغَتْ قُلُوْبُكُمَا ۚ وَاِنْ تَظٰهَرَا عَلَیْهِ فَاِنَّ اللّٰهَ هُوَ مَوْلٰىهُ وَجِبْرِیْلُ وَصَالِحُ الْمُؤْمِنِیْنَ ۚ وَالْمَلٰٓىِٕكَةُ بَعْدَ ذٰلِكَ ظَهِیْرٌ ۟",
+        "terjemahan": "Jika kamu berdua bertobat kepada Allah, maka sesungguhnya hati kamu berdua telah condong (untuk menerima kebaikan); dan jika kamu berdua bantu-membantu menyusahkan nabi, maka sesungguhnya Allah adalah Pelindungnya dan (begitu pula) Jibril dan orang-orang mukmin yang baik; dan selain dari itu malaikat-malaikat adalah penolongnya pula."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "عَسٰی رَبُّهٗۤ اِنْ طَلَّقَكُنَّ اَنْ یُّبْدِلَهٗۤ اَزْوَاجًا خَیْرًا مِّنْكُنَّ مُسْلِمٰتٍ مُّؤْمِنٰتٍ قٰنِتٰتٍ تٰٓىِٕبٰتٍ عٰبِدٰتٍ سٰٓىِٕحٰتٍ ثَیِّبٰتٍ وَّاَبْكَارًا ۟",
+        "terjemahan": "Jika nabi menceraikan kamu, boleh jadi Tuhan-nya akan memberi ganti kepadanya dengan istri-istri yang lebih baik daripada kamu, yang patuh, yang beriman, yang taat, yang bertobat, yang mengerjakan ibadah, yang berpuasa, yang janda, dan yang perawan."
+      }
+    ]
+  },
+  "67": {
+    "nama": "Al-Mulk",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "تَبٰرَكَ الَّذِیْ بِیَدِهِ الْمُلْكُ ؗ وَهُوَ عَلٰی كُلِّ شَیْءٍ قَدِیْرُ ۟ۙ",
+        "terjemahan": "Maha Suci Allah Yang di tangan-Nya-lah segala kerajaan, dan Dia Maha Kuasa atas segala sesuatu,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "لَّذِیْ خَلَقَ الْمَوْتَ وَالْحَیٰوةَ لِیَبْلُوَكُمْ اَیُّكُمْ اَحْسَنُ عَمَلًا ؕ وَهُوَ الْعَزِیْزُ الْغَفُوْرُ ۟ۙ",
+        "terjemahan": "Yang menjadikan mati dan hidup, supaya Dia menguji kamu, siapa di antara kamu yang lebih baik amalnya. Dan Dia Maha Perkasa lagi Maha Pengampun."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "الَّذِیْ خَلَقَ سَبْعَ سَمٰوٰتٍ طِبَاقًا ؕ مَا تَرٰی فِیْ خَلْقِ الرَّحْمٰنِ مِنْ تَفٰوُتٍ ؕ فَارْجِعِ الْبَصَرَ ۙ هَلْ تَرٰی مِنْ فُطُوْرٍ ۟",
+        "terjemahan": "Yang telah menciptakan tujuh langit berlapis-lapis. Kamu sekali-kali tidak melihat pada ciptaan Tuhan Yang Maha Pemurah sesuatu yang tidak seimbang. Maka lihatlah berulang-ulang, adakah kamu lihat sesuatu yang tidak seimbang?"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "ثُمَّ ارْجِعِ الْبَصَرَ كَرَّتَیْنِ یَنْقَلِبْ اِلَیْكَ الْبَصَرُ خَاسِئًا وَّهُوَ حَسِیْرٌ ۟",
+        "terjemahan": "Kemudian pandanglah sekali lagi, niscaya penglihatanmu akan kembali kepadamu dengan tidak menemukan sesuatu cacat dan penglihatanmu itu pun dalam keadaan payah."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَلَقَدْ زَیَّنَّا السَّمَآءَ الدُّنْیَا بِمَصَابِیْحَ وَجَعَلْنٰهَا رُجُوْمًا لِّلشَّیٰطِیْنِ وَاَعْتَدْنَا لَهُمْ عَذَابَ السَّعِیْرِ ۟",
+        "terjemahan": "Sesungguhnya Kami telah menghiasi langit yang dekat dengan bintang-bintang, dan Kami jadikan bintang-bintang itu alat-alat pelempar setan, dan Kami sediakan bagi mereka siksa neraka yang menyala-nyala."
+      }
+    ]
+  },
+  "68": {
+    "nama": "Al-Qalam",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "نٓ وَالْقَلَمِ وَمَا یَسْطُرُوْنَ ۟ۙ",
+        "terjemahan": "Nūn , demi pena dan apa yang mereka tulis,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "مَاۤ اَنْتَ بِنِعْمَةِ رَبِّكَ بِمَجْنُوْنٍ ۟ۚ",
+        "terjemahan": "berkat nikmat Tuhan-mu kamu (Muhammad) sekali-kali bukan orang gila."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَاِنَّ لَكَ لَاَجْرًا غَیْرَ مَمْنُوْنٍ ۟ۚ",
+        "terjemahan": "Dan sesungguhnya bagi kamu benar-benar pahala yang besar yang tidak putus-putusnya."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَاِنَّكَ لَعَلٰی خُلُقٍ عَظِیْمٍ ۟",
+        "terjemahan": "Dan sesungguhnya kamu benar-benar berbudi pekerti yang agung."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَسَتُبْصِرُ وَیُبْصِرُوْنَ ۟ۙ",
+        "terjemahan": "Maka kelak kamu akan melihat dan mereka (orang-orang kafir) pun akan melihat,"
+      }
+    ]
+  },
+  "69": {
+    "nama": "Al-Haqqah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اَلْحَآقَّةُ ۟ۙ",
+        "terjemahan": "Hari kiamat ,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "مَا الْحَآقَّةُ ۟ۚ",
+        "terjemahan": "apakah hari kiamat itu?"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَمَاۤ اَدْرٰىكَ مَا الْحَآقَّةُ ۟ؕ",
+        "terjemahan": "Dan tahukah kamu apakah hari kiamat itu?"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "كَذَّبَتْ ثَمُوْدُ وَعَادٌ بِالْقَارِعَةِ ۟",
+        "terjemahan": "Kaum Ṡamūd dan ʻĀd telah mendustakan hari kiamat ."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَاَمَّا ثَمُوْدُ فَاُهْلِكُوْا بِالطَّاغِیَةِ ۟",
+        "terjemahan": "Adapun kaum Ṡamūd, maka mereka telah dibinasakan dengan kejadian yang luar biasa ."
+      }
+    ]
+  },
+  "70": {
+    "nama": "Al-Ma'arij",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "سَاَلَ سَآىِٕلٌۢ بِعَذَابٍ وَّاقِعٍ ۟ۙ",
+        "terjemahan": "Seseorang peminta telah meminta kedatangan azab yang bakal terjadi,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "لِّلْكٰفِرِیْنَ لَیْسَ لَهٗ دَافِعٌ ۟ۙ",
+        "terjemahan": "untuk orang-orang kafir, yang tidak seorang pun dapat menolaknya,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "مِّنَ اللّٰهِ ذِی الْمَعَارِجِ ۟ؕ",
+        "terjemahan": "(yang datang) dari Allah, Yang mempunyai tempat-tempat naik."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "تَعْرُجُ الْمَلٰٓىِٕكَةُ وَالرُّوْحُ اِلَیْهِ فِیْ یَوْمٍ كَانَ مِقْدَارُهٗ خَمْسِیْنَ اَلْفَ سَنَةٍ ۟ۚ",
+        "terjemahan": "Malaikat-malaikat dan Jibril naik (menghadap) kepada Tuhan dalam sehari yang kadarnya lima puluh ribu tahun ."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَاصْبِرْ صَبْرًا جَمِیْلًا ۟",
+        "terjemahan": "Maka bersabarlah kamu dengan sabar yang baik."
+      }
+    ]
+  },
+  "71": {
+    "nama": "Nuh",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِنَّاۤ اَرْسَلْنَا نُوْحًا اِلٰی قَوْمِهٖۤ اَنْ اَنْذِرْ قَوْمَكَ مِنْ قَبْلِ اَنْ یَّاْتِیَهُمْ عَذَابٌ اَلِیْمٌ ۟",
+        "terjemahan": "Sesungguhnya Kami telah mengutus Nūḥ kepada kaumnya (dengan memerintahkan), \"Berilah kaummu peringatan sebelum datang kepadanya azab yang pedih\"."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "قَالَ یٰقَوْمِ اِنِّیْ لَكُمْ نَذِیْرٌ مُّبِیْنٌ ۟ۙ",
+        "terjemahan": "Nūḥ berkata, \"Hai kaumku, sesungguhnya aku adalah pemberi peringatan yang menjelaskan kepada kamu,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اَنِ اعْبُدُوا اللّٰهَ وَاتَّقُوْهُ وَاَطِیْعُوْنِ ۟ۙ",
+        "terjemahan": "(yaitu) sembahlah olehmu Allah, bertakwalah kepada-Nya dan taatlah kepadaku,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "یَغْفِرْ لَكُمْ مِّنْ ذُنُوْبِكُمْ وَیُؤَخِّرْكُمْ اِلٰۤی اَجَلٍ مُّسَمًّی ؕ اِنَّ اَجَلَ اللّٰهِ اِذَا جَآءَ لَا یُؤَخَّرُ ۘ لَوْ كُنْتُمْ تَعْلَمُوْنَ ۟",
+        "terjemahan": "niscaya Allah akan mengampuni sebagian dosa-dosamu dan menangguhkan kamu sampai kepada waktu yang ditentukan. Sesungguhnya ketetapan Allah apabila telah datang tidak dapat ditangguhkan, kalau kamu mengetahui\"."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "قَالَ رَبِّ اِنِّیْ دَعَوْتُ قَوْمِیْ لَیْلًا وَّنَهَارًا ۟ۙ",
+        "terjemahan": "Nūḥ berkata, \"Ya Tuhan-ku sesungguhnya aku telah menyeru kaumku malam dan siang,"
+      }
+    ]
+  },
+  "72": {
+    "nama": "Al-Jinn",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "قُلْ اُوْحِیَ اِلَیَّ اَنَّهُ اسْتَمَعَ نَفَرٌ مِّنَ الْجِنِّ فَقَالُوْۤا اِنَّا سَمِعْنَا قُرْاٰنًا عَجَبًا ۟ۙ",
+        "terjemahan": "Katakanlah (hai Muhammad), \"Telah diwahyukan kepadaku bahwasanya sekumpulan jin telah mendengarkan (Al-Qur`ān), lalu mereka berkata, \"Sesungguhnya kami telah mendengarkan Al-Qur`ān yang menakjubkan,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "یَّهْدِیْۤ اِلَی الرُّشْدِ فَاٰمَنَّا بِهٖ ؕ وَلَنْ نُّشْرِكَ بِرَبِّنَاۤ اَحَدًا ۟ۙ",
+        "terjemahan": "(yang) memberi petunjuk kapada jalan yang benar, lalu kami beriman kepadanya. Dan kami sekali-kali tidak akan mempersekutukan seorang pun dengan Tuhan kami,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَّاَنَّهٗ تَعٰلٰی جَدُّ رَبِّنَا مَا اتَّخَذَ صَاحِبَةً وَّلَا وَلَدًا ۟ۙ",
+        "terjemahan": "dan bahwasanya Maha Tinggi kebesaran Tuhan kami, Dia tidak beristri dan tidak (pula) beranak."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَّاَنَّهٗ كَانَ یَقُوْلُ سَفِیْهُنَا عَلَی اللّٰهِ شَطَطًا ۟ۙ",
+        "terjemahan": "Dan bahwasanya orang yang kurang akal dari kami selalu mengatakan (perkataan) yang melampaui batas terhadap Allah,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَّاَنَّا ظَنَنَّاۤ اَنْ لَّنْ تَقُوْلَ الْاِنْسُ وَالْجِنُّ عَلَی اللّٰهِ كَذِبًا ۟ۙ",
+        "terjemahan": "dan sesungguhnya kami mengira bahwa manusia dan jin sekali-kali tidak akan mengatakan perkataan yang dusta terhadap Allah."
+      }
+    ]
+  },
+  "73": {
+    "nama": "Al-Muzzammil",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یٰۤاَیُّهَا الْمُزَّمِّلُ ۟ۙ",
+        "terjemahan": "Hai orang yang berselimut (Muhammad),"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "قُمِ الَّیْلَ اِلَّا قَلِیْلًا ۟ۙ",
+        "terjemahan": "bangunlah (untuk salat) di malam hari , kecuali sedikit (darinya),"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "نِّصْفَهٗۤ اَوِ انْقُصْ مِنْهُ قَلِیْلًا ۟ۙ",
+        "terjemahan": "(yaitu) seperduanya atau kurangilah dari seperdua itu sedikit."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اَوْ زِدْ عَلَیْهِ وَرَتِّلِ الْقُرْاٰنَ تَرْتِیْلًا ۟ؕ",
+        "terjemahan": "atau lebih dari seperdua itu. Dan bacalah Al-Qur`ān itu dengan perlahan-lahan."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اِنَّا سَنُلْقِیْ عَلَیْكَ قَوْلًا ثَقِیْلًا ۟",
+        "terjemahan": "Sesungguhnya Kami akan menurunkan kepadamu perkataan yang berat."
+      }
+    ]
+  },
+  "74": {
+    "nama": "Al-Muddaththir",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "یٰۤاَیُّهَا الْمُدَّثِّرُ ۟ۙ",
+        "terjemahan": "Hai orang yang berkemul (berselimut),"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "قُمْ فَاَنْذِرْ ۟",
+        "terjemahan": "bangunlah, lalu berilah peringatan!"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَرَبَّكَ فَكَبِّرْ ۟",
+        "terjemahan": "dan Tuhan-mu agungkanlah."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَثِیَابَكَ فَطَهِّرْ ۟",
+        "terjemahan": "dan pakaianmu bersihkanlah,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَالرُّجْزَ فَاهْجُرْ ۟",
+        "terjemahan": "dan perbuatan dosa (menyembah berhala) tinggalkanlah,"
+      }
+    ]
+  },
+  "75": {
+    "nama": "Al-Qiyamah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "لَاۤ اُقْسِمُ بِیَوْمِ الْقِیٰمَةِ ۟ۙ",
+        "terjemahan": "Aku bersumpah demi hari kiamat,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَلَاۤ اُقْسِمُ بِالنَّفْسِ اللَّوَّامَةِ ۟ؕ",
+        "terjemahan": "dan aku bersumpah dengan jiwa yang amat menyesali (dirinya sendiri) ."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اَیَحْسَبُ الْاِنْسَانُ اَلَّنْ نَّجْمَعَ عِظَامَهٗ ۟ؕ",
+        "terjemahan": "Apakah manusia mengira, bahwa Kami tidak akan mengumpulkan (kembali) tulang belulangnya?"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "بَلٰى قٰدِرِیْنَ عَلٰۤی اَنْ نُّسَوِّیَ بَنَانَهٗ ۟",
+        "terjemahan": "Bukan demikian, sebenarnya Kami kuasa menyusun (kembali) jari jemarinya dengan sempurna."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "بَلْ یُرِیْدُ الْاِنْسَانُ لِیَفْجُرَ اَمَامَهٗ ۟ۚ",
+        "terjemahan": "Bahkan manusia itu hendak membuat maksiat terus menerus."
+      }
+    ]
+  },
+  "76": {
+    "nama": "Al-Insan",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "هَلْ اَتٰی عَلَی الْاِنْسَانِ حِیْنٌ مِّنَ الدَّهْرِ لَمْ یَكُنْ شَیْـًٔا مَّذْكُوْرًا ۟",
+        "terjemahan": "Bukankah telah datang atas manusia satu waktu dari masa, sedang dia ketika itu belum merupakan sesuatu yang dapat disebut?"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اِنَّا خَلَقْنَا الْاِنْسَانَ مِنْ نُّطْفَةٍ اَمْشَاجٍ ۖۗ نَّبْتَلِیْهِ فَجَعَلْنٰهُ سَمِیْعًا بَصِیْرًا ۟",
+        "terjemahan": "Sesungguhnya Kami telah menciptakan manusia dari setetes mani yang bercampur yang Kami hendak mengujinya (dengan perintah dan larangan), karena itu Kami jadikan dia mendengar dan melihat."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِنَّا هَدَیْنٰهُ السَّبِیْلَ اِمَّا شَاكِرًا وَّاِمَّا كَفُوْرًا ۟",
+        "terjemahan": "Sesungguhnya Kami telah menunjukinya jalan yang lurus; ada yang bersyukur dan ada pula yang kafir."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِنَّاۤ اَعْتَدْنَا لِلْكٰفِرِیْنَ سَلٰسِلَاۡ وَاَغْلٰلًا وَّسَعِیْرًا ۟",
+        "terjemahan": "Sesungguhnya Kami menyediakan bagi orang-orang kafir rantai, belenggu, dan neraka yang menyala-nyala."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اِنَّ الْاَبْرَارَ یَشْرَبُوْنَ مِنْ كَاْسٍ كَانَ مِزَاجُهَا كَافُوْرًا ۟ۚ",
+        "terjemahan": "Sesungguhnya orang-orang yang berbuat kebajikan minum dari gelas (berisi minuman) yang campurannya adalah air kāfūr ,"
+      }
+    ]
+  },
+  "77": {
+    "nama": "Al-Mursalat",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالْمُرْسَلٰتِ عُرْفًا ۟ۙ",
+        "terjemahan": "Demi malaikat-malaikat yang diutus untuk membawa kebaikan,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "فَالْعٰصِفٰتِ عَصْفًا ۟ۙ",
+        "terjemahan": "dan (malaikat-malaikat) yang terbang dengan kencangnya ,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَّالنّٰشِرٰتِ نَشْرًا ۟ۙ",
+        "terjemahan": "dan (malaikat-malaikat) yang menyebarkan (rahmat Tuhan-nya) dengan seluas-luasnya ,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "فَالْفٰرِقٰتِ فَرْقًا ۟ۙ",
+        "terjemahan": "dan (malaikat-malaikat) yang membedakan (antara yang hak dan yang batil) dengan sejelas-jelasnya,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَالْمُلْقِیٰتِ ذِكْرًا ۟ۙ",
+        "terjemahan": "dan (malaikat-malaikat) yang menyampaikan wahyu,"
+      }
+    ]
+  },
+  "78": {
+    "nama": "An-Naba",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "عَمَّ یَتَسَآءَلُوْنَ ۟ۚ",
+        "terjemahan": "Tentang apakah mereka saling bertanya-tanya?"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "عَنِ النَّبَاِ الْعَظِیْمِ ۟ۙ",
+        "terjemahan": "Tentang berita yang besar ,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "الَّذِیْ هُمْ فِیْهِ مُخْتَلِفُوْنَ ۟ؕ",
+        "terjemahan": "yang mereka perselisihkan tentang ini."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "كَلَّا سَیَعْلَمُوْنَ ۟ۙ",
+        "terjemahan": "Sekali-kali tidak ; kelak mereka akan mengetahui,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "ثُمَّ كَلَّا سَیَعْلَمُوْنَ ۟",
+        "terjemahan": "kemudian sekali-kali tidak; kelak mereka akan mengetahui."
+      }
+    ]
+  },
+  "79": {
+    "nama": "An-Nazi'at",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالنّٰزِعٰتِ غَرْقًا ۟ۙ",
+        "terjemahan": "Demi (malaikat-malaikat) yang mencabut (nyawa) dengan keras,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَّالنّٰشِطٰتِ نَشْطًا ۟ۙ",
+        "terjemahan": "dan (malaikat-malaikat) yang mencabut (nyawa) dengan lemah-lembut,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَّالسّٰبِحٰتِ سَبْحًا ۟ۙ",
+        "terjemahan": "dan (malaikat-malaikat) yang turun dari langit dengan cepat,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "فَالسّٰبِقٰتِ سَبْقًا ۟ۙ",
+        "terjemahan": "dan (malaikat-malaikat) yang mendahului dengan kencang,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَالْمُدَبِّرٰتِ اَمْرًا ۟ۘ",
+        "terjemahan": "dan (malaikat-malaikat) yang mengatur urusan (dunia)."
+      }
+    ]
+  },
+  "80": {
+    "nama": "'Abasa",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "عَبَسَ وَتَوَلّٰۤی ۟ۙ",
+        "terjemahan": "Dia (Muhammad) bermuka masam dan berpaling,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اَنْ جَآءَهُ الْاَعْمٰى ۟ؕ",
+        "terjemahan": "karena telah datang seorang buta kepadanya."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَمَا یُدْرِیْكَ لَعَلَّهٗ یَزَّ ۟ۙ",
+        "terjemahan": "Tahukah kamu barangkali ia ingin membersihkan dirinya (dari dosa),"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اَوْ یَذَّكَّرُ فَتَنْفَعَهُ الذِّكْرٰى ۟ؕ",
+        "terjemahan": "atau dia (ingin) mendapatkan pengajaran, lalu pengajaran itu memberi manfaat kepadanya?"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اَمَّا مَنِ اسْتَغْنٰى ۟ۙ",
+        "terjemahan": "Adapun orang yang merasa dirinya serba cukup,"
+      }
+    ]
+  },
+  "81": {
+    "nama": "At-Takwir",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِذَا الشَّمْسُ كُوِّرَتْ ۟",
+        "terjemahan": "Apabila matahari digulung,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَاِذَا النُّجُوْمُ انْكَدَرَتْ ۟",
+        "terjemahan": "dan apabila bintang-bintang berjatuhan,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَاِذَا الْجِبَالُ سُیِّرَتْ ۟",
+        "terjemahan": "dan apabila gunung-gunung dihancurkan,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَاِذَا الْعِشَارُ عُطِّلَتْ ۟",
+        "terjemahan": "dan apabila unta-unta yang bunting ditinggalkan (tidak diperdulikan),"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَاِذَا الْوُحُوْشُ حُشِرَتْ ۟",
+        "terjemahan": "dan apabila binatang-binatang liar dikumpulkan,"
+      }
+    ]
+  },
+  "82": {
+    "nama": "Al-Infitar",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِذَا السَّمَآءُ انْفَطَرَتْ ۟ۙ",
+        "terjemahan": "Apabila langit terbelah,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَاِذَا الْكَوَاكِبُ انْتَثَرَتْ ۟ۙ",
+        "terjemahan": "dan apabila bintang-bintang jatuh berserakan,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَاِذَا الْبِحَارُ فُجِّرَتْ ۟ۙ",
+        "terjemahan": "dan apabila lautan menjadikan meluap,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَاِذَا الْقُبُوْرُ بُعْثِرَتْ ۟ۙ",
+        "terjemahan": "dan apabila kuburan-kuburan dibongkar,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "عَلِمَتْ نَفْسٌ مَّا قَدَّمَتْ وَاَخَّرَتْ ۟ؕ",
+        "terjemahan": "maka tiap-tiap jiwa akan mengetahui apa yang telah dikerjakan dan yang dilalaikannya."
+      }
+    ]
+  },
+  "83": {
+    "nama": "Al-Mutaffifin",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَیْلٌ لِّلْمُطَفِّفِیْنَ ۟ۙ",
+        "terjemahan": "Kecelakaan besarlah bagi orang-orang yang curang ,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "الَّذِیْنَ اِذَا اكْتَالُوْا عَلَی النَّاسِ یَسْتَوْفُوْنَ ۟ؗۖ",
+        "terjemahan": "(yaitu) orang-orang yang apabila menerima takaran dari orang lain, mereka minta dipenuhi,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَاِذَا كَالُوْهُمْ اَوْ وَّزَنُوْهُمْ یُخْسِرُوْنَ ۟ؕ",
+        "terjemahan": "dan apabila mereka menakar atau menimbang untuk orang lain, mereka mengurangi."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اَلَا یَظُنُّ اُولٰٓىِٕكَ اَنَّهُمْ مَّبْعُوْثُوْنَ ۟ۙ",
+        "terjemahan": "Tidaklah orang-orang itu menyangka bahwa sesungguhnya mereka akan dibangkitkan,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "لِیَوْمٍ عَظِیْمٍ ۟ۙ",
+        "terjemahan": "pada suatu hari yang besar,"
+      }
+    ]
+  },
+  "84": {
+    "nama": "Al-Inshiqaq",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِذَا السَّمَآءُ انْشَقَّتْ ۟ۙ",
+        "terjemahan": "Apabila langit terbelah,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَاَذِنَتْ لِرَبِّهَا وَحُقَّتْ ۟ۙ",
+        "terjemahan": "dan patuh kepada Tuhan-nya, dan sudah semestinya langit itu patuh,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَاِذَا الْاَرْضُ مُدَّتْ ۟ؕ",
+        "terjemahan": "dan apabila bumi diratakan,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَاَلْقَتْ مَا فِیْهَا وَتَخَلَّتْ ۟ۙ",
+        "terjemahan": "dan memuntahkan apa yang ada di dalamnya dan menjadi kosong,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَاَذِنَتْ لِرَبِّهَا وَحُقَّتْ ۟ؕ",
+        "terjemahan": "dan patuh kepada Tuhan-nya, dan sudah semestinya bumi itu patuh, (pada waktu itu manusia akan mengetahui akibat perbuatannya)."
+      }
+    ]
+  },
+  "85": {
+    "nama": "Al-Buruj",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالسَّمَآءِ ذَاتِ الْبُرُوْجِ ۟ۙ",
+        "terjemahan": "Demi langit yang mempunyai gugusan bintang,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَالْیَوْمِ الْمَوْعُوْدِ ۟ۙ",
+        "terjemahan": "dan hari yang dijanjikan,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَشَاهِدٍ وَّمَشْهُوْدٍ ۟ؕ",
+        "terjemahan": "dan yang menyaksikan dan yang disaksikan."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "قُتِلَ اَصْحٰبُ الْاُخْدُوْدِ ۟ۙ",
+        "terjemahan": "Binasa dan terlaknatlah orang-orang yang membuat parit ,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "النَّارِ ذَاتِ الْوَقُوْدِ ۟ۙ",
+        "terjemahan": "yang berapi (dinyalakan dengan) kayu bakar,"
+      }
+    ]
+  },
+  "86": {
+    "nama": "At-Tariq",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالسَّمَآءِ وَالطَّارِقِ ۟ۙ",
+        "terjemahan": "Demi langit dan yang datang pada malam hari,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَمَاۤ اَدْرٰىكَ مَا الطَّارِقُ ۟ۙ",
+        "terjemahan": "tahukah kamu apakah yang datang pada malam hari itu?,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "النَّجْمُ الثَّاقِبُ ۟ۙ",
+        "terjemahan": "(yaitu) bintang yang cahayanya menembus,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِنْ كُلُّ نَفْسٍ لَّمَّا عَلَیْهَا حَافِظٌ ۟ؕ",
+        "terjemahan": "tidak ada suatu jiwa pun (diri) melainkan ada penjaganya."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَلْیَنْظُرِ الْاِنْسَانُ مِمَّ خُلِقَ ۟ؕ",
+        "terjemahan": "Maka hendaklah manusia memperhatikan dari apakah dia diciptakan?"
+      }
+    ]
+  },
+  "87": {
+    "nama": "Al-A'la",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "سَبِّحِ اسْمَ رَبِّكَ الْاَعْلَی ۟ۙ",
+        "terjemahan": "Sucikanlah nama Tuhan-mu Yang Maha Tingi,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "الَّذِیْ خَلَقَ فَسَوّٰی ۟",
+        "terjemahan": "yang menciptakan, dan menyempurnakan (penciptaan-Nya),"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَالَّذِیْ قَدَّرَ فَهَدٰی ۟",
+        "terjemahan": "dan yang menentukan kadar (masing-masing) dan memberi petunjuk,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَالَّذِیْۤ اَخْرَجَ الْمَرْعٰی ۟",
+        "terjemahan": "dan yang menumbuhkan rumput-rumputan,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَجَعَلَهٗ غُثَآءً اَحْوٰی ۟ؕ",
+        "terjemahan": "lalu dijadikan-Nya rumput-rumput itu kering kehitam-hitaman."
+      }
+    ]
+  },
+  "88": {
+    "nama": "Al-Ghashiyah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "هَلْ اَتٰىكَ حَدِیْثُ الْغَاشِیَةِ ۟ؕ",
+        "terjemahan": "Sudah datangkah kepadamu berita (tentang) hari pembalasan?"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وُجُوْهٌ یَّوْمَىِٕذٍ خَاشِعَةٌ ۟ۙ",
+        "terjemahan": "Banyak muka pada hari itu tunduk terhina,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "عَامِلَةٌ نَّاصِبَةٌ ۟ۙ",
+        "terjemahan": "bekerja keras lagi kepayahan,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "تَصْلٰی نَارًا حَامِیَةً ۟ۙ",
+        "terjemahan": "memasuki api yang sangat panas (neraka),"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "تُسْقٰی مِنْ عَیْنٍ اٰنِیَةٍ ۟ؕ",
+        "terjemahan": "diberi minum (dengan air) dari sumber yang sangat panas."
+      }
+    ]
+  },
+  "89": {
+    "nama": "Al-Fajr",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالْفَجْرِ ۟ۙ",
+        "terjemahan": "Demi fajar,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَلَیَالٍ عَشْرٍ ۟ۙ",
+        "terjemahan": "dan malam yang sepuluh ,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَّالشَّفْعِ وَالْوَتْرِ ۟ۙ",
+        "terjemahan": "dan yang genap dan yang ganjil,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَالَّیْلِ اِذَا یَسْرِ ۟ۚ",
+        "terjemahan": "dan malam bila berlalu."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "هَلْ فِیْ ذٰلِكَ قَسَمٌ لِّذِیْ حِجْرٍ ۟ؕ",
+        "terjemahan": "Pada yang demikian itu terdapat sumpah (yang dapat diterima) oleh orang-orang yang berakal."
+      }
+    ]
+  },
+  "90": {
+    "nama": "Al-Balad",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "لَاۤ اُقْسِمُ بِهٰذَا الْبَلَدِ ۟ۙ",
+        "terjemahan": "Aku benar-benar bersumpah dengan kota ini (Mekah),"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَاَنْتَ حِلٌّۢ بِهٰذَا الْبَلَدِ ۟ۙ",
+        "terjemahan": "dan kamu (Muhammad) bertempat di kota Mekah ini,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَوَالِدٍ وَّمَا وَلَدَ ۟ۙ",
+        "terjemahan": "dan demi bapak dan anaknya."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "لَقَدْ خَلَقْنَا الْاِنْسَانَ فِیْ كَبَدٍ ۟ؕ",
+        "terjemahan": "Sesungguhnya Kami telah menciptakan manusia berada dalam susah payah."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "اَیَحْسَبُ اَنْ لَّنْ یَّقْدِرَ عَلَیْهِ اَحَدٌ ۟ۘ",
+        "terjemahan": "Apakah manusia itu menyangka bahwa sekali-kali tiada seorang pun yang berkuasa atasnya?"
+      }
+    ]
+  },
+  "91": {
+    "nama": "Ash-Shams",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالشَّمْسِ وَضُحٰىهَا ۟",
+        "terjemahan": "Demi matahari dan cahayanya di pagi hari,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَالْقَمَرِ اِذَا تَلٰىهَا ۟",
+        "terjemahan": "dan bulan apabila mengiringinya,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَالنَّهَارِ اِذَا جَلّٰىهَا ۟",
+        "terjemahan": "dan siang apabila menampakkannya,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَالَّیْلِ اِذَا یَغْشٰىهَا ۟",
+        "terjemahan": "dan malam apabila menutupinya ,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَالسَّمَآءِ وَمَا بَنٰىهَا ۟",
+        "terjemahan": "dan langit serta pembinaannya,"
+      }
+    ]
+  },
+  "92": {
+    "nama": "Al-Lail",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالَّیْلِ اِذَا یَغْشٰی ۟ۙ",
+        "terjemahan": "Demi malam apabila menutupi (cahaya siang),"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَالنَّهَارِ اِذَا تَجَلّٰی ۟ۙ",
+        "terjemahan": "dan siang apabila terang benderang,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَمَا خَلَقَ الذَّكَرَ وَالْاُ ۟ۙ",
+        "terjemahan": "dan penciptaan laki-laki dan perempuan,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "اِنَّ سَعْیَكُمْ لَشَتّٰی ۟ؕ",
+        "terjemahan": "sesungguhnya usaha kamu memang berbeda-beda."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَاَمَّا مَنْ اَعْطٰی وَاتَّقٰی ۟ۙ",
+        "terjemahan": "Adapun orang yang memberikan (hartanya di jalan Allah) dan bertakwa,"
+      }
+    ]
+  },
+  "93": {
+    "nama": "Ad-Duhaa",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالضُّحٰی ۟ۙ",
+        "terjemahan": "Demi waktu matahari sepenggalahan naik,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَالَّیْلِ اِذَا سَجٰی ۟ۙ",
+        "terjemahan": "dan demi malam apabila telah sunyi,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "مَا وَدَّعَكَ رَبُّكَ وَمَا قَلٰی ۟ؕ",
+        "terjemahan": "Tuhan-mu tiada meninggalkan kamu dan tiada (pula) benci kepadamu ,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَلَلْاٰخِرَةُ خَیْرٌ لَّكَ مِنَ الْاُوْلٰی ۟ؕ",
+        "terjemahan": "dan sesungguhnya akhir itu lebih baik bagimu dari permulaan ."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَلَسَوْفَ یُعْطِیْكَ رَبُّكَ فَتَرْضٰی ۟ؕ",
+        "terjemahan": "Dan kelak Tuhan-mu pasti memberikan karunia-Nya kepadamu, lalu (hati) kamu menjadi puas."
+      }
+    ]
+  },
+  "94": {
+    "nama": "Ash-Sharh",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اَلَمْ نَشْرَحْ لَكَ صَدْرَكَ ۟ۙ",
+        "terjemahan": "Bukankah Kami telah melapangkan untukmu dadamu?"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَوَضَعْنَا عَنْكَ وِزْرَكَ ۟ۙ",
+        "terjemahan": "dan Kami telah menghilangkan darimu bebanmu ,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "الَّذِیْۤ اَنْقَضَ ظَهْرَكَ ۟ۙ",
+        "terjemahan": "yang memberatkan punggungmu?"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَرَفَعْنَا لَكَ ذِكْرَكَ ۟ؕ",
+        "terjemahan": "Dan Kami tinggikan bagimu sebutan (nama)mu ."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَاِنَّ مَعَ الْعُسْرِ یُسْرًا ۟ۙ",
+        "terjemahan": "Karena sesungguhnya sesudah kesulitan itu ada kemudahan,"
+      }
+    ]
+  },
+  "95": {
+    "nama": "At-Tin",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالتِّیْنِ وَالزَّیْتُوْنِ ۟ۙ",
+        "terjemahan": "Demi (buah) tin dan (buah) zaitun ,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَطُوْرِ سِیْنِیْنَ ۟ۙ",
+        "terjemahan": "dan demi bukit Ṭūrsīnā` ,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَهٰذَا الْبَلَدِ الْاَمِیْنِ ۟ۙ",
+        "terjemahan": "dan demi kota (Mekah) ini yang aman,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "لَقَدْ خَلَقْنَا الْاِنْسَانَ فِیْۤ اَحْسَنِ تَقْوِیْمٍ ۟ؗ",
+        "terjemahan": "sesungguhnya Kami telah menciptakan manusia dalam bentuk yang sebaik-baiknya."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "ثُمَّ رَدَدْنٰهُ اَسْفَلَ سٰفِلِیْنَ ۟ۙ",
+        "terjemahan": "Kemudian Kami kembalikan dia ke tempat yang serendah-rendahnya (neraka),"
+      }
+    ]
+  },
+  "96": {
+    "nama": "Al-'Alaq",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِقْرَاْ بِاسْمِ رَبِّكَ الَّذِیْ خَلَقَ ۟ۚ",
+        "terjemahan": "Bacalah dengan (menyebut) nama Tuhan-mu Yang menciptakan,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "خَلَقَ الْاِنْسَانَ مِنْ عَلَقٍ ۟ۚ",
+        "terjemahan": "Dia telah menciptakan manusia dari segumpal darah."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِقْرَاْ وَرَبُّكَ الْاَكْرَمُ ۟ۙ",
+        "terjemahan": "Bacalah, dan Tuhan-mulah Yang Maha Pemurah,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "الَّذِیْ عَلَّمَ بِالْقَلَمِ ۟ۙ",
+        "terjemahan": "Yang mengajar (manusia) dengan perantaran kalam ."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "عَلَّمَ الْاِنْسَانَ مَا لَمْ یَعْلَمْ ۟ؕ",
+        "terjemahan": "Dia mengajarkan kepada manusia apa yang tidak diketahuinya."
+      }
+    ]
+  },
+  "97": {
+    "nama": "Al-Qadr",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِنَّاۤ اَنْزَلْنٰهُ فِیْ لَیْلَةِ الْقَدْرِ ۟ۚۖ",
+        "terjemahan": "Sesungguhnya Kami telah menurunkannya (Al-Qur`ān) pada malam kemuliaan ."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَمَاۤ اَدْرٰىكَ مَا لَیْلَةُ الْقَدْرِ ۟ؕ",
+        "terjemahan": "Dan tahukah kamu apakah malam kemuliaan itu?"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "لَیْلَةُ الْقَدْرِ ۙ۬ خَیْرٌ مِّنْ اَلْفِ شَهْرٍ ۟ؕؔ",
+        "terjemahan": "Malam kemuliaan itu lebih baik dari seribu bulan."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "تَنَزَّلُ الْمَلٰٓىِٕكَةُ وَالرُّوْحُ فِیْهَا بِاِذْنِ رَبِّهِمْ ۚ مِنْ كُلِّ اَمْرٍ ۟ۙۛ",
+        "terjemahan": "Pada malam itu turun malaikat-malaikat dan malaikat Jibril dengan izin Tuhan-nya untuk mengatur segala urusan."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "سَلٰمٌ ۛ۫ هِیَ حَتّٰی مَطْلَعِ الْفَجْرِ ۟۠",
+        "terjemahan": "Malam itu (penuh) kesejahteraan sampai terbit fajar."
+      }
+    ]
+  },
+  "98": {
+    "nama": "Al-Bayyinah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "لَمْ یَكُنِ الَّذِیْنَ كَفَرُوْا مِنْ اَهْلِ الْكِتٰبِ وَالْمُشْرِكِیْنَ مُنْفَكِّیْنَ حَتّٰی تَاْتِیَهُمُ الْبَیِّنَةُ ۟ۙ",
+        "terjemahan": "Orang-orang kafir yakni ahli kitab dan orang-orang musyrik (mengatakan bahwa mereka) tidak akan meninggalkan (agamanya) sebelum datang kepada mereka bukti yang nyata,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "رَسُوْلٌ مِّنَ اللّٰهِ یَتْلُوْا صُحُفًا مُّطَهَّرَةً ۟ۙ",
+        "terjemahan": "(yaitu) seorang rasul dari Allah (Muhammad) yang membacakan lembaran-lembaran yang disucikan (Al-Qur`ān),"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "فِیْهَا كُتُبٌ قَیِّمَةٌ ۟ؕ",
+        "terjemahan": "di dalamnya terdapat (isi) Kitab-kitab yang lurus ."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَمَا تَفَرَّقَ الَّذِیْنَ اُوْتُوا الْكِتٰبَ اِلَّا مِنْ بَعْدِ مَا جَآءَتْهُمُ الْبَیِّنَةُ ۟ؕ",
+        "terjemahan": "Dan tidaklah berpecah belah orang-orang yang didatangkan Alkitab (kepada mereka) melainkan sesudah datang kepada mereka bukti yang nyata."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَمَاۤ اُمِرُوْۤا اِلَّا لِیَعْبُدُوا اللّٰهَ مُخْلِصِیْنَ لَهُ الدِّیْنَ ۙ۬ حُنَفَآءَ وَیُقِیْمُوا الصَّلٰوةَ وَیُؤْتُوا الزَّكٰوةَ وَذٰلِكَ دِیْنُ الْقَیِّمَةِ ۟ؕ",
+        "terjemahan": "Padahal mereka tidak disuruh kecuali supaya menyembah Allah dengan memurnikan ketaatan kepada-Nya dalam (menjalankan) agama yang lurus , dan supaya mereka mendirikan salat dan menunaikan zakat; dan yang demikian itulah agama yang lurus."
+      }
+    ]
+  },
+  "99": {
+    "nama": "Az-Zalzalah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِذَا زُلْزِلَتِ الْاَرْضُ زِلْزَالَهَا ۟ۙ",
+        "terjemahan": "Apabila bumi diguncangkan dengan guncangan (yang dahsyat),"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَاَخْرَجَتِ الْاَرْضُ اَثْقَالَهَا ۟ۙ",
+        "terjemahan": "dan bumi telah mengeluarkan beban-beban berat (yang dikandung)nya,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَقَالَ الْاِنْسَانُ مَا لَهَا ۟ۚ",
+        "terjemahan": "dan manusia bertanya, \"Mengapa bumi (jadi begini)?\","
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "یَوْمَىِٕذٍ تُحَدِّثُ اَخْبَارَهَا ۟ؕ",
+        "terjemahan": "pada hari itu bumi menceritakan beritanya,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "بِاَنَّ رَبَّكَ اَوْحٰی لَهَا ۟ؕ",
+        "terjemahan": "karena sesungguhnya Tuhan-mu telah memerintahkan (yang sedemikian itu) kepadanya."
+      }
+    ]
+  },
+  "100": {
+    "nama": "Al-Adiyat",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالْعٰدِیٰتِ ضَبْحًا ۟ۙ",
+        "terjemahan": "Demi kuda perang yang berlari kencang dengan terengah-engah,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "فَالْمُوْرِیٰتِ قَدْحًا ۟ۙ",
+        "terjemahan": "dan kuda yang mencetuskan api dengan pukulan (kuku kakinya),"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "فَالْمُغِیْرٰتِ صُبْحًا ۟ۙ",
+        "terjemahan": "dan kuda yang menyerang dengan tiba-tiba di waktu pagi,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "فَاَثَرْنَ بِهٖ نَقْعًا ۟ۙ",
+        "terjemahan": "maka ia menerbangkan debu,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَوَسَطْنَ بِهٖ جَمْعًا ۟ۙ",
+        "terjemahan": "dan menyerbu ke tengah-tengah kumpulan musuh,"
+      }
+    ]
+  },
+  "101": {
+    "nama": "Al-Qari'ah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اَلْقَارِعَةُ ۟ۙ",
+        "terjemahan": "Hari kiamat,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "مَا الْقَارِعَةُ ۟ۚ",
+        "terjemahan": "apakah hari kiamat itu?"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَمَاۤ اَدْرٰىكَ مَا الْقَارِعَةُ ۟ؕ",
+        "terjemahan": "Tahukah kamu apakah hari kiamat itu?"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "یَوْمَ یَكُوْنُ النَّاسُ كَالْفَرَاشِ الْمَبْثُوْثِ ۟ۙ",
+        "terjemahan": "Pada hari itu manusia adalah seperti kupu-kupu yang bertebaran,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَتَكُوْنُ الْجِبَالُ كَالْعِهْنِ الْمَنْفُوْشِ ۟ؕ",
+        "terjemahan": "dan gunung-gunung adalah seperti bulu yang dihambur-hamburkan."
+      }
+    ]
+  },
+  "102": {
+    "nama": "At-Takathur",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اَلْهٰىكُمُ التَّكَاثُرُ ۟ۙ",
+        "terjemahan": "Bermegah-megahan telah melalaikan kamu ,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "حَتّٰی زُرْتُمُ الْمَقَابِرَ ۟ؕ",
+        "terjemahan": "sampai kamu masuk ke dalam kubur."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "كَلَّا سَوْفَ تَعْلَمُوْنَ ۟ۙ",
+        "terjemahan": "Janganlah begitu, kelak kamu akan mengetahui (akibat perbuatanmu itu),"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "ثُمَّ كَلَّا سَوْفَ تَعْلَمُوْنَ ۟ؕ",
+        "terjemahan": "dan janganlah begitu, kelak kamu akan mengetahui."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "كَلَّا لَوْ تَعْلَمُوْنَ عِلْمَ الْیَقِیْنِ ۟ؕ",
+        "terjemahan": "Janganlah begitu, jika kamu mengetahui dengan pengetahuan yang yakin,"
+      }
+    ]
+  },
+  "103": {
+    "nama": "Al-Asr",
+    "jumlah_ayat": 3,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَالْعَصْرِ ۟ۙ",
+        "terjemahan": "Demi masa."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اِنَّ الْاِنْسَانَ لَفِیْ خُسْرٍ ۟ۙ",
+        "terjemahan": "Sesungguhnya manusia itu benar-benar dalam kerugian,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِلَّا الَّذِیْنَ اٰمَنُوْا وَعَمِلُوا الصّٰلِحٰتِ وَتَوَاصَوْا بِالْحَقِّ ۙ۬ وَتَوَاصَوْا بِالصَّبْرِ ۟۠",
+        "terjemahan": "kecuali orang-orang yang beriman dan mengerjakan amal saleh, dan nasihat menasihati supaya mentaati kebenaran, dan nasihat menasihati supaya menetapi kesabaran."
+      }
+    ]
+  },
+  "104": {
+    "nama": "Al-Humazah",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "وَیْلٌ لِّكُلِّ هُمَزَةٍ لُّمَزَةِ ۟ۙ",
+        "terjemahan": "Kecelakaanlah bagi setiap pengumpat lagi pencela,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "لَّذِیْ جَمَعَ مَالًا وَّعَدَّدَهٗ ۟ۙ",
+        "terjemahan": "yang mengumpulkan harta dan menghitung-hitungnya ,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "یَحْسَبُ اَنَّ مَالَهٗۤ اَخْلَدَهٗ ۟ۚ",
+        "terjemahan": "dia mengira bahwa hartanya itu dapat mengekalkannya,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "كَلَّا لَیُنْۢبَذَنَّ فِی الْحُطَمَةِ ۟ؗۖ",
+        "terjemahan": "sekali-kali tidak! Sesungguhnya dia benar-benar akan dilemparkan ke dalam ῌuṭamah."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَمَاۤ اَدْرٰىكَ مَا الْحُطَمَةُ ۟ؕ",
+        "terjemahan": "Dan tahukah kamu apa ῌuṭamah itu?"
+      }
+    ]
+  },
+  "105": {
+    "nama": "Al-Fil",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اَلَمْ تَرَ كَیْفَ فَعَلَ رَبُّكَ بِاَصْحٰبِ الْفِیْلِ ۟ؕ",
+        "terjemahan": "Apakah kamu tidak memperhatikan bagaimana Tuhan-mu telah bertindak terhadap tentara bergajah ?"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اَلَمْ یَجْعَلْ كَیْدَهُمْ فِیْ تَضْلِیْلٍ ۟ۙ",
+        "terjemahan": "Bukankah Dia telah menjadikan tipu daya mereka (untuk menghancurkan Kakbah) itu sia-sia?"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَّاَرْسَلَ عَلَیْهِمْ طَیْرًا اَبَابِیْلَ ۟ۙ",
+        "terjemahan": "dan Dia mengirimkan kapada mereka burung yang berbondong-bondong,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "تَرْمِیْهِمْ بِحِجَارَةٍ مِّنْ سِجِّیْلٍ ۟",
+        "terjemahan": "yang melempari mereka dengan batu (berasal) dari tanah yang terbakar,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فَجَعَلَهُمْ كَعَصْفٍ مَّاْكُوْلٍ ۟۠",
+        "terjemahan": "lalu Dia menjadikan mereka seperti daun-daun yang dimakan (ulat)."
+      }
+    ]
+  },
+  "106": {
+    "nama": "Quraysh",
+    "jumlah_ayat": 4,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "لِاِیْلٰفِ قُرَیْشٍ ۟ۙ",
+        "terjemahan": "Karena kebiasaan orang-orang Quraisy,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اٖلٰفِهِمْ رِحْلَةَ الشِّتَآءِ وَالصَّیْفِ ۟ۚ",
+        "terjemahan": "(yaitu) kebiasaan mereka bepergian pada musim dingin dan musim panas ."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "فَلْیَعْبُدُوْا رَبَّ هٰذَا الْبَیْتِ ۟ۙ",
+        "terjemahan": "Maka hendaklah mereka menyembah Tuhan pemilik rumah ini (Kakbah)."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "الَّذِیْۤ اَطْعَمَهُمْ مِّنْ جُوْعٍ ۙ۬ وَّاٰمَنَهُمْ مِّنْ خَوْفٍ ۟۠",
+        "terjemahan": "Yang telah memberi makanan kepada mereka untuk menghilangkan lapar dan mengamankan mereka dari ketakutan."
+      }
+    ]
+  },
+  "107": {
+    "nama": "Al-Ma'un",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اَرَءَیْتَ الَّذِیْ یُكَذِّبُ بِالدِّیْنِ ۟ؕ",
+        "terjemahan": "Tahukah kamu (orang) yang mendustakan agama?"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "فَذٰلِكَ الَّذِیْ یَدُعُّ الْیَتِیْمَ ۟ۙ",
+        "terjemahan": "Itulah orang yang menghardik anak yatim,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَلَا یَحُضُّ عَلٰی طَعَامِ الْمِسْكِیْنِ ۟ؕ",
+        "terjemahan": "dan tidak menganjurkan memberi makan orang miskin."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "فَوَیْلٌ لِّلْمُصَلِّیْنَ ۟ۙ",
+        "terjemahan": "Maka kecelakaanlah bagi orang-orang yang salat,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "الَّذِیْنَ هُمْ عَنْ صَلَاتِهِمْ سَاهُوْنَ ۟ۙ",
+        "terjemahan": "(yaitu) orang-orang yang lalai dari salatnya,"
+      }
+    ]
+  },
+  "108": {
+    "nama": "Al-Kawthar",
+    "jumlah_ayat": 3,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِنَّاۤ اَعْطَیْنٰكَ الْكَوْثَرَ ۟ؕ",
+        "terjemahan": "Sesungguhnya Kami telah memberikan kepadamu sebuah sungai di surga."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "فَصَلِّ لِرَبِّكَ وَانْحَرْ ۟ؕ",
+        "terjemahan": "Maka dirikanlah salat karena Tuhan-mu dan berkurbanlah ."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِنَّ شَانِئَكَ هُوَ الْاَبْتَرُ ۟۠",
+        "terjemahan": "Sesungguhnya orang-orang yang membenci kamu, dialah yang terputus ."
+      }
+    ]
+  },
+  "109": {
+    "nama": "Al-Kafirun",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "قُلْ یٰۤاَیُّهَا الْكٰفِرُوْنَ ۟ۙ",
+        "terjemahan": "Katakanlah, \"Hai orang-orang kafir,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "لَاۤ اَعْبُدُ مَا تَعْبُدُوْنَ ۟ۙ",
+        "terjemahan": "Aku tidak akan menyembah apa yang kamu sembah."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَلَاۤ اَنْتُمْ عٰبِدُوْنَ مَاۤ اَعْبُدُ ۟ۚ",
+        "terjemahan": "Dan kamu bukan penyembah Tuhan yang aku sembah."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَلَاۤ اَنَا عَابِدٌ مَّا عَبَدْتُّمْ ۟ۙ",
+        "terjemahan": "Dan aku tidak pernah menjadi penyembah apa yang kamu sembah,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَلَاۤ اَنْتُمْ عٰبِدُوْنَ مَاۤ اَعْبُدُ ۟ؕ",
+        "terjemahan": "dan kamu tidak pernah (pula) menjadi penyembah Tuhan yang aku sembah."
+      }
+    ]
+  },
+  "110": {
+    "nama": "An-Nasr",
+    "jumlah_ayat": 3,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "اِذَا جَآءَ نَصْرُ اللّٰهِ وَالْفَتْحُ ۟ۙ",
+        "terjemahan": "Apabila telah datang pertolongan Allah dan kemenangan,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "وَرَاَیْتَ النَّاسَ یَدْخُلُوْنَ فِیْ دِیْنِ اللّٰهِ اَفْوَاجًا ۟ۙ",
+        "terjemahan": "dan kamu lihat manusia masuk agama Allah dengan berbondong-bondong,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "فَسَبِّحْ بِحَمْدِ رَبِّكَ وَاسْتَغْفِرْهُ اِنَّهٗ كَانَ تَوَّابًا ۟۠",
+        "terjemahan": "maka bertasbihlah dengan memuji Tuhan-mu dan mohonlah ampun kepada-Nya. Sesungguhnya Dia adalah Maha Penerima tobat."
+      }
+    ]
+  },
+  "111": {
+    "nama": "Al-Masad",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "تَبَّتْ یَدَاۤ اَبِیْ لَهَبٍ وَّتَبَّ ۟ؕ",
+        "terjemahan": "Binasalah kedua tangan Abu Lahab dan sesungguhnya dia akan binasa."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "مَاۤ اَغْنٰی عَنْهُ مَالُهٗ وَمَا كَسَبَ ۟ؕ",
+        "terjemahan": "Tidaklah berfaedah kepadanya harta bendanya dan apa yang ia usahakan."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "سَیَصْلٰی نَارًا ذَاتَ لَهَبٍ ۟ۚۖ",
+        "terjemahan": "Kelak dia akan masuk ke dalam api yang bergejolak."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَّامْرَاَتُهٗ ؕ حَمَّالَةَ الْحَطَبِ ۟ۚ",
+        "terjemahan": "Dan (begitu pula) istrinya, pembawa kayu bakar ."
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "فِیْ جِیْدِهَا حَبْلٌ مِّنْ مَّسَدٍ ۟۠",
+        "terjemahan": "Yang di lehernya ada tali dari sabut."
+      }
+    ]
+  },
+  "112": {
+    "nama": "Al-Ikhlas",
+    "jumlah_ayat": 4,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "قُلْ هُوَ اللّٰهُ اَحَدٌ ۟ۚ",
+        "terjemahan": "Katakanlah, \"Dia-lah Allah, Yang Maha Esa."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "اَللّٰهُ الصَّمَدُ ۟ۚ",
+        "terjemahan": "Allah adalah Tuhan yang bergantung kepada-Nya segala sesuatu."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "لَمْ یَلِدْ ۙ۬ وَلَمْ یُوْلَدْ ۟ۙ",
+        "terjemahan": "Dia tiada beranak dan tiada pula diperanakkan,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَلَمْ یَكُنْ لَّهٗ كُفُوًا اَحَدٌ ۟۠",
+        "terjemahan": "dan tidak ada seorang pun yang setara dengan Dia\"."
+      }
+    ]
+  },
+  "113": {
+    "nama": "Al-Falaq",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "قُلْ اَعُوْذُ بِرَبِّ الْفَلَقِ ۟ۙ",
+        "terjemahan": "Katakanlah, \"Aku berlindung kepada Tuhan yang menguasai subuh,"
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "مِنْ شَرِّ مَا خَلَقَ ۟ۙ",
+        "terjemahan": "dari kejahatan makhluk-Nya,"
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "وَمِنْ شَرِّ غَاسِقٍ اِذَا وَقَبَ ۟ۙ",
+        "terjemahan": "dan dari kejahatan malam apabila telah gelap gulita,"
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "وَمِنْ شَرِّ النَّفّٰثٰتِ فِی الْعُقَدِ ۟ۙ",
+        "terjemahan": "dan dari kejahatan wanita-wanita tukang sihir yang mengembus pada buhul-buhul ,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "وَمِنْ شَرِّ حَاسِدٍ اِذَا حَسَدَ ۟۠",
+        "terjemahan": "dan dari kejahatan orang yang dengki apabila ia dengki\"."
+      }
+    ]
+  },
+  "114": {
+    "nama": "An-Nas",
+    "jumlah_ayat": 5,
+    "ayat": [
+      {
+        "ayat": 1,
+        "teks_arab": "قُلْ اَعُوْذُ بِرَبِّ النَّاسِ ۟ۙ",
+        "terjemahan": "Katakanlah, \"Aku berlindung kepada Tuhan (yang memelihara dan menguasai) manusia."
+      },
+      {
+        "ayat": 2,
+        "teks_arab": "مَلِكِ النَّاسِ ۟ۙ",
+        "terjemahan": "Raja manusia."
+      },
+      {
+        "ayat": 3,
+        "teks_arab": "اِلٰهِ النَّاسِ ۟ۙ",
+        "terjemahan": "Sembahan manusia."
+      },
+      {
+        "ayat": 4,
+        "teks_arab": "مِنْ شَرِّ الْوَسْوَاسِ ۙ۬ الْخَنَّاسِ ۟",
+        "terjemahan": "Dari kejahatan (bisikan) setan yang biasa bersembunyi,"
+      },
+      {
+        "ayat": 5,
+        "teks_arab": "الَّذِیْ یُوَسْوِسُ فِیْ صُدُوْرِ النَّاسِ ۟ۙ",
+        "terjemahan": "yang membisikkan (kejahatan) ke dalam dada manusia,"
+      }
+    ]
+  }
+}
