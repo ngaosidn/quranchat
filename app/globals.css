@@ -119,6 +119,19 @@ body {
   font-family: 'UthmanicNeoColor', serif;
 }
 
+/* Salinan file di public/fonts (untuk editor admin warna, dll.) */
+@font-face {
+  font-family: 'UthmanicNeoColorCopy';
+  src: url('/fonts/Uthmanic_NeoCOLOR-Regular%20copy.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-uthmanic-warna-editor {
+  font-family: 'UthmanicNeoColorCopy', 'UthmanicNeoColor', serif;
+}
+
 @font-face {
   font-family: 'NastaleeqColor';
   src: url('/fonts/Nastaleeq_COLOR-Regular.woff2') format('woff2');
