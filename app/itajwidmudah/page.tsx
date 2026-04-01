@@ -329,30 +329,46 @@ export default function RTM() {
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-white">
-      {/* Header */}
+      {/* Modernized Header */}
       <div className="w-full max-w-md mx-auto sticky top-0 z-10">
-        <div className="bg-purple-600 rounded-b-3xl px-6 pt-10 pb-6 relative shadow">
-          <button
-            onClick={() => router.replace('/')}
-            className="absolute top-4 right-4 text-white hover:text-purple-200 transition-colors p-2 rounded-full bg-purple-500/30 hover:bg-purple-700/60"
-            aria-label="Kembali ke Beranda"
-          >
-            <IoArrowBack className="w-7 h-7" />
-          </button>
-          <div className="flex items-center gap-3 mb-4">
-            <div>
-              <Image 
-                src="/logo.svg" 
-                alt="Logo" 
-                width={120} 
-                height={41} 
-                className="max-w-[120px] h-auto" 
-                priority
-              />
+        <div className="bg-gradient-to-br from-purple-600 via-purple-700 to-fuchsia-900 rounded-b-[2rem] px-6 pt-8 pb-6 relative shadow-2xl shadow-purple-900/30 overflow-hidden border-b border-white/10">
+          {/* Subtle Background Pattern */}
+          <div className="absolute inset-0 opacity-10 pointer-events-none" 
+               style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}>
+          </div>
+          {/* Shimmer Effect */}
+          <div className="shimmer-overlay" />
+          {/* Glossy Accents */}
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-purple-400/20 rounded-full blur-2xl"></div>
+
+          <div className="relative z-10">
+            <div className="flex items-center justify-between mb-4">
+              <div className="bg-white/15 backdrop-blur-md p-2 rounded-2xl border border-white/20 shadow-inner inline-block">
+                <Image 
+                  src="/logo.svg" 
+                  alt="Logo" 
+                  width={110} 
+                  height={38} 
+                  className="max-w-[120px] h-auto pointer-events-none" 
+                  priority
+                />
+              </div>
+
+              <button
+                onClick={() => router.replace('/')}
+                className="text-white hover:text-purple-100 transition-all p-2.5 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 hover:bg-white/25 active:scale-90 shadow-lg"
+                aria-label="Kembali ke Beranda"
+              >
+                <IoArrowBack className="w-6 h-6" />
+              </button>
+            </div>
+            
+            <div className="space-y-1 translate-x-1">
+              <div className="text-white text-base font-bold font-poppins tracking-wide drop-shadow-sm">Rumus Tajwid Mudah 🎓</div>
+              <div className="text-purple-100 text-xs font-medium font-poppins opacity-90">Belajar Tajwid dengan Interaktif ✨</div>
             </div>
           </div>
-          <div className="text-white text-sm font-normal font-poppins">Rumus Tajwid Mudah</div>
-          <div className="text-white text-sm font-normal font-poppins">Belajar Tajwid dengan Mudah ✨</div>
         </div>
       </div>
 

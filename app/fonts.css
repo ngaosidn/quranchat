@@ -12,7 +12,7 @@
 @font-face {
   font-family: 'Mushaf Ligatures';
   src: local('QCF_BSML'),
-       url(https://raw.githubusercontent.com/mustafa0x/qpc-fonts/f93bf5f3/mushaf-v2-woff2/QCF_BSML.woff2) format('woff2');
+    url(https://raw.githubusercontent.com/mustafa0x/qpc-fonts/f93bf5f3/mushaf-v2-woff2/QCF_BSML.woff2) format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -21,7 +21,7 @@
 @font-face {
   font-family: 'Mushaf Page NNN';
   src: local('QCF_PNNN'),
-       url(https://raw.githubusercontent.com/mustafa0x/qpc-fonts/f93bf5f3/mushaf-woff2/QCF_PNNN.woff2) format('woff2');
+    url(https://raw.githubusercontent.com/mustafa0x/qpc-fonts/f93bf5f3/mushaf-woff2/QCF_PNNN.woff2) format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -54,7 +54,7 @@
 @font-face {
   font-family: 'me_quran';
   src: url('/fonts/me_quran-2.woff2') format('woff2'),
-       url('/fonts/me_quran-2.ttf') format('truetype');
+    url('/fonts/me_quran-2.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -74,4 +74,4 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-} 
+}

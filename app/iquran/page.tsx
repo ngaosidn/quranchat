@@ -44,6 +44,7 @@ interface Message {
     results: WordSearchResult[];
   };
   isRandom?: boolean;
+  quickActions?: Array<{ label: string; value: string; icon?: string }>;
 }
 
 interface TafsirData {
@@ -132,14 +133,21 @@ export default function QuranChat() {
         // If no messages were loaded or error occurred, set initial message
         setMessages([{
           type: 'bot',
-          content: `Berikut adalah perintah yang tersedia:\n\n📚 1. Ketik "list" untuk melihat daftar surah\n🔍 2. Ketik nama surah (contoh: "al fatihah" atau "yasin")\n🔢 3. Ketik nomor surah (contoh: "1" untuk Al-Fatihah)\n📖 4. Cari ayat spesifik dengan format:\n   - "surah 1 ayat 1"\n   - "al fatihah ayat 1"\n   - "1 1"\n   - "surah al fatihah ayat 1-4"\n   - "1 1-4"\n🔎 5. Cari kata dalam Al-Quran:\n   - "cari malaikat"\n🎲 6. Ketik "random" atau "acak" untuk mendapatkan ayat random\n\nSilakan pilih salah satu perintah di atas untuk memulai.`
+          content: `Selamat datang di QuranChat! ✨\n\nSilakan pilih menu cepat di bawah ini atau ketik apa yang ingin Anda cari:`,
+          quickActions: [
+            { label: 'Daftar Surah', value: 'daftar', icon: '📚' },
+            { label: 'Cari Kata', value: 'cari ', icon: '🔎' },
+            { label: 'Nasihat Acak', value: 'acak', icon: '🎲' },
+            { label: 'Surah Yasin', value: 'Yasin', icon: '📖' },
+            { label: 'Al-Fatihah', value: '1', icon: '🔢' }
+          ]
         }]);
         setIsLoading(false);
       }
     };
 
     loadMessages();
-  }, []); // Empty dependency array to run only once on mount
+  }, []);
 
   // Save messages to localStorage whenever they change
   useEffect(() => {
@@ -183,12 +191,12 @@ export default function QuranChat() {
         if (!surah || typeof surah !== 'object') return false;
 
         const { name_simple, name_arabic, name_english } = surah;
-        
+
         if (!name_simple || !name_arabic || !name_english) return false;
 
-        if (typeof name_simple !== 'string' || 
-            typeof name_arabic !== 'string' || 
-            typeof name_english !== 'string') return false;
+        if (typeof name_simple !== 'string' ||
+          typeof name_arabic !== 'string' ||
+          typeof name_english !== 'string') return false;
 
         return (
           name_simple.toLowerCase().includes(searchQuery) ||
@@ -235,12 +243,12 @@ export default function QuranChat() {
       );
 
       const searchResults = searchResponse.data.search.results;
-      
+
       // Process search results
       for (const result of searchResults) {
         const [surahId, verseNumber] = result.verse_key.split(':').map(Number);
         const surah = allSurahs.find(s => s.id === surahId);
-        
+
         if (surah) {
           // Get the full verse data
           const verseResponse = await axios.get(
@@ -253,13 +261,13 @@ export default function QuranChat() {
           );
 
           const verseData = verseResponse.data.verse;
-          
+
           // Only add if the verse contains the search word
           const translation = verseData.translations?.[0]?.text || '';
           const arabicText = verseData.text_uthmani || '';
-          
-          if (translation.toLowerCase().includes(searchQuery) || 
-              arabicText.includes(query)) {
+
+          if (translation.toLowerCase().includes(searchQuery) ||
+            arabicText.includes(query)) {
             // Count word occurrences
             const translationCount = (translation.toLowerCase().match(new RegExp(searchQuery, 'g')) || []).length;
             const arabicCount = (arabicText.match(new RegExp(query, 'g')) || []).length;
@@ -297,18 +305,18 @@ export default function QuranChat() {
       // Get all surahs first
       const surahsResponse = await axios.get('https://api.quran.com/api/v4/chapters?language=id');
       const surahs = surahsResponse.data.chapters;
-      
+
       // Get total verses count
       const totalVerses = surahs.reduce((sum: number, surah: SearchResult) => sum + surah.verses_count, 0);
-      
+
       // Generate random verse number (1 to total verses)
       const randomVerseNumber = Math.floor(Math.random() * totalVerses) + 1;
-      
+
       // Find which surah contains this verse
       let currentVerseCount = 0;
       let selectedSurah = null;
       let verseInSurah = 0;
-      
+
       for (const surah of surahs) {
         if (currentVerseCount + surah.verses_count >= randomVerseNumber) {
           selectedSurah = surah;
@@ -317,16 +325,16 @@ export default function QuranChat() {
         }
         currentVerseCount += surah.verses_count;
       }
-      
+
       if (!selectedSurah) {
         throw new Error('Could not find surah for random verse');
       }
-      
+
       // Get verse data
       const verseResponse = await axios.get(
         `https://api.quran.com/api/v4/verses/by_key/${selectedSurah.id}:${verseInSurah}?words=true&word_fields=text_uthmani&translations=33&fields=text_uthmani`
       );
-      
+
       return {
         surah: selectedSurah,
         ayat: verseInSurah,
@@ -353,7 +361,7 @@ export default function QuranChat() {
       // Check for word search command
       const wordSearchPattern = /^(?:cari|search)\s+(.+)$/i;
       const wordSearchMatch = userMessage.match(wordSearchPattern);
-      
+
       if (wordSearchMatch) {
         const searchQuery = wordSearchMatch[1].trim();
         setIsLoading(true);
@@ -361,12 +369,12 @@ export default function QuranChat() {
           type: 'bot',
           content: `🔍 Mencari kata "${searchQuery}" dalam Al-Quran...`
         }]);
-        
+
         // Add artificial delay for better UX
         await new Promise(resolve => setTimeout(resolve, 1500));
-        
+
         const results = await searchWordInQuran(searchQuery);
-        
+
         if (results.length === 0) {
           setMessages(prev => [...prev, {
             type: 'bot',
@@ -414,11 +422,12 @@ export default function QuranChat() {
       }
 
       // Check for random command
-      if (userMessage.toLowerCase() === 'random' || userMessage.toLowerCase() === 'acak') {
+      const randomCommands = ['random', 'acak', 'pilih acak', 'ayat hari ini', 'nasihat'];
+      if (randomCommands.includes(userMessage.toLowerCase())) {
         const randomResult = await getRandomAyat();
         setMessages(prev => [...prev, {
           type: 'bot',
-          content: `🎲 Berikut adalah satu ayat random dari Al-Quran:\nSurah ${randomResult.surah.id} - ${randomResult.surah.name_simple} (Ayat ${randomResult.ayat})`,
+          content: `🎲 Berikut adalah ayat pilihan untuk Anda hari ini:\n\nSurah ${randomResult.surah.id} - ${randomResult.surah.name_simple} (Ayat ${randomResult.ayat})`,
           surah: randomResult.surah,
           ayat: randomResult.ayat
         }]);
@@ -430,12 +439,12 @@ export default function QuranChat() {
       const ayatPattern = /^(?:surah\s*)?(\d+|[\w\- ]+)[\s-]*ayat[\s-]*(\d+)(?:[\s-]*[-–]\s*(\d+))?$/i;
       const ayatPattern2 = /^(?:surah\s*)?(\d+)[\s-]+(\d+)(?:[\s-]*[-–]\s*(\d+))?$/i;
       const matchAyat = userMessage.match(ayatPattern) || userMessage.match(ayatPattern2);
-      
+
       if (matchAyat) {
         const surahQuery = matchAyat[1].trim().replace(/-/g, ' ');
         const startAyat = parseInt(matchAyat[2]);
         const endAyat = matchAyat[3] ? parseInt(matchAyat[3]) : startAyat;
-        
+
         let surahInfo = null;
         if (/^\d+$/.test(surahQuery)) {
           surahInfo = allSurahs.find(s => s.id === parseInt(surahQuery));
@@ -495,21 +504,22 @@ export default function QuranChat() {
         if (surahInfo) {
           setMessages(prev => [...prev, {
             type: 'bot',
-            content: `📖 Informasi Surah :\n\n` +
-              `📌 Nama Surah : ${surahInfo.name_simple} (${surahInfo.name_arabic})\n` +
-              `📝 Arti Nama : ${surahInfo.translated_name?.name || '-'}\n` +
-              `📍 Tempat Turun : ${surahInfo.revelation_place === 'makkah' ? 'Makkiyah' : 'Madaniyah'}\n` +
-              `📊 Jumlah Ayat : ${surahInfo.verses_count}`,
+            content: `✨ Informasi Surah\n\n` +
+              `• Nama : ${surahInfo.name_simple} (${surahInfo.name_arabic})\n` +
+              `• Arti : ${surahInfo.translated_name?.name || '-'}\n` +
+              `• Turun : ${surahInfo.revelation_place === 'makkah' ? 'Makkiyah' : 'Madaniyah'}\n` +
+              `• Total : ${surahInfo.verses_count} Ayat`,
             surah: surahInfo
           }]);
           return;
         }
       }
-      // Perintah list (tetap ada)
-      if (userMessage.toLowerCase() === 'list') {
+      // Perintah list (daftar)
+      const listCommands = ['list', 'daftar', 'semua surah', 'semua surat', 'daftar surah'];
+      if (listCommands.includes(userMessage.toLowerCase())) {
         setMessages(prev => [...prev, {
           type: 'bot',
-          content: 'Berikut adalah daftar surah dalam Al-Quran:',
+          content: 'Berikut adalah daftar seluruh surah dalam Al-Quran:',
           surahs: allSurahs
         }]);
       } else {
@@ -539,22 +549,23 @@ export default function QuranChat() {
     }
   }, [allSurahs, searchWordInQuran, searchResults, getRandomAyat]);
 
-  const handleSend = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
+  const handleSend = async (e?: React.FormEvent, directMessage?: string) => {
+    if (e) e.preventDefault();
+    const userMessage = directMessage || input.trim();
+    if (!userMessage) return;
 
-    const userMessage = input.trim();
     setInput('');
     setMessages(prev => [...prev, { type: 'user', content: userMessage }]);
     setIsLoading(true);
 
     try {
       // Check for random command
-      if (userMessage.toLowerCase() === 'random' || userMessage.toLowerCase() === 'acak') {
+      const randomCommands = ['random', 'acak', 'pilih acak', 'ayat hari ini', 'nasihat'];
+      if (randomCommands.includes(userMessage.toLowerCase())) {
         const randomResult = await getRandomAyat();
         setMessages(prev => [...prev, {
           type: 'bot',
-          content: `🎲 Berikut adalah satu ayat random dari Al-Quran:\nSurah ${randomResult.surah.id} - ${randomResult.surah.name_simple} (Ayat ${randomResult.ayat})`,
+          content: `🎲 Berikut adalah ayat pilihan untuk Anda hari ini:\n\nSurah ${randomResult.surah.id} - ${randomResult.surah.name_simple} (Ayat ${randomResult.ayat})`,
           surah: randomResult.surah,
           ayat: randomResult.ayat
         }]);
@@ -562,13 +573,14 @@ export default function QuranChat() {
         return;
       }
 
-    // Perintah kembali ke menu utama
-    if (userMessage.trim().toLowerCase() === 'kembali') {
-      router.replace('/');
-      return;
-    }
+      // Perintah kembali ke menu utama
+      const backCommands = ['kembali', 'menu', 'menu utama', 'pulang', 'keluar'];
+      if (backCommands.includes(userMessage.trim().toLowerCase())) {
+        router.replace('/');
+        return;
+      }
 
-    await handleSearch(userMessage);
+      await handleSearch(userMessage);
     } catch (error) {
       console.error('Error:', error);
       setMessages(prev => [...prev, {
@@ -596,7 +608,7 @@ export default function QuranChat() {
 
   // Function to get total pages based on surah
   const getTotalPages = (surahId: number) => {
-    switch(surahId) {
+    switch (surahId) {
       case 1: return 1; // Al-Fatihah
       case 2: return 49; // Al-Baqarah
       case 3: return 27; // Ali Imran (050-076)
@@ -719,11 +731,11 @@ export default function QuranChat() {
   const getImageUrlFromCache = async (surahId: number, page: number) => {
     const imageNumber = getImageNumber(surahId, page);
     const imageUrl = `https://raw.githubusercontent.com/ngaosidn/dbQuranImages/main/${imageNumber}.webp`;
-    
+
     try {
       const cache = await caches.open('quran-images');
       const cachedResponse = await cache.match(imageUrl);
-      
+
       if (cachedResponse) {
         const blob = await cachedResponse.blob();
         return URL.createObjectURL(blob);
@@ -731,7 +743,7 @@ export default function QuranChat() {
     } catch (error) {
       console.error('Error getting image from cache:', error);
     }
-    
+
     return imageUrl;
   };
 
@@ -748,7 +760,7 @@ export default function QuranChat() {
         await new Promise(resolve => setTimeout(resolve, 1000));
         setImageSrc(imageUrl);
         setIsImageLoading(false);
-        
+
         requestAnimationFrame(() => {
           const imageContainer = document.querySelector('.bg-white.rounded-2xl.shadow-xl .flex-1.overflow-y-auto');
           if (imageContainer) {
@@ -763,7 +775,7 @@ export default function QuranChat() {
   const handleSurahSelect = async (surah: SearchResult) => {
     setSelectedSurahImage(surah);
     setShowSurahImage(true);
-      setCurrentPage(1);
+    setCurrentPage(1);
 
     // Cek apakah surah sudah di-cache
     if (!cachedSurahs.has(surah.id)) {
@@ -782,7 +794,7 @@ export default function QuranChat() {
 
   // Function to get image number based on surah and page
   const getImageNumber = (surahId: number, page: number) => {
-    switch(surahId) {
+    switch (surahId) {
       case 1: return "001"; // Al-Fatihah
       case 2: return String(page + 1).padStart(3, '0'); // Al-Baqarah (002-049)
       case 3: return String(page + 49).padStart(3, '0'); // Ali Imran (050-076)
@@ -920,11 +932,11 @@ export default function QuranChat() {
 
     const totalPages = getTotalPages(surahId);
     const cache = await caches.open('quran-images');
-    
+
     setIsCaching(true);
     setCachingTotal(totalPages);
     setCachingProgress(0);
-    
+
     // Cache all pages of the surah
     for (let page = 1; page <= totalPages; page++) {
       const imageUrl = `https://raw.githubusercontent.com/ngaosidn/dbQuranImages/main/${getImageNumber(surahId, page)}.webp`;
@@ -937,7 +949,7 @@ export default function QuranChat() {
         console.error(`Error caching image for surah ${surahId} page ${page}:`, error);
       }
     }
-    
+
     // Mark this surah as cached and save to localStorage
     const newCachedSurahs = new Set([...cachedSurahs, surahId]);
     setCachedSurahs(newCachedSurahs);
@@ -961,22 +973,22 @@ export default function QuranChat() {
 
     const totalSurahs = 114;
     let totalPages = 0;
-    
+
     // Hitung total halaman yang perlu di-cache
     for (let surahId = 1; surahId <= totalSurahs; surahId++) {
       totalPages += getTotalPages(surahId);
     }
-    
+
     setCachingAllTotal(totalPages);
     setCachingAllProgress(0);
-    
+
     const cache = await caches.open('quran-images');
     let currentProgress = 0;
-    
+
     // Cache semua surah
     for (let surahId = 1; surahId <= totalSurahs; surahId++) {
       const totalPages = getTotalPages(surahId);
-      
+
       for (let page = 1; page <= totalPages; page++) {
         const imageUrl = `https://raw.githubusercontent.com/ngaosidn/dbQuranImages/main/${getImageNumber(surahId, page)}.webp`;
         try {
@@ -989,41 +1001,57 @@ export default function QuranChat() {
         }
       }
     }
-    
+
     // Update cachedSurahs state dan localStorage
     const allSurahIds = Array.from({ length: 114 }, (_, i) => i + 1);
     setCachedSurahs(new Set(allSurahIds));
     localStorage.setItem('cachedSurahs', JSON.stringify(allSurahIds));
-    
+
     setIsCachingAll(false);
   };
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-white">
-      {/* Header ala Intercom */}
+      {/* Modernized Header */}
       <div className="w-full max-w-md mx-auto sticky top-0 z-10">
-        <div className="bg-blue-600 rounded-b-3xl px-6 pt-10 pb-6 relative shadow">
-          <button
-            onClick={() => router.replace('/')}
-            className="absolute top-4 right-4 text-white hover:text-blue-200 transition-colors p-2 rounded-full bg-blue-500/30 hover:bg-blue-700/60"
-            aria-label="Kembali ke Beranda"
-          >
-            <IoArrowBack className="w-7 h-7" />
-          </button>
-          <div className="flex items-center gap-3 mb-4">
-            <div>
-              <Image 
-                src="/logo.svg" 
-                alt="Logo" 
-                width={120} 
-                height={41} 
-                className="max-w-[120px] h-auto" 
-                priority
-              />
+        <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900 rounded-b-[2rem] px-6 pt-8 pb-6 relative shadow-2xl shadow-blue-900/30 overflow-hidden border-b border-white/10">
+          {/* Subtle Background Pattern */}
+          <div className="absolute inset-0 opacity-10 pointer-events-none" 
+               style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}>
+          </div>
+          {/* Shimmer Effect */}
+          <div className="shimmer-overlay" />
+          {/* Glossy Accents */}
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-blue-400/20 rounded-full blur-2xl"></div>
+
+          <div className="relative z-10">
+            <div className="flex items-center justify-between mb-4">
+              <div className="bg-white/15 backdrop-blur-md p-2 rounded-2xl border border-white/20 shadow-inner inline-block">
+                <Image
+                  src="/logo.svg"
+                  alt="Logo"
+                  width={110}
+                  height={38}
+                  className="max-w-[120px] h-auto pointer-events-none"
+                  priority
+                />
+              </div>
+
+              <button
+                onClick={() => router.replace('/')}
+                className="text-white hover:text-blue-100 transition-all p-2.5 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 hover:bg-white/25 active:scale-90 shadow-lg"
+                aria-label="Kembali ke Beranda"
+              >
+                <IoArrowBack className="w-6 h-6" />
+              </button>
+            </div>
+            
+            <div className="space-y-1 translate-x-1">
+              <div className="text-white text-base font-bold font-poppins tracking-wide drop-shadow-sm">Ahlan Bikum! 👋</div>
+              <div className="text-blue-100 text-xs font-medium font-poppins opacity-90">Mau baca dan tadabbur ayat apa hari ini? ✨</div>
             </div>
           </div>
-          <div className="text-white text-sm font-normal font-poppins">Ahlan Bikum!</div>
-          <div className="text-white text-sm font-normal font-poppins">Mau baca dan tadabbur ayat apa hari ini? ✨</div>
         </div>
       </div>
 
@@ -1031,25 +1059,63 @@ export default function QuranChat() {
       <div className="w-full max-w-md mx-auto flex-1 flex flex-col justify-end pb-28 sm:pb-4" style={{ minHeight: 'calc(100dvh - 220px)' }}>
         <div className="flex-1 flex flex-col space-y-2.5 sm:space-y-3 px-2 pt-3 sm:pt-4 overflow-y-auto scrollbar-none" style={{ minHeight: 200 }}>
           {messages.map((msg, idx) => (
-            <div key={idx} className={`flex items-end ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}> 
+            <div key={idx} className={`flex items-end ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
               {msg.type !== 'user' && (
                 <Image src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740" alt="Bot" width={32} height={32} className="rounded-full object-cover mt-1" />
               )}
               <div
-                className={`rounded-2xl px-3.5 sm:px-4 py-2 shadow max-w-[80%] text-sm leading-relaxed transition-all
+                className={`rounded-2xl px-4 py-2.5 shadow-sm max-w-[85%] text-sm leading-relaxed transition-all relative overflow-hidden
                   ${msg.type === 'user'
-                    ? 'bg-blue-400 text-white rounded-br-md'
-                    : 'bg-white text-gray-800 border border-blue-100 rounded-bl-md'}
+                    ? 'bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-br-none'
+                    : 'bg-white/80 backdrop-blur-sm text-slate-800 border border-blue-50 rounded-bl-none shadow-blue-900/5' }
                 `}
               >
-                <pre className="whitespace-pre-wrap">{msg.content}</pre>
+                <div className="whitespace-pre-wrap font-medium">{msg.content}</div>
+                
+                {msg.quickActions && (
+                  <div className="flex flex-wrap gap-2 mt-4 mb-1">
+                    {msg.quickActions.map((action, actionIdx) => (
+                      <button
+                        key={actionIdx}
+                        onClick={() => {
+                          // Trigger search manually if it's a direct command
+                          if (action.value === 'daftar' || action.value === 'acak' || action.value === '1') {
+                             handleSend(undefined, action.value);
+                          } else {
+                             setInput(action.value);
+                          }
+                        }}
+                        className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full border border-blue-100 hover:bg-blue-100 hover:border-blue-200 transition-all text-xs font-bold shadow-sm active:scale-95"
+                      >
+                        {action.icon && <span>{action.icon}</span>}
+                        <span>{action.label}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
                 {msg.surah && !msg.ayat && (
-                  <button
-                    className="mt-2 px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold shadow hover:bg-indigo-700 transition w-full sm:w-auto"
-                    onClick={() => handleSurahSelect(msg.surah!)}
-                  >
-                    Baca Surah
-                  </button>
+                  <div className="grid grid-cols-2 gap-2.5 mt-4">
+                    <button
+                      className="group relative flex items-center justify-center gap-2 bg-gradient-to-br from-indigo-500 to-indigo-700 text-white py-2 px-4 rounded-xl font-bold text-[11px] shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5 transition-all active:scale-95 overflow-hidden"
+                      onClick={() => handleSurahSelect(msg.surah!)}
+                    >
+                      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                      </svg>
+                      <span>Baca Surah</span>
+                    </button>
+                    <button
+                      className="group relative flex items-center justify-center gap-2 bg-gradient-to-br from-emerald-500 to-emerald-700 text-white py-2 px-4 rounded-xl font-bold text-[11px] shadow-md shadow-emerald-200 hover:shadow-lg hover:-translate-y-0.5 transition-all active:scale-95 overflow-hidden"
+                      onClick={() => handleAyatClick(msg.surah!, 1, { start: 1, end: msg.surah!.verses_count })}
+                    >
+                      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" />
+                      </svg>
+                      <span>Baca per ayat</span>
+                    </button>
+                  </div>
                 )}
                 {msg.wordSearchResults && (
                   <div className="mt-2 grid grid-cols-1 gap-3 max-h-[60vh] overflow-y-auto pr-1">
@@ -1164,14 +1230,21 @@ export default function QuranChat() {
           className="flex fixed bottom-0 left-0 right-0 w-full max-w-md z-20 bg-white rounded-t-2xl shadow-lg px-3.5 sm:px-4 py-2 sm:py-2.5 gap-2.5 sm:gap-3 border-t border-gray-200 mt-0 sm:mt-1 mb-0 sm:mb-1 mx-auto sm:mx-2 sm:sticky sm:bottom-0"
           style={{ minHeight: '48px' }}
         >
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="text-gray-400 hover:text-red-500 transition-colors shrink-0"
             aria-label="Clear chat history"
             onClick={() => {
               setMessages([{
                 type: 'bot',
-                content: `Berikut adalah perintah yang tersedia:\n\n📚 1. Ketik "list" untuk melihat daftar surah\n🔍 2. Ketik nama surah (contoh: "al fatihah" atau "yasin")\n🔢 3. Ketik nomor surah (contoh: "1" untuk Al-Fatihah)\n📖 4. Cari ayat spesifik dengan format:\n   - "surah 1 ayat 1"\n   - "al fatihah ayat 1"\n   - "1 1"\n   - "surah al fatihah ayat 1-4"\n   - "1 1-4"\n🔎 5. Cari kata dalam Al-Quran:\n   - "cari malaikat"\n🎲 6. Ketik "random" atau "acak" untuk mendapatkan ayat random\n\nSilakan pilih salah satu perintah di atas untuk memulai.`
+                content: `Silakan gunakan menu cepat di bawah ini untuk memulai pencarian Anda:`,
+                quickActions: [
+                  { label: 'Daftar Surah', value: 'daftar', icon: '📚' },
+                  { label: 'Cari Kata', value: 'cari ', icon: '🔎' },
+                  { label: 'Nasihat Acak', value: 'acak', icon: '🎲' },
+                  { label: 'Surah Yasin', value: 'Yasin', icon: '📖' },
+                  { label: 'Al-Fatihah', value: '1', icon: '🔢' }
+                ]
               }]);
               localStorage.removeItem('quranChatHistory');
             }}
@@ -1189,11 +1262,10 @@ export default function QuranChat() {
           <button
             type="submit"
             disabled={isLoading || !input.trim()}
-            className={`flex items-center justify-center rounded-xl px-4 py-2 font-semibold shadow transition-all shrink-0 ${
-              isLoading || !input.trim()
+            className={`flex items-center justify-center rounded-xl px-4 py-2 font-semibold shadow transition-all shrink-0 ${isLoading || !input.trim()
                 ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                 : 'bg-blue-600 text-white hover:bg-blue-700 hover:scale-105 active:scale-95'
-            }`}
+              }`}
           >
             Kirim
           </button>
@@ -1227,8 +1299,8 @@ export default function QuranChat() {
             <div className="space-y-4 overflow-y-auto">
               <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
                 <div className="font-uthmani text-right mb-2">{singleAyatData.text_uthmani}</div>
-                <div className="translation-text" dangerouslySetInnerHTML={{ 
-                  __html: singleAyatData.translations?.[0]?.text?.replace(/<sup[^>]*>.*?<\/sup>/g, '') || "Translation not available" 
+                <div className="translation-text" dangerouslySetInnerHTML={{
+                  __html: singleAyatData.translations?.[0]?.text?.replace(/<sup[^>]*>.*?<\/sup>/g, '') || "Translation not available"
                 }} />
               </div>
             </div>
@@ -1255,7 +1327,7 @@ export default function QuranChat() {
                 setWordSearchData(null);
               }}
             >×</button>
-            
+
             <h3 className="text-lg font-bold mb-4 text-indigo-700 pr-8">
               Hasil Pencarian: &ldquo;{wordSearchData.word}&rdquo; ({wordSearchData.count} kali dalam {wordSearchData.results.length} ayat)
             </h3>
@@ -1264,45 +1336,45 @@ export default function QuranChat() {
               {wordSearchData.results
                 .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
                 .map((result, index) => (
-                <div key={`${result.surah.id}-${result.verse_number}-${index}`} className="flex flex-col gap-2 p-4 bg-white rounded-xl border border-blue-100 shadow hover:bg-blue-50 hover:border-blue-300 cursor-pointer transition-all group relative max-w-full">
-                  <div className="flex items-center gap-3">
-                    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-700 font-bold text-lg shadow group-hover:bg-blue-600 group-hover:text-white transition-all shrink-0">
-                      {result.surah.id}
-                    </span>
-                    <div className="flex flex-col flex-1 min-w-0">
-                      <span className="font-semibold text-gray-800 truncate text-base">
-                        Surah {result.surah.name_simple} ({result.surah.name_arabic})
+                  <div key={`${result.surah.id}-${result.verse_number}-${index}`} className="flex flex-col gap-2 p-4 bg-white rounded-xl border border-blue-100 shadow hover:bg-blue-50 hover:border-blue-300 cursor-pointer transition-all group relative max-w-full">
+                    <div className="flex items-center gap-3">
+                      <span className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-700 font-bold text-lg shadow group-hover:bg-blue-600 group-hover:text-white transition-all shrink-0">
+                        {result.surah.id}
                       </span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-blue-500">Ayat {result.verse_number}</span>
-                        <span className="text-green-600">({result.wordCount} kali)</span>
+                      <div className="flex flex-col flex-1 min-w-0">
+                        <span className="font-semibold text-gray-800 truncate text-base">
+                          Surah {result.surah.name_simple} ({result.surah.name_arabic})
+                        </span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-blue-500">Ayat {result.verse_number}</span>
+                          <span className="text-green-600">({result.wordCount} kali)</span>
+                        </div>
                       </div>
                     </div>
+
+                    <div className="font-uthmani text-right text-2xl sm:text-3xl leading-loose text-gray-800">{result.text_uthmani}</div>
+                    <div className="text-gray-600 text-sm" dangerouslySetInnerHTML={{
+                      __html: result.translation.replace(
+                        new RegExp(`(${wordSearchData.word})`, 'gi'),
+                        '<span class="italic font-bold text-blue-600">$1</span>'
+                      )
+                    }} />
+
+                    {/* Audio */}
+                    <audio
+                      controls
+                      src={`https://everyayah.com/data/Alafasy_64kbps/${String(result.surah.id).padStart(3, '0')}${String(result.verse_number).padStart(3, '0')}.mp3`}
+                      className="w-full mb-2"
+                    />
+
+                    {/* Tafsir Button */}
+                    <TafsirButton
+                      surahNumber={result.surah.id}
+                      ayahNumber={result.verse_number}
+                      surahName={result.surah.name_simple}
+                    />
                   </div>
-                  
-                  <div className="font-uthmani text-right text-2xl sm:text-3xl leading-loose text-gray-800">{result.text_uthmani}</div>
-                  <div className="text-gray-600 text-sm" dangerouslySetInnerHTML={{
-                    __html: result.translation.replace(
-                      new RegExp(`(${wordSearchData.word})`, 'gi'),
-                      '<span class="italic font-bold text-blue-600">$1</span>'
-                    )
-                  }} />
-                  
-                  {/* Audio */}
-                  <audio
-                    controls
-                    src={`https://everyayah.com/data/Alafasy_64kbps/${String(result.surah.id).padStart(3, '0')}${String(result.verse_number).padStart(3, '0')}.mp3`}
-                    className="w-full mb-2"
-                  />
-                  
-                  {/* Tafsir Button */}
-                  <TafsirButton 
-                    surahNumber={result.surah.id} 
-                    ayahNumber={result.verse_number} 
-                    surahName={result.surah.name_simple} 
-                  />
-                </div>
-              ))}
+                ))}
             </div>
 
             {/* Pagination */}
@@ -1339,14 +1411,14 @@ export default function QuranChat() {
             <button
               className="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 rounded-lg text-2xl p-2 shadow transition-all"
               style={{ minWidth: 40, minHeight: 40 }}
-                  onClick={() => {
+              onClick={() => {
                 setShowSurahImage(false);
                 setSelectedSurahImage(null);
                 setCurrentPage(1);
                 setImageSrc(null);
               }}
             >×</button>
-            
+
             <h3 className="text-lg sm:text-xl font-bold mb-4 text-blue-700 pr-8">
               Surah {selectedSurahImage.name_simple} ({selectedSurahImage.name_arabic})
             </h3>
@@ -1389,10 +1461,10 @@ export default function QuranChat() {
                 aria-label="Halaman berikutnya"
               >
                 ←
-                </button>
+              </button>
               <span className="text-gray-600 font-medium text-sm sm:text-base whitespace-nowrap">
                 Halaman {currentPage} dari {getTotalPages(selectedSurahImage.id)}
-                </span>
+              </span>
               <button
                 className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-blue-600 text-white text-xl sm:text-2xl rounded-lg font-semibold shadow hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 onClick={() => handlePageChange(currentPage - 1)}
@@ -1414,7 +1486,7 @@ export default function QuranChat() {
             </h3>
             <div className="space-y-4">
               <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div 
+                <div
                   className="bg-blue-600 h-2.5 rounded-full transition-all duration-300"
                   style={{ width: `${(cachingProgress / cachingTotal) * 100}%` }}
                 ></div>
@@ -1443,19 +1515,19 @@ export default function QuranChat() {
               >
                 Download Sekarang
               </button>
-                <button
-                  onClick={() => {
+              <button
+                onClick={() => {
                   setShowInitialCachePrompt(false);
                   localStorage.setItem('hasShownInitialCachePrompt', 'true');
                 }}
                 className="w-full px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold shadow hover:bg-gray-200 transition"
               >
                 Nanti Saja
-                </button>
+              </button>
             </div>
           </div>
-              </div>
-            )}
+        </div>
+      )}
       {/* Caching All Progress Modal */}
       {isCachingAll && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50">
@@ -1465,7 +1537,7 @@ export default function QuranChat() {
             </h3>
             <div className="space-y-4">
               <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div 
+                <div
                   className="bg-blue-600 h-2.5 rounded-full transition-all duration-300"
                   style={{ width: `${(cachingAllProgress / cachingAllTotal) * 100}%` }}
                 ></div>

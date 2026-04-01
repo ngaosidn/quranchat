@@ -588,20 +588,22 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-2 z-50">
       <div className="bg-gradient-to-br from-green-100 via-white to-green-50 rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col border border-gray-100 sm:p-0 p-0">
-        <div className="p-4 sm:p-5 border-b border-gray-200 flex justify-between items-center bg-gradient-to-r from-green-50 to-green-100 rounded-t-3xl">
-          <h2 className="text-lg sm:text-xl font-bold text-gray-800 tracking-wide">
-            Surah {surahNumber}{surahName ? ` - ${surahName}` : ''}
-            {startAyat && endAyat && startAyat !== endAyat ? ` (Ayat ${startAyat}-${endAyat})` : startAyat ? ` (Ayat ${startAyat})` : ''}
+        <div className="p-3 sm:p-5 border-b border-gray-200 flex flex-col sm:flex-row gap-2 sm:gap-4 justify-between sm:items-center bg-gradient-to-r from-green-50 to-green-100 rounded-t-3xl">
+          <h2 className="text-base sm:text-lg md:text-xl font-bold text-gray-800 tracking-wide leading-tight line-clamp-1 sm:line-clamp-none">
+            {surahNumber}. {surahName || 'Surah'}
+            <span className="ml-1 text-xs sm:text-sm text-green-600 font-medium">
+              {startAyat && endAyat && startAyat !== endAyat ? `(${startAyat}-${endAyat})` : startAyat ? `(${startAyat})` : ''}
+            </span>
           </h2>
-          <div className="flex items-center gap-2">
-            <label className="flex items-center gap-1">
-              <span className="font-semibold text-green-800 text-xs sm:text-sm">Mushaf Font :</span>
+          <div className="flex items-center justify-between sm:justify-end gap-3 translate-y-[-2px] sm:translate-y-0">
+            <label className="flex items-center gap-1.5 flex-1 sm:flex-none">
+              <span className="font-bold text-green-800 text-[10px] sm:text-xs uppercase tracking-tight">Mushaf :</span>
               <select
-                className="border border-green-200 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-green-300 text-xs sm:text-sm text-gray-800 bg-white"
+                className="flex-1 sm:flex-none border border-green-200 rounded-lg px-2 py-1 focus:outline-none focus:ring-2 focus:ring-green-400 text-xs text-gray-800 bg-white shadow-sm"
                 value={mushafFont}
                 onChange={e => setMushafFont(e.target.value)}
               >
-                <option value="">Pilih</option>
+                <option value="">Default</option>
                 <option value="Madina">Madina</option>
                 <option value="Kemenag">Kemenag</option>
                 <option value="Indopak">Indopak</option>
@@ -609,14 +611,17 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
             </label>
             <button
               onClick={onClose}
-              className="text-gray-500 hover:text-green-600 p-2 hover:bg-green-50 rounded-full transition-all duration-200"
+              className="text-gray-400 hover:text-red-500 p-1.5 hover:bg-white rounded-full transition-all duration-200 shadow-sm border border-transparent hover:border-red-100"
+              aria-label="Tutup"
             >
-              ✕
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </div>
         </div>
 
-        <div className="overflow-y-auto p-3 sm:p-6 space-y-4 sm:space-y-6">
+        <div className="flex-1 overflow-y-auto p-3 sm:p-6 space-y-4 sm:space-y-6 scroll-smooth">
           {loading ? (
             <div className="flex justify-center py-8">
               <div className="flex space-x-2">
@@ -685,48 +690,82 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
                   key={verse.ayat}
                   className="bg-gradient-to-br from-indigo-50 to-white rounded-2xl p-3 sm:p-5 shadow border border-indigo-50 flex flex-col gap-2 sm:gap-3 hover:shadow-lg hover:border-indigo-200 transition-all duration-300"
                 >
-                  <div className="flex items-center gap-2 sm:gap-3 mb-1">
-                    <span className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-indigo-100 text-indigo-600 font-bold text-base sm:text-lg shadow-sm">
-                      {verse.ayat}
-                    </span>
-                    <span className="text-xs sm:text-sm text-gray-400">Ayat</span>
-                    <button
-                      className="ml-2 px-2 py-1 rounded-full border border-indigo-200 bg-white hover:bg-indigo-100 transition text-indigo-600 flex items-center"
-                      onClick={() => handlePlay(verse.ayat)}
-                    >
-                      {playingAyah === verse.ayat ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                  {/* Header Ayat: Pro App Layout */}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                    {/* Sisi Kiri: Info Utama */}
+                    <div className="flex items-center gap-2">
+                       <div className="relative group">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                        <span className="relative inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-indigo-700 font-extrabold text-xs sm:text-sm shadow-md border border-indigo-100 italic">
+                          {verse.ayat}
+                        </span>
+                      </div>
+                      <div className="flex flex-col -space-y-0.5">
+                        <span className="text-[10px] text-gray-400 font-extrabold uppercase tracking-widest">Ayat</span>
+                        <div className="h-0.5 w-4 bg-indigo-200 rounded-full"></div>
+                      </div>
+                      
+                      {/* Play Button: Primary Action */}
+                      <button
+                        className="ml-2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center shadow-lg shadow-indigo-200 hover:bg-indigo-700 hover:scale-110 active:scale-95 transition-all duration-200"
+                        onClick={() => handlePlay(verse.ayat)}
+                        aria-label="Putar Audio"
+                      >
+                        {playingAyah === verse.ayat ? (
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                          </svg>
+                        ) : (
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.25l13.5 6.75-13.5 6.75V5.25z" />
+                          </svg>
+                        )}
+                      </button>
+                    </div>
+
+                    {/* Sisi Kanan: Fitur Pendukung */}
+                    <div className="flex items-center flex-wrap gap-2 sm:gap-2.5">
+                      <button
+                        className="flex-1 sm:flex-none px-3 py-1.5 rounded-xl border border-yellow-200 bg-yellow-50/50 hover:bg-yellow-500 hover:text-white transition-all text-yellow-700 flex items-center justify-center gap-1.5 shadow-sm active:scale-95 text-[10px] sm:text-xs font-bold"
+                        onClick={() => {
+                          const tafsirAyat = tafsirList.find((t) => t.ayat === verse.ayat);
+                          setShowTafsir({
+                            ayat: verse.ayat,
+                            text: tafsirAyat ? tafsirAyat.teks : 'Tafsir tidak tersedia.'
+                          });
+                        }}
+                        title="Lihat Tafsir"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" />
                         </svg>
-                      ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.25l13.5 6.75-13.5 6.75V5.25z" />
+                        Tafsir
+                      </button>
+
+                      <button
+                        className="flex-1 sm:flex-none px-3 py-1.5 rounded-xl border border-emerald-200 bg-emerald-50/50 hover:bg-emerald-500 hover:text-white transition-all text-emerald-700 flex items-center justify-center gap-1.5 shadow-sm active:scale-95 text-[10px] sm:text-xs font-bold whitespace-nowrap"
+                        onClick={() => setAhkamPopup({ ayat: verse.ayat })}
+                        title="Ahkam Tajwid"
+                      >
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.01 1.912a15.998 15.998 0 01-3.388-1.62m11.125-9.378c.854-.53 1.874-.32 2.476.495.601.816.483 1.969-.328 2.684l-5.63 4.96c-.347.306-.78.473-1.23.473h-.033c-.45 0-.883-.167-1.23-.473l-5.63-4.96c-.811-.715-.929-1.868-.328-2.684.602-.815 1.622-1.025 2.476-.495l4.712 2.923a1.5 1.5 0 001.768 0l4.712-2.923z" />
                         </svg>
-                      )}
-                    </button>
-                    <button
-                      className="ml-1 px-2 py-1 rounded-full border border-indigo-200 bg-white hover:bg-yellow-100 transition text-yellow-600 flex items-center gap-1"
-                      onClick={() => {
-                        const tafsirAyat = tafsirList.find((t) => t.ayat === verse.ayat);
-                        setShowTafsir({
-                          ayat: verse.ayat,
-                          text: tafsirAyat ? tafsirAyat.teks : 'Tafsir tidak tersedia.'
-                        });
-                      }}
-                      title="Lihat Tafsir"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75C2.25 5.507 3.257 4.5 4.5 4.5h5.25v15H4.5a2.25 2.25 0 01-2.25-2.25V6.75zM21.75 6.75c0-1.243-1.007-2.25-2.25-2.25h-5.25v15h5.25a2.25 2.25 0 002.25-2.25V6.75z" />
-                      </svg>
-                      <span className="ml-1 font-semibold text-yellow-600 text-xs">Tafsir</span>
-                    </button>
-                    <button
-                      className="ml-1 px-2 py-1 rounded-full border border-indigo-200 bg-white hover:bg-emerald-100 transition text-emerald-600 flex items-center gap-1"
-                      onClick={() => setAhkamPopup({ ayat: verse.ayat })}
-                      title="Ahkam Tajwid"
-                    >
-                      <span className="font-semibold text-emerald-600 text-xs">Ahkam Tajwid</span>
-                    </button>
+                        Tajwid
+                      </button>
+
+                      <button
+                        className="flex-1 sm:flex-none px-3 py-1.5 rounded-xl border border-purple-200 bg-purple-50/50 hover:bg-purple-500 hover:text-white transition-all text-purple-700 flex items-center justify-center gap-1.5 shadow-sm active:scale-95 text-[10px] sm:text-xs font-bold"
+                        onClick={() => {
+                          alert(`Fitur Kirim Bacaan Ayat ${verse.ayat} segera hadir!`);
+                        }}
+                        title="Kirim Bacaan"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                        </svg>
+                        Kirim
+                      </button>
+                    </div>
                   </div>
                   <div className="text-right">
                     <div className={`text-3xl sm:text-3xl md:text-4xl leading-loose text-gray-800 ${fontClass}`} style={{ direction: 'rtl', position: 'relative' }}>
@@ -764,30 +803,48 @@ export default function VerseList({ surahNumber, onClose, startAyat, endAyat }: 
                 </div>
               );
               })}
-              {/* Pagination Controls */}
-              <div className="flex justify-between items-center mt-4 gap-2">
-                <button
-                  className="px-3 py-1 rounded bg-green-200 text-green-800 font-semibold disabled:opacity-50"
-                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                  disabled={currentPage === 1}
-                >
-                  Sebelumnya
-                </button>
-                <span className="text-gray-600 text-sm">
-                  Halaman {currentPage} dari {totalPages}
-                </span>
-                <button
-                  className="px-3 py-1 rounded bg-green-200 text-green-800 font-semibold disabled:opacity-50"
-                  onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-                  disabled={currentPage === totalPages}
-                >
-                  Berikutnya
-                </button>
-              </div>
               <audio ref={audioRef} />
             </div>
           )}
         </div>
+
+        {/* Fixed Footer for Pagination */}
+        {!loading && verses.length > 0 && (
+          <div className="p-2.5 sm:p-4 border-t border-gray-100 bg-white/90 backdrop-blur-md rounded-b-3xl">
+            <div className="flex justify-between items-center gap-1 sm:gap-4 max-w-lg mx-auto">
+              <button
+                className="flex items-center justify-center gap-1 px-3 sm:px-5 py-2 rounded-xl bg-green-50 text-green-700 font-bold text-xs sm:text-sm hover:bg-green-600 hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-sm active:scale-95 border border-green-100"
+                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-3.5 h-3.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+                <span className="hidden xs:inline">Sebelumnya</span>
+                <span className="xs:hidden">Dulu</span>
+              </button>
+              
+              <div className="flex flex-col items-center min-w-[70px]">
+                <span className="text-gray-400 text-[8px] uppercase tracking-widest font-bold">Halaman</span>
+                <span className="text-gray-800 font-extrabold text-xs sm:text-sm px-3 py-1 bg-white rounded-full border border-gray-100 shadow-inner">
+                  {currentPage} <span className="text-gray-300 font-normal mx-0.5">/</span> {totalPages}
+                </span>
+              </div>
+
+              <button
+                className="flex items-center justify-center gap-1 px-3 sm:px-5 py-2 rounded-xl bg-green-50 text-green-700 font-bold text-xs sm:text-sm hover:bg-green-600 hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-sm active:scale-95 border border-green-100"
+                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                disabled={currentPage === totalPages}
+              >
+                <span className="hidden xs:inline">Berikutnya</span>
+                <span className="xs:hidden">Lanjut</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-3.5 h-3.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
         {/* Pop up tafsir */}
         {showTafsir && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-2">
