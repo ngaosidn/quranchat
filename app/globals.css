@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --font-amiri: 'Amiri', serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-end-rgb));
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+}
+
+@layer utilities {
+  .font-uthmani {
+    font-family: var(--font-amiri);
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-align: right;
+    direction: rtl;
+  }
+
+  @media (min-width: 640px) {
+    .font-uthmani {
+      font-size: 1.7em !important;
+      line-height: 2 !important;
+    }
+  }
+
+  .font-poppins {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  }
+
+  .translation-text {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #4B5563;
+  }
+
+  .surah-name-arabic {
+    font-family: var(--font-amiri);
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+}
+
+.font-amiri {
+  font-family: var(--font-amiri), serif;
+}
+
+.surah-name-arabic {
+  font-family: var(--font-amiri), serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+@keyframes spectrum {
+
+  0%,
+  100% {
+    height: 20%;
+  }
+
+  50% {
+    height: 100%;
+  }
+}
+
+.animate-spectrum>div {
+  animation-play-state: running;
+}
+
+.animate-spectrum>div:nth-child(odd) {
+  background: linear-gradient(to top, #9333ea, #7e22ce);
+}
+
+.animate-spectrum>div:nth-child(even) {
+  background: linear-gradient(to top, #7e22ce, #9333ea);
+}
+
+@font-face {
+  font-family: 'UthmanicNeoColor';
+  src: url('/fonts/Uthmanic_NeoCOLOR-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-uthmanic {
+  font-family: 'UthmanicNeoColor', serif;
+}
+
+/* Salinan file di public/fonts (untuk editor admin warna, dll.) */
+@font-face {
+  font-family: 'UthmanicNeoColorCopy';
+  src: url('/fonts/Uthmanic_NeoCOLOR-Regular%20copy.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-uthmanic-warna-editor {
+  font-family: 'UthmanicNeoColorCopy', 'UthmanicNeoColor', serif;
+}
+
+@font-face {
+  font-family: 'NastaleeqColor';
+  src: url('/fonts/Nastaleeq_COLOR-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-nastaleeq {
+  font-family: 'NastaleeqColor', serif;
+}
+
+@font-face {
+  font-family: 'AlQuranNeoV5x1';
+  src: url('/fonts/AlQuranNeov5x1.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-indopak {
+  font-family: 'AlQuranNeoV5x1', serif;
+}
+
+
+@keyframes shimmer { 
+  0% { transform: translateX(-150%) skewX(-15deg); opacity: 0; } 
+  5% { opacity: 1; } 
+  35% { transform: translateX(150%) skewX(-15deg); opacity: 1; } 
+  45% { opacity: 0; } 
+  100% { transform: translateX(150%) skewX(-15deg); opacity: 0; } 
+}
+
+.shimmer-overlay { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: linear-gradient(to right, transparent 45%, rgba(255, 255, 255, 0.15) 50%, transparent 55%); 
+  z-index: 5; 
+  pointer-events: none; 
+  animation: shimmer 12s infinite linear; 
+}

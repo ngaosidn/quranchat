@@ -1,0 +1,99 @@
+{
+  "rules": [
+    {
+      "surah": 2,
+      "ayat": 1,
+      "mushaf": "all",
+      "targets": [
+        {
+          "word": "الٓمٓ",
+          "popup_key": "Ahkam Tajwid",
+          "audio_url": "https://everyayah.com/data/Alafasy_64kbps/002001.mp3",
+          "image_url": "https://cdn.jsdelivr.net/gh/ngaosidn/dbTajwid@main/01%20-%201%20-%20Mad%20Thabi'i.jpg?raw=true",
+          "explanation": "Penjelasan khusus untuk kata الٓمٓ (bisa kamu ganti)."
+        }
+      ],
+      "title": "Ahkam Tajwid"
+    },
+    {
+      "surah": 2,
+      "ayat": 2,
+      "mushaf": "all",
+      "targets": [
+        {
+          "word": "ذَٰلِكَ",
+          "popup_key": "Ahkam Tajwid",
+          "audio_url": "https://everyayah.com/data/Alafasy_64kbps/002002.mp3",
+          "image_url": "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyMzNybzYzemd4c3Z6MDd3OWl3cjIzenQ1MWJ0ZGh2Ym1pNTlvcHdjNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NxC8VtyxqhMtpLoEEN/200w.gif",
+          "explanation": "Penjelasan khusus untuk kata ذَٰلِكَ."
+        },
+        {
+          "word": "ٱلۡكِتَٰبُ",
+          "popup_key": "Ahkam Tajwid",
+          "audio_url": "https://everyayah.com/data/Alafasy_64kbps/002002.mp3",
+          "image_url": "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyMzNybzYzemd4c3Z6MDd3OWl3cjIzenQ1MWJ0ZGh2Ym1pNTlvcHdjNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NxC8VtyxqhMtpLoEEN/200w.gif",
+          "explanation": "Penjelasan khusus untuk kata ٱلۡكِتَٰبُ."
+        },
+        {
+          "word": "لَا",
+          "popup_key": "Ahkam Tajwid",
+          "audio_url": "https://everyayah.com/data/Alafasy_64kbps/002002.mp3",
+          "image_url": "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyMzNybzYzemd4c3Z6MDd3OWl3cjIzenQ1MWJ0ZGh2Ym1pNTlvcHdjNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NxC8VtyxqhMtpLoEEN/200w.gif",
+          "explanation": "Penjelasan khusus untuk kata لَا."
+        },
+        {
+          "word": "رَيۡبَۛ",
+          "popup_key": "Ahkam Tajwid",
+          "audio_url": "https://everyayah.com/data/Alafasy_64kbps/002002.mp3",
+          "image_url": "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyMzNybzYzemd4c3Z6MDd3OWl3cjIzenQ1MWJ0ZGh2Ym1pNTlvcHdjNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NxC8VtyxqhMtpLoEEN/200w.gif",
+          "explanation": "Penjelasan khusus untuk kata رَيۡبَۛ."
+        }
+      ],
+      "title": "Ahkam Tajwid"
+    },
+    {
+      "surah": 2,
+      "ayat": 3,
+      "mushaf": "all",
+      "targets": [
+        {
+          "word": "وَيُقِيمُونَ",
+          "popup_key": "iqamah_salat",
+          "audio_url": "https://everyayah.com/data/Alafasy_64kbps/002003.mp3",
+          "image_url": "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyMzNybzYzemd4c3Z6MDd3OWl3cjIzenQ1MWJ0ZGh2Ym1pNTlvcHdjNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NxC8VtyxqhMtpLoEEN/200w.gif",
+          "explanation": "Penjelasan khusus untuk kata وَيُقِيمُونَ."
+        },
+        {
+          "word": "ٱلصَّلَوٰةَ",
+          "popup_key": "iqamah_salat",
+          "audio_url": "https://everyayah.com/data/Alafasy_64kbps/002003.mp3",
+          "image_url": "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyMzNybzYzemd4c3Z6MDd3OWl3cjIzenQ1MWJ0ZGh2Ym1pNTlvcHdjNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NxC8VtyxqhMtpLoEEN/200w.gif",
+          "explanation": "Penjelasan khusus untuk kata ٱلصَّلَوٰةَ."
+        }
+      ],
+      "title": "Iqamah / Makna Salat"
+    }, 
+    {
+      "surah": 2,
+      "ayat": 4,
+      "mushaf": "all",
+      "targets": [
+        {
+          "word": "وَمَآ أُنزِلَ",
+          "popup_key": "iqamah_salat",
+          "audio_url": "https://everyayah.com/data/Alafasy_64kbps/002004.mp3",
+          "image_url": "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyMzNybzYzemd4c3Z6MDd3OWl3cjIzenQ1MWJ0ZGh2Ym1pNTlvcHdjNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NxC8VtyxqhMtpLoEEN/200w.gif",
+          "explanation": "Penjelasan khusus untuk kata وَمَآ أُنزِلَ."
+        },
+        {
+          "word": "مِن قَبۡلِكَ",
+          "popup_key": "iqamah_salat",
+          "audio_url": "https://everyayah.com/data/Alafasy_64kbps/002004.mp3",
+          "image_url": "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyMzNybzYzemd4c3Z6MDd3OWl3cjIzenQ1MWJ0ZGh2Ym1pNTlvcHdjNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NxC8VtyxqhMtpLoEEN/200w.gif",
+          "explanation": "Penjelasan khusus untuk kata مِن قَبۡلِكَ."
+        }
+      ],
+      "title": "Iqamah / Makna Salat"
+    }
+  ]
+}

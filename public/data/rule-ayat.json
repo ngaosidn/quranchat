@@ -1,0 +1,43 @@
+{
+  "rules": [
+    {
+      "surah": 2,
+      "ayat": 1,
+      "title": "Ahkam Tajwid - Ayat 1",
+      "audio_url": "https://everyayah.com/data/Alafasy_64kbps/002001.mp3",
+      "image_url": "https://cdn.jsdelivr.net/gh/ngaosidn/dbTajwid@main/01%20-%201%20-%20Mad%20Thabi'i.jpg?raw=true",
+      "video_url": "https://youtu.be/cA3D08F-2IM",
+      "explanation": "Penjelasan ahkam tajwid untuk ayat ini. Isi bisa kamu lengkapi di file rule-ayat.json."
+    },
+    {
+      "surah": 2,
+      "ayat": 2,
+      "title": "Ahkam Tajwid - Ayat 2",
+      "audio_url": "https://everyayah.com/data/Alafasy_64kbps/002002.mp3",
+      "image_url": "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyMzNybzYzemd4c3Z6MDd3OWl3cjIzenQ1MWJ0ZGh2Ym1pNTlvcHdjNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NxC8VtyxqhMtpLoEEN/200w.gif",
+      "explanation": "Penjelasan ahkam tajwid untuk ayat 2. Edit di rule-ayat.json."
+    },
+    {
+      "surah": 2,
+      "ayat": 3,
+      "title": "Ahkam Tajwid - Ayat 3",
+      "audio_url": "https://everyayah.com/data/Alafasy_64kbps/002003.mp3",
+      "image_url": "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyMzNybzYzemd4c3Z6MDd3OWl3cjIzenQ1MWJ0ZGh2Ym1pNTlvcHdjNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NxC8VtyxqhMtpLoEEN/200w.gif",
+      "explanation": "Penjelasan ahkam tajwid untuk ayat 3. Edit di rule-ayat.json."
+    },
+    {
+      "surah": 2,
+      "ayat": 4,
+      "title": "Ahkam Tajwid - Ayat 4",
+      "explanation": "Coba dulu ya"
+    },
+    {
+      "surah": 2,
+      "ayat": 6,
+      "title": "Ahkam Tajwid - Ayat 6",
+      "audio_url": "https://everyayah.com/data/Alafasy_64kbps/002006.mp3",
+      "image_url": "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyMzNybzYzemd4c3Z6MDd3OWl3cjIzenQ1MWJ0ZGh2Ym1pNTlvcHdjNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NxC8VtyxqhMtpLoEEN/200w.gif",
+      "explanation": "Penjelasan ahkam tajwid untuk ayat 6. Edit di rule-ayat.json."
+    }
+  ]
+}
